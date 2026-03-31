@@ -882,9 +882,142 @@
           ]
         },
         {
+          "slug": "whisky-guia",
+          "label": "Whisky desde cero",
+          "position": 3,
+          "panelTitle": "Guía básica del whisky para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "No hace falta saber de barricas, regiones o catas para empezar con el whisky. Lo más útil al principio es entender de qué cereal parte, si es más suave o más intenso, y cómo cambia al tomarlo solo, con unas gotas de agua o con hielo.",
+          "sections": [
+            {
+              "slug": "que-es-whisky",
+              "title": "Qué es el whisky",
+              "subtitle": "Un destilado de cereales que suele ganar carácter con el tiempo en madera",
+              "imageUrl": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Vaso de whisky servido junto a una botella",
+              "paragraphs": [
+                "El whisky es un destilado elaborado a partir de cereales como cebada, maíz, centeno o trigo. Primero se fermentan esos cereales, luego se destilan y normalmente se dejan reposar en barricas.",
+                "Ese paso por madera le da buena parte de su personalidad: color ámbar, notas de vainilla, caramelo, especias, frutos secos o humo, según el tipo de barrica y el tiempo de crianza.",
+                "Para quien empieza, una forma simple de entenderlo es esta: el whisky combina tres grandes factores, que son el cereal, la destilación y la barrica."
+              ]
+            },
+            {
+              "slug": "como-se-hace-whisky",
+              "title": "Cómo se hace el whisky",
+              "subtitle": "Del grano a la botella en varias etapas fáciles de seguir",
+              "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Granos usados para elaborar bebidas alcohólicas",
+              "paragraphs": [
+                "El proceso suele empezar con cereal malteado o cocido, que se mezcla con agua para extraer azúcares fermentables. Después se añade levadura para crear una bebida alcohólica base.",
+                "Esa base se destila para concentrar alcohol y aromas. Luego el destilado se guarda en barricas, donde cambia poco a poco de color, textura y complejidad.",
+                "Finalmente se ajusta la graduación y se embotella. Según el productor, puede filtrarse más o menos, mezclarse con otros lotes o presentarse como una expresión muy concreta."
+              ]
+            },
+            {
+              "slug": "como-empezar",
+              "title": "Cómo empezar a entenderlo",
+              "subtitle": "No hace falta una cata formal para notar diferencias básicas",
+              "imageUrl": "https://images.unsplash.com/photo-1569529465841-dfecdab7503b?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Persona sosteniendo un vaso de whisky para observarlo",
+              "paragraphs": [
+                "Empieza fijándote en si el whisky se siente suave o intenso, seco o dulce, ligero o robusto. Esa primera impresión ya dice mucho aunque no conozcas todos los términos técnicos.",
+                "Después intenta notar si aparecen recuerdos a vainilla, miel, madera, manzana, frutos secos, especias o humo. No hace falta acertar exactamente: se trata de entrenar el paladar poco a poco.",
+                "Comparar dos whiskies distintos en pequeñas cantidades suele enseñar más que leer muchas descripciones teóricas sin probar nada."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "estilos-whisky",
+              "title": "Estilos de whisky para orientarte",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Estilo"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil general"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Scotch más suave",
+                  "composition": "Puede mostrar notas de cereal, miel, fruta madura, vainilla o madera elegante, sin humo dominante.",
+                  "objective": "Es una buena puerta de entrada para familiarizarse con el whisky sin ir directo a perfiles extremos."
+                },
+                {
+                  "term": "Bourbon",
+                  "composition": "Suele ser más amable, con recuerdos a caramelo, vainilla, maíz dulce, madera y especias suaves.",
+                  "objective": "Ayuda a reconocer cómo el maíz y la barrica nueva pueden dar un perfil más redondo y accesible."
+                },
+                {
+                  "term": "Irish whiskey",
+                  "composition": "A menudo resulta más ligero, limpio y fácil de beber, con fruta, cereal y poca agresividad.",
+                  "objective": "Sirve para empezar con un estilo directo y normalmente amistoso para principiantes."
+                },
+                {
+                  "term": "Rye whiskey",
+                  "composition": "Más seco, especiado y con sensación algo más punzante que otros estilos.",
+                  "objective": "Permite descubrir cómo cambia el perfil cuando el centeno tiene más protagonismo."
+                },
+                {
+                  "term": "Peated o ahumado",
+                  "composition": "Aromas intensos de humo, turba, medicina, tierra o brasas, según el productor.",
+                  "objective": "Muestra el lado más extremo y divisivo del whisky; suele entenderse mejor después de probar estilos más suaves."
+                }
+              ]
+            },
+            {
+              "slug": "tomarlo-whisky",
+              "title": "Cómo tomar whisky al empezar",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Forma"
+                },
+                {
+                  "key": "composition",
+                  "label": "Qué pasa"
+                },
+                {
+                  "key": "objective",
+                  "label": "Para qué sirve"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Solo",
+                  "composition": "Muestra el perfil más directo del whisky, con toda su intensidad alcohólica y aromática.",
+                  "objective": "Ayuda a conocerlo tal como sale de la botella, aunque puede ser exigente al principio."
+                },
+                {
+                  "term": "Con unas gotas de agua",
+                  "composition": "Puede abrir aromas y suavizar la sensación alcohólica sin convertirlo en una bebida aguada.",
+                  "objective": "Es una forma muy útil para principiantes porque hace más fácil notar matices."
+                },
+                {
+                  "term": "Con hielo",
+                  "composition": "Baja la temperatura y reduce algo de intensidad, pero también puede esconder parte del aroma.",
+                  "objective": "Sirve si prefieres una entrada más suave, aunque no siempre deja ver toda la complejidad."
+                },
+                {
+                  "term": "En cóctel simple",
+                  "composition": "Combinado con otros ingredientes, el whisky puede resultar más amable y accesible.",
+                  "objective": "Es una buena opción si quieres acostumbrarte poco a poco a su sabor sin empezar por una cata directa."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "slug": "servicio",
           "label": "Servicio y consumo",
-          "position": 3,
+          "position": 4,
           "panelTitle": "Servicio y consumo responsable",
           "tables": [
             {

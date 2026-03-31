@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Category {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  position  Int
+  title     String
+  summary   String
+  abv       String
+  origin    String
+  imageUrl  String
+  imageAlt  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  guide     Guide?
+}
+
+model Guide {
+  id         String    @id @default(cuid())
+  categoryId String    @unique
+  title      String
+  type       String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  category   Category  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  tabs       GuideTab[]
+}
+
+model GuideTab {
+  id          String         @id @default(cuid())
+  guideId      String
+  slug         String
+  label        String
+  panelTitle   String?
+  noteTitle    String?
+  noteContent  String?
+  position     Int
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  guide        Guide          @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  sections     GuideSection[]
+  tables       GuideTable[]
+
+  @@unique([guideId, slug])
+  @@index([guideId, position])
+}
+
+model GuideSection {
+  id         String           @id @default(cuid())
+  tabId       String
+  slug        String
+  title       String
+  subtitle    String
+  imageUrl    String
+  imageAlt    String
+  position    Int
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  tab         GuideTab         @relation(fields: [tabId], references: [id], onDelete: Cascade)
+  paragraphs  GuideParagraph[]
+
+  @@unique([tabId, slug])
+  @@index([tabId, position])
+}
+
+model GuideParagraph {
+  id        String       @id @default(cuid())
+  sectionId String
+  content   String
+  position  Int
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  section   GuideSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+
+  @@index([sectionId, position])
+}
+
+model GuideTable {
+  id        String         @id @default(cuid())
+  tabId      String
+  slug       String
+  title      String
+  columns    Json
+  position   Int
+  createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt
+  tab        GuideTab       @relation(fields: [tabId], references: [id], onDelete: Cascade)
+  rows       GuideTableRow[]
+
+  @@unique([tabId, slug])
+  @@index([tabId, position])
+}
+
+model GuideTableRow {
+  id          String      @id @default(cuid())
+  tableId      String
+  term         String
+  composition  String?
+  objective    String?
+  description  String?
+  reference    String?
+  abv          String?
+  imageUrl     String?
+  imageAlt     String?
+  position     Int
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  table        GuideTable  @relation(fields: [tableId], references: [id], onDelete: Cascade)
+
+  @@index([tableId, position])
+}

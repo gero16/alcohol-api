@@ -1,0 +1,134 @@
+import type { Prisma } from "../generated/prisma";
+import type {
+  ApiCategory,
+  ApiGuideDetail,
+  ApiGuideSummary,
+  ApiGuideTable,
+  TableColumn,
+} from "./contracts";
+
+export const guideDetailInclude = {
+  category: true,
+  tabs: {
+    orderBy: { position: "asc" },
+    include: {
+      sections: {
+        orderBy: { position: "asc" },
+        include: {
+          paragraphs: {
+            orderBy: { position: "asc" },
+          },
+        },
+      },
+      tables: {
+        orderBy: { position: "asc" },
+        include: {
+          rows: {
+            orderBy: { position: "asc" },
+          },
+        },
+      },
+    },
+  },
+} satisfies Prisma.GuideInclude;
+
+export type GuideDetailRecord = Prisma.GuideGetPayload<{
+  include: typeof guideDetailInclude;
+}>;
+
+export type CategoryRecord = Prisma.CategoryGetPayload<{
+  include: { guide: true };
+}>;
+
+export type GuideSummaryRecord = Prisma.GuideGetPayload<{
+  include: {
+    category: true;
+    tabs: true;
+  };
+}>;
+
+export function toApiCategory(category: CategoryRecord): ApiCategory {
+  return {
+    id: category.id,
+    slug: category.slug,
+    position: category.position,
+    title: category.title,
+    summary: category.summary,
+    abv: category.abv,
+    origin: category.origin,
+    imageUrl: category.imageUrl,
+    imageAlt: category.imageAlt,
+    hasGuide: Boolean(category.guide),
+  };
+}
+
+export function toApiGuideSummary(guide: GuideSummaryRecord): ApiGuideSummary {
+  return {
+    id: guide.id,
+    categorySlug: guide.category.slug,
+    categoryTitle: guide.category.title,
+    title: guide.title,
+    type: guide.type,
+    tabsCount: guide.tabs.length,
+  };
+}
+
+export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
+  return {
+    id: guide.id,
+    category: {
+      id: guide.category.id,
+      slug: guide.category.slug,
+      position: guide.category.position,
+      title: guide.category.title,
+      summary: guide.category.summary,
+      abv: guide.category.abv,
+      origin: guide.category.origin,
+      imageUrl: guide.category.imageUrl,
+      imageAlt: guide.category.imageAlt,
+      hasGuide: true,
+    },
+    title: guide.title,
+    type: guide.type,
+    tabs: guide.tabs.map((tab) => ({
+      id: tab.id,
+      slug: tab.slug,
+      label: tab.label,
+      panelTitle: tab.panelTitle ?? undefined,
+      noteTitle: tab.noteTitle ?? undefined,
+      noteContent: tab.noteContent ?? undefined,
+      sections: tab.sections.map((section) => ({
+        id: section.id,
+        slug: section.slug,
+        title: section.title,
+        subtitle: section.subtitle,
+        imageUrl: section.imageUrl,
+        imageAlt: section.imageAlt,
+        paragraphs: section.paragraphs.map((paragraph) => paragraph.content),
+      })),
+      tables: tab.tables.map((table): ApiGuideTable => {
+        const columns = table.columns as TableColumn[];
+        const displayMode = table.rows.some((row) => row.imageUrl) ? "cards" : "table";
+
+        return {
+          id: table.id,
+          slug: table.slug,
+          title: table.title,
+          displayMode,
+          columns,
+          rows: table.rows.map((row) => ({
+            id: row.id,
+            term: row.term,
+            composition: row.composition ?? undefined,
+            objective: row.objective ?? undefined,
+            description: row.description ?? undefined,
+            reference: row.reference ?? undefined,
+            abv: row.abv ?? undefined,
+            imageUrl: row.imageUrl ?? undefined,
+            imageAlt: row.imageAlt ?? undefined,
+          })),
+        };
+      }),
+    })),
+  };
+}

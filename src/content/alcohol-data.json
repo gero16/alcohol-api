@@ -1,0 +1,2072 @@
+{
+  "categories": [
+    {
+      "slug": "vino",
+      "position": 0,
+      "title": "Vino",
+      "summary": "Fermentación del mosto de uva. Variedades tintas, blancas y rosadas; el alcohol proviene de la conversión de azúcares naturales por levaduras.",
+      "abv": "9–15 % vol. (típico)",
+      "origin": "Mediterráneo y regiones vinícolas mundiales",
+      "imageUrl": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=80",
+      "imageAlt": "Copa de vino tinto sobre una mesa de madera"
+    },
+    {
+      "slug": "cerveza",
+      "position": 1,
+      "title": "Cerveza",
+      "summary": "Elaborada con malta de cereales (cebada habitualmente), lúpulo y agua. Fermentación alcohólica con estilos muy diversos.",
+      "abv": "4–8 % vol. (mayoría de estilos comerciales)",
+      "origin": "Global; tradiciones centroeuropeas y artesanales",
+      "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+      "imageAlt": "Vasos de cerveza dorada con espuma"
+    },
+    {
+      "slug": "destilados",
+      "position": 2,
+      "title": "Destilados",
+      "summary": "Concentración por destilación (whisky, ron, ginebra, vodka, tequila, etc.). Mayor graduación que vinos o cervezas.",
+      "abv": "35–50 % vol. (habitual en botella)",
+      "origin": "Según producto: Escocia, Caribe, Europa del Este, México…",
+      "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
+      "imageAlt": "Botellas y vaso de bebidas destiladas"
+    },
+    {
+      "slug": "licores",
+      "position": 3,
+      "title": "Licores y cremas",
+      "summary": "Base alcohólica con azúcares, hierbas, frutas o crema. Consumo frecuente en cócteles o postre.",
+      "abv": "15–40 % vol.",
+      "origin": "Tradiciones locales y marcas comerciales",
+      "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+      "imageAlt": "Cóctel servido en una copa con tonos rojizos"
+    },
+    {
+      "slug": "aperitivos",
+      "position": 4,
+      "title": "Aperitivos",
+      "summary": "Bebidas aromáticas pensadas para tomarse antes de comer. Suelen tener perfiles herbales, cítricos, amargos o vínicos y una graduación media.",
+      "abv": "11–24 % vol. (habitual, según estilo)",
+      "origin": "Tradiciones mediterráneas y europeas, especialmente Italia y Francia",
+      "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+      "imageAlt": "Bebida aperitiva servida con hielo y rodaja cítrica"
+    },
+    {
+      "slug": "sidra",
+      "position": 5,
+      "title": "Sidra y similares",
+      "summary": "Fermentación de zumo de manzana u otros frutos. Perfil más ligero que muchos vinos tintos.",
+      "abv": "4–8 % vol.",
+      "origin": "Asturias, País Vasco, Normandía, Reino Unido",
+      "imageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=1200&q=80",
+      "imageAlt": "Botella y vaso de sidra servida"
+    },
+    {
+      "slug": "champagne",
+      "position": 6,
+      "title": "Espumoso",
+      "summary": "Vinos con segunda fermentación (o método Charmat) que generan burbujas de CO₂ disuelto.",
+      "abv": "11–13 % vol.",
+      "origin": "Champagne (Francia), Cava (España), Prosecco (Italia)…",
+      "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+      "imageAlt": "Copa de vino espumoso con burbujas"
+    }
+  ],
+  "guides": [
+    {
+      "categorySlug": "vino",
+      "title": "Clasificaciones del vino",
+      "type": "guide",
+      "tabs": [
+        {
+          "slug": "composicion",
+          "label": "Uva y composición",
+          "position": 0,
+          "noteTitle": "Dato curioso",
+          "noteContent": "En el Viejo Mundo, muchos vinos se identifican por la región o la denominación de origen, como Rioja, donde puede predominar el Tempranillo pero la etiqueta destaca el lugar. En el Nuevo Mundo, como América, Australia o Sudáfrica, es más habitual identificar el vino por la uva principal.",
+          "sections": [
+            {
+              "slug": "varietales",
+              "title": "1. Vinos varietales",
+              "subtitle": "Un vino varietal está elaborado predominantemente con un solo tipo de uva.",
+              "imageUrl": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Viñedo con hileras de uvas maduras al atardecer",
+              "paragraphs": [
+                "La regla del 85 %: en muchos países como Uruguay, Argentina, Estados Unidos y Chile, para que una etiqueta diga \"Malbec\" o \"Tannat\", no es obligatorio que sea 100 % esa uva. Por ley, debe tener al menos un 85 % de la cepa principal.",
+                "El 15 % restante puede ser una mezcla decidida por el enólogo para mejorar el color, la estructura o el equilibrio final.",
+                "El enfoque general es resaltar las características más reconocibles y puras de esa uva específica."
+              ]
+            },
+            {
+              "slug": "monovarietales",
+              "title": "2. Vinos monovarietales",
+              "subtitle": "Aunque a menudo se usan como sinónimos de los varietales, el término monovarietal es más estricto.",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vino servida junto a una botella",
+              "paragraphs": [
+                "Se refiere a vinos elaborados al 100 % con una sola variedad de uva.",
+                "No hay margen para ese 15 % de ayuda de otras cepas.",
+                "Se considera una expresión muy pura de un viñedo y de una uva en particular."
+              ]
+            },
+            {
+              "slug": "cortes",
+              "title": "3. Vinos de corte",
+              "subtitle": "También llamados blend, assemblage o coupage, son vinos elaborados con dos o más variedades de uva.",
+              "imageUrl": "https://images.unsplash.com/photo-1524594154908-eddba9c7e5c6?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Varias copas de vino listas para una cata",
+              "paragraphs": [
+                "La mezcla se hace en proporciones significativas y forma parte del diseño del vino.",
+                "El objetivo del enólogo suele ser buscar equilibrio: una cepa puede aportar color y estructura, mientras otra suma suavidad, fruta o complejidad aromática.",
+                "Un ejemplo clásico son muchos vinos de Burdeos, que suelen combinar Cabernet Sauvignon, Merlot y Cabernet Franc."
+              ]
+            },
+            {
+              "slug": "multivarietales",
+              "title": "4. Vinos multivarietales",
+              "subtitle": "Es un término menos común, pero útil para blends que reúnen muchas cepas distintas.",
+              "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botellas y copas variadas sobre una mesa de degustación",
+              "paragraphs": [
+                "Pueden incorporar 5, 10 o incluso más variedades en una sola botella.",
+                "Se busca una complejidad extrema que una sola uva difícilmente podría ofrecer por sí sola."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "resumen",
+              "title": "Resumen para recordar",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "composition",
+                  "label": "Composición"
+                },
+                {
+                  "key": "objective",
+                  "label": "Objetivo"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Monovarietal",
+                  "composition": "100 % una sola uva",
+                  "objective": "Pureza absoluta de la cepa"
+                },
+                {
+                  "term": "Varietal",
+                  "composition": "Al menos 85 % de una uva",
+                  "objective": "Identificar el vino con un sabor conocido"
+                },
+                {
+                  "term": "Blend / Corte",
+                  "composition": "Mezcla de 2 o más uvas",
+                  "objective": "Lograr complejidad y equilibrio"
+                },
+                {
+                  "term": "Multivarietal",
+                  "composition": "Mezcla amplia de varias cepas",
+                  "objective": "Buscar complejidad extrema"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "elaboracion",
+          "label": "Método de elaboración",
+          "position": 1,
+          "panelTitle": "Según su método de elaboración",
+          "tables": [
+            {
+              "slug": "metodo-elaboracion",
+              "title": "Según su método de elaboración",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Vinos tranquilos",
+                  "description": "Son los vinos sin burbujas y con una graduación habitual entre 8,5 % y 14,5 %. Aquí entran la mayoría de los tintos, blancos y rosados.",
+                  "imageUrl": "https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copa de vino tranquilo servida sobre una mesa"
+                },
+                {
+                  "term": "Vinos espumosos",
+                  "description": "Contienen gas carbónico natural gracias a una segunda fermentación, ya sea en botella como Champagne o Cava, o en tanque como Prosecco.",
+                  "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copa de espumoso con burbujas y botella al fondo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "crianza",
+          "label": "Crianza",
+          "position": 2,
+          "panelTitle": "Según su envejecimiento o crianza",
+          "tables": [
+            {
+              "slug": "crianza",
+              "title": "Según su envejecimiento o crianza",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Vinos jóvenes o cosecha",
+                  "description": "Se embotellan poco después de la fermentación. No pasan por madera o lo hacen durante muy poco tiempo, buscando resaltar la fruta fresca.",
+                  "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copa de vino joven acompañando una comida ligera"
+                },
+                {
+                  "term": "Vinos de crianza",
+                  "description": "Han pasado un tiempo mínimo en barrica de roble y luego en botella, desarrollando mayor estructura y complejidad.",
+                  "reference": "Ejemplo en España: 2 años de envejecimiento total, con al menos 6 meses en barrica.",
+                  "imageUrl": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botella de vino tinto y copa en ambiente cálido"
+                },
+                {
+                  "term": "Vinos de reserva",
+                  "description": "Proceden de cosechas excepcionales y pasan más tiempo en contacto con la madera, lo que aporta notas de vainilla, cuero y especias.",
+                  "reference": "Ejemplo en España: 3 años de envejecimiento total, con al menos 1 año en barrica.",
+                  "imageUrl": "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Barricas de roble en una bodega de vino"
+                },
+                {
+                  "term": "Vinos de gran reserva",
+                  "description": "Se elaboran solo en años de calidad suprema y están pensados para una guarda prolongada y una evolución más lenta.",
+                  "reference": "Ejemplo en España: 5 años de envejecimiento total, con al menos 2 años en barrica.",
+                  "imageUrl": "https://images.unsplash.com/photo-1506377585622-bedcbb027afc?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas de vino reposando en una cava"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "estilos",
+          "label": "Color y estilo",
+          "position": 3,
+          "panelTitle": "Según su color y estilo",
+          "sections": [
+            {
+              "slug": "tintos",
+              "title": "1. Vinos tintos",
+              "subtitle": "Se elaboran con uvas tintas y fermentan con los hollejos, lo que aporta color y taninos.",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vino tinto intenso servida",
+              "paragraphs": [
+                "Ligeros: tienen poco tanino y resultan fáciles de beber, como Pinot Noir o Gamay.",
+                "De cuerpo medio: buscan equilibrio entre frescura y estructura, como Merlot o Tempranillo.",
+                "De gran cuerpo: son intensos, oscuros y con mucho tanino, ideales para carnes rojas, como Cabernet Sauvignon, Malbec o Syrah."
+              ]
+            },
+            {
+              "slug": "blancos",
+              "title": "2. Vinos blancos",
+              "subtitle": "Pueden elaborarse con uvas blancas o con uvas tintas vinificadas sin piel, fermentando solo el mosto.",
+              "imageUrl": "https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vino blanco brillante sobre una mesa",
+              "paragraphs": [
+                "Secos y frescos: muy ácidos y con poco o ningún azúcar residual, como Sauvignon Blanc, Pinot Grigio o Albariño.",
+                "Con cuerpo o untuosos: a menudo pasan por barrica y desarrollan notas de vainilla o mantequilla, como Chardonnay o Viognier.",
+                "Aromáticos: destacan por sus aromas florales o frutales intensos, como Riesling, Torrontés o Gewürztraminer."
+              ]
+            },
+            {
+              "slug": "rosados",
+              "title": "3. Vinos rosados",
+              "subtitle": "Generalmente no son una mezcla de tinto y blanco, sino vinos elaborados con breve contacto del mosto con pieles de uva tinta.",
+              "imageUrl": "https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vino rosado con tono salmón",
+              "paragraphs": [
+                "Ese contacto dura solo unas horas, hasta lograr el tono deseado.",
+                "Pueden ir desde perfiles muy secos hasta estilos más dulces, según la elaboración y el mercado."
+              ]
+            },
+            {
+              "slug": "espumosos-estilo",
+              "title": "4. Vinos espumosos",
+              "subtitle": "Contienen gas carbónico disuelto creado de forma natural durante una segunda fermentación.",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas de vino espumoso en una celebración",
+              "paragraphs": [
+                "Champagne: exclusivo de esa región de Francia.",
+                "Cava: espumoso español elaborado con método tradicional.",
+                "Prosecco: espumoso italiano, normalmente más afrutado y ligero."
+              ]
+            },
+            {
+              "slug": "dulces-generosos",
+              "title": "5. Vinos dulces y generosos",
+              "subtitle": "Incluyen estilos donde el azúcar residual o la fortificación cambian de forma notable el perfil final.",
+              "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Vino dulce servido en copa pequeña de postre",
+              "paragraphs": [
+                "Dulces de postre: se detiene la fermentación para conservar azúcar natural, o se usan uvas pasas o congeladas, como Sauternes, Tokaji o Late Harvest.",
+                "Generosos o fortificados: se les añade alcohol durante o después de la fermentación, elevando la graduación alcohólica, como Jerez, Oporto o Madeira."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorySlug": "cerveza",
+      "title": "Guía completa de la cerveza",
+      "type": "guide",
+      "tabs": [
+        {
+          "slug": "historia",
+          "label": "Historia e ingredientes",
+          "position": 0,
+          "noteTitle": "Dato clave",
+          "noteContent": "La cerveza no se clasifica solo por color. Dos cervezas doradas pueden ser muy distintas si cambian la levadura, el lúpulo, la fermentación, el agua o el tiempo de maduración.",
+          "sections": [
+            {
+              "slug": "historia",
+              "title": "Historia y origen",
+              "subtitle": "Una bebida milenaria con raíces agrícolas y urbanas",
+              "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Jarras de cerveza sobre una mesa de madera",
+              "paragraphs": [
+                "La cerveza es una de las bebidas fermentadas más antiguas de la humanidad. Existen registros de preparaciones de cereales fermentados en Mesopotamia y Egipto hace miles de años, donde cumplía funciones alimentarias, rituales y sociales.",
+                "Con el tiempo, su elaboración se consolidó en Europa. Los monasterios medievales mejoraron técnicas de cocción, fermentación y conservación, mientras que la incorporación del lúpulo ganó importancia por su capacidad para aportar amargor, aroma y estabilidad.",
+                "En la edad moderna y contemporánea, la industrialización permitió controlar mejor la levadura, la temperatura y la higiene. Más tarde, el movimiento artesanal recuperó estilos históricos y dio lugar a una enorme diversidad de cervezas regionales y experimentales."
+              ]
+            },
+            {
+              "slug": "materias-primas",
+              "title": "Ingredientes principales",
+              "subtitle": "Agua, malta, lúpulo y levadura forman la base clásica",
+              "imageUrl": "https://images.unsplash.com/photo-1584225064785-c62a8b43d148?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Ingredientes para elaborar cerveza como cebada y lúpulo",
+              "paragraphs": [
+                "El agua suele ser el componente mayoritario y afecta el perfil final por su contenido mineral. Según el estilo, puede favorecer sensaciones más secas, redondas o amargas.",
+                "La malta se obtiene al germinar y secar cereales, habitualmente cebada. Aporta azúcares fermentables, color, cuerpo y notas que pueden recordar a pan, cereal, galleta, caramelo o tostado.",
+                "El lúpulo añade amargor, aromas herbales, florales, resinosos o cítricos, y ayuda a equilibrar el dulzor de la malta. La levadura transforma los azúcares en alcohol y CO2, además de generar compuestos aromáticos característicos."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "elaboracion",
+          "label": "Cómo se crea",
+          "position": 1,
+          "panelTitle": "Cómo se crea",
+          "tables": [
+            {
+              "slug": "elaboracion",
+              "title": "Cómo se crea",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "1. Preparar el grano",
+                  "description": "La cerveza suele empezar con granos, sobre todo cebada. Esos granos se preparan para convertirlos en malta y luego se rompen en trozos pequeños. No se busca hacer harina fina, sino abrir el grano para que después pueda soltar mejor lo que tiene dentro.",
+                  "reference": "En palabras simples: primero se deja el grano listo para poder sacarle sabor, color y azúcares.",
+                  "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Granos de cebada y malta en primer plano"
+                },
+                {
+                  "term": "2. Mezclar el grano con agua caliente",
+                  "description": "Después, ese grano preparado se mezcla con agua caliente. El calor ayuda a sacar color, sabor y azúcares del cereal. El líquido dulce que sale de este proceso se llama mosto, y todavía no es cerveza: es como la base de la cerveza antes de fermentar.",
+                  "reference": "Si lo piensas fácil: aquí se hace una especie de infusión de cereal de la que sale un jugo dulce.",
+                  "imageUrl": "https://plus.unsplash.com/premium_photo-1682148370179-803c1e406cb3?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Equipos de elaboración de cerveza usados para el proceso de maceración"
+                },
+                {
+                  "term": "3. Hervir el líquido y añadir lúpulo",
+                  "description": "Ese mosto se hierve. Durante la cocción se añade lúpulo, una planta que da amargor y también aromas que pueden ser florales, herbales, cítricos o resinosos. Según cuándo se agregue el lúpulo, la cerveza puede quedar más amarga o más aromática.",
+                  "reference": "Dicho de forma sencilla: en esta parte se cocina la base de la cerveza y se le empieza a dar su personalidad.",
+                  "imageUrl": "https://images.unsplash.com/photo-1750180583457-4da9215739a9?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Conos de lúpulo utilizados para aportar aroma y amargor a la cerveza"
+                },
+                {
+                  "term": "4. Enfriar y poner levadura",
+                  "description": "Cuando el líquido ya hervido se enfría, se le agrega levadura. La levadura es un microorganismo que se alimenta de los azúcares del mosto y los transforma en alcohol y gas. Aquí ocurre lo más importante: el mosto deja de ser solo un líquido dulce y empieza a convertirse en cerveza.",
+                  "reference": "La idea clave es esta: sin levadura no habría alcohol ni burbujas naturales de fermentación.",
+                  "imageUrl": "https://plus.unsplash.com/premium_photo-1682146545156-959b159f8669?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Área de fermentación en una microcervecería con equipos y tanques"
+                },
+                {
+                  "term": "5. Dejar reposar, ajustar y envasar",
+                  "description": "Después de fermentar, la cerveza se deja reposar para que los sabores se ordenen mejor. Luego puede filtrarse o no, dependiendo del estilo. Finalmente se envasa en botella, lata o barril, y se ajusta la cantidad de gas para que tenga la espuma y la sensación en boca esperadas.",
+                  "reference": "En resumen: al final se termina de pulir la cerveza para que quede lista para beber.",
+                  "imageUrl": "https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas de cerveza alineadas para su envasado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "consumo",
+          "label": "Consumo y servicio",
+          "position": 2,
+          "panelTitle": "Consumo y servicio",
+          "tables": [
+            {
+              "slug": "consumo-servicio",
+              "title": "Consumo y servicio",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "objective",
+                  "label": "Para qué sirve"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Temperatura de servicio",
+                  "composition": "Las ligeras suelen servirse más frías; estilos intensos o complejos admiten temperaturas algo mayores.",
+                  "objective": "Una temperatura adecuada mejora la percepción de aromas, amargor, cuerpo y carbonatación."
+                },
+                {
+                  "term": "Vaso y espuma",
+                  "composition": "El recipiente influye en la liberación aromática y en la retención de espuma. La espuma protege aromas y forma parte de la experiencia sensorial.",
+                  "objective": "Servir en vaso limpio y apropiado ayuda a apreciar mejor textura, aroma y presentación."
+                },
+                {
+                  "term": "Consumo responsable",
+                  "composition": "La graduación y el volumen importan. Una cerveza suave y una de alta densidad alcohólica no equivalen en cantidad de alcohol ingerido.",
+                  "objective": "Conviene moderar el consumo, alternar con agua y evitar beber en embarazo, menores o al conducir."
+                },
+                {
+                  "term": "Maridaje",
+                  "composition": "Las cervezas claras y secas acompañan platos ligeros; las tostadas o oscuras combinan mejor con carnes, quesos curados o postres con cacao.",
+                  "objective": "El contraste o afinidad entre sabores puede equilibrar grasa, sal, dulzor y amargor."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "clasificacion",
+          "label": "Clasificación",
+          "position": 3,
+          "panelTitle": "Clasificación general",
+          "sections": [
+            {
+              "slug": "fermentacion",
+              "title": "Clasificación por fermentación",
+              "subtitle": "La forma más común de ordenar las cervezas",
+              "imageUrl": "https://images.unsplash.com/photo-1485879136085-498e55ac8f06?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Diferentes vasos de cerveza servidos en una barra",
+              "paragraphs": [
+                "Una manera muy usada de clasificar la cerveza es fijarse en cómo trabaja la levadura. Esto da lugar a grandes familias como las ale, las lager y las cervezas de fermentación espontánea o mixta.",
+                "Las ale suelen tener aromas más notorios y variados, mientras que muchas lager presentan un perfil más limpio y directo. Las espontáneas y mixtas suelen destacar por su complejidad y, a veces, por una acidez más marcada.",
+                "Para alguien que empieza, esta clasificación es útil porque explica por qué dos cervezas pueden parecer parecidas a simple vista, pero oler y saber de forma muy distinta."
+              ]
+            },
+            {
+              "slug": "color-cuerpo",
+              "title": "Clasificación por color, cuerpo y sabor",
+              "subtitle": "Una forma fácil de entender la cerveza al probarla",
+              "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cervezas de distintos colores en vasos",
+              "paragraphs": [
+                "También se puede clasificar por lo que percibimos al verla y beberla: color, cuerpo, dulzor, sequedad y amargor. Por eso se habla de cervezas claras, ámbar, rojas, tostadas u oscuras.",
+                "El \"cuerpo\" se refiere a la sensación de peso o densidad en la boca. Algunas cervezas se sienten ligeras y refrescantes, mientras que otras resultan más densas, cremosas o intensas.",
+                "Este criterio es muy útil para principiantes porque permite describir la experiencia de manera sencilla, aunque no cuenta toda la historia técnica del estilo."
+              ]
+            },
+            {
+              "slug": "tradicion",
+              "title": "Clasificación por tradición o familia",
+              "subtitle": "Los estilos también se agrupan por su historia",
+              "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Degustación de varias cervezas artesanales",
+              "paragraphs": [
+                "Muchas cervezas se ordenan por familias históricas o regionales. Por ejemplo, pilsner, IPA, stout, porter, saison o lambic no son solo nombres sueltos: cada uno representa una tradición y una forma de elaborar cerveza.",
+                "Este tipo de clasificación ayuda a entender de dónde viene un estilo, qué ingredientes suelen usarse y qué perfil se espera al beberlo.",
+                "En resumen, no todas las clasificaciones hablan de lo mismo: unas se centran en la técnica, otras en el sabor y otras en la historia del estilo."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "clasificacion-general",
+              "title": "Clasificación general",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Criterio"
+                },
+                {
+                  "key": "composition",
+                  "label": "Categorías"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué cambia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Según la fermentación",
+                  "composition": "Ale, lager, fermentación espontánea o mixta.",
+                  "objective": "La levadura y la temperatura determinan aromas, limpieza del perfil y carácter del estilo."
+                },
+                {
+                  "term": "Según el color",
+                  "composition": "Pálida, ámbar, roja, tostada, marrón o negra.",
+                  "objective": "El color suele relacionarse con el tipo de malta y anticipa parte del perfil sensorial."
+                },
+                {
+                  "term": "Según el cuerpo y amargor",
+                  "composition": "Ligera, media o robusta; más dulce o más amarga.",
+                  "objective": "Permite distinguir cervezas refrescantes de otras intensas, densas y persistentes."
+                },
+                {
+                  "term": "Según tradición o familia",
+                  "composition": "Pilsner, IPA, stout, porter, trigo, saison, lambic y muchas otras.",
+                  "objective": "Agrupa estilos por historia, receta, levadura, origen geográfico y técnica de elaboración."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "tipos",
+          "label": "Tipos y estilos",
+          "position": 4,
+          "panelTitle": "Tipos y estilos frecuentes",
+          "sections": [
+            {
+              "slug": "lager",
+              "title": "Lager",
+              "subtitle": "Fermentación baja y perfil generalmente limpio",
+              "imageUrl": "https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cerveza lager clara servida en vaso alto",
+              "paragraphs": [
+                "Se fermenta con levaduras que trabajan a temperaturas bajas y luego suele pasar por maduración en frío. Esto favorece un perfil más limpio y nítido.",
+                "Dentro de esta familia están muchas cervezas comerciales internacionales, así como estilos como pilsner, helles, bock o dunkel."
+              ]
+            },
+            {
+              "slug": "ale",
+              "title": "Ale",
+              "subtitle": "Fermentación alta y mayor expresividad aromática",
+              "imageUrl": "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Vaso de cerveza ale de color ámbar",
+              "paragraphs": [
+                "Las ales suelen fermentar a temperaturas más elevadas que las lager, lo que favorece la aparición de ésteres y perfiles más afrutados o especiados.",
+                "Aquí se encuentran estilos como pale ale, IPA, bitter, brown ale, saison o Belgian ale."
+              ]
+            },
+            {
+              "slug": "trigo",
+              "title": "Cervezas de trigo",
+              "subtitle": "Textura suave, espuma abundante y notas frescas",
+              "imageUrl": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cerveza de trigo turbia con espuma abundante",
+              "paragraphs": [
+                "Usan una proporción relevante de trigo malteado o sin maltear. Suelen ser ligeras, cremosas y muy espumosas.",
+                "Algunas versiones recuerdan a plátano, clavo o cítricos, como ocurre en varias weissbier y witbier."
+              ]
+            },
+            {
+              "slug": "ipa",
+              "title": "IPA y pale ale lupuladas",
+              "subtitle": "Aromas cítricos, resinosos o tropicales",
+              "imageUrl": "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cerveza lupulada servida con espuma densa",
+              "paragraphs": [
+                "Las India Pale Ale destacan por el protagonismo del lúpulo, que puede aportar amargor elevado y un aroma muy expresivo.",
+                "Existen subestilos como English IPA, American IPA, Session IPA, Double IPA, New England IPA o West Coast IPA."
+              ]
+            },
+            {
+              "slug": "stout-porter",
+              "title": "Stout y porter",
+              "subtitle": "Maltas tostadas y sabores más intensos",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cerveza negra servida en copa",
+              "paragraphs": [
+                "Usan maltas más oscuras que aportan notas a café, cacao, pan tostado o regaliz. Pueden ser secas, cremosas, dulces o muy alcohólicas.",
+                "Son estilos asociados a perfiles profundos y maridajes con carnes, quesos azules o postres de chocolate."
+              ]
+            },
+            {
+              "slug": "acidas",
+              "title": "Ácidas, espontáneas y mixtas",
+              "subtitle": "Fermentaciones complejas y perfiles muy distintivos",
+              "imageUrl": "https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas con cerveza ácida y tonos frutales",
+              "paragraphs": [
+                "Incluyen familias como lambic, gueuze, kriek o algunas sour ales. Pueden fermentarse con levaduras salvajes y bacterias lácticas.",
+                "Se distinguen por acidez, complejidad aromática y, en ocasiones, presencia de fruta o maduración en barrica."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "tipos-estilos",
+              "title": "Tipos y estilos frecuentes",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Familia"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil general"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Lager claras",
+                  "composition": "Cervezas limpias, frescas y generalmente fáciles de beber, como pilsner o helles.",
+                  "objective": "Sirven para reconocer perfiles suaves, refrescantes y con sabores directos."
+                },
+                {
+                  "term": "Ales lupuladas",
+                  "composition": "Pale ale e IPA con más presencia de aroma y amargor procedentes del lúpulo.",
+                  "objective": "Ayudan a identificar notas cítricas, frutales, florales o resinosas."
+                },
+                {
+                  "term": "Oscuras y tostadas",
+                  "composition": "Porter, stout y otras cervezas con maltas oscuras que recuerdan a cacao, café o pan tostado.",
+                  "objective": "Permiten entender cómo el tostado de la malta cambia el color y el sabor."
+                },
+                {
+                  "term": "Trigo y refrescantes",
+                  "composition": "Cervezas suaves, espumosas y a menudo algo turbias, como weissbier o witbier.",
+                  "objective": "Muestran perfiles más ligeros, cremosos y fáciles de reconocer para quien empieza."
+                },
+                {
+                  "term": "Ácidas y especiales",
+                  "composition": "Cervezas donde la acidez, la fruta, la barrica o fermentaciones menos comunes tienen protagonismo.",
+                  "objective": "Ayudan a descubrir que la cerveza también puede ser compleja y muy distinta de lo habitual."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorySlug": "destilados",
+      "title": "Guía completa de los destilados",
+      "type": "guide",
+      "tabs": [
+        {
+          "slug": "que-son",
+          "label": "Qué son",
+          "position": 0,
+          "noteTitle": "Idea clave",
+          "noteContent": "No todos los destilados son agresivos ni todos están pensados para beberse solos. Lo importante es entender su origen, su graduación y si su perfil busca pureza, botánicos o crianza.",
+          "sections": [
+            {
+              "slug": "que-son",
+              "title": "Qué son los destilados",
+              "subtitle": "Bebidas concentradas por destilación a partir de un fermentado",
+              "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botellas y vaso de bebidas destiladas",
+              "paragraphs": [
+                "Los destilados parten de una bebida ya fermentada, como vino, cerveza, mosto de cereales o jugo de caña, y luego se someten a una destilación para concentrar alcohol y aromas.",
+                "Esa concentración explica por qué suelen tener mucha más graduación que vino, cerveza o sidra. No todos saben igual: la materia prima, el alambique y la crianza modifican mucho el perfil final.",
+                "Para entenderlos con facilidad, conviene pensar en tres preguntas: de qué se elaboran, cómo se destilan y si pasan o no por madera antes de embotellarse."
+              ]
+            },
+            {
+              "slug": "materia-prima",
+              "title": "Materias primas y origen del sabor",
+              "subtitle": "Cereales, caña, agave, uva o melaza cambian el carácter del producto",
+              "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Granos y materias primas usadas para bebidas alcohólicas",
+              "paragraphs": [
+                "Un whisky de cereales, un ron de caña o un brandy de vino no solo cambian por el nombre: cada base fermentada deja compuestos aromáticos distintos que sobreviven al proceso.",
+                "La pureza del corte, el tipo de destilación y la crianza posterior pueden resaltar notas frutales, especiadas, tostadas, herbales o más neutras.",
+                "Por eso dos destilados con la misma graduación pueden sentirse radicalmente distintos en nariz, textura y final de boca."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "elaboracion",
+          "label": "Cómo se elaboran",
+          "position": 1,
+          "panelTitle": "Cómo se elaboran",
+          "tables": [
+            {
+              "slug": "elaboracion",
+              "title": "Cómo se elaboran",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "1. Fermentar una base",
+                  "description": "Antes de destilar, hay que producir un fermentado: mosto de cereales, vino, jugo de caña o agave cocido, según el producto final.",
+                  "reference": "Sin fermentación previa no hay alcohol que concentrar después en el alambique.",
+                  "imageUrl": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Fermentado base usado antes de la destilación"
+                },
+                {
+                  "term": "2. Destilar y separar fracciones",
+                  "description": "El líquido fermentado se calienta para evaporar alcoholes y compuestos aromáticos. Luego se condensan y se separan cabezas, corazón y colas.",
+                  "reference": "El corazón suele ser la parte más equilibrada y segura para construir el destilado comercial.",
+                  "imageUrl": "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Equipo de destilación metálico en una destilería"
+                },
+                {
+                  "term": "3. Criar o mantener transparente",
+                  "description": "Algunos destilados se embotellan claros y jóvenes, mientras otros pasan meses o años en barricas para ganar color, redondez y complejidad.",
+                  "reference": "La madera puede aportar vainilla, caramelo, tostados, frutos secos o especias.",
+                  "imageUrl": "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Barricas utilizadas para la crianza de destilados"
+                },
+                {
+                  "term": "4. Ajustar y embotellar",
+                  "description": "Antes de salir al mercado, se corrige la graduación con agua, se filtra si corresponde y se embotella con el estilo buscado por el productor.",
+                  "reference": "En esta etapa se define gran parte de la textura final y la intensidad alcohólica con la que llegará al consumidor.",
+                  "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas listas para su embotellado final"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "familias",
+          "label": "Familias",
+          "position": 2,
+          "panelTitle": "Familias principales",
+          "sections": [
+            {
+              "slug": "whisky",
+              "title": "Whisky",
+              "subtitle": "Cereal, destilación y barrica en un mismo lenguaje",
+              "imageUrl": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Vaso de whisky servido junto a una botella",
+              "paragraphs": [
+                "Puede elaborarse con cebada, maíz, centeno u otros cereales, y su identidad cambia mucho entre Escocia, Irlanda, Estados Unidos, Japón y otros productores.",
+                "La crianza en barrica es clave: aporta color ámbar y notas tostadas, de vainilla, frutos secos o humo, según el tipo de madera y el tiempo de reposo.",
+                "Para principiantes es útil compararlo con ron añejo o brandy para notar cómo cambia un destilado cuando la base original es otra."
+              ]
+            },
+            {
+              "slug": "ron",
+              "title": "Ron",
+              "subtitle": "La caña de azúcar llevada a perfiles secos, dulces o especiados",
+              "imageUrl": "https://images.unsplash.com/photo-1575650772417-e6b418b0d065?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Ron servido en vaso corto con hielo",
+              "paragraphs": [
+                "El ron puede partir de melaza o jugo de caña y mostrar estilos ligeros, oscuros, añejos o con más carga especiada según el país y el proceso.",
+                "Muchos rones jóvenes se usan en coctelería, mientras los añejos se valoran más para beber con calma y observar la influencia de la madera.",
+                "Es un buen ejemplo para ver que un destilado puede parecer dulce sin contener necesariamente mucho azúcar residual."
+              ]
+            },
+            {
+              "slug": "ginebra-vodka",
+              "title": "Ginebra y vodka",
+              "subtitle": "Dos caminos muy diferentes desde perfiles transparentes",
+              "imageUrl": "https://images.unsplash.com/photo-1551751299-1b51cab2694c?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botellas transparentes y copa de destilado",
+              "paragraphs": [
+                "El vodka persigue limpieza y neutralidad, por lo que suele emplearse como base para mezclas donde el protagonismo está en otros ingredientes.",
+                "La ginebra, en cambio, busca identidad aromática a partir del enebro y botánicos como cítricos, especias o hierbas.",
+                "Compararlas es útil porque ambas pueden verse parecidas en la copa, pero en nariz y final resultan muy distintas."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "familias-principales",
+              "title": "Familias principales",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Familia"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo es"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué enseña"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Whisky / whiskey",
+                  "composition": "Destilado de cereales, a menudo con crianza en madera.",
+                  "objective": "Ayuda a entender cómo grano y barrica moldean aroma, cuerpo y color."
+                },
+                {
+                  "term": "Ron",
+                  "composition": "Procede de caña de azúcar o melaza; puede ser ligero, especiado o añejo.",
+                  "objective": "Muestra cómo el origen tropical y la maduración cambian dulzor percibido y textura."
+                },
+                {
+                  "term": "Ginebra",
+                  "composition": "Destilado aromatizado donde enebro y botánicos tienen gran protagonismo.",
+                  "objective": "Sirve para reconocer perfiles herbales, cítricos y secos."
+                },
+                {
+                  "term": "Vodka",
+                  "composition": "Destilado neutro y limpio, normalmente de cereal o patata.",
+                  "objective": "Permite entender la lógica de los destilados más puros y orientados a mezcla."
+                },
+                {
+                  "term": "Tequila / mezcal",
+                  "composition": "Destilados de agave con perfiles que van de frescos a ahumados.",
+                  "objective": "Ayudan a ver el peso de la materia prima y del método tradicional en el resultado final."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "servicio",
+          "label": "Servicio y consumo",
+          "position": 3,
+          "panelTitle": "Servicio y consumo responsable",
+          "tables": [
+            {
+              "slug": "servicio-consumo",
+              "title": "Servicio y consumo responsable",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "objective",
+                  "label": "Por qué importa"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Graduación y porción",
+                  "composition": "Su alta concentración obliga a porciones pequeñas y consumo pausado.",
+                  "objective": "Ayuda a dimensionar mejor el impacto alcohólico frente a bebidas fermentadas."
+                },
+                {
+                  "term": "Con hielo, agua o en cóctel",
+                  "composition": "Puede beberse solo, rebajado o mezclado según estilo y preferencia.",
+                  "objective": "Permite adaptar intensidad aromática y percepción alcohólica."
+                },
+                {
+                  "term": "Temperatura",
+                  "composition": "Muy frío reduce aromas; templado muestra más complejidad en boca y nariz.",
+                  "objective": "Sirve para entender por qué no todos los destilados se disfrutan igual de helados."
+                },
+                {
+                  "term": "Consumo responsable",
+                  "composition": "La elevada graduación exige más atención al ritmo, al contexto y a la cantidad.",
+                  "objective": "Recuerda que una pequeña medida puede equivaler a bastante alcohol ingerido."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorySlug": "licores",
+      "title": "Guía completa de licores y cremas",
+      "type": "guide",
+      "tabs": [
+        {
+          "slug": "que-son",
+          "label": "Qué son",
+          "position": 0,
+          "noteTitle": "Idea clave",
+          "noteContent": "Los licores no son solo bebidas dulces para después de comer. Muchos actúan como herramienta aromática dentro de cócteles, cafés y postres, y su graduación puede seguir siendo relevante.",
+          "sections": [
+            {
+              "slug": "que-son",
+              "title": "Qué son los licores y cremas",
+              "subtitle": "Bebidas aromatizadas y endulzadas con perfil más amable que muchos destilados puros",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cóctel servido en una copa con tonos rojizos",
+              "paragraphs": [
+                "Los licores combinan una base alcohólica con azúcar, frutas, hierbas, especias, frutos secos o crema, y por eso suelen tener un perfil más expresivo y dulce.",
+                "Algunos se toman solos como sobremesa, otros funcionan sobre todo en cócteles y muchos sirven para aromatizar postres o cafés.",
+                "Lo clave para diferenciarlos de un destilado puro es que aquí la aromatización y el equilibrio dulce tienen un papel central."
+              ]
+            },
+            {
+              "slug": "como-diferenciarlos",
+              "title": "En qué se diferencian de aperitivos y destilados",
+              "subtitle": "Más dulzor y más intención aromática en un formato muy versátil",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Mesa con bebidas y acompañamientos",
+              "paragraphs": [
+                "Un destilado puede ser seco, directo y muy alcohólico; un licor suele ser más redondo y tener sabores añadidos más evidentes.",
+                "Un aperitivo se asocia a la previa de la comida y al amargor moderado. El licor, en cambio, suele moverse entre sobremesa, mezcla y consumo ocasional más indulgente.",
+                "Por eso conviene fijarse en el dulzor, la textura y el uso habitual para ubicarlos mejor dentro del mapa general del alcohol."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "elaboracion",
+          "label": "Cómo se elaboran",
+          "position": 1,
+          "panelTitle": "Cómo se elaboran",
+          "tables": [
+            {
+              "slug": "elaboracion",
+              "title": "Cómo se elaboran",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "1. Elegir una base alcohólica",
+                  "description": "La base puede ser alcohol neutro, ron, brandy u otro destilado suave sobre el que se construirá el perfil aromático.",
+                  "reference": "La elección condiciona cuerpo, textura y persistencia final.",
+                  "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas usadas como base para licores"
+                },
+                {
+                  "term": "2. Aromatizar o macerar",
+                  "description": "Se añaden frutas, pieles, hierbas, cacao, café, especias o frutos secos para transferir sabor y aroma al alcohol.",
+                  "reference": "Puede hacerse por maceración, infusión o mezcla de extractos y destilados aromáticos.",
+                  "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Ingredientes aromáticos y bebidas servidas"
+                },
+                {
+                  "term": "3. Ajustar dulzor y textura",
+                  "description": "Se incorpora azúcar, jarabes o crema según el estilo, buscando equilibrio entre intensidad alcohólica y sensación golosa.",
+                  "reference": "Aquí nace la diferencia entre un licor seco, uno frutal o una crema más densa.",
+                  "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Bebida dulce servida en copa"
+                },
+                {
+                  "term": "4. Reposar y embotellar",
+                  "description": "La mezcla se deja estabilizar antes de filtrar y embotellar para que el perfil final resulte más integrado.",
+                  "reference": "Un breve reposo puede suavizar aristas y armonizar aroma, dulzor y alcohol.",
+                  "imageUrl": "https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas alineadas listas para envasado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "familias",
+          "label": "Familias",
+          "position": 2,
+          "panelTitle": "Familias principales",
+          "sections": [
+            {
+              "slug": "frutales",
+              "title": "Licores frutales y cítricos",
+              "subtitle": "Perfil brillante, aromático y muy usado en mezcla",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cóctel frutal servido en copa",
+              "paragraphs": [
+                "Aquí entran desde licores de naranja hasta preparaciones de cereza, cassis o limón, muy frecuentes en coctelería clásica y moderna.",
+                "Suelen ofrecer entrada fácil porque la fruta se reconoce rápido y el dulzor atenúa la sensación alcohólica.",
+                "Son útiles para principiantes porque muestran con claridad cómo un licor puede funcionar como ingrediente y no solo como bebida de sobremesa."
+              ]
+            },
+            {
+              "slug": "herbales",
+              "title": "Licores herbales y especiados",
+              "subtitle": "Más complejos, a veces más secos y con identidad tradicional",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas con bebidas aromáticas herbales",
+              "paragraphs": [
+                "Muchos nacen de recetas monásticas, regionales o digestivas, y combinan hierbas, raíces y especias de manera más intensa.",
+                "Pueden parecer medicinales, balsámicos o amargos según la receta, y por eso no siempre son los más fáciles al inicio.",
+                "Aun así, son excelentes para mostrar que el universo del licor es mucho más amplio que las opciones dulces y frutales."
+              ]
+            },
+            {
+              "slug": "cremas",
+              "title": "Cremas y licores de sobremesa",
+              "subtitle": "Textura densa y perfil más goloso",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Licor cremoso servido en copa",
+              "paragraphs": [
+                "Las cremas enfatizan suavidad, sensación láctea y notas dulces como cacao, vainilla, café o caramelo.",
+                "Normalmente se beben frías, en porciones pequeñas, o se usan para complementar postres y cafés.",
+                "Son un buen ejemplo de cómo el alcohol también puede presentarse con una textura muy distinta a la de un destilado clásico."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "familias-principales",
+              "title": "Familias principales",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Familia"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo es"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué enseña"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Herbales y amargos",
+                  "composition": "Usan botánicos, raíces y especias con perfil digestivo o medicinal.",
+                  "objective": "Ayudan a reconocer la familia más tradicional y compleja."
+                },
+                {
+                  "term": "Frutales y cítricos",
+                  "composition": "Resaltan naranja, limón, cereza, cassis u otras frutas.",
+                  "objective": "Muestran licores más aromáticos y accesibles para mezcla."
+                },
+                {
+                  "term": "Cremas",
+                  "composition": "Incorporan lácteos o textura cremosa, como crema irlandesa o licores de huevo.",
+                  "objective": "Permiten entender cómo cambia el cuerpo cuando el dulzor y la densidad suben."
+                },
+                {
+                  "term": "Café, cacao o frutos secos",
+                  "composition": "Aromas tostados, golosos y de sobremesa con mucha presencia sensorial.",
+                  "objective": "Sirven para relacionar licor con postres, café y coctelería indulgente."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "servicio",
+          "label": "Servicio y uso",
+          "position": 3,
+          "panelTitle": "Servicio, uso y moderación",
+          "tables": [
+            {
+              "slug": "servicio-uso",
+              "title": "Servicio, uso y moderación",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "objective",
+                  "label": "Por qué importa"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Solo o en cóctel",
+                  "composition": "Algunos licores funcionan como digestivo; otros están diseñados para mezclar.",
+                  "objective": "Ayuda a ubicarlos correctamente según el momento de consumo."
+                },
+                {
+                  "term": "Temperatura",
+                  "composition": "Los cremosos y frutales suelen agradecer frío; los herbales pueden mostrar más matices algo menos helados.",
+                  "objective": "Permite percibir mejor dulzor, textura y complejidad aromática."
+                },
+                {
+                  "term": "Porción y azúcar",
+                  "composition": "Aunque parezcan suaves, su carga de azúcar y alcohol puede ser alta.",
+                  "objective": "Sirve para moderar consumo y entender que dulzor no significa baja graduación."
+                },
+                {
+                  "term": "Uso gastronómico",
+                  "composition": "También se integran en postres, cafés o salsas.",
+                  "objective": "Muestra que su valor no siempre está solo en beberlos solos."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "ejemplos",
+          "label": "Ejemplos",
+          "position": 4,
+          "panelTitle": "Ejemplos conocidos",
+          "tables": [
+            {
+              "slug": "ejemplos-conocidos",
+              "title": "Ejemplos conocidos",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Ejemplo"
+                },
+                {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué enseña"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Triple sec / licor de naranja",
+                  "composition": "Cítrico, fragante y muy frecuente en coctelería.",
+                  "objective": "Sirve para entender los licores como ingrediente aromático.",
+                  "abv": "20-40 % vol. aprox."
+                },
+                {
+                  "term": "Amaretto",
+                  "composition": "Perfil de almendra, caramelo y especias suaves.",
+                  "objective": "Muestra la familia de licores de frutos secos y sobremesa.",
+                  "abv": "20-28 % vol. aprox."
+                },
+                {
+                  "term": "Licor de café",
+                  "composition": "Notas tostadas, dulces y muy asociadas a postres o tragos cortos.",
+                  "objective": "Ayuda a relacionar licor con sobremesa y mezcla.",
+                  "abv": "15-25 % vol. aprox."
+                },
+                {
+                  "term": "Crema irlandesa",
+                  "composition": "Textura cremosa y sabor a cacao, vainilla o café.",
+                  "objective": "Permite entender el segmento más suave y goloso.",
+                  "abv": "15-20 % vol. aprox."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorySlug": "aperitivos",
+      "title": "Guía completa de los aperitivos",
+      "type": "guide",
+      "tabs": [
+        {
+          "slug": "que-son",
+          "label": "Qué son",
+          "position": 0,
+          "noteTitle": "Idea clave",
+          "noteContent": "No todos los aperitivos se beben solos y no todos son muy amargos. Lo que los une es su función cultural y su perfil pensado para tomarse antes de comer o en tragos ligeros de apertura.",
+          "sections": [
+            {
+              "slug": "que-son",
+              "title": "Qué son los aperitivos",
+              "subtitle": "Bebidas pensadas para abrir el apetito antes de comer",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Bebida aperitiva servida en copa con hielo",
+              "paragraphs": [
+                "Los aperitivos son bebidas alcohólicas que tradicionalmente se toman antes de una comida. Su función cultural no es solo acompañar un momento social, sino estimular el apetito con sabores amargos, herbales, cítricos, especiados o ligeramente dulces.",
+                "No todos los aperitivos son iguales. Algunos tienen base de vino, otros usan alcohol neutro o destilados, y muchos se aromatizan con hierbas, raíces, cáscaras de cítricos y especias. Por eso su sabor puede ser muy suave y fresco o bastante intenso y amargo.",
+                "Para alguien que empieza, una idea simple ayuda mucho: un aperitivo es una bebida preparada para beber antes de comer, normalmente servida sola, con hielo o mezclada con soda, tónica o espumoso."
+              ]
+            },
+            {
+              "slug": "historia",
+              "title": "Origen e historia",
+              "subtitle": "Una costumbre muy asociada al Mediterráneo y a Europa",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas servidas en una mesa de aperitivo",
+              "paragraphs": [
+                "La palabra aperitivo viene de la idea de abrir el apetito. A lo largo del tiempo, distintas culturas usaron vinos aromatizados con plantas, especias y hierbas como preparación para la comida.",
+                "Italia y Francia son dos regiones clave en la historia del aperitivo moderno. Allí se hicieron populares bebidas como el vermut, los bitter italianos y varios vinos aromatizados que después pasaron a bares, cafés y rituales sociales muy reconocibles.",
+                "Con el tiempo, el aperitivo dejó de ser solo una bebida medicinal o casera y pasó a formar parte de una cultura de encuentro: reunirse antes de almorzar o cenar, tomar algo ligero y acompañarlo con pequeños bocados."
+              ]
+            },
+            {
+              "slug": "diferencia",
+              "title": "En qué se diferencian de otras bebidas",
+              "subtitle": "No son lo mismo que un licor, un destilado o un cóctel",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Mesa con bebidas y pequeños bocados de aperitivo",
+              "paragraphs": [
+                "Un aperitivo puede parecerse a un licor o a una bebida para cócteles, pero no significa exactamente lo mismo. Un destilado como whisky o vodka suele tener mucha más graduación. Un licor suele ser más dulce y a veces más denso. Un cóctel es una mezcla preparada, mientras que el aperitivo puede ser una bebida base o servirse casi sin modificar.",
+                "Muchos aperitivos comparten elementos con los licores, sobre todo el uso de hierbas, frutas y especias. La diferencia principal es su función y su perfil: suelen buscar frescura, amargor moderado, complejidad aromática y una graduación media.",
+                "Por eso bebidas como el vermut, Aperol, Campari o Lillet se entienden mejor como aperitivos: están pensadas para beberse antes de comer o como parte de tragos ligeros y refrescantes."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "elaboracion",
+          "label": "Cómo se elaboran",
+          "position": 1,
+          "panelTitle": "Cómo se elaboran",
+          "tables": [
+            {
+              "slug": "elaboracion",
+              "title": "Cómo se elaboran",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "1. Elegir una base alcohólica",
+                  "description": "El aperitivo necesita un líquido base sobre el que se construye el sabor. Esa base puede ser vino, vino fortificado, alcohol neutro o una mezcla con destilados suaves. La elección cambia mucho el resultado final.",
+                  "reference": "Dicho fácil: primero se decide sobre qué bebida se va a construir el aperitivo.",
+                  "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas y copas usadas como base de bebidas aperitivas"
+                },
+                {
+                  "term": "2. Aromatizar con hierbas, frutas o especias",
+                  "description": "Después se agregan ingredientes que dan identidad: ajenjo, genciana, cáscaras de naranja, flores, raíces, canela, clavo, cardamomo u otras plantas aromáticas. Estos ingredientes aportan amargor, frescura, aroma y complejidad.",
+                  "reference": "Aquí aparece el carácter del aperitivo: más cítrico, más amargo, más herbal o más especiado.",
+                  "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Bebidas aromáticas y tonos herbales en copas"
+                },
+                {
+                  "term": "3. Ajustar dulzor, amargor y color",
+                  "description": "Una vez infusionados o mezclados los sabores, se ajusta el equilibrio. Algunas recetas añaden azúcar para suavizar, otras refuerzan el amargor, y en ciertos casos se incorpora color para dar el tono rojo, naranja o dorado tan típico de varios aperitivos.",
+                  "reference": "La clave no es solo qué ingredientes lleva, sino cómo se equilibran entre sí.",
+                  "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copa de aperitivo rojo servida con hielo"
+                },
+                {
+                  "term": "4. Dejar reposar y embotellar",
+                  "description": "Cuando la receta está lista, la bebida se deja reposar para que los sabores se integren mejor. Después se filtra si hace falta y se embotella. Algunos aperitivos están listos para beberse solos; otros se disfrutan mejor mezclados.",
+                  "reference": "En términos simples: al final se deja que el sabor se ordene y luego se envasa.",
+                  "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas de bebidas alcohólicas listas para servir"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "tipos",
+          "label": "Tipos",
+          "position": 2,
+          "panelTitle": "Tipos principales",
+          "sections": [
+            {
+              "slug": "vermut",
+              "title": "Vermut",
+              "subtitle": "El aperitivo clásico por excelencia",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vermut servida como aperitivo",
+              "paragraphs": [
+                "El vermut suele partir de una base de vino aromatizado con hierbas, especias y otros botánicos. Puede ser rojo, blanco o seco, y cada versión cambia bastante en dulzor, amargor y aroma.",
+                "Para principiantes, el vermut es una gran referencia porque deja entender rápidamente qué significa un aperitivo: una bebida compleja, aromática, de graduación media y pensada para tomarse antes de comer.",
+                "Puede beberse solo con hielo, con una rodaja de cítrico, con soda o como base de cócteles clásicos."
+              ]
+            },
+            {
+              "slug": "bitter",
+              "title": "Bitter aperitivo",
+              "subtitle": "Más amargo, más intenso y muy usado en mezcla",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Aperitivo bitter rojo servido con hielo",
+              "paragraphs": [
+                "Los bitter aperitivos suelen tener color rojo o naranja y un perfil donde conviven amargor, dulzor y notas cítricas o herbales. Son muy conocidos en la tradición italiana.",
+                "Algunos se sirven con hielo y soda; otros brillan en combinaciones como spritz, americano o negroni. Para mucha gente, aquí empieza la experiencia del aperitivo moderno de bar.",
+                "Aunque pueden parecer fuertes por su sabor amargo, no siempre tienen una graduación altísima. Lo importante es su perfil aromático y su capacidad de abrir el apetito."
+              ]
+            },
+            {
+              "slug": "quinados",
+              "title": "Vinos quinados y aromatizados",
+              "subtitle": "Perfil vínico, botánico y elegante",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa clara de aperitivo vínico servida fría",
+              "paragraphs": [
+                "En esta familia entran bebidas con base de vino que incorporan sustancias amargas, hierbas o frutas para crear un perfil más refinado y menos intenso que algunos bitter rojos.",
+                "Suelen mostrar notas frescas, vínicas, florales o cítricas, y pueden beberse solas muy frías o mezcladas en tragos suaves.",
+                "Son una buena opción para quien quiere acercarse al mundo del aperitivo sin empezar por sabores muy agresivos o muy dulces."
+              ]
+            },
+            {
+              "slug": "mezcla-ligera",
+              "title": "Aperitivos para mezcla ligera",
+              "subtitle": "Perfectos para soda, tónica o espumoso",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cóctel aperitivo ligero con hielo y cítricos",
+              "paragraphs": [
+                "Algunos aperitivos están pensados sobre todo para mezclarse. Funcionan muy bien con soda, agua con gas, tónica o espumoso, y dan lugar a bebidas frescas, brillantes y fáciles de tomar.",
+                "Suelen tener un perfil más amable para personas que recién empiezan: algo de amargor, algo de dulzor y bastante aroma cítrico o herbal.",
+                "Por eso son tan comunes en terrazas, reuniones y consumo informal antes de almorzar o cenar."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "tipos-principales",
+              "title": "Tipos principales",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Tipo"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo es"
+                },
+                {
+                  "key": "objective",
+                  "label": "Para qué ayuda"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Vermut y vinos aromatizados",
+                  "composition": "Aperitivos con base de vino a los que se añaden hierbas, especias, cortezas y, a veces, alcohol extra.",
+                  "objective": "Son una de las puertas de entrada más claras para entender qué es un aperitivo clásico."
+                },
+                {
+                  "term": "Bitter italianos",
+                  "composition": "Aperitivos de color intenso y perfil amargo-dulce, con notas herbales, cítricas y especiadas.",
+                  "objective": "Ayudan a reconocer el amargor típico del aperitivo moderno y su uso en tragos con soda o espumoso."
+                },
+                {
+                  "term": "Aperitivos herbales o quinados",
+                  "composition": "Bebidas aromatizadas donde destacan raíces, plantas amargas, quina u otras notas medicinales o vínicas.",
+                  "objective": "Muestran la parte más tradicional y botánica del mundo de los aperitivos."
+                },
+                {
+                  "term": "Aperitivos ligeros para mezcla",
+                  "composition": "Productos pensados para combinar con soda, tónica o espumoso y crear tragos frescos de baja a media graduación.",
+                  "objective": "Son los más fáciles de reconocer en bares y reuniones informales."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "consumo",
+          "label": "Consumo y servicio",
+          "position": 3,
+          "panelTitle": "Consumo y servicio",
+          "tables": [
+            {
+              "slug": "consumo-servicio",
+              "title": "Consumo y servicio",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "objective",
+                  "label": "Por qué importa"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Cuándo se toman",
+                  "composition": "Tradicionalmente antes de comer, en reuniones sociales, bares o en casa, a menudo acompañados por bocados salados.",
+                  "objective": "La idea es preparar el paladar y abrir el apetito, no reemplazar una comida completa."
+                },
+                {
+                  "term": "Cómo se sirven",
+                  "composition": "Pueden tomarse solos, con hielo, con soda, con tónica o mezclados con vino espumoso, según el producto y la costumbre local.",
+                  "objective": "El modo de servicio cambia la intensidad, la frescura y lo fácil que resulta beberlos."
+                },
+                {
+                  "term": "Temperatura y garnish",
+                  "composition": "Suelen disfrutarse fríos. Muchas veces se sirven con naranja, limón, aceituna o hierbas aromáticas.",
+                  "objective": "El frío y los complementos resaltan aromas y equilibran mejor amargor, dulzor y acidez."
+                },
+                {
+                  "term": "Consumo responsable",
+                  "composition": "Aunque algunos parezcan ligeros o muy refrescantes, siguen siendo bebidas alcohólicas y su graduación puede variar bastante.",
+                  "objective": "Conviene moderar la cantidad, tener en cuenta mezclas y evitar el consumo en situaciones de riesgo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "ejemplos",
+          "label": "Ejemplos",
+          "position": 4,
+          "panelTitle": "Ejemplos conocidos",
+          "sections": [
+            {
+              "slug": "vermut-rojo",
+              "title": "Vermut rojo",
+              "subtitle": "Probablemente el ejemplo más reconocible",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Vermut rojo servido con hielo",
+              "paragraphs": [
+                "Su graduación habitual suele rondar entre 14,5 % y 18 % vol., según la marca y el estilo.",
+                "Suele ser aromático, algo dulce, especiado y con un fondo amargo que lo hace claramente aperitivo.",
+                "Es muy común beberlo con hielo, una rodaja de naranja y algo de soda. También combina con aceitunas, quesos suaves, embutidos y encurtidos.",
+                "Para principiantes, es una forma excelente de entrar al tema porque muestra equilibrio entre dulzor, hierbas y amargor.",
+                "Normalmente parte de una base de vino aromatizado. Eso hace que conserve cierta sensación vínica, distinta a la de un destilado puro o un licor muy azucarado.",
+                "Si alguien quiere entender qué es un aperitivo tradicional de bar o de sobremesa temprana, el vermut rojo suele ser el mejor punto de partida."
+              ]
+            },
+            {
+              "slug": "vermut-blanco-seco",
+              "title": "Vermut blanco o seco",
+              "subtitle": "Más fresco, más claro y a veces más delicado",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vermut blanco o seco servida fría",
+              "paragraphs": [
+                "Su graduación habitual suele moverse entre 15 % y 18 % vol., dependiendo de la versión y la marca.",
+                "El vermut blanco suele sentirse más floral, fresco o ligeramente dulce que el rojo, mientras que el vermut seco apunta a un perfil menos dulce y más limpio.",
+                "Ambos muestran muy bien que dentro del mundo del vermut no todo sabe igual. Cambiar el nivel de dulzor, el tipo de hierbas y la intensidad aromática transforma bastante la experiencia.",
+                "Pueden tomarse solos, con hielo, con una rodaja de limón o en mezclas sencillas. El seco además aparece mucho en coctelería clásica.",
+                "Para una persona que recién empieza, esta familia ayuda a notar cómo un aperitivo puede seguir siendo botánico y vínico sin ser necesariamente intenso, oscuro o claramente amargo."
+              ]
+            },
+            {
+              "slug": "aperol",
+              "title": "Aperol",
+              "subtitle": "Ligero, naranja y muy popular en mezclas",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cóctel aperitivo naranja con hielo",
+              "paragraphs": [
+                "Su graduación típica ronda el 11 % vol., por lo que suele resultar más ligero que otros aperitivos amargos.",
+                "Aperol es uno de los aperitivos más conocidos en el consumo actual. Suele percibirse fresco, cítrico y amable, con amargor moderado.",
+                "Se hizo mundialmente famoso por el spritz, donde se mezcla con espumoso, soda y hielo. Esa preparación lo volvió muy reconocible para personas que no tenían experiencia previa con aperitivos.",
+                "Es una buena referencia para entender el perfil social y refrescante de esta categoría.",
+                "Su color naranja brillante y su sabor relativamente accesible hacen que muchas personas lo identifiquen rápido como una bebida de terraza, reunión o previa de comida.",
+                "No representa todo el mundo del aperitivo, pero sí muestra muy bien la versión más liviana, mezclable y fácil de disfrutar."
+              ]
+            },
+            {
+              "slug": "campari",
+              "title": "Campari",
+              "subtitle": "Más intenso y claramente amargo",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Aperitivo rojo intenso servido en vaso",
+              "paragraphs": [
+                "Su graduación cambia según el país, pero normalmente se mueve entre 20,5 % y 28,5 % vol., así que suele ser más intenso que Aperol.",
+                "Campari representa el lado más botánico y amargo del aperitivo italiano. Tiene un perfil que muchas personas encuentran desafiante al principio, pero muy interesante cuando se aprende a reconocerlo.",
+                "Suele usarse con soda, jugos cítricos o en cócteles clásicos como el negroni y el americano.",
+                "Es ideal para explicar que no todos los aperitivos son suaves: algunos apuestan fuerte por el amargor y la complejidad.",
+                "En Campari suele percibirse una mezcla de notas herbales, cítricas, especiadas y una amargura más protagonista que en opciones como Aperol.",
+                "Por eso funciona muy bien como ejemplo comparativo: si Aperol muestra la cara más amable del aperitivo, Campari deja ver una versión más intensa, adulta y clásica."
+              ]
+            },
+            {
+              "slug": "lillet",
+              "title": "Lillet y aperitivos similares",
+              "subtitle": "Más vínicos, suaves y elegantes",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Aperitivo vínico elegante servido en copa",
+              "paragraphs": [
+                "Su graduación habitual suele rondar el 17 % vol., aunque puede variar un poco entre productos similares.",
+                "Lillet y bebidas parecidas representan una línea de aperitivos más delicada y refinada, con una base claramente vínica y una aromatización más sutil que la de muchos bitter italianos.",
+                "Suelen sentirse frescos, florales, cítricos o ligeramente frutales, y por eso muchas personas los encuentran más fáciles de beber solos muy fríos o con una mezcla simple.",
+                "Son una buena referencia para entender que un aperitivo no tiene por qué ser muy rojo, muy dulce o muy amargo para cumplir su función.",
+                "Dentro de una guía para principiantes, este ejemplo sirve para mostrar el lado más suave, elegante y menos agresivo de los aperitivos de base vínica."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "ejemplos-conocidos",
+              "title": "Ejemplos conocidos",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Ejemplo"
+                },
+                {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué enseña"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Vermut rojo",
+                  "composition": "Más especiado y dulce-amargo, muy habitual con hielo, rodaja de naranja o soda.",
+                  "objective": "Sirve para entender el aperitivo clásico de base vínica y perfil herbal.",
+                  "abv": "14,5-18 % vol. aprox."
+                },
+                {
+                  "term": "Vermut blanco o seco",
+                  "composition": "Más ligero, floral o seco según el estilo, con menos sensación tostada que el rojo.",
+                  "objective": "Ayuda a notar cómo cambia un aperitivo cuando se modifica dulzor y amargor.",
+                  "abv": "15-18 % vol. aprox."
+                },
+                {
+                  "term": "Aperol",
+                  "composition": "Aperitivo italiano naranja, cítrico, amable y menos agresivo en amargor que otros bitter.",
+                  "objective": "Es uno de los ejemplos más accesibles para principiantes y muy usado en spritz.",
+                  "abv": "11 % vol. aprox."
+                },
+                {
+                  "term": "Campari",
+                  "composition": "Más amargo e intenso, con perfil botánico muy marcado y gran presencia en cócteles clásicos.",
+                  "objective": "Permite entender el lado más serio y claramente amargo del aperitivo.",
+                  "abv": "20,5-28,5 % vol. aprox. según mercado"
+                },
+                {
+                  "term": "Lillet y bebidas similares",
+                  "composition": "Aperitivos vínicos aromatizados, frescos y elegantes, a menudo servidos muy fríos o mezclados.",
+                  "objective": "Muestran una versión más suave, vínica y aromática del universo aperitivo.",
+                  "abv": "17 % vol. aprox."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorySlug": "sidra",
+      "title": "Guía completa de la sidra",
+      "type": "guide",
+      "tabs": [
+        {
+          "slug": "que-es",
+          "label": "Qué es",
+          "position": 0,
+          "noteTitle": "Dato clave",
+          "noteContent": "La sidra no es solo una bebida informal o estacional. Según la región y el método, puede ser muy gastronómica, compleja y tan representativa del territorio como un vino.",
+          "sections": [
+            {
+              "slug": "que-es",
+              "title": "Qué es la sidra",
+              "subtitle": "Una bebida fermentada de manzana con identidad propia",
+              "imageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botella y vaso de sidra servida",
+              "paragraphs": [
+                "La sidra se obtiene fermentando jugo de manzana, aunque existen variantes de pera y otras frutas fermentadas en algunas regiones.",
+                "Su perfil puede ir de seco y ácido a afrutado y amable, con o sin burbuja, según la tradición local y el método de elaboración.",
+                "Es útil verla como una familia intermedia: más ligera que muchos vinos tintos, pero con una identidad fermentativa muy distinta a cerveza o espumoso."
+              ]
+            },
+            {
+              "slug": "manzana-y-terroir",
+              "title": "La importancia de la manzana y del origen",
+              "subtitle": "Variedad, acidez y tanino cambian mucho el resultado final",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Mesa con botellas y copas de sidra",
+              "paragraphs": [
+                "No todas las manzanas sirven para la misma sidra. Algunas aportan azúcar, otras acidez y otras taninos que dan estructura.",
+                "Regiones como Asturias, el País Vasco, Normandía o Inglaterra desarrollaron estilos distintos justamente por trabajar con variedades y costumbres propias.",
+                "Por eso la sidra merece tratarse como una categoría con lenguaje propio y no solo como una bebida frutada ligera."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "elaboracion",
+          "label": "Cómo se elabora",
+          "position": 1,
+          "panelTitle": "Cómo se elabora",
+          "tables": [
+            {
+              "slug": "elaboracion",
+              "title": "Cómo se elabora",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "1. Selección y prensado",
+                  "description": "Las manzanas se escogen y se prensan para extraer un mosto que puede mezclar variedades dulces, ácidas y tánicas.",
+                  "reference": "La combinación de frutas define gran parte del equilibrio entre frescura, estructura y grado alcohólico.",
+                  "imageUrl": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Manzanas frescas listas para elaboración"
+                },
+                {
+                  "term": "2. Fermentación",
+                  "description": "El mosto fermenta con levaduras seleccionadas o autóctonas, transformando azúcares en alcohol y desarrollando aromas de fruta, flores o notas rústicas.",
+                  "reference": "Temperatura y levadura influyen mucho en si la sidra queda limpia, salvaje o muy aromática.",
+                  "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Fermentación de bebidas en recipientes"
+                },
+                {
+                  "term": "3. Toma de espuma o embotellado tranquilo",
+                  "description": "Algunas sidras se embotellan sin gas, otras con ligera aguja y otras desarrollan burbuja mediante métodos más controlados.",
+                  "reference": "Aquí se decide si el resultado será más tradicional, fresco o cercano al estilo espumoso.",
+                  "imageUrl": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas embotelladas listas para consumo"
+                },
+                {
+                  "term": "4. Afinado y servicio",
+                  "description": "Tras reposar, la sidra se sirve de forma distinta según la cultura: escanciada, directa en copa o muy fría en formato más moderno.",
+                  "reference": "El servicio cambia percepción de acidez, burbuja y textura.",
+                  "imageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Sidra servida en botella y vaso"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "estilos",
+          "label": "Estilos",
+          "position": 2,
+          "panelTitle": "Estilos principales",
+          "sections": [
+            {
+              "slug": "natural",
+              "title": "Sidra natural",
+              "subtitle": "Rústica, viva y muy ligada a la mesa",
+              "imageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botella de sidra natural servida",
+              "paragraphs": [
+                "En regiones del norte de España suele presentarse con poca burbuja, más acidez y una expresión muy directa de la manzana fermentada.",
+                "Puede resultar menos amable al principio, pero ofrece una lectura muy honesta del producto.",
+                "Es una gran puerta de entrada para entender que la sidra también puede ser seria, gastronómica y compleja."
+              ]
+            },
+            {
+              "slug": "espumosa",
+              "title": "Sidra espumosa",
+              "subtitle": "Más burbuja y sensación festiva",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa con bebida espumosa de manzana",
+              "paragraphs": [
+                "Busca una textura más viva y una percepción más fresca, por lo que suele resultar accesible para público general.",
+                "A veces se asocia a celebraciones o servicio muy frío, y puede recordar en parte a ciertos espumosos ligeros.",
+                "Compararla con la natural ayuda a entender cómo el gas cambia la experiencia general de la bebida."
+              ]
+            },
+            {
+              "slug": "dulce-semiseca",
+              "title": "Sidras dulces y semisecas",
+              "subtitle": "Más afrutadas y de entrada sencilla",
+              "imageUrl": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Manzanas y bebida de sidra servida",
+              "paragraphs": [
+                "Conservan más sensación frutal y menos agresividad ácida, por lo que suelen gustar a quienes recién empiezan.",
+                "Pueden ser una opción cómoda para aperitivos informales, postres o momentos más relajados.",
+                "Su mayor accesibilidad no significa que sean simples: el equilibrio entre dulzor y acidez sigue siendo importante."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "estilos-principales",
+              "title": "Estilos principales",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Estilo"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil general"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Natural o tradicional",
+                  "composition": "Menos gas, más rusticidad y acidez marcada.",
+                  "objective": "Ayuda a reconocer estilos gastronómicos y regionales."
+                },
+                {
+                  "term": "Espumosa o achampanada",
+                  "composition": "Más burbuja y sensación festiva o refrescante.",
+                  "objective": "Muestra la cercanía entre sidra y bebidas de celebración."
+                },
+                {
+                  "term": "Seca",
+                  "composition": "Poca sensación azucarada, final más afilado y adulto.",
+                  "objective": "Permite distinguir frescura de dulzor percibido."
+                },
+                {
+                  "term": "Semiseca o dulce",
+                  "composition": "Más fruta madura, accesibilidad y redondez.",
+                  "objective": "Es útil para quienes se acercan por primera vez a la categoría."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "servicio",
+          "label": "Servicio",
+          "position": 3,
+          "panelTitle": "Servicio y maridaje",
+          "tables": [
+            {
+              "slug": "servicio-maridaje",
+              "title": "Servicio y maridaje",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "objective",
+                  "label": "Por qué importa"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Temperatura",
+                  "composition": "Suele disfrutarse fresca, pero sin congelar aromas por completo.",
+                  "objective": "Una temperatura intermedia conserva mejor fruta, acidez y burbuja."
+                },
+                {
+                  "term": "Servicio tradicional",
+                  "composition": "En algunas zonas se escancia para oxigenar y resaltar vivacidad.",
+                  "objective": "Permite entender que el ritual también forma parte del producto."
+                },
+                {
+                  "term": "Maridaje",
+                  "composition": "Funciona bien con quesos, embutidos, cocina de mar, fritos o platos salados.",
+                  "objective": "Su acidez ayuda a limpiar boca y refrescar entre bocados."
+                },
+                {
+                  "term": "Consumo responsable",
+                  "composition": "Aunque tenga menos graduación, sigue siendo una bebida alcohólica.",
+                  "objective": "Conviene no confundir ligereza con ausencia de riesgo."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categorySlug": "champagne",
+      "title": "Guía completa del espumoso",
+      "type": "guide",
+      "tabs": [
+        {
+          "slug": "que-son",
+          "label": "Qué son",
+          "position": 0,
+          "noteTitle": "Idea clave",
+          "noteContent": "No todo espumoso es Champagne y no toda burbuja significa el mismo estilo. Método, dulzor y tiempo sobre lías son las claves para leer bien esta categoría.",
+          "sections": [
+            {
+              "slug": "que-son",
+              "title": "Qué son los espumosos",
+              "subtitle": "Vinos con burbujas formadas por una segunda fermentación o toma de espuma",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vino espumoso con burbujas",
+              "paragraphs": [
+                "Los espumosos son vinos en los que el dióxido de carbono queda disuelto de forma natural, generando burbuja y una textura distinta a la del vino tranquilo.",
+                "No todos son iguales: Champagne, Cava, Prosecco y otros estilos cambian por uva, método, tiempo sobre lías y nivel de dulzor.",
+                "Para entenderlos bien conviene observar tres cosas: cómo se forman las burbujas, qué tan secos son y qué estilo aromático buscan."
+              ]
+            },
+            {
+              "slug": "por-que-importa-el-metodo",
+              "title": "Por qué importa el método",
+              "subtitle": "La forma de crear la burbuja cambia textura, aromas y precio",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa espumosa servida en mesa",
+              "paragraphs": [
+                "El método tradicional genera una burbuja más fina y complejidad de pan tostado o bollería cuando hay crianza sobre lías.",
+                "El método Charmat suele dar perfiles más primarios, frutales y ligeros, muy expresivos y fáciles de beber.",
+                "Ese detalle técnico ayuda mucho a entender por qué dos espumosos de graduación parecida pueden sentirse tan distintos."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "elaboracion",
+          "label": "Cómo se elabora",
+          "position": 1,
+          "panelTitle": "Cómo se elabora",
+          "tables": [
+            {
+              "slug": "elaboracion",
+              "title": "Cómo se elabora",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "1. Elaborar un vino base",
+                  "description": "Todo espumoso parte de un vino tranquilo inicial, normalmente fresco, con buena acidez y alcohol moderado.",
+                  "reference": "Ese vino base está pensado para soportar una segunda fermentación sin perder equilibrio.",
+                  "imageUrl": "https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copa de vino claro usada como base de espumoso"
+                },
+                {
+                  "term": "2. Segunda fermentación",
+                  "description": "Se añade azúcar y levaduras para generar gas carbónico dentro de botella o tanque, según el método elegido.",
+                  "reference": "Aquí nacen la burbuja y buena parte de la textura final.",
+                  "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copas con espumoso servido"
+                },
+                {
+                  "term": "3. Crianza sobre lías o afinado",
+                  "description": "Muchos espumosos reposan con las levaduras muertas para ganar complejidad, notas de panadería y burbuja más integrada.",
+                  "reference": "Cuanto más larga la crianza, mayor sensación de profundidad y cremosidad.",
+                  "imageUrl": "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas reposando durante el afinado"
+                },
+                {
+                  "term": "4. Ajuste de dulzor y expedición",
+                  "description": "Antes del cierre final se puede corregir el nivel de azúcar para definir estilos más secos o más amables.",
+                  "reference": "Ese ajuste explica categorías como brut nature, brut, extra dry o demi-sec.",
+                  "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Espumoso servido en copa fina"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "estilos",
+          "label": "Métodos y estilos",
+          "position": 2,
+          "panelTitle": "Métodos, estilos y dulzor",
+          "sections": [
+            {
+              "slug": "champagne-cava",
+              "title": "Champagne y Cava de método tradicional",
+              "subtitle": "Burbuja más fina y perfil más complejo",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas de espumoso servidas para celebración",
+              "paragraphs": [
+                "Suelen mostrar notas de pan, brioche, frutos secos o manzana madura cuando pasan tiempo sobre lías.",
+                "La textura resulta más cremosa y la burbuja suele sentirse más pequeña e integrada.",
+                "Son una gran referencia para entender el lado más serio, gastronómico y clásico del espumoso."
+              ]
+            },
+            {
+              "slug": "prosecco-y-frutales",
+              "title": "Espumosos frutales y de tanque",
+              "subtitle": "Más directos, jóvenes y fáciles de beber",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de espumoso joven y brillante",
+              "paragraphs": [
+                "Prosecco y estilos similares priorizan fruta blanca, flores y sensación fresca más que notas de panadería.",
+                "Funcionan muy bien como aperitivo o en contextos informales donde se busca vivacidad y ligereza.",
+                "Compararlos con un espumoso de método tradicional ayuda a notar cómo la técnica cambia el lenguaje aromático."
+              ]
+            },
+            {
+              "slug": "dulzor",
+              "title": "Interpretar el nivel de dulzor",
+              "subtitle": "Una etiqueta seca no siempre significa lo que parece",
+              "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Espumoso servido para cata",
+              "paragraphs": [
+                "Términos como brut nature, brut o demi-sec ayudan a anticipar la sensación de azúcar residual.",
+                "Esa clasificación es muy útil porque condiciona maridaje, percepción de acidez y estilo de consumo.",
+                "Es uno de los primeros códigos que conviene aprender al mirar una botella de espumoso."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "metodos-estilos",
+              "title": "Métodos, estilos y dulzor",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Categoría"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo es"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué enseña"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Método tradicional",
+                  "composition": "Segunda fermentación en botella; más complejidad y burbuja fina.",
+                  "objective": "Ayuda a reconocer el estilo de Champagne y muchos Cava."
+                },
+                {
+                  "term": "Método Charmat",
+                  "composition": "Segunda fermentación en tanque; perfil más frutal y directo.",
+                  "objective": "Explica por qué algunos espumosos resultan más ligeros y accesibles."
+                },
+                {
+                  "term": "Brut nature / extra brut / brut",
+                  "composition": "Estilos más secos, con muy poco o poco azúcar añadido.",
+                  "objective": "Sirven para interpretar la etiqueta y anticipar sensación en boca."
+                },
+                {
+                  "term": "Sec / demi-sec",
+                  "composition": "Perfiles con mayor dulzor percibido.",
+                  "objective": "Muestran que no todos los espumosos son totalmente secos."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "servicio",
+          "label": "Servicio",
+          "position": 3,
+          "panelTitle": "Servicio y consumo",
+          "tables": [
+            {
+              "slug": "servicio-consumo",
+              "title": "Servicio y consumo",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "objective",
+                  "label": "Por qué importa"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Temperatura de servicio",
+                  "composition": "Suele servirse bien frío, pero sin apagar por completo aroma y textura.",
+                  "objective": "Un exceso de frío puede esconder complejidad y finura de burbuja."
+                },
+                {
+                  "term": "Tipo de copa",
+                  "composition": "La copa estrecha conserva burbuja; una copa más amplia deja ver más aromas.",
+                  "objective": "Ayuda a decidir si priorizar frescura visual o expresión aromática."
+                },
+                {
+                  "term": "Maridaje",
+                  "composition": "Puede acompañar aperitivos, fritos, mariscos, quesos e incluso postres según su dulzor.",
+                  "objective": "Muestra la enorme versatilidad gastronómica del espumoso."
+                },
+                {
+                  "term": "Celebración y consumo responsable",
+                  "composition": "Su imagen festiva no reduce su contenido alcohólico ni el efecto del ritmo de consumo.",
+                  "objective": "Recuerda que la burbuja puede hacer que se beba rápido sin medir la cantidad real."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

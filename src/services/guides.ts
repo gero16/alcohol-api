@@ -1,0 +1,294 @@
+import { Prisma } from "../generated/prisma";
+import type {
+  GuideUpsertInput,
+  SeedGuideSection,
+  SeedGuideTab,
+  SeedGuideTable,
+} from "../domain/contracts";
+import { guideDetailInclude } from "../domain/serializers";
+import { prisma } from "../lib/prisma";
+
+type SectionMutationInput = SeedGuideSection & {
+  tabSlug?: string;
+  position?: number;
+};
+
+function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideInput {
+  return {
+    slug: tab.slug,
+    label: tab.label,
+    panelTitle: tab.panelTitle,
+    noteTitle: tab.noteTitle,
+    noteContent: tab.noteContent,
+    position: tab.position,
+    sections: {
+      create: (tab.sections ?? []).map((section, index) => ({
+        slug: section.slug,
+        title: section.title,
+        subtitle: section.subtitle,
+        imageUrl: section.imageUrl,
+        imageAlt: section.imageAlt,
+        position: index,
+        paragraphs: {
+          create: section.paragraphs.map((content, paragraphIndex) => ({
+            content,
+            position: paragraphIndex,
+          })),
+        },
+      })),
+    },
+    tables: {
+      create: (tab.tables ?? []).map((table, index) => toGuideTableCreate(table, index)),
+    },
+  };
+}
+
+function toGuideTableCreate(
+  table: SeedGuideTable,
+  index: number,
+): Prisma.GuideTableCreateWithoutTabInput {
+  return {
+    slug: table.slug,
+    title: table.title,
+    columns: table.columns,
+    position: index,
+    rows: {
+      create: table.rows.map((row, rowIndex) => ({
+        term: row.term,
+        composition: row.composition,
+        objective: row.objective,
+        description: row.description,
+        reference: row.reference,
+        abv: row.abv,
+        imageUrl: row.imageUrl,
+        imageAlt: row.imageAlt,
+        position: rowIndex,
+      })),
+    },
+  };
+}
+
+async function requireCategory(slug: string) {
+  const category = await prisma.category.findUnique({
+    where: { slug },
+    select: { id: true, slug: true, title: true },
+  });
+
+  if (!category) {
+    throw new Error(`CATEGORY_NOT_FOUND:${slug}`);
+  }
+
+  return category;
+}
+
+async function requireGuideTab(categorySlug: string, tabSlug: string) {
+  const tab = await prisma.guideTab.findFirst({
+    where: {
+      slug: tabSlug,
+      guide: {
+        category: {
+          slug: categorySlug,
+        },
+      },
+    },
+    include: {
+      guide: {
+        include: {
+          category: true,
+        },
+      },
+    },
+  });
+
+  if (!tab) {
+    throw new Error(`GUIDE_TAB_NOT_FOUND:${categorySlug}:${tabSlug}`);
+  }
+
+  return tab;
+}
+
+export async function listGuides() {
+  return prisma.guide.findMany({
+    include: {
+      category: true,
+      tabs: {
+        orderBy: { position: "asc" },
+      },
+    },
+    orderBy: {
+      category: {
+        title: "asc",
+      },
+    },
+  });
+}
+
+export async function getGuideByCategorySlug(categorySlug: string) {
+  return prisma.guide.findFirst({
+    where: {
+      category: {
+        slug: categorySlug,
+      },
+    },
+    include: guideDetailInclude,
+  });
+}
+
+export async function replaceGuideForCategory(categorySlug: string, payload: GuideUpsertInput) {
+  const category = await requireCategory(categorySlug);
+
+  await prisma.guide.deleteMany({
+    where: {
+      categoryId: category.id,
+    },
+  });
+
+  return prisma.guide.create({
+    data: {
+      title: payload.title,
+      type: payload.type,
+      category: {
+        connect: { id: category.id },
+      },
+      tabs: {
+        create: payload.tabs.map((tab, index) =>
+          toGuideTabCreate({
+            ...tab,
+            position: index,
+          }),
+        ),
+      },
+    },
+    include: guideDetailInclude,
+  });
+}
+
+export async function createSectionForGuide(categorySlug: string, payload: SectionMutationInput) {
+  const tab = await requireGuideTab(categorySlug, payload.tabSlug ?? "");
+
+  const existingSections = await prisma.guideSection.count({
+    where: {
+      tabId: tab.id,
+    },
+  });
+
+  return prisma.guideSection.create({
+    data: {
+      tab: {
+        connect: { id: tab.id },
+      },
+      slug: payload.slug,
+      title: payload.title,
+      subtitle: payload.subtitle,
+      imageUrl: payload.imageUrl,
+      imageAlt: payload.imageAlt,
+      position: payload.position ?? existingSections,
+      paragraphs: {
+        create: payload.paragraphs.map((content, index) => ({
+          content,
+          position: index,
+        })),
+      },
+    },
+    include: {
+      paragraphs: {
+        orderBy: { position: "asc" },
+      },
+      tab: true,
+    },
+  });
+}
+
+export async function updateSectionForGuide(
+  categorySlug: string,
+  sectionId: string,
+  payload: SectionMutationInput,
+) {
+  const section = await prisma.guideSection.findFirst({
+    where: {
+      id: sectionId,
+      tab: {
+        guide: {
+          category: {
+            slug: categorySlug,
+          },
+        },
+      },
+    },
+    include: {
+      tab: true,
+    },
+  });
+
+  if (!section) {
+    return null;
+  }
+
+  const targetTab =
+    payload.tabSlug && payload.tabSlug !== section.tab.slug
+      ? await requireGuideTab(categorySlug, payload.tabSlug)
+      : section.tab;
+
+  await prisma.guideParagraph.deleteMany({
+    where: {
+      sectionId,
+    },
+  });
+
+  return prisma.guideSection.update({
+    where: { id: sectionId },
+    data: {
+      tab: {
+        connect: { id: targetTab.id },
+      },
+      slug: payload.slug,
+      title: payload.title,
+      subtitle: payload.subtitle,
+      imageUrl: payload.imageUrl,
+      imageAlt: payload.imageAlt,
+      position: payload.position ?? section.position,
+      paragraphs: {
+        create: payload.paragraphs.map((content, index) => ({
+          content,
+          position: index,
+        })),
+      },
+    },
+    include: {
+      paragraphs: {
+        orderBy: { position: "asc" },
+      },
+      tab: true,
+    },
+  });
+}
+
+export async function deleteSectionForGuide(categorySlug: string, sectionId: string) {
+  const section = await prisma.guideSection.findFirst({
+    where: {
+      id: sectionId,
+      tab: {
+        guide: {
+          category: {
+            slug: categorySlug,
+          },
+        },
+      },
+    },
+    select: {
+      id: true,
+    },
+  });
+
+  if (!section) {
+    return null;
+  }
+
+  await prisma.guideSection.delete({
+    where: {
+      id: sectionId,
+    },
+  });
+
+  return { deleted: true };
+}

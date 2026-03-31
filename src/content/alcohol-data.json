@@ -1015,9 +1015,298 @@
           ]
         },
         {
+          "slug": "ron-guia",
+          "label": "Ron desde cero",
+          "position": 4,
+          "panelTitle": "Guía básica del ron para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "El ron no es solo una bebida dulce para mezclar. Puede ir desde perfiles ligeros y frescos hasta versiones añejas, secas y complejas para beber con más calma.",
+          "sections": [
+            {
+              "slug": "que-es-ron",
+              "title": "Qué es el ron",
+              "subtitle": "Un destilado nacido de la caña de azúcar o de la melaza",
+              "imageUrl": "https://images.unsplash.com/photo-1575650772417-e6b418b0d065?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Ron servido en vaso corto con hielo",
+              "paragraphs": [
+                "El ron es un destilado elaborado a partir de productos de la caña de azúcar, sobre todo melaza o jugo de caña fermentado.",
+                "Según el país, el método de destilación y el tiempo en barrica, puede resultar ligero, especiado, afrutado, tostado o bastante serio.",
+                "Para empezar, conviene recordar que no todo ron sabe a vainilla o caramelo: algunos son frescos y secos, mientras otros son más redondos y golosos."
+              ]
+            },
+            {
+              "slug": "como-entender-ron",
+              "title": "Cómo empezar a entenderlo",
+              "subtitle": "La edad y el color ayudan, pero no cuentan toda la historia",
+              "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botellas y vasos de destilados servidos",
+              "paragraphs": [
+                "Un ron blanco suele pensarse para mezcla y perfil más limpio, mientras un ron dorado o añejo puede mostrar más madera, especias y profundidad.",
+                "Aun así, color y edad no lo explican todo: algunos rones jóvenes son muy expresivos y algunos oscuros pueden ser más sencillos de lo que parecen.",
+                "Lo más útil para principiantes es comparar un ron ligero con uno añejo y notar cómo cambia la textura, el dulzor percibido y el peso de la barrica."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "estilos-ron",
+              "title": "Estilos de ron para orientarte",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Estilo"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil general"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Ron blanco",
+                  "composition": "Más limpio, ligero y habitual en cócteles o mezclas frescas.",
+                  "objective": "Ayuda a entender el lado más directo y mezclable del ron."
+                },
+                {
+                  "term": "Ron dorado",
+                  "composition": "Algo más redondo, con madera suave y notas de vainilla o caramelo.",
+                  "objective": "Muestra cómo la crianza cambia el perfil sin volverlo necesariamente pesado."
+                },
+                {
+                  "term": "Ron añejo",
+                  "composition": "Más estructura, barrica, especias y profundidad aromática.",
+                  "objective": "Sirve para descubrir el ron que puede tomarse con más calma y atención."
+                },
+                {
+                  "term": "Ron especiado",
+                  "composition": "Canela, vainilla, clavo u otras especias destacan sobre la base del destilado.",
+                  "objective": "Permite reconocer estilos más fáciles de identificar para quien empieza."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "ginebra-guia",
+          "label": "Ginebra desde cero",
+          "position": 5,
+          "panelTitle": "Guía básica de la ginebra para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "La clave de la ginebra no es solo que sea transparente, sino que esté aromatizada con enebro y otros botánicos que cambian mucho su personalidad.",
+          "sections": [
+            {
+              "slug": "que-es-ginebra",
+              "title": "Qué es la ginebra",
+              "subtitle": "Un destilado aromatizado donde el enebro es obligatorio",
+              "imageUrl": "https://images.unsplash.com/photo-1551751299-1b51cab2694c?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botella y copa de ginebra servida",
+              "paragraphs": [
+                "La ginebra parte de una base alcohólica neutra que se aromatiza con botánicos, y el enebro debe ser el aroma principal.",
+                "Según la receta, pueden aparecer notas cítricas, florales, herbales, especiadas o resinosas.",
+                "Para principiantes, la forma más simple de entenderla es pensarla como un destilado aromático, no como una bebida dulce ni como un vodka con sabor."
+              ]
+            },
+            {
+              "slug": "como-empezar-ginebra",
+              "title": "Cómo empezar a reconocerla",
+              "subtitle": "Botánicos, tónica y garnish cambian mucho la experiencia",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Trago con ginebra y cítricos servido en copa",
+              "paragraphs": [
+                "Una ginebra seca resalta más el enebro y los botánicos clásicos, mientras otras versiones modernas priorizan cítricos, flores o especias.",
+                "La mezcla con tónica puede hacerla más accesible, pero también tapar matices si la proporción no está equilibrada.",
+                "La mejor manera de empezar es probar una ginebra sola en pequeña cantidad y luego compararla con una mezcla simple para notar qué cambia."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "estilos-ginebra",
+              "title": "Estilos de ginebra para orientarte",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Estilo"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil general"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "London Dry",
+                  "composition": "Seca, directa y con enebro muy claro, a menudo con cítricos y especias.",
+                  "objective": "Es la referencia más útil para entender la idea clásica de la ginebra."
+                },
+                {
+                  "term": "Ginebra cítrica",
+                  "composition": "Más fresca, brillante y amable, con limón, naranja o pomelo en primer plano.",
+                  "objective": "Ayuda a entrar en la categoría con un perfil más accesible."
+                },
+                {
+                  "term": "Ginebra floral o herbal",
+                  "composition": "Lavanda, pepino, hierbas o notas verdes más visibles.",
+                  "objective": "Muestra cómo una misma categoría puede cambiar mucho sin dejar de ser ginebra."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "vodka-guia",
+          "label": "Vodka desde cero",
+          "position": 6,
+          "panelTitle": "Guía básica del vodka para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "El vodka puede parecer simple, pero justamente su gracia está en la limpieza, la textura y cómo funciona como base para beber solo o mezclar.",
+          "sections": [
+            {
+              "slug": "que-es-vodka",
+              "title": "Qué es el vodka",
+              "subtitle": "Un destilado limpio y neutro, elaborado con cereal, patata u otras bases fermentables",
+              "imageUrl": "https://images.unsplash.com/photo-1607622750671-6cd9a99f5e34?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botella de vodka transparente con vaso",
+              "paragraphs": [
+                "El vodka busca pureza y neutralidad aromática, por eso suele tener menos rasgos aromáticos intensos que ginebra, ron o whisky.",
+                "Puede elaborarse con trigo, centeno, patata u otras materias primas, pero muchas veces lo que más se nota es la textura y la limpieza en boca.",
+                "Para alguien que empieza, es útil pensar que el vodka no intenta impresionar con muchos aromas, sino ofrecer una base limpia y versátil."
+              ]
+            },
+            {
+              "slug": "como-entender-vodka",
+              "title": "Cómo empezar a entenderlo",
+              "subtitle": "La diferencia suele sentirse más en la textura que en el aroma",
+              "imageUrl": "https://images.unsplash.com/photo-1551751299-1b51cab2694c?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Destilado transparente servido en vaso corto",
+              "paragraphs": [
+                "Al probarlo, muchas personas notan primero si resulta seco, sedoso, punzante o muy limpio, más que identificar aromas concretos.",
+                "Eso hace que el vodka sea muy útil en coctelería, porque no compite demasiado con otros ingredientes.",
+                "Tomarlo muy frío suele hacerlo más amable, aunque también reduce todavía más cualquier pequeño matiz aromático."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "formas-vodka",
+              "title": "Cómo se suele consumir el vodka",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Forma"
+                },
+                {
+                  "key": "composition",
+                  "label": "Qué pasa"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Muy frío y solo",
+                  "composition": "Se siente más limpio y menos agresivo, con textura más controlada.",
+                  "objective": "Sirve para entender por qué muchas tradiciones lo beben casi helado."
+                },
+                {
+                  "term": "Con soda o tónica",
+                  "composition": "Se vuelve más ligero y refrescante, sin mucha complejidad adicional.",
+                  "objective": "Ayuda a ver su función como base neutra y fácil de combinar."
+                },
+                {
+                  "term": "En cóctel",
+                  "composition": "Permite que destaquen jugos, hierbas, cítricos u otros ingredientes.",
+                  "objective": "Muestra por qué es uno de los destilados más usados en mezcla."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "tequila-mezcal-guia",
+          "label": "Tequila y mezcal",
+          "position": 7,
+          "panelTitle": "Guía básica de tequila y mezcal para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Tequila y mezcal vienen del agave, pero no son lo mismo. La variedad de planta, la región y el método de elaboración cambian muchísimo el resultado final.",
+          "sections": [
+            {
+              "slug": "que-son-agave",
+              "title": "Qué son tequila y mezcal",
+              "subtitle": "Destilados de agave con identidad muy marcada",
+              "imageUrl": "https://images.unsplash.com/photo-1621972750749-0fbb1abb7736?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Vasos de tequila y botella servidos en mesa",
+              "paragraphs": [
+                "Ambos son destilados hechos a partir de agave, pero el tequila se asocia sobre todo al agave azul y a una denominación muy concreta, mientras el mezcal abarca una familia más amplia.",
+                "El mezcal suele relacionarse con perfiles más ahumados o rústicos, aunque no todos lo son igual.",
+                "Para empezar, basta con recordar que comparten origen vegetal, pero su elaboración y su estilo pueden separarlos bastante."
+              ]
+            },
+            {
+              "slug": "como-empezar-agave",
+              "title": "Cómo empezar a distinguirlos",
+              "subtitle": "Agave, cocción y humo son pistas muy útiles",
+              "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botellas y vasos de destilados servidos",
+              "paragraphs": [
+                "Un tequila joven puede sentirse más limpio, vegetal, cítrico o picante, mientras algunos mezcales muestran humo, tierra y una sensación más artesanal.",
+                "La categoría reposado o añejo también cambia mucho el perfil por el paso por barrica.",
+                "La mejor manera de entrar en este mundo es comparar un blanco/joven con uno reposado, y si puedes, poner al lado un mezcal para notar cómo cambia el carácter del agave."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "estilos-agave",
+              "title": "Estilos de tequila y mezcal para orientarte",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Estilo"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil general"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Tequila blanco",
+                  "composition": "Más directo, vegetal, cítrico y con menos influencia de barrica.",
+                  "objective": "Es el mejor punto de partida para reconocer el agave en estado más puro."
+                },
+                {
+                  "term": "Tequila reposado o añejo",
+                  "composition": "Más redondo, con vainilla, madera y especias encima del perfil de agave.",
+                  "objective": "Ayuda a notar cómo la barrica suaviza y transforma el destilado."
+                },
+                {
+                  "term": "Mezcal joven",
+                  "composition": "Puede mostrar humo, tierra, hierbas secas y un carácter más salvaje.",
+                  "objective": "Sirve para descubrir el lado más intenso y distintivo de los destilados de agave."
+                }
+              ]
+            }
+          ]
+        },
+        {
           "slug": "servicio",
           "label": "Servicio y consumo",
-          "position": 4,
+          "position": 8,
           "panelTitle": "Servicio y consumo responsable",
           "tables": [
             {

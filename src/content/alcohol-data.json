@@ -1614,29 +1614,29 @@
               "rows": [
                 {
                   "term": "1. Elegir una base alcohólica",
-                  "description": "La base puede ser alcohol neutro, ron, brandy u otro destilado suave sobre el que se construirá el perfil aromático.",
-                  "reference": "La elección condiciona cuerpo, textura y persistencia final.",
+                  "description": "Todo licor parte de una base alcohólica. Esa base puede ser alcohol neutro, ron, brandy u otro destilado suave. No siempre se busca que esa base se note mucho: muchas veces funciona como soporte sobre el que luego se construye todo el sabor.",
+                  "reference": "Dicho fácil: primero se elige sobre qué alcohol se va a apoyar el licor.",
                   "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Botellas usadas como base para licores"
                 },
                 {
                   "term": "2. Aromatizar o macerar",
-                  "description": "Se añaden frutas, pieles, hierbas, cacao, café, especias o frutos secos para transferir sabor y aroma al alcohol.",
-                  "reference": "Puede hacerse por maceración, infusión o mezcla de extractos y destilados aromáticos.",
+                  "description": "Después se añaden frutas, pieles, hierbas, cacao, café, especias o frutos secos. Esos ingredientes se dejan en contacto con el alcohol para que le pasen sabor y aroma. A veces el perfil se consigue por maceración larga; otras veces por infusión, mezcla de extractos o combinación de varias preparaciones.",
+                  "reference": "Dicho fácil: aquí nace el sabor del licor, porque el alcohol empieza a tomar el carácter de los ingredientes.",
                   "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Ingredientes aromáticos y bebidas servidas"
                 },
                 {
                   "term": "3. Ajustar dulzor y textura",
-                  "description": "Se incorpora azúcar, jarabes o crema según el estilo, buscando equilibrio entre intensidad alcohólica y sensación golosa.",
-                  "reference": "Aquí nace la diferencia entre un licor seco, uno frutal o una crema más densa.",
+                  "description": "Cuando el sabor base ya está definido, se ajusta el dulzor y la textura. Para eso se pueden usar azúcar, jarabes, miel, crema u otros ingredientes que hagan el resultado más seco, más suave, más espeso o más goloso, según el estilo buscado.",
+                  "reference": "Aquí aparece gran parte de la diferencia entre un licor herbal seco, uno frutal más amable o una crema de sobremesa.",
                   "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Bebida dulce servida en copa"
                 },
                 {
                   "term": "4. Reposar y embotellar",
-                  "description": "La mezcla se deja estabilizar antes de filtrar y embotellar para que el perfil final resulte más integrado.",
-                  "reference": "Un breve reposo puede suavizar aristas y armonizar aroma, dulzor y alcohol.",
+                  "description": "Antes de embotellar, la mezcla suele reposar para que el alcohol, el dulzor y los aromas se integren mejor. Después se filtra si hace falta, se ajusta la graduación final y recién ahí se envasa.",
+                  "reference": "Dicho fácil: al final se deja que el licor se ordene y se redondee antes de pasar a botella.",
                   "imageUrl": "https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Botellas alineadas listas para envasado"
                 }
@@ -1900,7 +1900,7 @@
               "imageAlt": "Ingredientes aromáticos y bebidas servidas en copas",
               "paragraphs": [
                 "Como otros licores herbales, parte de una base alcohólica sobre la que se trabaja con botánicos. Esos botánicos pueden incluir hierbas, raíces, especias, frutas secas y cáscaras aromáticas.",
-                "Luego esos ingredientes se maceran o infusionan para que transfieran sabor y aroma al alcohol. Después se ajusta la receta con dulzor y se deja reposar para que el conjunto se vuelva más integrado.",
+                "Luego esos ingredientes se maceran o infusionan, es decir, se dejan en contacto con el alcohol para que le pasen sabor y aroma. Después se ajusta la receta con dulzor y se deja reposar para que el conjunto se vuelva más integrado.",
                 "La diferencia con un destilado puro está en que aquí no se busca neutralidad ni sabor limpio de una sola materia prima. Se busca una mezcla compleja de sabores añadidos, construida como receta.",
                 "Dicho fácil: Jägermeister no intenta saber a cereal, caña o agave como un destilado base. Intenta saber a su combinación de hierbas, especias y notas digestivas."
               ]
@@ -1991,7 +1991,7 @@
               "imageAlt": "Ingredientes aromáticos y bebidas servidas en copas",
               "paragraphs": [
                 "Como otros licores herbales, parte de una base alcohólica sobre la que se trabaja con botánicos. La receta puede incluir hierbas, raíces, cortezas, especias y plantas amargas.",
-                "Esos ingredientes se maceran o infusionan para transferir sabor y aroma al alcohol. Luego la mezcla se ajusta y se deja reposar para que el conjunto se vuelva más estable e integrado.",
+                "Esos ingredientes se maceran o infusionan, o sea, se dejan en contacto con el alcohol para que le transfieran sabor y aroma. Luego la mezcla se ajusta y se deja reposar para que el conjunto se vuelva más estable e integrado.",
                 "Lo importante es que aquí no se busca un sabor neutro ni limpio como en vodka. Se busca construir una receta intensa, amarga y botánica.",
                 "Dicho fácil: el fernet sabe a su mezcla de hierbas y amargos, no a una sola materia prima base."
               ]

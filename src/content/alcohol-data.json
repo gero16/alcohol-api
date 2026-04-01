@@ -3528,6 +3528,18 @@
       "featured": false
     },
     {
+      "slug": "cabezas-corazon-colas",
+      "term": "Cabezas, corazón y colas",
+      "shortDefinition": "Partes que van saliendo durante la destilación a medida que se evaporan y condensan compuestos distintos.",
+      "details": [
+        "Dicho simple: no todo lo que sale del alambique es igual, porque algunas sustancias aparecen antes y otras después.",
+        "Las cabezas son lo primero que sale y suelen considerarse menos deseables. El corazón es la parte media y normalmente la más limpia y equilibrada. Las colas salen al final y suelen sentirse más pesadas o ásperas.",
+        "Por eso separar bien estas partes es importante para definir la calidad y el estilo del destilado final."
+      ],
+      "relatedCategories": ["destilados"],
+      "featured": false
+    },
+    {
       "slug": "barrica",
       "term": "Barrica",
       "shortDefinition": "Recipiente de madera usado para criar o madurar algunas bebidas.",

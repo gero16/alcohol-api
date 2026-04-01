@@ -1782,7 +1782,7 @@
         {
           "slug": "ejemplos",
           "label": "Ejemplos",
-          "position": 5,
+          "position": 6,
           "panelTitle": "Ejemplos conocidos",
           "tables": [
             {
@@ -1842,6 +1842,12 @@
                   "composition": "Licor herbal alemán con perfil especiado, balsámico, algo amargo y claramente digestivo.",
                   "objective": "Sirve para entender la familia de licores de hierbas intensos, menos frutales y menos golosos que otros ejemplos populares.",
                   "abv": "35 % vol. aprox."
+                },
+                {
+                  "term": "Fernet",
+                  "composition": "Licor herbal muy amargo, intenso, especiado y claramente digestivo.",
+                  "objective": "Ayuda a reconocer el extremo más amargo y herbal dentro de los licores populares.",
+                  "abv": "35-45 % vol. aprox. según marca"
                 },
                 {
                   "term": "Sambuca",
@@ -1955,6 +1961,97 @@
               ]
             }
           ]
+        },
+        {
+          "slug": "fernet",
+          "label": "Fernet",
+          "position": 5,
+          "panelTitle": "Guía básica de fernet para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Fernet es un licor herbal y amargo, normalmente más intenso y seco que otros licores populares. Muchas personas lo conocen mezclado, pero entenderlo como bebida de hierbas ayuda mucho a ubicarlo mejor.",
+          "sections": [
+            {
+              "slug": "que-es-fernet",
+              "title": "Qué es el fernet",
+              "subtitle": "Un licor herbal amargo, intenso y de tradición digestiva",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas con bebida herbal servida en mesa",
+              "paragraphs": [
+                "Fernet es un licor herbal elaborado con una mezcla de hierbas, raíces, especias y otros botánicos. Su perfil suele sentirse más amargo, seco y medicinal que el de muchos licores frutales o cremosos.",
+                "Su graduación habitual suele moverse aproximadamente entre 35 % y 45 % vol. según la marca, así que tiene una presencia alcohólica clara y un carácter bastante intenso.",
+                "Para alguien que empieza, una forma simple de ubicarlo es esta: es un licor de hierbas mucho más amargo y directo que un amaretto o una crema, y normalmente más severo en sabor que Jägermeister.",
+                "Por eso suele dividir opiniones al principio: combina amargor, especias, notas balsámicas y una sensación digestiva muy marcada."
+              ]
+            },
+            {
+              "slug": "como-se-hace-fernet",
+              "title": "Cómo se hace el fernet",
+              "subtitle": "Base alcohólica, botánicos amargos y reposo para integrar el perfil",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Ingredientes aromáticos y bebidas servidas en copas",
+              "paragraphs": [
+                "Como otros licores herbales, parte de una base alcohólica sobre la que se trabaja con botánicos. La receta puede incluir hierbas, raíces, cortezas, especias y plantas amargas.",
+                "Esos ingredientes se maceran o infusionan para transferir sabor y aroma al alcohol. Luego la mezcla se ajusta y se deja reposar para que el conjunto se vuelva más estable e integrado.",
+                "Lo importante es que aquí no se busca un sabor neutro ni limpio como en vodka. Se busca construir una receta intensa, amarga y botánica.",
+                "Dicho fácil: el fernet sabe a su mezcla de hierbas y amargos, no a una sola materia prima base."
+              ]
+            },
+            {
+              "slug": "como-entender-fernet",
+              "title": "Cómo empezar a entenderlo",
+              "subtitle": "Solo, con hielo o mezclado, pero siempre con personalidad fuerte",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Mesa con bebidas y acompañamientos",
+              "paragraphs": [
+                "Muchas personas lo conocen mezclado, por ejemplo con cola, porque así el perfil amargo se vuelve más amable y fácil de tomar. Esa mezcla puede ser una puerta de entrada razonable.",
+                "Si se prueba solo o con hielo, aparecen mucho más claras las notas herbales, el amargor, el costado balsámico y la sensación digestiva.",
+                "Compararlo con Jägermeister ayuda bastante: ambos son licores herbales, pero el fernet suele sentirse más seco, más amargo y menos redondo o dulce.",
+                "Para un principiante, la clave es no esperar que sepa a postre ni a cóctel dulce. Hay que leerlo como un licor amargo y botánico con una identidad muy marcada."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "fernet-claves",
+              "title": "Claves rápidas para ubicarlo",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo es"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Tipo de bebida",
+                  "composition": "Licor herbal amargo y digestivo, no destilado puro ni aperitivo clásico.",
+                  "objective": "Ayuda a ubicarlo dentro de la familia de licores botánicos intensos."
+                },
+                {
+                  "term": "Graduación habitual",
+                  "composition": "35-45 % vol. aprox. según marca.",
+                  "objective": "Recuerda que su intensidad no está solo en el sabor, sino también en el alcohol."
+                },
+                {
+                  "term": "Perfil",
+                  "composition": "Amargo, herbal, especiado, balsámico y menos dulce que muchos otros licores.",
+                  "objective": "Permite distinguirlo de licores más suaves, frutales o golosos."
+                },
+                {
+                  "term": "Uso común",
+                  "composition": "Solo, con hielo o mezclado, según costumbre y país.",
+                  "objective": "Muestra que el servicio cambia mucho la percepción de un licor tan intenso."
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2003,7 +2100,8 @@
               "paragraphs": [
                 "Un aperitivo puede parecerse a un licor o a una bebida para cócteles, pero no significa exactamente lo mismo. Un destilado como whisky o vodka suele tener mucha más graduación. Un licor suele ser más dulce y a veces más denso. Un cóctel es una mezcla preparada, mientras que el aperitivo puede ser una bebida base o servirse casi sin modificar.",
                 "Muchos aperitivos comparten elementos con los licores, sobre todo el uso de hierbas, frutas y especias. La diferencia principal es su función y su perfil: suelen buscar frescura, amargor moderado, complejidad aromática y una graduación media.",
-                "Por eso bebidas como el vermut, Aperol, Campari o Lillet se entienden mejor como aperitivos: están pensadas para beberse antes de comer o como parte de tragos ligeros y refrescantes."
+                "Por eso bebidas como el vermut, Aperol, Campari o Lillet se entienden mejor como aperitivos: están pensadas para beberse antes de comer o como parte de tragos ligeros y refrescantes.",
+                "Algunas de estas bebidas también podrían describirse como licores amargos o herbales si uno mira solo la receta. Aquí se organizan como aperitivos porque su uso más típico y su identidad cultural están mucho más ligados al momento previo a la comida que a la sobremesa o al digestivo."
               ]
             }
           ]

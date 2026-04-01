@@ -1,8 +1,5 @@
 import type { FastifyPluginAsync } from "fastify";
-import alcoholData from "../content/alcohol-data.json";
-import type { SeedDataset } from "../domain/contracts";
-
-const dataset = alcoholData as SeedDataset;
+import { listGlossary } from "../services/content";
 
 export const glossaryRoutes: FastifyPluginAsync = async (app) => {
   app.get(
@@ -13,11 +10,6 @@ export const glossaryRoutes: FastifyPluginAsync = async (app) => {
         summary: "Listar términos del glosario básico",
       },
     },
-    async () =>
-      dataset.glossary.map((item) => ({
-        ...item,
-        details: [...item.details],
-        relatedCategories: [...item.relatedCategories],
-      })),
+    async () => listGlossary(),
   );
 };

@@ -1,11 +1,16 @@
-﻿import alcoholData from "../src/content/alcohol-data.json";
+import alcoholData from "../src/content/alcohol-data.json";
+import { exportBackupDataset } from "../src/content/backup";
 import type { SeedDataset } from "../src/domain/contracts";
-import { prisma } from "../src/lib/prisma";
+import { getPrismaOrThrow } from "../src/lib/prisma";
+import { replaceGlossaryItems } from "../src/services/glossary";
 import { replaceGuideForCategory } from "../src/services/guides";
 
 const dataset = alcoholData as SeedDataset;
 
 async function main() {
+  const prisma = getPrismaOrThrow();
+
+  await prisma.glossaryItem.deleteMany();
   await prisma.guide.deleteMany();
   await prisma.category.deleteMany();
 
@@ -18,6 +23,10 @@ async function main() {
   for (const guide of dataset.guides) {
     await replaceGuideForCategory(guide.categorySlug, guide);
   }
+
+  await replaceGlossaryItems(dataset.glossary);
+
+  await exportBackupDataset();
 }
 
 main()

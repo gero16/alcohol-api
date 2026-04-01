@@ -1,7 +1,8 @@
 import type { FastifyPluginAsync } from "fastify";
 import { Prisma } from "../generated/prisma";
-import { toApiCategory } from "../domain/serializers";
-import { prisma } from "../lib/prisma";
+import { READ_ONLY_MODE_MESSAGE, isDatabaseUnavailableError } from "../lib/database";
+import { getPrismaOrThrow } from "../lib/prisma";
+import { getCategoryBySlug, listCategories, refreshBackupSnapshot } from "../services/content";
 
 const categoryBodySchema = {
   type: "object",
@@ -28,14 +29,7 @@ export const categoriesRoutes: FastifyPluginAsync = async (app) => {
         summary: "Listar categorías",
       },
     },
-    async () => {
-      const categories = await prisma.category.findMany({
-        include: { guide: true },
-        orderBy: { position: "asc" },
-      });
-
-      return categories.map(toApiCategory);
-    },
+    async () => listCategories(),
   );
 
   app.get(
@@ -55,16 +49,13 @@ export const categoriesRoutes: FastifyPluginAsync = async (app) => {
     },
     async (request, reply) => {
       const { slug } = request.params as { slug: string };
-      const category = await prisma.category.findUnique({
-        where: { slug },
-        include: { guide: true },
-      });
+      const category = await getCategoryBySlug(slug);
 
       if (!category) {
         return reply.code(404).send({ message: "Categoría no encontrada" });
       }
 
-      return toApiCategory(category);
+      return category;
     },
   );
 
@@ -81,18 +72,35 @@ export const categoriesRoutes: FastifyPluginAsync = async (app) => {
       const body = request.body as Prisma.CategoryCreateInput;
 
       try {
+        const prisma = getPrismaOrThrow();
         const category = await prisma.category.create({
           data: body,
           include: { guide: true },
         });
+        await refreshBackupSnapshot(app.log);
 
-        return reply.code(201).send(toApiCategory(category));
+        return reply.code(201).send({
+          id: category.id,
+          slug: category.slug,
+          position: category.position,
+          title: category.title,
+          summary: category.summary,
+          abv: category.abv,
+          origin: category.origin,
+          imageUrl: category.imageUrl,
+          imageAlt: category.imageAlt,
+          hasGuide: Boolean(category.guide),
+        });
       } catch (error) {
         if (
           error instanceof Prisma.PrismaClientKnownRequestError &&
           error.code === "P2002"
         ) {
           return reply.code(409).send({ message: "Ya existe una categoría con ese slug" });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
 
         throw error;
@@ -121,13 +129,26 @@ export const categoriesRoutes: FastifyPluginAsync = async (app) => {
       const body = request.body as Prisma.CategoryUpdateInput;
 
       try {
+        const prisma = getPrismaOrThrow();
         const category = await prisma.category.update({
           where: { slug },
           data: body,
           include: { guide: true },
         });
+        await refreshBackupSnapshot(app.log);
 
-        return toApiCategory(category);
+        return {
+          id: category.id,
+          slug: category.slug,
+          position: category.position,
+          title: category.title,
+          summary: category.summary,
+          abv: category.abv,
+          origin: category.origin,
+          imageUrl: category.imageUrl,
+          imageAlt: category.imageAlt,
+          hasGuide: Boolean(category.guide),
+        };
       } catch (error) {
         if (
           error instanceof Prisma.PrismaClientKnownRequestError &&
@@ -141,6 +162,10 @@ export const categoriesRoutes: FastifyPluginAsync = async (app) => {
           error.code === "P2002"
         ) {
           return reply.code(409).send({ message: "El slug indicado ya está en uso" });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
 
         throw error;
@@ -167,9 +192,11 @@ export const categoriesRoutes: FastifyPluginAsync = async (app) => {
       const { slug } = request.params as { slug: string };
 
       try {
+        const prisma = getPrismaOrThrow();
         await prisma.category.delete({
           where: { slug },
         });
+        await refreshBackupSnapshot(app.log);
 
         return reply.code(204).send();
       } catch (error) {
@@ -178,6 +205,10 @@ export const categoriesRoutes: FastifyPluginAsync = async (app) => {
           error.code === "P2025"
         ) {
           return reply.code(404).send({ message: "Categoría no encontrada" });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
 
         throw error;

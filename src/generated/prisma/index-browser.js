@@ -205,6 +205,32 @@ exports.Prisma.GuideTableRowScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.GlossaryItemScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  term: 'term',
+  shortDefinition: 'shortDefinition',
+  featured: 'featured',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.GlossaryDetailScalarFieldEnum = {
+  id: 'id',
+  glossaryItemId: 'glossaryItemId',
+  content: 'content',
+  position: 'position',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.GlossaryItemCategoryScalarFieldEnum = {
+  glossaryItemId: 'glossaryItemId',
+  categoryId: 'categoryId',
+  position: 'position',
+  createdAt: 'createdAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -238,7 +264,10 @@ exports.Prisma.ModelName = {
   GuideSection: 'GuideSection',
   GuideParagraph: 'GuideParagraph',
   GuideTable: 'GuideTable',
-  GuideTableRow: 'GuideTableRow'
+  GuideTableRow: 'GuideTableRow',
+  GlossaryItem: 'GlossaryItem',
+  GlossaryDetail: 'GlossaryDetail',
+  GlossaryItemCategory: 'GlossaryItemCategory'
 };
 
 /**

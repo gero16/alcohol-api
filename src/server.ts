@@ -12,7 +12,9 @@ async function start() {
     });
   } catch (error) {
     app.log.error(error);
-    await prisma.$disconnect();
+    if (prisma) {
+      await prisma.$disconnect();
+    }
     process.exit(1);
   }
 }

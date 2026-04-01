@@ -2,6 +2,7 @@ import Fastify from "fastify";
 import cors from "@fastify/cors";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
+import { adminMigrationRoutes } from "./routes/adminMigration";
 import { categoriesRoutes } from "./routes/categories";
 import { glossaryRoutes } from "./routes/glossary";
 import { guidesRoutes } from "./routes/guides";
@@ -66,6 +67,10 @@ export function buildApp() {
 
   app.register(subcategoriesRoutes, {
     prefix: "/subcategories",
+  });
+
+  app.register(adminMigrationRoutes, {
+    prefix: "/admin/migration",
   });
 
   return app;

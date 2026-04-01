@@ -1,7 +1,5 @@
-import { toApiGuideDetail, toApiSubcategoryDetail, type GuideDetailRecord } from "../domain/serializers";
-import type { ApiSubcategoryDetail } from "../domain/contracts";
-import { prisma } from "../lib/prisma";
-import { guideDetailInclude } from "../domain/serializers";
+import type { ApiGuideDetail, ApiSubcategoryDetail } from "../domain/contracts";
+import { listGuideDetails } from "./content";
 
 function isSpiritGuideTabSlug(slug: string): boolean {
   return slug.endsWith("-guia");
@@ -32,7 +30,7 @@ function isLiqueurSubcategoryTabSlug(slug: string): boolean {
 }
 
 function getSyntheticTabFromSection(
-  guide: GuideDetailRecord,
+  guide: ApiGuideDetail,
   sourceTabSlug: string,
   sectionSlug: string,
 ): ApiSubcategoryDetail | null {
@@ -43,26 +41,24 @@ function getSyntheticTabFromSection(
     return null;
   }
 
-  const apiGuide = toApiGuideDetail(guide);
-  const apiSourceTab = apiGuide.tabs.find((tab) => tab.slug === sourceTabSlug);
-
-  if (!apiSourceTab) {
-    return null;
-  }
-
-  return toApiSubcategoryDetail({
+  return {
     id: section.id,
     slug: section.slug,
     label: section.title.replace(/^\d+\.\s*/, ""),
     subtitle: section.subtitle,
     imageUrl: section.imageUrl,
     imageAlt: section.imageAlt,
-    previewText: section.paragraphs[0]?.content ?? "",
-    guide,
+    previewText: section.paragraphs[0] ?? "",
+    category: guide.category,
+    guide: {
+      id: guide.id,
+      title: guide.title,
+      type: guide.type,
+    },
     tab: {
-      ...apiSourceTab,
-      id: `${apiSourceTab.id}-${section.id}`,
-      slug: `${apiSourceTab.slug}-${section.slug}`,
+      ...sourceTab,
+      id: `${sourceTab.id}-${section.id}`,
+      slug: `${sourceTab.slug}-${section.slug}`,
       label: section.title.replace(/^\d+\.\s*/, ""),
       panelTitle: section.title.replace(/^\d+\.\s*/, ""),
       sections: [
@@ -73,37 +69,39 @@ function getSyntheticTabFromSection(
           subtitle: section.subtitle,
           imageUrl: section.imageUrl,
           imageAlt: section.imageAlt,
-          paragraphs: section.paragraphs.map((paragraph) => paragraph.content),
+          paragraphs: [...section.paragraphs],
         },
       ],
       tables: [],
     },
-  });
+  };
 }
 
-function getSubcategoryFromGuide(guide: GuideDetailRecord, slug: string): ApiSubcategoryDetail | null {
-  const apiGuide = toApiGuideDetail(guide);
-
+function getSubcategoryFromGuide(guide: ApiGuideDetail, slug: string): ApiSubcategoryDetail | null {
   if (guide.category.slug === "destilados") {
     const matchingTab = guide.tabs.find((tab) => toSpiritSubcategorySlug(tab.slug) === slug);
-    const apiTab = apiGuide.tabs.find((tab) => toSpiritSubcategorySlug(tab.slug) === slug);
     const previewSection = matchingTab?.sections[0];
 
-    if (!matchingTab || !apiTab || !isSpiritGuideTabSlug(matchingTab.slug)) {
+    if (!matchingTab || !isSpiritGuideTabSlug(matchingTab.slug)) {
       return null;
     }
 
-    return toApiSubcategoryDetail({
+    return {
       id: matchingTab.id,
       slug,
       label: toSpiritDisplayLabel(matchingTab.label),
       subtitle: previewSection?.subtitle,
       imageUrl: previewSection?.imageUrl,
       imageAlt: previewSection?.imageAlt,
-      previewText: previewSection?.paragraphs[0]?.content ?? matchingTab.noteContent ?? "",
-      guide,
-      tab: apiTab,
-    });
+      previewText: previewSection?.paragraphs[0] ?? matchingTab.noteContent ?? "",
+      category: guide.category,
+      guide: {
+        id: guide.id,
+        title: guide.title,
+        type: guide.type,
+      },
+      tab: matchingTab,
+    };
   }
 
   if (guide.category.slug === "aperitivos") {
@@ -121,24 +119,29 @@ function getSubcategoryFromGuide(guide: GuideDetailRecord, slug: string): ApiSub
   if (guide.category.slug === "vino") {
     const sourceTab = guide.tabs.find((tab) => isWineSubcategorySourceTabSlug(tab.slug));
     const sourceSection = sourceTab?.sections.find((section) => section.slug === slug);
-    const dedicatedApiTab = apiGuide.tabs.find((tab) => tab.slug === slug);
+      const dedicatedApiTab = guide.tabs.find((tab) => tab.slug === slug);
 
     if (!sourceSection) {
       return null;
     }
 
     if (dedicatedApiTab) {
-      return toApiSubcategoryDetail({
+      return {
         id: sourceSection.id,
         slug: sourceSection.slug,
         label: sourceSection.title.replace(/^\d+\.\s*/, ""),
         subtitle: sourceSection.subtitle,
         imageUrl: sourceSection.imageUrl,
         imageAlt: sourceSection.imageAlt,
-        previewText: sourceSection.paragraphs[0]?.content ?? "",
-        guide,
+        previewText: sourceSection.paragraphs[0] ?? "",
+        category: guide.category,
+        guide: {
+          id: guide.id,
+          title: guide.title,
+          type: guide.type,
+        },
         tab: dedicatedApiTab,
-      });
+      };
     }
 
     return getSyntheticTabFromSection(guide, "estilos", slug);
@@ -150,33 +153,35 @@ function getSubcategoryFromGuide(guide: GuideDetailRecord, slug: string): ApiSub
 
   if (guide.category.slug === "licores") {
     const matchingTab = guide.tabs.find((tab) => tab.slug === slug && isLiqueurSubcategoryTabSlug(tab.slug));
-    const apiTab = apiGuide.tabs.find((tab) => tab.slug === slug);
     const previewSection = matchingTab?.sections[0];
 
-    if (!matchingTab || !apiTab) {
+    if (!matchingTab) {
       return null;
     }
 
-    return toApiSubcategoryDetail({
+    return {
       id: matchingTab.id,
       slug: matchingTab.slug,
       label: matchingTab.label,
       subtitle: previewSection?.subtitle,
       imageUrl: previewSection?.imageUrl,
       imageAlt: previewSection?.imageAlt,
-      previewText: previewSection?.paragraphs[0]?.content ?? matchingTab.noteContent ?? "",
-      guide,
-      tab: apiTab,
-    });
+      previewText: previewSection?.paragraphs[0] ?? matchingTab.noteContent ?? "",
+      category: guide.category,
+      guide: {
+        id: guide.id,
+        title: guide.title,
+        type: guide.type,
+      },
+      tab: matchingTab,
+    };
   }
 
   return null;
 }
 
 export async function getSubcategoryBySlug(slug: string): Promise<ApiSubcategoryDetail | null> {
-  const guides = await prisma.guide.findMany({
-    include: guideDetailInclude,
-  });
+  const guides = await listGuideDetails();
 
   for (const guide of guides) {
     const subcategory = getSubcategoryFromGuide(guide, slug);

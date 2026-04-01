@@ -3507,7 +3507,12 @@
         "En vino fermenta el mosto de uva, en cerveza fermenta el mosto de cereales, y en sidra fermenta el jugo de manzana.",
         "En espumosos también puede haber una segunda fermentación, que es la que genera las burbujas."
       ],
-      "relatedCategories": ["vino", "cerveza", "sidra", "destilados"],
+      "relatedCategories": [
+        "vino",
+        "cerveza",
+        "sidra",
+        "destilados"
+      ],
       "featured": true
     },
     {
@@ -3519,7 +3524,12 @@
         "En cerveza, el mosto es el líquido dulce que se obtiene del grano y que luego fermentará con levaduras.",
         "Es una palabra clave porque muchas bebidas alcohólicas empiezan justamente como mosto."
       ],
-      "relatedCategories": ["vino", "cerveza", "sidra", "destilados"],
+      "relatedCategories": [
+        "vino",
+        "cerveza",
+        "sidra",
+        "destilados"
+      ],
       "featured": true
     },
     {
@@ -3531,7 +3541,12 @@
         "Además de producir alcohol, también influyen en aromas, textura y estilo final.",
         "Según la bebida, pueden ser seleccionadas por el productor o aparecer de forma más espontánea."
       ],
-      "relatedCategories": ["vino", "cerveza", "sidra", "destilados"],
+      "relatedCategories": [
+        "vino",
+        "cerveza",
+        "sidra",
+        "destilados"
+      ],
       "featured": true
     },
     {
@@ -3543,7 +3558,10 @@
         "No depende solo del alcohol: también influyen azúcares, textura, taninos o la forma de elaboración.",
         "Se usa mucho para comparar vinos y cervezas."
       ],
-      "relatedCategories": ["vino", "cerveza"],
+      "relatedCategories": [
+        "vino",
+        "cerveza"
+      ],
       "featured": true
     },
     {
@@ -3555,7 +3573,10 @@
         "Se sienten un poco como un té negro muy cargado: secan la boca y dan estructura.",
         "Por eso suelen mencionarse más en tintos que en blancos simples."
       ],
-      "relatedCategories": ["vino", "sidra"],
+      "relatedCategories": [
+        "vino",
+        "sidra"
+      ],
       "featured": true
     },
     {
@@ -3568,7 +3589,10 @@
         "Eso permite separar partes del proceso, como cabezas, corazón y colas. Luego ese vapor se enfría y vuelve a hacerse líquido. Ahí aparece el destilado.",
         "Whisky, ron, ginebra, vodka y tequila son ejemplos de bebidas que pasan por destilación."
       ],
-      "relatedCategories": ["destilados", "licores"],
+      "relatedCategories": [
+        "destilados",
+        "licores"
+      ],
       "featured": true
     },
     {
@@ -3580,7 +3604,9 @@
         "Luego ese vapor se condensa y vuelve a hacerse líquido.",
         "El tipo de alambique puede influir en el carácter final del destilado."
       ],
-      "relatedCategories": ["destilados"],
+      "relatedCategories": [
+        "destilados"
+      ],
       "featured": false
     },
     {
@@ -3592,7 +3618,9 @@
         "Las cabezas son lo primero que sale y suelen considerarse menos deseables. El corazón es la parte media y normalmente la más limpia y equilibrada. Las colas salen al final y suelen sentirse más pesadas o ásperas.",
         "Por eso separar bien estas partes es importante para definir la calidad y el estilo del destilado final."
       ],
-      "relatedCategories": ["destilados"],
+      "relatedCategories": [
+        "destilados"
+      ],
       "featured": false
     },
     {
@@ -3604,7 +3632,10 @@
         "Se usa mucho en vino y en varios destilados como whisky, ron o brandy.",
         "El tiempo en barrica cambia color, aroma y textura."
       ],
-      "relatedCategories": ["vino", "destilados"],
+      "relatedCategories": [
+        "vino",
+        "destilados"
+      ],
       "featured": false
     },
     {
@@ -3616,7 +3647,9 @@
         "Eso puede aportar notas de panadería, crema o mayor sensación de volumen.",
         "Es un término frecuente al hablar de Champagne, Cava y ciertos blancos con crianza."
       ],
-      "relatedCategories": ["vino"],
+      "relatedCategories": [
+        "vino"
+      ],
       "featured": false
     },
     {
@@ -3628,7 +3661,11 @@
         "En licores suele usarse para extraer sabor de frutas, hierbas, raíces o especias.",
         "Es una palabra útil porque explica de dónde salen muchos colores y aromas."
       ],
-      "relatedCategories": ["vino", "licores", "aperitivos"],
+      "relatedCategories": [
+        "vino",
+        "licores",
+        "aperitivos"
+      ],
       "featured": false
     },
     {
@@ -3640,7 +3677,10 @@
         "Cuanto más azúcar residual queda, más dulce puede sentirse la bebida.",
         "Se menciona mucho en vinos, espumosos y algunas sidras."
       ],
-      "relatedCategories": ["vino", "sidra"],
+      "relatedCategories": [
+        "vino",
+        "sidra"
+      ],
       "featured": false
     }
   ]

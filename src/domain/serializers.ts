@@ -2,6 +2,7 @@ import type { Prisma } from "../generated/prisma";
 import type {
   ApiCategory,
   ApiGuideDetail,
+  ApiGlossaryItem,
   ApiGuideSummary,
   ApiSubcategoryDetail,
   ApiGuideTable,
@@ -46,6 +47,22 @@ export type GuideSummaryRecord = Prisma.GuideGetPayload<{
     category: true;
     tabs: true;
   };
+}>;
+
+export const glossaryItemInclude = {
+  details: {
+    orderBy: { position: "asc" },
+  },
+  relatedCategories: {
+    orderBy: { position: "asc" },
+    include: {
+      category: true,
+    },
+  },
+} satisfies Prisma.GlossaryItemInclude;
+
+export type GlossaryItemRecord = Prisma.GlossaryItemGetPayload<{
+  include: typeof glossaryItemInclude;
 }>;
 
 export function toApiCategory(category: CategoryRecord): ApiCategory {
@@ -175,5 +192,16 @@ export function toApiSubcategoryDetail(input: {
       type: input.guide.type,
     },
     tab: input.tab,
+  };
+}
+
+export function toApiGlossaryItem(item: GlossaryItemRecord): ApiGlossaryItem {
+  return {
+    slug: item.slug,
+    term: item.term,
+    shortDefinition: item.shortDefinition,
+    details: item.details.map((detail) => detail.content),
+    relatedCategories: item.relatedCategories.map((link) => link.category.slug),
+    featured: item.featured || undefined,
   };
 }

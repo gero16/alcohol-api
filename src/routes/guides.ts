@@ -1,12 +1,15 @@
 import type { FastifyPluginAsync } from "fastify";
 import { Prisma } from "../generated/prisma";
 import type { GuideUpsertInput } from "../domain/contracts";
-import { toApiGuideDetail, toApiGuideSummary } from "../domain/serializers";
+import { READ_ONLY_MODE_MESSAGE, isDatabaseUnavailableError } from "../lib/database";
+import {
+  getGuideByCategorySlug as getGuideByCategorySlugWithFallback,
+  listGuides as listGuidesWithFallback,
+  refreshBackupSnapshot,
+} from "../services/content";
 import {
   createSectionForGuide,
   deleteSectionForGuide,
-  getGuideByCategorySlug,
-  listGuides,
   replaceGuideForCategory,
   updateSectionForGuide,
 } from "../services/guides";
@@ -157,10 +160,7 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
         summary: "Listar guías disponibles",
       },
     },
-    async () => {
-      const guides = await listGuides();
-      return guides.map(toApiGuideSummary);
-    },
+    async () => listGuidesWithFallback(),
   );
 
   app.get(
@@ -180,13 +180,13 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
     },
     async (request, reply) => {
       const { categorySlug } = request.params as { categorySlug: string };
-      const guide = await getGuideByCategorySlug(categorySlug);
+      const guide = await getGuideByCategorySlugWithFallback(categorySlug);
 
       if (!guide) {
         return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
       }
 
-      return toApiGuideDetail(guide);
+      return guide;
     },
   );
 
@@ -211,12 +211,23 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
       const body = request.body as GuideUpsertInput;
 
       try {
-        const guide = await replaceGuideForCategory(categorySlug, body);
-        return toApiGuideDetail(guide);
+        await replaceGuideForCategory(categorySlug, body);
+        await refreshBackupSnapshot(app.log);
+        const guide = await getGuideByCategorySlugWithFallback(categorySlug);
+
+        if (!guide) {
+          return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
+        }
+
+        return guide;
       } catch (error) {
         const handled = handleGuideError(error);
         if (handled) {
           return reply.code(handled.statusCode).send({ message: handled.message });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
 
         throw error;
@@ -255,17 +266,22 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
 
       try {
         await createSectionForGuide(categorySlug, body);
-        const guide = await getGuideByCategorySlug(categorySlug);
+        await refreshBackupSnapshot(app.log);
+        const guide = await getGuideByCategorySlugWithFallback(categorySlug);
 
         if (!guide) {
           return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
         }
 
-        return reply.code(201).send(toApiGuideDetail(guide));
+        return reply.code(201).send(guide);
       } catch (error) {
         const handled = handleGuideError(error);
         if (handled) {
           return reply.code(handled.statusCode).send({ message: handled.message });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
 
         throw error;
@@ -313,17 +329,22 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
           return reply.code(404).send({ message: "Sección no encontrada" });
         }
 
-        const guide = await getGuideByCategorySlug(categorySlug);
+        await refreshBackupSnapshot(app.log);
+        const guide = await getGuideByCategorySlugWithFallback(categorySlug);
 
         if (!guide) {
           return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
         }
 
-        return toApiGuideDetail(guide);
+        return guide;
       } catch (error) {
         const handled = handleGuideError(error);
         if (handled) {
           return reply.code(handled.statusCode).send({ message: handled.message });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
 
         throw error;
@@ -353,19 +374,33 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
         sectionId: string;
       };
 
-      const deleted = await deleteSectionForGuide(categorySlug, sectionId);
+      try {
+        const deleted = await deleteSectionForGuide(categorySlug, sectionId);
 
-      if (!deleted) {
-        return reply.code(404).send({ message: "Sección no encontrada" });
+        if (!deleted) {
+          return reply.code(404).send({ message: "Sección no encontrada" });
+        }
+
+        await refreshBackupSnapshot(app.log);
+        const guide = await getGuideByCategorySlugWithFallback(categorySlug);
+
+        if (!guide) {
+          return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
+        }
+
+        return guide;
+      } catch (error) {
+        const handled = handleGuideError(error);
+        if (handled) {
+          return reply.code(handled.statusCode).send({ message: handled.message });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
+        }
+
+        throw error;
       }
-
-      const guide = await getGuideByCategorySlug(categorySlug);
-
-      if (!guide) {
-        return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
-      }
-
-      return toApiGuideDetail(guide);
     },
   );
 };

@@ -48,6 +48,21 @@ export type GuideTable = $Result.DefaultSelection<Prisma.$GuideTablePayload>
  * 
  */
 export type GuideTableRow = $Result.DefaultSelection<Prisma.$GuideTableRowPayload>
+/**
+ * Model GlossaryItem
+ * 
+ */
+export type GlossaryItem = $Result.DefaultSelection<Prisma.$GlossaryItemPayload>
+/**
+ * Model GlossaryDetail
+ * 
+ */
+export type GlossaryDetail = $Result.DefaultSelection<Prisma.$GlossaryDetailPayload>
+/**
+ * Model GlossaryItemCategory
+ * 
+ */
+export type GlossaryItemCategory = $Result.DefaultSelection<Prisma.$GlossaryItemCategoryPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -239,6 +254,36 @@ export class PrismaClient<
     * ```
     */
   get guideTableRow(): Prisma.GuideTableRowDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.glossaryItem`: Exposes CRUD operations for the **GlossaryItem** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GlossaryItems
+    * const glossaryItems = await prisma.glossaryItem.findMany()
+    * ```
+    */
+  get glossaryItem(): Prisma.GlossaryItemDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.glossaryDetail`: Exposes CRUD operations for the **GlossaryDetail** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GlossaryDetails
+    * const glossaryDetails = await prisma.glossaryDetail.findMany()
+    * ```
+    */
+  get glossaryDetail(): Prisma.GlossaryDetailDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.glossaryItemCategory`: Exposes CRUD operations for the **GlossaryItemCategory** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GlossaryItemCategories
+    * const glossaryItemCategories = await prisma.glossaryItemCategory.findMany()
+    * ```
+    */
+  get glossaryItemCategory(): Prisma.GlossaryItemCategoryDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -679,7 +724,10 @@ export namespace Prisma {
     GuideSection: 'GuideSection',
     GuideParagraph: 'GuideParagraph',
     GuideTable: 'GuideTable',
-    GuideTableRow: 'GuideTableRow'
+    GuideTableRow: 'GuideTableRow',
+    GlossaryItem: 'GlossaryItem',
+    GlossaryDetail: 'GlossaryDetail',
+    GlossaryItemCategory: 'GlossaryItemCategory'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -695,7 +743,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "category" | "guide" | "guideTab" | "guideSection" | "guideParagraph" | "guideTable" | "guideTableRow"
+      modelProps: "category" | "guide" | "guideTab" | "guideSection" | "guideParagraph" | "guideTable" | "guideTableRow" | "glossaryItem" | "glossaryDetail" | "glossaryItemCategory"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1217,6 +1265,228 @@ export namespace Prisma {
           }
         }
       }
+      GlossaryItem: {
+        payload: Prisma.$GlossaryItemPayload<ExtArgs>
+        fields: Prisma.GlossaryItemFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GlossaryItemFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GlossaryItemFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>
+          }
+          findFirst: {
+            args: Prisma.GlossaryItemFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GlossaryItemFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>
+          }
+          findMany: {
+            args: Prisma.GlossaryItemFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>[]
+          }
+          create: {
+            args: Prisma.GlossaryItemCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>
+          }
+          createMany: {
+            args: Prisma.GlossaryItemCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.GlossaryItemCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>[]
+          }
+          delete: {
+            args: Prisma.GlossaryItemDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>
+          }
+          update: {
+            args: Prisma.GlossaryItemUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>
+          }
+          deleteMany: {
+            args: Prisma.GlossaryItemDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GlossaryItemUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.GlossaryItemUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>[]
+          }
+          upsert: {
+            args: Prisma.GlossaryItemUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemPayload>
+          }
+          aggregate: {
+            args: Prisma.GlossaryItemAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateGlossaryItem>
+          }
+          groupBy: {
+            args: Prisma.GlossaryItemGroupByArgs<ExtArgs>
+            result: $Utils.Optional<GlossaryItemGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GlossaryItemCountArgs<ExtArgs>
+            result: $Utils.Optional<GlossaryItemCountAggregateOutputType> | number
+          }
+        }
+      }
+      GlossaryDetail: {
+        payload: Prisma.$GlossaryDetailPayload<ExtArgs>
+        fields: Prisma.GlossaryDetailFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GlossaryDetailFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GlossaryDetailFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>
+          }
+          findFirst: {
+            args: Prisma.GlossaryDetailFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GlossaryDetailFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>
+          }
+          findMany: {
+            args: Prisma.GlossaryDetailFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>[]
+          }
+          create: {
+            args: Prisma.GlossaryDetailCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>
+          }
+          createMany: {
+            args: Prisma.GlossaryDetailCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.GlossaryDetailCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>[]
+          }
+          delete: {
+            args: Prisma.GlossaryDetailDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>
+          }
+          update: {
+            args: Prisma.GlossaryDetailUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>
+          }
+          deleteMany: {
+            args: Prisma.GlossaryDetailDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GlossaryDetailUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.GlossaryDetailUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>[]
+          }
+          upsert: {
+            args: Prisma.GlossaryDetailUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryDetailPayload>
+          }
+          aggregate: {
+            args: Prisma.GlossaryDetailAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateGlossaryDetail>
+          }
+          groupBy: {
+            args: Prisma.GlossaryDetailGroupByArgs<ExtArgs>
+            result: $Utils.Optional<GlossaryDetailGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GlossaryDetailCountArgs<ExtArgs>
+            result: $Utils.Optional<GlossaryDetailCountAggregateOutputType> | number
+          }
+        }
+      }
+      GlossaryItemCategory: {
+        payload: Prisma.$GlossaryItemCategoryPayload<ExtArgs>
+        fields: Prisma.GlossaryItemCategoryFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GlossaryItemCategoryFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GlossaryItemCategoryFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>
+          }
+          findFirst: {
+            args: Prisma.GlossaryItemCategoryFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GlossaryItemCategoryFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>
+          }
+          findMany: {
+            args: Prisma.GlossaryItemCategoryFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>[]
+          }
+          create: {
+            args: Prisma.GlossaryItemCategoryCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>
+          }
+          createMany: {
+            args: Prisma.GlossaryItemCategoryCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.GlossaryItemCategoryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>[]
+          }
+          delete: {
+            args: Prisma.GlossaryItemCategoryDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>
+          }
+          update: {
+            args: Prisma.GlossaryItemCategoryUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>
+          }
+          deleteMany: {
+            args: Prisma.GlossaryItemCategoryDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GlossaryItemCategoryUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.GlossaryItemCategoryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>[]
+          }
+          upsert: {
+            args: Prisma.GlossaryItemCategoryUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GlossaryItemCategoryPayload>
+          }
+          aggregate: {
+            args: Prisma.GlossaryItemCategoryAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateGlossaryItemCategory>
+          }
+          groupBy: {
+            args: Prisma.GlossaryItemCategoryGroupByArgs<ExtArgs>
+            result: $Utils.Optional<GlossaryItemCategoryGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GlossaryItemCategoryCountArgs<ExtArgs>
+            result: $Utils.Optional<GlossaryItemCategoryCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1332,6 +1602,9 @@ export namespace Prisma {
     guideParagraph?: GuideParagraphOmit
     guideTable?: GuideTableOmit
     guideTableRow?: GuideTableRowOmit
+    glossaryItem?: GlossaryItemOmit
+    glossaryDetail?: GlossaryDetailOmit
+    glossaryItemCategory?: GlossaryItemCategoryOmit
   }
 
   /* Types for Logging */
@@ -1405,6 +1678,37 @@ export namespace Prisma {
   /**
    * Count Types
    */
+
+
+  /**
+   * Count Type CategoryCountOutputType
+   */
+
+  export type CategoryCountOutputType = {
+    glossaryLinks: number
+  }
+
+  export type CategoryCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    glossaryLinks?: boolean | CategoryCountOutputTypeCountGlossaryLinksArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CategoryCountOutputType without action
+   */
+  export type CategoryCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CategoryCountOutputType
+     */
+    select?: CategoryCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CategoryCountOutputType without action
+   */
+  export type CategoryCountOutputTypeCountGlossaryLinksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlossaryItemCategoryWhereInput
+  }
 
 
   /**
@@ -1537,6 +1841,46 @@ export namespace Prisma {
    */
   export type GuideTableCountOutputTypeCountRowsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: GuideTableRowWhereInput
+  }
+
+
+  /**
+   * Count Type GlossaryItemCountOutputType
+   */
+
+  export type GlossaryItemCountOutputType = {
+    details: number
+    relatedCategories: number
+  }
+
+  export type GlossaryItemCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    details?: boolean | GlossaryItemCountOutputTypeCountDetailsArgs
+    relatedCategories?: boolean | GlossaryItemCountOutputTypeCountRelatedCategoriesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * GlossaryItemCountOutputType without action
+   */
+  export type GlossaryItemCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCountOutputType
+     */
+    select?: GlossaryItemCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * GlossaryItemCountOutputType without action
+   */
+  export type GlossaryItemCountOutputTypeCountDetailsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlossaryDetailWhereInput
+  }
+
+  /**
+   * GlossaryItemCountOutputType without action
+   */
+  export type GlossaryItemCountOutputTypeCountRelatedCategoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlossaryItemCategoryWhereInput
   }
 
 
@@ -1791,6 +2135,8 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     guide?: boolean | Category$guideArgs<ExtArgs>
+    glossaryLinks?: boolean | Category$glossaryLinksArgs<ExtArgs>
+    _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1838,6 +2184,8 @@ export namespace Prisma {
   export type CategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "position" | "title" | "summary" | "abv" | "origin" | "imageUrl" | "imageAlt" | "createdAt" | "updatedAt", ExtArgs["result"]["category"]>
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     guide?: boolean | Category$guideArgs<ExtArgs>
+    glossaryLinks?: boolean | Category$glossaryLinksArgs<ExtArgs>
+    _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CategoryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
   export type CategoryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1846,6 +2194,7 @@ export namespace Prisma {
     name: "Category"
     objects: {
       guide: Prisma.$GuidePayload<ExtArgs> | null
+      glossaryLinks: Prisma.$GlossaryItemCategoryPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2254,6 +2603,7 @@ export namespace Prisma {
   export interface Prisma__CategoryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     guide<T extends Category$guideArgs<ExtArgs> = {}>(args?: Subset<T, Category$guideArgs<ExtArgs>>): Prisma__GuideClient<$Result.GetResult<Prisma.$GuidePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    glossaryLinks<T extends Category$glossaryLinksArgs<ExtArgs> = {}>(args?: Subset<T, Category$glossaryLinksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2703,6 +3053,30 @@ export namespace Prisma {
      */
     include?: GuideInclude<ExtArgs> | null
     where?: GuideWhereInput
+  }
+
+  /**
+   * Category.glossaryLinks
+   */
+  export type Category$glossaryLinksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    where?: GlossaryItemCategoryWhereInput
+    orderBy?: GlossaryItemCategoryOrderByWithRelationInput | GlossaryItemCategoryOrderByWithRelationInput[]
+    cursor?: GlossaryItemCategoryWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: GlossaryItemCategoryScalarFieldEnum | GlossaryItemCategoryScalarFieldEnum[]
   }
 
   /**
@@ -9716,6 +10090,3337 @@ export namespace Prisma {
 
 
   /**
+   * Model GlossaryItem
+   */
+
+  export type AggregateGlossaryItem = {
+    _count: GlossaryItemCountAggregateOutputType | null
+    _min: GlossaryItemMinAggregateOutputType | null
+    _max: GlossaryItemMaxAggregateOutputType | null
+  }
+
+  export type GlossaryItemMinAggregateOutputType = {
+    id: string | null
+    slug: string | null
+    term: string | null
+    shortDefinition: string | null
+    featured: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type GlossaryItemMaxAggregateOutputType = {
+    id: string | null
+    slug: string | null
+    term: string | null
+    shortDefinition: string | null
+    featured: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type GlossaryItemCountAggregateOutputType = {
+    id: number
+    slug: number
+    term: number
+    shortDefinition: number
+    featured: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type GlossaryItemMinAggregateInputType = {
+    id?: true
+    slug?: true
+    term?: true
+    shortDefinition?: true
+    featured?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type GlossaryItemMaxAggregateInputType = {
+    id?: true
+    slug?: true
+    term?: true
+    shortDefinition?: true
+    featured?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type GlossaryItemCountAggregateInputType = {
+    id?: true
+    slug?: true
+    term?: true
+    shortDefinition?: true
+    featured?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type GlossaryItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlossaryItem to aggregate.
+     */
+    where?: GlossaryItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItems to fetch.
+     */
+    orderBy?: GlossaryItemOrderByWithRelationInput | GlossaryItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GlossaryItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GlossaryItems
+    **/
+    _count?: true | GlossaryItemCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GlossaryItemMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GlossaryItemMaxAggregateInputType
+  }
+
+  export type GetGlossaryItemAggregateType<T extends GlossaryItemAggregateArgs> = {
+        [P in keyof T & keyof AggregateGlossaryItem]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGlossaryItem[P]>
+      : GetScalarType<T[P], AggregateGlossaryItem[P]>
+  }
+
+
+
+
+  export type GlossaryItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlossaryItemWhereInput
+    orderBy?: GlossaryItemOrderByWithAggregationInput | GlossaryItemOrderByWithAggregationInput[]
+    by: GlossaryItemScalarFieldEnum[] | GlossaryItemScalarFieldEnum
+    having?: GlossaryItemScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GlossaryItemCountAggregateInputType | true
+    _min?: GlossaryItemMinAggregateInputType
+    _max?: GlossaryItemMaxAggregateInputType
+  }
+
+  export type GlossaryItemGroupByOutputType = {
+    id: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured: boolean
+    createdAt: Date
+    updatedAt: Date
+    _count: GlossaryItemCountAggregateOutputType | null
+    _min: GlossaryItemMinAggregateOutputType | null
+    _max: GlossaryItemMaxAggregateOutputType | null
+  }
+
+  type GetGlossaryItemGroupByPayload<T extends GlossaryItemGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GlossaryItemGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GlossaryItemGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GlossaryItemGroupByOutputType[P]>
+            : GetScalarType<T[P], GlossaryItemGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GlossaryItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    slug?: boolean
+    term?: boolean
+    shortDefinition?: boolean
+    featured?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    details?: boolean | GlossaryItem$detailsArgs<ExtArgs>
+    relatedCategories?: boolean | GlossaryItem$relatedCategoriesArgs<ExtArgs>
+    _count?: boolean | GlossaryItemCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["glossaryItem"]>
+
+  export type GlossaryItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    slug?: boolean
+    term?: boolean
+    shortDefinition?: boolean
+    featured?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["glossaryItem"]>
+
+  export type GlossaryItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    slug?: boolean
+    term?: boolean
+    shortDefinition?: boolean
+    featured?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["glossaryItem"]>
+
+  export type GlossaryItemSelectScalar = {
+    id?: boolean
+    slug?: boolean
+    term?: boolean
+    shortDefinition?: boolean
+    featured?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type GlossaryItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "term" | "shortDefinition" | "featured" | "createdAt" | "updatedAt", ExtArgs["result"]["glossaryItem"]>
+  export type GlossaryItemInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    details?: boolean | GlossaryItem$detailsArgs<ExtArgs>
+    relatedCategories?: boolean | GlossaryItem$relatedCategoriesArgs<ExtArgs>
+    _count?: boolean | GlossaryItemCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type GlossaryItemIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type GlossaryItemIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $GlossaryItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GlossaryItem"
+    objects: {
+      details: Prisma.$GlossaryDetailPayload<ExtArgs>[]
+      relatedCategories: Prisma.$GlossaryItemCategoryPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      slug: string
+      term: string
+      shortDefinition: string
+      featured: boolean
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["glossaryItem"]>
+    composites: {}
+  }
+
+  type GlossaryItemGetPayload<S extends boolean | null | undefined | GlossaryItemDefaultArgs> = $Result.GetResult<Prisma.$GlossaryItemPayload, S>
+
+  type GlossaryItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<GlossaryItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: GlossaryItemCountAggregateInputType | true
+    }
+
+  export interface GlossaryItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GlossaryItem'], meta: { name: 'GlossaryItem' } }
+    /**
+     * Find zero or one GlossaryItem that matches the filter.
+     * @param {GlossaryItemFindUniqueArgs} args - Arguments to find a GlossaryItem
+     * @example
+     * // Get one GlossaryItem
+     * const glossaryItem = await prisma.glossaryItem.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends GlossaryItemFindUniqueArgs>(args: SelectSubset<T, GlossaryItemFindUniqueArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one GlossaryItem that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {GlossaryItemFindUniqueOrThrowArgs} args - Arguments to find a GlossaryItem
+     * @example
+     * // Get one GlossaryItem
+     * const glossaryItem = await prisma.glossaryItem.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends GlossaryItemFindUniqueOrThrowArgs>(args: SelectSubset<T, GlossaryItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlossaryItem that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemFindFirstArgs} args - Arguments to find a GlossaryItem
+     * @example
+     * // Get one GlossaryItem
+     * const glossaryItem = await prisma.glossaryItem.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends GlossaryItemFindFirstArgs>(args?: SelectSubset<T, GlossaryItemFindFirstArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlossaryItem that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemFindFirstOrThrowArgs} args - Arguments to find a GlossaryItem
+     * @example
+     * // Get one GlossaryItem
+     * const glossaryItem = await prisma.glossaryItem.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends GlossaryItemFindFirstOrThrowArgs>(args?: SelectSubset<T, GlossaryItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more GlossaryItems that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GlossaryItems
+     * const glossaryItems = await prisma.glossaryItem.findMany()
+     * 
+     * // Get first 10 GlossaryItems
+     * const glossaryItems = await prisma.glossaryItem.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const glossaryItemWithIdOnly = await prisma.glossaryItem.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends GlossaryItemFindManyArgs>(args?: SelectSubset<T, GlossaryItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a GlossaryItem.
+     * @param {GlossaryItemCreateArgs} args - Arguments to create a GlossaryItem.
+     * @example
+     * // Create one GlossaryItem
+     * const GlossaryItem = await prisma.glossaryItem.create({
+     *   data: {
+     *     // ... data to create a GlossaryItem
+     *   }
+     * })
+     * 
+     */
+    create<T extends GlossaryItemCreateArgs>(args: SelectSubset<T, GlossaryItemCreateArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many GlossaryItems.
+     * @param {GlossaryItemCreateManyArgs} args - Arguments to create many GlossaryItems.
+     * @example
+     * // Create many GlossaryItems
+     * const glossaryItem = await prisma.glossaryItem.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends GlossaryItemCreateManyArgs>(args?: SelectSubset<T, GlossaryItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many GlossaryItems and returns the data saved in the database.
+     * @param {GlossaryItemCreateManyAndReturnArgs} args - Arguments to create many GlossaryItems.
+     * @example
+     * // Create many GlossaryItems
+     * const glossaryItem = await prisma.glossaryItem.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many GlossaryItems and only return the `id`
+     * const glossaryItemWithIdOnly = await prisma.glossaryItem.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends GlossaryItemCreateManyAndReturnArgs>(args?: SelectSubset<T, GlossaryItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a GlossaryItem.
+     * @param {GlossaryItemDeleteArgs} args - Arguments to delete one GlossaryItem.
+     * @example
+     * // Delete one GlossaryItem
+     * const GlossaryItem = await prisma.glossaryItem.delete({
+     *   where: {
+     *     // ... filter to delete one GlossaryItem
+     *   }
+     * })
+     * 
+     */
+    delete<T extends GlossaryItemDeleteArgs>(args: SelectSubset<T, GlossaryItemDeleteArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one GlossaryItem.
+     * @param {GlossaryItemUpdateArgs} args - Arguments to update one GlossaryItem.
+     * @example
+     * // Update one GlossaryItem
+     * const glossaryItem = await prisma.glossaryItem.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends GlossaryItemUpdateArgs>(args: SelectSubset<T, GlossaryItemUpdateArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more GlossaryItems.
+     * @param {GlossaryItemDeleteManyArgs} args - Arguments to filter GlossaryItems to delete.
+     * @example
+     * // Delete a few GlossaryItems
+     * const { count } = await prisma.glossaryItem.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends GlossaryItemDeleteManyArgs>(args?: SelectSubset<T, GlossaryItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlossaryItems.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GlossaryItems
+     * const glossaryItem = await prisma.glossaryItem.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends GlossaryItemUpdateManyArgs>(args: SelectSubset<T, GlossaryItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlossaryItems and returns the data updated in the database.
+     * @param {GlossaryItemUpdateManyAndReturnArgs} args - Arguments to update many GlossaryItems.
+     * @example
+     * // Update many GlossaryItems
+     * const glossaryItem = await prisma.glossaryItem.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more GlossaryItems and only return the `id`
+     * const glossaryItemWithIdOnly = await prisma.glossaryItem.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends GlossaryItemUpdateManyAndReturnArgs>(args: SelectSubset<T, GlossaryItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one GlossaryItem.
+     * @param {GlossaryItemUpsertArgs} args - Arguments to update or create a GlossaryItem.
+     * @example
+     * // Update or create a GlossaryItem
+     * const glossaryItem = await prisma.glossaryItem.upsert({
+     *   create: {
+     *     // ... data to create a GlossaryItem
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GlossaryItem we want to update
+     *   }
+     * })
+     */
+    upsert<T extends GlossaryItemUpsertArgs>(args: SelectSubset<T, GlossaryItemUpsertArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of GlossaryItems.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCountArgs} args - Arguments to filter GlossaryItems to count.
+     * @example
+     * // Count the number of GlossaryItems
+     * const count = await prisma.glossaryItem.count({
+     *   where: {
+     *     // ... the filter for the GlossaryItems we want to count
+     *   }
+     * })
+    **/
+    count<T extends GlossaryItemCountArgs>(
+      args?: Subset<T, GlossaryItemCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GlossaryItemCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GlossaryItem.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GlossaryItemAggregateArgs>(args: Subset<T, GlossaryItemAggregateArgs>): Prisma.PrismaPromise<GetGlossaryItemAggregateType<T>>
+
+    /**
+     * Group by GlossaryItem.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GlossaryItemGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GlossaryItemGroupByArgs['orderBy'] }
+        : { orderBy?: GlossaryItemGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GlossaryItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGlossaryItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GlossaryItem model
+   */
+  readonly fields: GlossaryItemFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GlossaryItem.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GlossaryItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    details<T extends GlossaryItem$detailsArgs<ExtArgs> = {}>(args?: Subset<T, GlossaryItem$detailsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    relatedCategories<T extends GlossaryItem$relatedCategoriesArgs<ExtArgs> = {}>(args?: Subset<T, GlossaryItem$relatedCategoriesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the GlossaryItem model
+   */
+  interface GlossaryItemFieldRefs {
+    readonly id: FieldRef<"GlossaryItem", 'String'>
+    readonly slug: FieldRef<"GlossaryItem", 'String'>
+    readonly term: FieldRef<"GlossaryItem", 'String'>
+    readonly shortDefinition: FieldRef<"GlossaryItem", 'String'>
+    readonly featured: FieldRef<"GlossaryItem", 'Boolean'>
+    readonly createdAt: FieldRef<"GlossaryItem", 'DateTime'>
+    readonly updatedAt: FieldRef<"GlossaryItem", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * GlossaryItem findUnique
+   */
+  export type GlossaryItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItem to fetch.
+     */
+    where: GlossaryItemWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItem findUniqueOrThrow
+   */
+  export type GlossaryItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItem to fetch.
+     */
+    where: GlossaryItemWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItem findFirst
+   */
+  export type GlossaryItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItem to fetch.
+     */
+    where?: GlossaryItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItems to fetch.
+     */
+    orderBy?: GlossaryItemOrderByWithRelationInput | GlossaryItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlossaryItems.
+     */
+    cursor?: GlossaryItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryItems.
+     */
+    distinct?: GlossaryItemScalarFieldEnum | GlossaryItemScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItem findFirstOrThrow
+   */
+  export type GlossaryItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItem to fetch.
+     */
+    where?: GlossaryItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItems to fetch.
+     */
+    orderBy?: GlossaryItemOrderByWithRelationInput | GlossaryItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlossaryItems.
+     */
+    cursor?: GlossaryItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryItems.
+     */
+    distinct?: GlossaryItemScalarFieldEnum | GlossaryItemScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItem findMany
+   */
+  export type GlossaryItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItems to fetch.
+     */
+    where?: GlossaryItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItems to fetch.
+     */
+    orderBy?: GlossaryItemOrderByWithRelationInput | GlossaryItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GlossaryItems.
+     */
+    cursor?: GlossaryItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryItems.
+     */
+    distinct?: GlossaryItemScalarFieldEnum | GlossaryItemScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItem create
+   */
+  export type GlossaryItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * The data needed to create a GlossaryItem.
+     */
+    data: XOR<GlossaryItemCreateInput, GlossaryItemUncheckedCreateInput>
+  }
+
+  /**
+   * GlossaryItem createMany
+   */
+  export type GlossaryItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GlossaryItems.
+     */
+    data: GlossaryItemCreateManyInput | GlossaryItemCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GlossaryItem createManyAndReturn
+   */
+  export type GlossaryItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * The data used to create many GlossaryItems.
+     */
+    data: GlossaryItemCreateManyInput | GlossaryItemCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GlossaryItem update
+   */
+  export type GlossaryItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * The data needed to update a GlossaryItem.
+     */
+    data: XOR<GlossaryItemUpdateInput, GlossaryItemUncheckedUpdateInput>
+    /**
+     * Choose, which GlossaryItem to update.
+     */
+    where: GlossaryItemWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItem updateMany
+   */
+  export type GlossaryItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GlossaryItems.
+     */
+    data: XOR<GlossaryItemUpdateManyMutationInput, GlossaryItemUncheckedUpdateManyInput>
+    /**
+     * Filter which GlossaryItems to update
+     */
+    where?: GlossaryItemWhereInput
+    /**
+     * Limit how many GlossaryItems to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlossaryItem updateManyAndReturn
+   */
+  export type GlossaryItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * The data used to update GlossaryItems.
+     */
+    data: XOR<GlossaryItemUpdateManyMutationInput, GlossaryItemUncheckedUpdateManyInput>
+    /**
+     * Filter which GlossaryItems to update
+     */
+    where?: GlossaryItemWhereInput
+    /**
+     * Limit how many GlossaryItems to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlossaryItem upsert
+   */
+  export type GlossaryItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * The filter to search for the GlossaryItem to update in case it exists.
+     */
+    where: GlossaryItemWhereUniqueInput
+    /**
+     * In case the GlossaryItem found by the `where` argument doesn't exist, create a new GlossaryItem with this data.
+     */
+    create: XOR<GlossaryItemCreateInput, GlossaryItemUncheckedCreateInput>
+    /**
+     * In case the GlossaryItem was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GlossaryItemUpdateInput, GlossaryItemUncheckedUpdateInput>
+  }
+
+  /**
+   * GlossaryItem delete
+   */
+  export type GlossaryItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+    /**
+     * Filter which GlossaryItem to delete.
+     */
+    where: GlossaryItemWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItem deleteMany
+   */
+  export type GlossaryItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlossaryItems to delete
+     */
+    where?: GlossaryItemWhereInput
+    /**
+     * Limit how many GlossaryItems to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlossaryItem.details
+   */
+  export type GlossaryItem$detailsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    where?: GlossaryDetailWhereInput
+    orderBy?: GlossaryDetailOrderByWithRelationInput | GlossaryDetailOrderByWithRelationInput[]
+    cursor?: GlossaryDetailWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: GlossaryDetailScalarFieldEnum | GlossaryDetailScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItem.relatedCategories
+   */
+  export type GlossaryItem$relatedCategoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    where?: GlossaryItemCategoryWhereInput
+    orderBy?: GlossaryItemCategoryOrderByWithRelationInput | GlossaryItemCategoryOrderByWithRelationInput[]
+    cursor?: GlossaryItemCategoryWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: GlossaryItemCategoryScalarFieldEnum | GlossaryItemCategoryScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItem without action
+   */
+  export type GlossaryItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItem
+     */
+    select?: GlossaryItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItem
+     */
+    omit?: GlossaryItemOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model GlossaryDetail
+   */
+
+  export type AggregateGlossaryDetail = {
+    _count: GlossaryDetailCountAggregateOutputType | null
+    _avg: GlossaryDetailAvgAggregateOutputType | null
+    _sum: GlossaryDetailSumAggregateOutputType | null
+    _min: GlossaryDetailMinAggregateOutputType | null
+    _max: GlossaryDetailMaxAggregateOutputType | null
+  }
+
+  export type GlossaryDetailAvgAggregateOutputType = {
+    position: number | null
+  }
+
+  export type GlossaryDetailSumAggregateOutputType = {
+    position: number | null
+  }
+
+  export type GlossaryDetailMinAggregateOutputType = {
+    id: string | null
+    glossaryItemId: string | null
+    content: string | null
+    position: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type GlossaryDetailMaxAggregateOutputType = {
+    id: string | null
+    glossaryItemId: string | null
+    content: string | null
+    position: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type GlossaryDetailCountAggregateOutputType = {
+    id: number
+    glossaryItemId: number
+    content: number
+    position: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type GlossaryDetailAvgAggregateInputType = {
+    position?: true
+  }
+
+  export type GlossaryDetailSumAggregateInputType = {
+    position?: true
+  }
+
+  export type GlossaryDetailMinAggregateInputType = {
+    id?: true
+    glossaryItemId?: true
+    content?: true
+    position?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type GlossaryDetailMaxAggregateInputType = {
+    id?: true
+    glossaryItemId?: true
+    content?: true
+    position?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type GlossaryDetailCountAggregateInputType = {
+    id?: true
+    glossaryItemId?: true
+    content?: true
+    position?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type GlossaryDetailAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlossaryDetail to aggregate.
+     */
+    where?: GlossaryDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryDetails to fetch.
+     */
+    orderBy?: GlossaryDetailOrderByWithRelationInput | GlossaryDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GlossaryDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryDetails.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GlossaryDetails
+    **/
+    _count?: true | GlossaryDetailCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GlossaryDetailAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GlossaryDetailSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GlossaryDetailMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GlossaryDetailMaxAggregateInputType
+  }
+
+  export type GetGlossaryDetailAggregateType<T extends GlossaryDetailAggregateArgs> = {
+        [P in keyof T & keyof AggregateGlossaryDetail]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGlossaryDetail[P]>
+      : GetScalarType<T[P], AggregateGlossaryDetail[P]>
+  }
+
+
+
+
+  export type GlossaryDetailGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlossaryDetailWhereInput
+    orderBy?: GlossaryDetailOrderByWithAggregationInput | GlossaryDetailOrderByWithAggregationInput[]
+    by: GlossaryDetailScalarFieldEnum[] | GlossaryDetailScalarFieldEnum
+    having?: GlossaryDetailScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GlossaryDetailCountAggregateInputType | true
+    _avg?: GlossaryDetailAvgAggregateInputType
+    _sum?: GlossaryDetailSumAggregateInputType
+    _min?: GlossaryDetailMinAggregateInputType
+    _max?: GlossaryDetailMaxAggregateInputType
+  }
+
+  export type GlossaryDetailGroupByOutputType = {
+    id: string
+    glossaryItemId: string
+    content: string
+    position: number
+    createdAt: Date
+    updatedAt: Date
+    _count: GlossaryDetailCountAggregateOutputType | null
+    _avg: GlossaryDetailAvgAggregateOutputType | null
+    _sum: GlossaryDetailSumAggregateOutputType | null
+    _min: GlossaryDetailMinAggregateOutputType | null
+    _max: GlossaryDetailMaxAggregateOutputType | null
+  }
+
+  type GetGlossaryDetailGroupByPayload<T extends GlossaryDetailGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GlossaryDetailGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GlossaryDetailGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GlossaryDetailGroupByOutputType[P]>
+            : GetScalarType<T[P], GlossaryDetailGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GlossaryDetailSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    glossaryItemId?: boolean
+    content?: boolean
+    position?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["glossaryDetail"]>
+
+  export type GlossaryDetailSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    glossaryItemId?: boolean
+    content?: boolean
+    position?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["glossaryDetail"]>
+
+  export type GlossaryDetailSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    glossaryItemId?: boolean
+    content?: boolean
+    position?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["glossaryDetail"]>
+
+  export type GlossaryDetailSelectScalar = {
+    id?: boolean
+    glossaryItemId?: boolean
+    content?: boolean
+    position?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type GlossaryDetailOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "glossaryItemId" | "content" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["glossaryDetail"]>
+  export type GlossaryDetailInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+  }
+  export type GlossaryDetailIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+  }
+  export type GlossaryDetailIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+  }
+
+  export type $GlossaryDetailPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GlossaryDetail"
+    objects: {
+      glossaryItem: Prisma.$GlossaryItemPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      glossaryItemId: string
+      content: string
+      position: number
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["glossaryDetail"]>
+    composites: {}
+  }
+
+  type GlossaryDetailGetPayload<S extends boolean | null | undefined | GlossaryDetailDefaultArgs> = $Result.GetResult<Prisma.$GlossaryDetailPayload, S>
+
+  type GlossaryDetailCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<GlossaryDetailFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: GlossaryDetailCountAggregateInputType | true
+    }
+
+  export interface GlossaryDetailDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GlossaryDetail'], meta: { name: 'GlossaryDetail' } }
+    /**
+     * Find zero or one GlossaryDetail that matches the filter.
+     * @param {GlossaryDetailFindUniqueArgs} args - Arguments to find a GlossaryDetail
+     * @example
+     * // Get one GlossaryDetail
+     * const glossaryDetail = await prisma.glossaryDetail.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends GlossaryDetailFindUniqueArgs>(args: SelectSubset<T, GlossaryDetailFindUniqueArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one GlossaryDetail that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {GlossaryDetailFindUniqueOrThrowArgs} args - Arguments to find a GlossaryDetail
+     * @example
+     * // Get one GlossaryDetail
+     * const glossaryDetail = await prisma.glossaryDetail.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends GlossaryDetailFindUniqueOrThrowArgs>(args: SelectSubset<T, GlossaryDetailFindUniqueOrThrowArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlossaryDetail that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryDetailFindFirstArgs} args - Arguments to find a GlossaryDetail
+     * @example
+     * // Get one GlossaryDetail
+     * const glossaryDetail = await prisma.glossaryDetail.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends GlossaryDetailFindFirstArgs>(args?: SelectSubset<T, GlossaryDetailFindFirstArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlossaryDetail that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryDetailFindFirstOrThrowArgs} args - Arguments to find a GlossaryDetail
+     * @example
+     * // Get one GlossaryDetail
+     * const glossaryDetail = await prisma.glossaryDetail.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends GlossaryDetailFindFirstOrThrowArgs>(args?: SelectSubset<T, GlossaryDetailFindFirstOrThrowArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more GlossaryDetails that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryDetailFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GlossaryDetails
+     * const glossaryDetails = await prisma.glossaryDetail.findMany()
+     * 
+     * // Get first 10 GlossaryDetails
+     * const glossaryDetails = await prisma.glossaryDetail.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const glossaryDetailWithIdOnly = await prisma.glossaryDetail.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends GlossaryDetailFindManyArgs>(args?: SelectSubset<T, GlossaryDetailFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a GlossaryDetail.
+     * @param {GlossaryDetailCreateArgs} args - Arguments to create a GlossaryDetail.
+     * @example
+     * // Create one GlossaryDetail
+     * const GlossaryDetail = await prisma.glossaryDetail.create({
+     *   data: {
+     *     // ... data to create a GlossaryDetail
+     *   }
+     * })
+     * 
+     */
+    create<T extends GlossaryDetailCreateArgs>(args: SelectSubset<T, GlossaryDetailCreateArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many GlossaryDetails.
+     * @param {GlossaryDetailCreateManyArgs} args - Arguments to create many GlossaryDetails.
+     * @example
+     * // Create many GlossaryDetails
+     * const glossaryDetail = await prisma.glossaryDetail.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends GlossaryDetailCreateManyArgs>(args?: SelectSubset<T, GlossaryDetailCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many GlossaryDetails and returns the data saved in the database.
+     * @param {GlossaryDetailCreateManyAndReturnArgs} args - Arguments to create many GlossaryDetails.
+     * @example
+     * // Create many GlossaryDetails
+     * const glossaryDetail = await prisma.glossaryDetail.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many GlossaryDetails and only return the `id`
+     * const glossaryDetailWithIdOnly = await prisma.glossaryDetail.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends GlossaryDetailCreateManyAndReturnArgs>(args?: SelectSubset<T, GlossaryDetailCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a GlossaryDetail.
+     * @param {GlossaryDetailDeleteArgs} args - Arguments to delete one GlossaryDetail.
+     * @example
+     * // Delete one GlossaryDetail
+     * const GlossaryDetail = await prisma.glossaryDetail.delete({
+     *   where: {
+     *     // ... filter to delete one GlossaryDetail
+     *   }
+     * })
+     * 
+     */
+    delete<T extends GlossaryDetailDeleteArgs>(args: SelectSubset<T, GlossaryDetailDeleteArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one GlossaryDetail.
+     * @param {GlossaryDetailUpdateArgs} args - Arguments to update one GlossaryDetail.
+     * @example
+     * // Update one GlossaryDetail
+     * const glossaryDetail = await prisma.glossaryDetail.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends GlossaryDetailUpdateArgs>(args: SelectSubset<T, GlossaryDetailUpdateArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more GlossaryDetails.
+     * @param {GlossaryDetailDeleteManyArgs} args - Arguments to filter GlossaryDetails to delete.
+     * @example
+     * // Delete a few GlossaryDetails
+     * const { count } = await prisma.glossaryDetail.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends GlossaryDetailDeleteManyArgs>(args?: SelectSubset<T, GlossaryDetailDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlossaryDetails.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryDetailUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GlossaryDetails
+     * const glossaryDetail = await prisma.glossaryDetail.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends GlossaryDetailUpdateManyArgs>(args: SelectSubset<T, GlossaryDetailUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlossaryDetails and returns the data updated in the database.
+     * @param {GlossaryDetailUpdateManyAndReturnArgs} args - Arguments to update many GlossaryDetails.
+     * @example
+     * // Update many GlossaryDetails
+     * const glossaryDetail = await prisma.glossaryDetail.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more GlossaryDetails and only return the `id`
+     * const glossaryDetailWithIdOnly = await prisma.glossaryDetail.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends GlossaryDetailUpdateManyAndReturnArgs>(args: SelectSubset<T, GlossaryDetailUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one GlossaryDetail.
+     * @param {GlossaryDetailUpsertArgs} args - Arguments to update or create a GlossaryDetail.
+     * @example
+     * // Update or create a GlossaryDetail
+     * const glossaryDetail = await prisma.glossaryDetail.upsert({
+     *   create: {
+     *     // ... data to create a GlossaryDetail
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GlossaryDetail we want to update
+     *   }
+     * })
+     */
+    upsert<T extends GlossaryDetailUpsertArgs>(args: SelectSubset<T, GlossaryDetailUpsertArgs<ExtArgs>>): Prisma__GlossaryDetailClient<$Result.GetResult<Prisma.$GlossaryDetailPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of GlossaryDetails.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryDetailCountArgs} args - Arguments to filter GlossaryDetails to count.
+     * @example
+     * // Count the number of GlossaryDetails
+     * const count = await prisma.glossaryDetail.count({
+     *   where: {
+     *     // ... the filter for the GlossaryDetails we want to count
+     *   }
+     * })
+    **/
+    count<T extends GlossaryDetailCountArgs>(
+      args?: Subset<T, GlossaryDetailCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GlossaryDetailCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GlossaryDetail.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryDetailAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GlossaryDetailAggregateArgs>(args: Subset<T, GlossaryDetailAggregateArgs>): Prisma.PrismaPromise<GetGlossaryDetailAggregateType<T>>
+
+    /**
+     * Group by GlossaryDetail.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryDetailGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GlossaryDetailGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GlossaryDetailGroupByArgs['orderBy'] }
+        : { orderBy?: GlossaryDetailGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GlossaryDetailGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGlossaryDetailGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GlossaryDetail model
+   */
+  readonly fields: GlossaryDetailFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GlossaryDetail.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GlossaryDetailClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    glossaryItem<T extends GlossaryItemDefaultArgs<ExtArgs> = {}>(args?: Subset<T, GlossaryItemDefaultArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the GlossaryDetail model
+   */
+  interface GlossaryDetailFieldRefs {
+    readonly id: FieldRef<"GlossaryDetail", 'String'>
+    readonly glossaryItemId: FieldRef<"GlossaryDetail", 'String'>
+    readonly content: FieldRef<"GlossaryDetail", 'String'>
+    readonly position: FieldRef<"GlossaryDetail", 'Int'>
+    readonly createdAt: FieldRef<"GlossaryDetail", 'DateTime'>
+    readonly updatedAt: FieldRef<"GlossaryDetail", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * GlossaryDetail findUnique
+   */
+  export type GlossaryDetailFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryDetail to fetch.
+     */
+    where: GlossaryDetailWhereUniqueInput
+  }
+
+  /**
+   * GlossaryDetail findUniqueOrThrow
+   */
+  export type GlossaryDetailFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryDetail to fetch.
+     */
+    where: GlossaryDetailWhereUniqueInput
+  }
+
+  /**
+   * GlossaryDetail findFirst
+   */
+  export type GlossaryDetailFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryDetail to fetch.
+     */
+    where?: GlossaryDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryDetails to fetch.
+     */
+    orderBy?: GlossaryDetailOrderByWithRelationInput | GlossaryDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlossaryDetails.
+     */
+    cursor?: GlossaryDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryDetails.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryDetails.
+     */
+    distinct?: GlossaryDetailScalarFieldEnum | GlossaryDetailScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryDetail findFirstOrThrow
+   */
+  export type GlossaryDetailFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryDetail to fetch.
+     */
+    where?: GlossaryDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryDetails to fetch.
+     */
+    orderBy?: GlossaryDetailOrderByWithRelationInput | GlossaryDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlossaryDetails.
+     */
+    cursor?: GlossaryDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryDetails.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryDetails.
+     */
+    distinct?: GlossaryDetailScalarFieldEnum | GlossaryDetailScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryDetail findMany
+   */
+  export type GlossaryDetailFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryDetails to fetch.
+     */
+    where?: GlossaryDetailWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryDetails to fetch.
+     */
+    orderBy?: GlossaryDetailOrderByWithRelationInput | GlossaryDetailOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GlossaryDetails.
+     */
+    cursor?: GlossaryDetailWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryDetails from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryDetails.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryDetails.
+     */
+    distinct?: GlossaryDetailScalarFieldEnum | GlossaryDetailScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryDetail create
+   */
+  export type GlossaryDetailCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * The data needed to create a GlossaryDetail.
+     */
+    data: XOR<GlossaryDetailCreateInput, GlossaryDetailUncheckedCreateInput>
+  }
+
+  /**
+   * GlossaryDetail createMany
+   */
+  export type GlossaryDetailCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GlossaryDetails.
+     */
+    data: GlossaryDetailCreateManyInput | GlossaryDetailCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GlossaryDetail createManyAndReturn
+   */
+  export type GlossaryDetailCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * The data used to create many GlossaryDetails.
+     */
+    data: GlossaryDetailCreateManyInput | GlossaryDetailCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GlossaryDetail update
+   */
+  export type GlossaryDetailUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * The data needed to update a GlossaryDetail.
+     */
+    data: XOR<GlossaryDetailUpdateInput, GlossaryDetailUncheckedUpdateInput>
+    /**
+     * Choose, which GlossaryDetail to update.
+     */
+    where: GlossaryDetailWhereUniqueInput
+  }
+
+  /**
+   * GlossaryDetail updateMany
+   */
+  export type GlossaryDetailUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GlossaryDetails.
+     */
+    data: XOR<GlossaryDetailUpdateManyMutationInput, GlossaryDetailUncheckedUpdateManyInput>
+    /**
+     * Filter which GlossaryDetails to update
+     */
+    where?: GlossaryDetailWhereInput
+    /**
+     * Limit how many GlossaryDetails to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlossaryDetail updateManyAndReturn
+   */
+  export type GlossaryDetailUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * The data used to update GlossaryDetails.
+     */
+    data: XOR<GlossaryDetailUpdateManyMutationInput, GlossaryDetailUncheckedUpdateManyInput>
+    /**
+     * Filter which GlossaryDetails to update
+     */
+    where?: GlossaryDetailWhereInput
+    /**
+     * Limit how many GlossaryDetails to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GlossaryDetail upsert
+   */
+  export type GlossaryDetailUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * The filter to search for the GlossaryDetail to update in case it exists.
+     */
+    where: GlossaryDetailWhereUniqueInput
+    /**
+     * In case the GlossaryDetail found by the `where` argument doesn't exist, create a new GlossaryDetail with this data.
+     */
+    create: XOR<GlossaryDetailCreateInput, GlossaryDetailUncheckedCreateInput>
+    /**
+     * In case the GlossaryDetail was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GlossaryDetailUpdateInput, GlossaryDetailUncheckedUpdateInput>
+  }
+
+  /**
+   * GlossaryDetail delete
+   */
+  export type GlossaryDetailDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+    /**
+     * Filter which GlossaryDetail to delete.
+     */
+    where: GlossaryDetailWhereUniqueInput
+  }
+
+  /**
+   * GlossaryDetail deleteMany
+   */
+  export type GlossaryDetailDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlossaryDetails to delete
+     */
+    where?: GlossaryDetailWhereInput
+    /**
+     * Limit how many GlossaryDetails to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlossaryDetail without action
+   */
+  export type GlossaryDetailDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryDetail
+     */
+    select?: GlossaryDetailSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryDetail
+     */
+    omit?: GlossaryDetailOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryDetailInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model GlossaryItemCategory
+   */
+
+  export type AggregateGlossaryItemCategory = {
+    _count: GlossaryItemCategoryCountAggregateOutputType | null
+    _avg: GlossaryItemCategoryAvgAggregateOutputType | null
+    _sum: GlossaryItemCategorySumAggregateOutputType | null
+    _min: GlossaryItemCategoryMinAggregateOutputType | null
+    _max: GlossaryItemCategoryMaxAggregateOutputType | null
+  }
+
+  export type GlossaryItemCategoryAvgAggregateOutputType = {
+    position: number | null
+  }
+
+  export type GlossaryItemCategorySumAggregateOutputType = {
+    position: number | null
+  }
+
+  export type GlossaryItemCategoryMinAggregateOutputType = {
+    glossaryItemId: string | null
+    categoryId: string | null
+    position: number | null
+    createdAt: Date | null
+  }
+
+  export type GlossaryItemCategoryMaxAggregateOutputType = {
+    glossaryItemId: string | null
+    categoryId: string | null
+    position: number | null
+    createdAt: Date | null
+  }
+
+  export type GlossaryItemCategoryCountAggregateOutputType = {
+    glossaryItemId: number
+    categoryId: number
+    position: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type GlossaryItemCategoryAvgAggregateInputType = {
+    position?: true
+  }
+
+  export type GlossaryItemCategorySumAggregateInputType = {
+    position?: true
+  }
+
+  export type GlossaryItemCategoryMinAggregateInputType = {
+    glossaryItemId?: true
+    categoryId?: true
+    position?: true
+    createdAt?: true
+  }
+
+  export type GlossaryItemCategoryMaxAggregateInputType = {
+    glossaryItemId?: true
+    categoryId?: true
+    position?: true
+    createdAt?: true
+  }
+
+  export type GlossaryItemCategoryCountAggregateInputType = {
+    glossaryItemId?: true
+    categoryId?: true
+    position?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type GlossaryItemCategoryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlossaryItemCategory to aggregate.
+     */
+    where?: GlossaryItemCategoryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItemCategories to fetch.
+     */
+    orderBy?: GlossaryItemCategoryOrderByWithRelationInput | GlossaryItemCategoryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GlossaryItemCategoryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItemCategories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItemCategories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GlossaryItemCategories
+    **/
+    _count?: true | GlossaryItemCategoryCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GlossaryItemCategoryAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GlossaryItemCategorySumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GlossaryItemCategoryMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GlossaryItemCategoryMaxAggregateInputType
+  }
+
+  export type GetGlossaryItemCategoryAggregateType<T extends GlossaryItemCategoryAggregateArgs> = {
+        [P in keyof T & keyof AggregateGlossaryItemCategory]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGlossaryItemCategory[P]>
+      : GetScalarType<T[P], AggregateGlossaryItemCategory[P]>
+  }
+
+
+
+
+  export type GlossaryItemCategoryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GlossaryItemCategoryWhereInput
+    orderBy?: GlossaryItemCategoryOrderByWithAggregationInput | GlossaryItemCategoryOrderByWithAggregationInput[]
+    by: GlossaryItemCategoryScalarFieldEnum[] | GlossaryItemCategoryScalarFieldEnum
+    having?: GlossaryItemCategoryScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GlossaryItemCategoryCountAggregateInputType | true
+    _avg?: GlossaryItemCategoryAvgAggregateInputType
+    _sum?: GlossaryItemCategorySumAggregateInputType
+    _min?: GlossaryItemCategoryMinAggregateInputType
+    _max?: GlossaryItemCategoryMaxAggregateInputType
+  }
+
+  export type GlossaryItemCategoryGroupByOutputType = {
+    glossaryItemId: string
+    categoryId: string
+    position: number
+    createdAt: Date
+    _count: GlossaryItemCategoryCountAggregateOutputType | null
+    _avg: GlossaryItemCategoryAvgAggregateOutputType | null
+    _sum: GlossaryItemCategorySumAggregateOutputType | null
+    _min: GlossaryItemCategoryMinAggregateOutputType | null
+    _max: GlossaryItemCategoryMaxAggregateOutputType | null
+  }
+
+  type GetGlossaryItemCategoryGroupByPayload<T extends GlossaryItemCategoryGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GlossaryItemCategoryGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GlossaryItemCategoryGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GlossaryItemCategoryGroupByOutputType[P]>
+            : GetScalarType<T[P], GlossaryItemCategoryGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GlossaryItemCategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    glossaryItemId?: boolean
+    categoryId?: boolean
+    position?: boolean
+    createdAt?: boolean
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["glossaryItemCategory"]>
+
+  export type GlossaryItemCategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    glossaryItemId?: boolean
+    categoryId?: boolean
+    position?: boolean
+    createdAt?: boolean
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["glossaryItemCategory"]>
+
+  export type GlossaryItemCategorySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    glossaryItemId?: boolean
+    categoryId?: boolean
+    position?: boolean
+    createdAt?: boolean
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["glossaryItemCategory"]>
+
+  export type GlossaryItemCategorySelectScalar = {
+    glossaryItemId?: boolean
+    categoryId?: boolean
+    position?: boolean
+    createdAt?: boolean
+  }
+
+  export type GlossaryItemCategoryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"glossaryItemId" | "categoryId" | "position" | "createdAt", ExtArgs["result"]["glossaryItemCategory"]>
+  export type GlossaryItemCategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }
+  export type GlossaryItemCategoryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }
+  export type GlossaryItemCategoryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    glossaryItem?: boolean | GlossaryItemDefaultArgs<ExtArgs>
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }
+
+  export type $GlossaryItemCategoryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GlossaryItemCategory"
+    objects: {
+      glossaryItem: Prisma.$GlossaryItemPayload<ExtArgs>
+      category: Prisma.$CategoryPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      glossaryItemId: string
+      categoryId: string
+      position: number
+      createdAt: Date
+    }, ExtArgs["result"]["glossaryItemCategory"]>
+    composites: {}
+  }
+
+  type GlossaryItemCategoryGetPayload<S extends boolean | null | undefined | GlossaryItemCategoryDefaultArgs> = $Result.GetResult<Prisma.$GlossaryItemCategoryPayload, S>
+
+  type GlossaryItemCategoryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<GlossaryItemCategoryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: GlossaryItemCategoryCountAggregateInputType | true
+    }
+
+  export interface GlossaryItemCategoryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GlossaryItemCategory'], meta: { name: 'GlossaryItemCategory' } }
+    /**
+     * Find zero or one GlossaryItemCategory that matches the filter.
+     * @param {GlossaryItemCategoryFindUniqueArgs} args - Arguments to find a GlossaryItemCategory
+     * @example
+     * // Get one GlossaryItemCategory
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends GlossaryItemCategoryFindUniqueArgs>(args: SelectSubset<T, GlossaryItemCategoryFindUniqueArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one GlossaryItemCategory that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {GlossaryItemCategoryFindUniqueOrThrowArgs} args - Arguments to find a GlossaryItemCategory
+     * @example
+     * // Get one GlossaryItemCategory
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends GlossaryItemCategoryFindUniqueOrThrowArgs>(args: SelectSubset<T, GlossaryItemCategoryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlossaryItemCategory that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCategoryFindFirstArgs} args - Arguments to find a GlossaryItemCategory
+     * @example
+     * // Get one GlossaryItemCategory
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends GlossaryItemCategoryFindFirstArgs>(args?: SelectSubset<T, GlossaryItemCategoryFindFirstArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GlossaryItemCategory that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCategoryFindFirstOrThrowArgs} args - Arguments to find a GlossaryItemCategory
+     * @example
+     * // Get one GlossaryItemCategory
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends GlossaryItemCategoryFindFirstOrThrowArgs>(args?: SelectSubset<T, GlossaryItemCategoryFindFirstOrThrowArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more GlossaryItemCategories that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCategoryFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GlossaryItemCategories
+     * const glossaryItemCategories = await prisma.glossaryItemCategory.findMany()
+     * 
+     * // Get first 10 GlossaryItemCategories
+     * const glossaryItemCategories = await prisma.glossaryItemCategory.findMany({ take: 10 })
+     * 
+     * // Only select the `glossaryItemId`
+     * const glossaryItemCategoryWithGlossaryItemIdOnly = await prisma.glossaryItemCategory.findMany({ select: { glossaryItemId: true } })
+     * 
+     */
+    findMany<T extends GlossaryItemCategoryFindManyArgs>(args?: SelectSubset<T, GlossaryItemCategoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a GlossaryItemCategory.
+     * @param {GlossaryItemCategoryCreateArgs} args - Arguments to create a GlossaryItemCategory.
+     * @example
+     * // Create one GlossaryItemCategory
+     * const GlossaryItemCategory = await prisma.glossaryItemCategory.create({
+     *   data: {
+     *     // ... data to create a GlossaryItemCategory
+     *   }
+     * })
+     * 
+     */
+    create<T extends GlossaryItemCategoryCreateArgs>(args: SelectSubset<T, GlossaryItemCategoryCreateArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many GlossaryItemCategories.
+     * @param {GlossaryItemCategoryCreateManyArgs} args - Arguments to create many GlossaryItemCategories.
+     * @example
+     * // Create many GlossaryItemCategories
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends GlossaryItemCategoryCreateManyArgs>(args?: SelectSubset<T, GlossaryItemCategoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many GlossaryItemCategories and returns the data saved in the database.
+     * @param {GlossaryItemCategoryCreateManyAndReturnArgs} args - Arguments to create many GlossaryItemCategories.
+     * @example
+     * // Create many GlossaryItemCategories
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many GlossaryItemCategories and only return the `glossaryItemId`
+     * const glossaryItemCategoryWithGlossaryItemIdOnly = await prisma.glossaryItemCategory.createManyAndReturn({
+     *   select: { glossaryItemId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends GlossaryItemCategoryCreateManyAndReturnArgs>(args?: SelectSubset<T, GlossaryItemCategoryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a GlossaryItemCategory.
+     * @param {GlossaryItemCategoryDeleteArgs} args - Arguments to delete one GlossaryItemCategory.
+     * @example
+     * // Delete one GlossaryItemCategory
+     * const GlossaryItemCategory = await prisma.glossaryItemCategory.delete({
+     *   where: {
+     *     // ... filter to delete one GlossaryItemCategory
+     *   }
+     * })
+     * 
+     */
+    delete<T extends GlossaryItemCategoryDeleteArgs>(args: SelectSubset<T, GlossaryItemCategoryDeleteArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one GlossaryItemCategory.
+     * @param {GlossaryItemCategoryUpdateArgs} args - Arguments to update one GlossaryItemCategory.
+     * @example
+     * // Update one GlossaryItemCategory
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends GlossaryItemCategoryUpdateArgs>(args: SelectSubset<T, GlossaryItemCategoryUpdateArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more GlossaryItemCategories.
+     * @param {GlossaryItemCategoryDeleteManyArgs} args - Arguments to filter GlossaryItemCategories to delete.
+     * @example
+     * // Delete a few GlossaryItemCategories
+     * const { count } = await prisma.glossaryItemCategory.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends GlossaryItemCategoryDeleteManyArgs>(args?: SelectSubset<T, GlossaryItemCategoryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlossaryItemCategories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCategoryUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GlossaryItemCategories
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends GlossaryItemCategoryUpdateManyArgs>(args: SelectSubset<T, GlossaryItemCategoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GlossaryItemCategories and returns the data updated in the database.
+     * @param {GlossaryItemCategoryUpdateManyAndReturnArgs} args - Arguments to update many GlossaryItemCategories.
+     * @example
+     * // Update many GlossaryItemCategories
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more GlossaryItemCategories and only return the `glossaryItemId`
+     * const glossaryItemCategoryWithGlossaryItemIdOnly = await prisma.glossaryItemCategory.updateManyAndReturn({
+     *   select: { glossaryItemId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends GlossaryItemCategoryUpdateManyAndReturnArgs>(args: SelectSubset<T, GlossaryItemCategoryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one GlossaryItemCategory.
+     * @param {GlossaryItemCategoryUpsertArgs} args - Arguments to update or create a GlossaryItemCategory.
+     * @example
+     * // Update or create a GlossaryItemCategory
+     * const glossaryItemCategory = await prisma.glossaryItemCategory.upsert({
+     *   create: {
+     *     // ... data to create a GlossaryItemCategory
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GlossaryItemCategory we want to update
+     *   }
+     * })
+     */
+    upsert<T extends GlossaryItemCategoryUpsertArgs>(args: SelectSubset<T, GlossaryItemCategoryUpsertArgs<ExtArgs>>): Prisma__GlossaryItemCategoryClient<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of GlossaryItemCategories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCategoryCountArgs} args - Arguments to filter GlossaryItemCategories to count.
+     * @example
+     * // Count the number of GlossaryItemCategories
+     * const count = await prisma.glossaryItemCategory.count({
+     *   where: {
+     *     // ... the filter for the GlossaryItemCategories we want to count
+     *   }
+     * })
+    **/
+    count<T extends GlossaryItemCategoryCountArgs>(
+      args?: Subset<T, GlossaryItemCategoryCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GlossaryItemCategoryCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GlossaryItemCategory.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCategoryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GlossaryItemCategoryAggregateArgs>(args: Subset<T, GlossaryItemCategoryAggregateArgs>): Prisma.PrismaPromise<GetGlossaryItemCategoryAggregateType<T>>
+
+    /**
+     * Group by GlossaryItemCategory.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GlossaryItemCategoryGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GlossaryItemCategoryGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GlossaryItemCategoryGroupByArgs['orderBy'] }
+        : { orderBy?: GlossaryItemCategoryGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GlossaryItemCategoryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGlossaryItemCategoryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GlossaryItemCategory model
+   */
+  readonly fields: GlossaryItemCategoryFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GlossaryItemCategory.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GlossaryItemCategoryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    glossaryItem<T extends GlossaryItemDefaultArgs<ExtArgs> = {}>(args?: Subset<T, GlossaryItemDefaultArgs<ExtArgs>>): Prisma__GlossaryItemClient<$Result.GetResult<Prisma.$GlossaryItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    category<T extends CategoryDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CategoryDefaultArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the GlossaryItemCategory model
+   */
+  interface GlossaryItemCategoryFieldRefs {
+    readonly glossaryItemId: FieldRef<"GlossaryItemCategory", 'String'>
+    readonly categoryId: FieldRef<"GlossaryItemCategory", 'String'>
+    readonly position: FieldRef<"GlossaryItemCategory", 'Int'>
+    readonly createdAt: FieldRef<"GlossaryItemCategory", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * GlossaryItemCategory findUnique
+   */
+  export type GlossaryItemCategoryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItemCategory to fetch.
+     */
+    where: GlossaryItemCategoryWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItemCategory findUniqueOrThrow
+   */
+  export type GlossaryItemCategoryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItemCategory to fetch.
+     */
+    where: GlossaryItemCategoryWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItemCategory findFirst
+   */
+  export type GlossaryItemCategoryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItemCategory to fetch.
+     */
+    where?: GlossaryItemCategoryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItemCategories to fetch.
+     */
+    orderBy?: GlossaryItemCategoryOrderByWithRelationInput | GlossaryItemCategoryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlossaryItemCategories.
+     */
+    cursor?: GlossaryItemCategoryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItemCategories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItemCategories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryItemCategories.
+     */
+    distinct?: GlossaryItemCategoryScalarFieldEnum | GlossaryItemCategoryScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItemCategory findFirstOrThrow
+   */
+  export type GlossaryItemCategoryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItemCategory to fetch.
+     */
+    where?: GlossaryItemCategoryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItemCategories to fetch.
+     */
+    orderBy?: GlossaryItemCategoryOrderByWithRelationInput | GlossaryItemCategoryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GlossaryItemCategories.
+     */
+    cursor?: GlossaryItemCategoryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItemCategories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItemCategories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryItemCategories.
+     */
+    distinct?: GlossaryItemCategoryScalarFieldEnum | GlossaryItemCategoryScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItemCategory findMany
+   */
+  export type GlossaryItemCategoryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * Filter, which GlossaryItemCategories to fetch.
+     */
+    where?: GlossaryItemCategoryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GlossaryItemCategories to fetch.
+     */
+    orderBy?: GlossaryItemCategoryOrderByWithRelationInput | GlossaryItemCategoryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GlossaryItemCategories.
+     */
+    cursor?: GlossaryItemCategoryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GlossaryItemCategories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GlossaryItemCategories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GlossaryItemCategories.
+     */
+    distinct?: GlossaryItemCategoryScalarFieldEnum | GlossaryItemCategoryScalarFieldEnum[]
+  }
+
+  /**
+   * GlossaryItemCategory create
+   */
+  export type GlossaryItemCategoryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * The data needed to create a GlossaryItemCategory.
+     */
+    data: XOR<GlossaryItemCategoryCreateInput, GlossaryItemCategoryUncheckedCreateInput>
+  }
+
+  /**
+   * GlossaryItemCategory createMany
+   */
+  export type GlossaryItemCategoryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GlossaryItemCategories.
+     */
+    data: GlossaryItemCategoryCreateManyInput | GlossaryItemCategoryCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GlossaryItemCategory createManyAndReturn
+   */
+  export type GlossaryItemCategoryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * The data used to create many GlossaryItemCategories.
+     */
+    data: GlossaryItemCategoryCreateManyInput | GlossaryItemCategoryCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GlossaryItemCategory update
+   */
+  export type GlossaryItemCategoryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * The data needed to update a GlossaryItemCategory.
+     */
+    data: XOR<GlossaryItemCategoryUpdateInput, GlossaryItemCategoryUncheckedUpdateInput>
+    /**
+     * Choose, which GlossaryItemCategory to update.
+     */
+    where: GlossaryItemCategoryWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItemCategory updateMany
+   */
+  export type GlossaryItemCategoryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GlossaryItemCategories.
+     */
+    data: XOR<GlossaryItemCategoryUpdateManyMutationInput, GlossaryItemCategoryUncheckedUpdateManyInput>
+    /**
+     * Filter which GlossaryItemCategories to update
+     */
+    where?: GlossaryItemCategoryWhereInput
+    /**
+     * Limit how many GlossaryItemCategories to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlossaryItemCategory updateManyAndReturn
+   */
+  export type GlossaryItemCategoryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * The data used to update GlossaryItemCategories.
+     */
+    data: XOR<GlossaryItemCategoryUpdateManyMutationInput, GlossaryItemCategoryUncheckedUpdateManyInput>
+    /**
+     * Filter which GlossaryItemCategories to update
+     */
+    where?: GlossaryItemCategoryWhereInput
+    /**
+     * Limit how many GlossaryItemCategories to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GlossaryItemCategory upsert
+   */
+  export type GlossaryItemCategoryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * The filter to search for the GlossaryItemCategory to update in case it exists.
+     */
+    where: GlossaryItemCategoryWhereUniqueInput
+    /**
+     * In case the GlossaryItemCategory found by the `where` argument doesn't exist, create a new GlossaryItemCategory with this data.
+     */
+    create: XOR<GlossaryItemCategoryCreateInput, GlossaryItemCategoryUncheckedCreateInput>
+    /**
+     * In case the GlossaryItemCategory was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GlossaryItemCategoryUpdateInput, GlossaryItemCategoryUncheckedUpdateInput>
+  }
+
+  /**
+   * GlossaryItemCategory delete
+   */
+  export type GlossaryItemCategoryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+    /**
+     * Filter which GlossaryItemCategory to delete.
+     */
+    where: GlossaryItemCategoryWhereUniqueInput
+  }
+
+  /**
+   * GlossaryItemCategory deleteMany
+   */
+  export type GlossaryItemCategoryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GlossaryItemCategories to delete
+     */
+    where?: GlossaryItemCategoryWhereInput
+    /**
+     * Limit how many GlossaryItemCategories to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * GlossaryItemCategory without action
+   */
+  export type GlossaryItemCategoryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GlossaryItemCategory
+     */
+    select?: GlossaryItemCategorySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GlossaryItemCategory
+     */
+    omit?: GlossaryItemCategoryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GlossaryItemCategoryInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -9835,6 +13540,41 @@ export namespace Prisma {
   export type GuideTableRowScalarFieldEnum = (typeof GuideTableRowScalarFieldEnum)[keyof typeof GuideTableRowScalarFieldEnum]
 
 
+  export const GlossaryItemScalarFieldEnum: {
+    id: 'id',
+    slug: 'slug',
+    term: 'term',
+    shortDefinition: 'shortDefinition',
+    featured: 'featured',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type GlossaryItemScalarFieldEnum = (typeof GlossaryItemScalarFieldEnum)[keyof typeof GlossaryItemScalarFieldEnum]
+
+
+  export const GlossaryDetailScalarFieldEnum: {
+    id: 'id',
+    glossaryItemId: 'glossaryItemId',
+    content: 'content',
+    position: 'position',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type GlossaryDetailScalarFieldEnum = (typeof GlossaryDetailScalarFieldEnum)[keyof typeof GlossaryDetailScalarFieldEnum]
+
+
+  export const GlossaryItemCategoryScalarFieldEnum: {
+    glossaryItemId: 'glossaryItemId',
+    categoryId: 'categoryId',
+    position: 'position',
+    createdAt: 'createdAt'
+  };
+
+  export type GlossaryItemCategoryScalarFieldEnum = (typeof GlossaryItemCategoryScalarFieldEnum)[keyof typeof GlossaryItemCategoryScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -9937,6 +13677,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -9969,6 +13716,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Category"> | Date | string
     updatedAt?: DateTimeFilter<"Category"> | Date | string
     guide?: XOR<GuideNullableScalarRelationFilter, GuideWhereInput> | null
+    glossaryLinks?: GlossaryItemCategoryListRelationFilter
   }
 
   export type CategoryOrderByWithRelationInput = {
@@ -9984,6 +13732,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     guide?: GuideOrderByWithRelationInput
+    glossaryLinks?: GlossaryItemCategoryOrderByRelationAggregateInput
   }
 
   export type CategoryWhereUniqueInput = Prisma.AtLeast<{
@@ -10002,6 +13751,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Category"> | Date | string
     updatedAt?: DateTimeFilter<"Category"> | Date | string
     guide?: XOR<GuideNullableScalarRelationFilter, GuideWhereInput> | null
+    glossaryLinks?: GlossaryItemCategoryListRelationFilter
   }, "id" | "slug">
 
   export type CategoryOrderByWithAggregationInput = {
@@ -10513,6 +14263,192 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"GuideTableRow"> | Date | string
   }
 
+  export type GlossaryItemWhereInput = {
+    AND?: GlossaryItemWhereInput | GlossaryItemWhereInput[]
+    OR?: GlossaryItemWhereInput[]
+    NOT?: GlossaryItemWhereInput | GlossaryItemWhereInput[]
+    id?: StringFilter<"GlossaryItem"> | string
+    slug?: StringFilter<"GlossaryItem"> | string
+    term?: StringFilter<"GlossaryItem"> | string
+    shortDefinition?: StringFilter<"GlossaryItem"> | string
+    featured?: BoolFilter<"GlossaryItem"> | boolean
+    createdAt?: DateTimeFilter<"GlossaryItem"> | Date | string
+    updatedAt?: DateTimeFilter<"GlossaryItem"> | Date | string
+    details?: GlossaryDetailListRelationFilter
+    relatedCategories?: GlossaryItemCategoryListRelationFilter
+  }
+
+  export type GlossaryItemOrderByWithRelationInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    term?: SortOrder
+    shortDefinition?: SortOrder
+    featured?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    details?: GlossaryDetailOrderByRelationAggregateInput
+    relatedCategories?: GlossaryItemCategoryOrderByRelationAggregateInput
+  }
+
+  export type GlossaryItemWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    slug?: string
+    AND?: GlossaryItemWhereInput | GlossaryItemWhereInput[]
+    OR?: GlossaryItemWhereInput[]
+    NOT?: GlossaryItemWhereInput | GlossaryItemWhereInput[]
+    term?: StringFilter<"GlossaryItem"> | string
+    shortDefinition?: StringFilter<"GlossaryItem"> | string
+    featured?: BoolFilter<"GlossaryItem"> | boolean
+    createdAt?: DateTimeFilter<"GlossaryItem"> | Date | string
+    updatedAt?: DateTimeFilter<"GlossaryItem"> | Date | string
+    details?: GlossaryDetailListRelationFilter
+    relatedCategories?: GlossaryItemCategoryListRelationFilter
+  }, "id" | "slug">
+
+  export type GlossaryItemOrderByWithAggregationInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    term?: SortOrder
+    shortDefinition?: SortOrder
+    featured?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: GlossaryItemCountOrderByAggregateInput
+    _max?: GlossaryItemMaxOrderByAggregateInput
+    _min?: GlossaryItemMinOrderByAggregateInput
+  }
+
+  export type GlossaryItemScalarWhereWithAggregatesInput = {
+    AND?: GlossaryItemScalarWhereWithAggregatesInput | GlossaryItemScalarWhereWithAggregatesInput[]
+    OR?: GlossaryItemScalarWhereWithAggregatesInput[]
+    NOT?: GlossaryItemScalarWhereWithAggregatesInput | GlossaryItemScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"GlossaryItem"> | string
+    slug?: StringWithAggregatesFilter<"GlossaryItem"> | string
+    term?: StringWithAggregatesFilter<"GlossaryItem"> | string
+    shortDefinition?: StringWithAggregatesFilter<"GlossaryItem"> | string
+    featured?: BoolWithAggregatesFilter<"GlossaryItem"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"GlossaryItem"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"GlossaryItem"> | Date | string
+  }
+
+  export type GlossaryDetailWhereInput = {
+    AND?: GlossaryDetailWhereInput | GlossaryDetailWhereInput[]
+    OR?: GlossaryDetailWhereInput[]
+    NOT?: GlossaryDetailWhereInput | GlossaryDetailWhereInput[]
+    id?: StringFilter<"GlossaryDetail"> | string
+    glossaryItemId?: StringFilter<"GlossaryDetail"> | string
+    content?: StringFilter<"GlossaryDetail"> | string
+    position?: IntFilter<"GlossaryDetail"> | number
+    createdAt?: DateTimeFilter<"GlossaryDetail"> | Date | string
+    updatedAt?: DateTimeFilter<"GlossaryDetail"> | Date | string
+    glossaryItem?: XOR<GlossaryItemScalarRelationFilter, GlossaryItemWhereInput>
+  }
+
+  export type GlossaryDetailOrderByWithRelationInput = {
+    id?: SortOrder
+    glossaryItemId?: SortOrder
+    content?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    glossaryItem?: GlossaryItemOrderByWithRelationInput
+  }
+
+  export type GlossaryDetailWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: GlossaryDetailWhereInput | GlossaryDetailWhereInput[]
+    OR?: GlossaryDetailWhereInput[]
+    NOT?: GlossaryDetailWhereInput | GlossaryDetailWhereInput[]
+    glossaryItemId?: StringFilter<"GlossaryDetail"> | string
+    content?: StringFilter<"GlossaryDetail"> | string
+    position?: IntFilter<"GlossaryDetail"> | number
+    createdAt?: DateTimeFilter<"GlossaryDetail"> | Date | string
+    updatedAt?: DateTimeFilter<"GlossaryDetail"> | Date | string
+    glossaryItem?: XOR<GlossaryItemScalarRelationFilter, GlossaryItemWhereInput>
+  }, "id">
+
+  export type GlossaryDetailOrderByWithAggregationInput = {
+    id?: SortOrder
+    glossaryItemId?: SortOrder
+    content?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: GlossaryDetailCountOrderByAggregateInput
+    _avg?: GlossaryDetailAvgOrderByAggregateInput
+    _max?: GlossaryDetailMaxOrderByAggregateInput
+    _min?: GlossaryDetailMinOrderByAggregateInput
+    _sum?: GlossaryDetailSumOrderByAggregateInput
+  }
+
+  export type GlossaryDetailScalarWhereWithAggregatesInput = {
+    AND?: GlossaryDetailScalarWhereWithAggregatesInput | GlossaryDetailScalarWhereWithAggregatesInput[]
+    OR?: GlossaryDetailScalarWhereWithAggregatesInput[]
+    NOT?: GlossaryDetailScalarWhereWithAggregatesInput | GlossaryDetailScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"GlossaryDetail"> | string
+    glossaryItemId?: StringWithAggregatesFilter<"GlossaryDetail"> | string
+    content?: StringWithAggregatesFilter<"GlossaryDetail"> | string
+    position?: IntWithAggregatesFilter<"GlossaryDetail"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"GlossaryDetail"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"GlossaryDetail"> | Date | string
+  }
+
+  export type GlossaryItemCategoryWhereInput = {
+    AND?: GlossaryItemCategoryWhereInput | GlossaryItemCategoryWhereInput[]
+    OR?: GlossaryItemCategoryWhereInput[]
+    NOT?: GlossaryItemCategoryWhereInput | GlossaryItemCategoryWhereInput[]
+    glossaryItemId?: StringFilter<"GlossaryItemCategory"> | string
+    categoryId?: StringFilter<"GlossaryItemCategory"> | string
+    position?: IntFilter<"GlossaryItemCategory"> | number
+    createdAt?: DateTimeFilter<"GlossaryItemCategory"> | Date | string
+    glossaryItem?: XOR<GlossaryItemScalarRelationFilter, GlossaryItemWhereInput>
+    category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
+  }
+
+  export type GlossaryItemCategoryOrderByWithRelationInput = {
+    glossaryItemId?: SortOrder
+    categoryId?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+    glossaryItem?: GlossaryItemOrderByWithRelationInput
+    category?: CategoryOrderByWithRelationInput
+  }
+
+  export type GlossaryItemCategoryWhereUniqueInput = Prisma.AtLeast<{
+    glossaryItemId_categoryId?: GlossaryItemCategoryGlossaryItemIdCategoryIdCompoundUniqueInput
+    AND?: GlossaryItemCategoryWhereInput | GlossaryItemCategoryWhereInput[]
+    OR?: GlossaryItemCategoryWhereInput[]
+    NOT?: GlossaryItemCategoryWhereInput | GlossaryItemCategoryWhereInput[]
+    glossaryItemId?: StringFilter<"GlossaryItemCategory"> | string
+    categoryId?: StringFilter<"GlossaryItemCategory"> | string
+    position?: IntFilter<"GlossaryItemCategory"> | number
+    createdAt?: DateTimeFilter<"GlossaryItemCategory"> | Date | string
+    glossaryItem?: XOR<GlossaryItemScalarRelationFilter, GlossaryItemWhereInput>
+    category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
+  }, "glossaryItemId_categoryId">
+
+  export type GlossaryItemCategoryOrderByWithAggregationInput = {
+    glossaryItemId?: SortOrder
+    categoryId?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+    _count?: GlossaryItemCategoryCountOrderByAggregateInput
+    _avg?: GlossaryItemCategoryAvgOrderByAggregateInput
+    _max?: GlossaryItemCategoryMaxOrderByAggregateInput
+    _min?: GlossaryItemCategoryMinOrderByAggregateInput
+    _sum?: GlossaryItemCategorySumOrderByAggregateInput
+  }
+
+  export type GlossaryItemCategoryScalarWhereWithAggregatesInput = {
+    AND?: GlossaryItemCategoryScalarWhereWithAggregatesInput | GlossaryItemCategoryScalarWhereWithAggregatesInput[]
+    OR?: GlossaryItemCategoryScalarWhereWithAggregatesInput[]
+    NOT?: GlossaryItemCategoryScalarWhereWithAggregatesInput | GlossaryItemCategoryScalarWhereWithAggregatesInput[]
+    glossaryItemId?: StringWithAggregatesFilter<"GlossaryItemCategory"> | string
+    categoryId?: StringWithAggregatesFilter<"GlossaryItemCategory"> | string
+    position?: IntWithAggregatesFilter<"GlossaryItemCategory"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"GlossaryItemCategory"> | Date | string
+  }
+
   export type CategoryCreateInput = {
     id?: string
     slug: string
@@ -10526,6 +14462,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     guide?: GuideCreateNestedOneWithoutCategoryInput
+    glossaryLinks?: GlossaryItemCategoryCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateInput = {
@@ -10541,6 +14478,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     guide?: GuideUncheckedCreateNestedOneWithoutCategoryInput
+    glossaryLinks?: GlossaryItemCategoryUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUpdateInput = {
@@ -10556,6 +14494,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneWithoutCategoryNestedInput
+    glossaryLinks?: GlossaryItemCategoryUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateInput = {
@@ -10571,6 +14510,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUncheckedUpdateOneWithoutCategoryNestedInput
+    glossaryLinks?: GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryCreateManyInput = {
@@ -11126,6 +15066,193 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type GlossaryItemCreateInput = {
+    id?: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    details?: GlossaryDetailCreateNestedManyWithoutGlossaryItemInput
+    relatedCategories?: GlossaryItemCategoryCreateNestedManyWithoutGlossaryItemInput
+  }
+
+  export type GlossaryItemUncheckedCreateInput = {
+    id?: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    details?: GlossaryDetailUncheckedCreateNestedManyWithoutGlossaryItemInput
+    relatedCategories?: GlossaryItemCategoryUncheckedCreateNestedManyWithoutGlossaryItemInput
+  }
+
+  export type GlossaryItemUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    details?: GlossaryDetailUpdateManyWithoutGlossaryItemNestedInput
+    relatedCategories?: GlossaryItemCategoryUpdateManyWithoutGlossaryItemNestedInput
+  }
+
+  export type GlossaryItemUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    details?: GlossaryDetailUncheckedUpdateManyWithoutGlossaryItemNestedInput
+    relatedCategories?: GlossaryItemCategoryUncheckedUpdateManyWithoutGlossaryItemNestedInput
+  }
+
+  export type GlossaryItemCreateManyInput = {
+    id?: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GlossaryItemUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryItemUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryDetailCreateInput = {
+    id?: string
+    content: string
+    position: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    glossaryItem: GlossaryItemCreateNestedOneWithoutDetailsInput
+  }
+
+  export type GlossaryDetailUncheckedCreateInput = {
+    id?: string
+    glossaryItemId: string
+    content: string
+    position: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GlossaryDetailUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    glossaryItem?: GlossaryItemUpdateOneRequiredWithoutDetailsNestedInput
+  }
+
+  export type GlossaryDetailUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    glossaryItemId?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryDetailCreateManyInput = {
+    id?: string
+    glossaryItemId: string
+    content: string
+    position: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GlossaryDetailUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryDetailUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    glossaryItemId?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryItemCategoryCreateInput = {
+    position: number
+    createdAt?: Date | string
+    glossaryItem: GlossaryItemCreateNestedOneWithoutRelatedCategoriesInput
+    category: CategoryCreateNestedOneWithoutGlossaryLinksInput
+  }
+
+  export type GlossaryItemCategoryUncheckedCreateInput = {
+    glossaryItemId: string
+    categoryId: string
+    position: number
+    createdAt?: Date | string
+  }
+
+  export type GlossaryItemCategoryUpdateInput = {
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    glossaryItem?: GlossaryItemUpdateOneRequiredWithoutRelatedCategoriesNestedInput
+    category?: CategoryUpdateOneRequiredWithoutGlossaryLinksNestedInput
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateInput = {
+    glossaryItemId?: StringFieldUpdateOperationsInput | string
+    categoryId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryItemCategoryCreateManyInput = {
+    glossaryItemId: string
+    categoryId: string
+    position: number
+    createdAt?: Date | string
+  }
+
+  export type GlossaryItemCategoryUpdateManyMutationInput = {
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateManyInput = {
+    glossaryItemId?: StringFieldUpdateOperationsInput | string
+    categoryId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -11166,6 +15293,16 @@ export namespace Prisma {
   export type GuideNullableScalarRelationFilter = {
     is?: GuideWhereInput | null
     isNot?: GuideWhereInput | null
+  }
+
+  export type GlossaryItemCategoryListRelationFilter = {
+    every?: GlossaryItemCategoryWhereInput
+    some?: GlossaryItemCategoryWhereInput
+    none?: GlossaryItemCategoryWhereInput
+  }
+
+  export type GlossaryItemCategoryOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type CategoryCountOrderByAggregateInput = {
@@ -11694,16 +15831,157 @@ export namespace Prisma {
     position?: SortOrder
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type GlossaryDetailListRelationFilter = {
+    every?: GlossaryDetailWhereInput
+    some?: GlossaryDetailWhereInput
+    none?: GlossaryDetailWhereInput
+  }
+
+  export type GlossaryDetailOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type GlossaryItemCountOrderByAggregateInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    term?: SortOrder
+    shortDefinition?: SortOrder
+    featured?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GlossaryItemMaxOrderByAggregateInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    term?: SortOrder
+    shortDefinition?: SortOrder
+    featured?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GlossaryItemMinOrderByAggregateInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    term?: SortOrder
+    shortDefinition?: SortOrder
+    featured?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type GlossaryItemScalarRelationFilter = {
+    is?: GlossaryItemWhereInput
+    isNot?: GlossaryItemWhereInput
+  }
+
+  export type GlossaryDetailCountOrderByAggregateInput = {
+    id?: SortOrder
+    glossaryItemId?: SortOrder
+    content?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GlossaryDetailAvgOrderByAggregateInput = {
+    position?: SortOrder
+  }
+
+  export type GlossaryDetailMaxOrderByAggregateInput = {
+    id?: SortOrder
+    glossaryItemId?: SortOrder
+    content?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GlossaryDetailMinOrderByAggregateInput = {
+    id?: SortOrder
+    glossaryItemId?: SortOrder
+    content?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GlossaryDetailSumOrderByAggregateInput = {
+    position?: SortOrder
+  }
+
+  export type GlossaryItemCategoryGlossaryItemIdCategoryIdCompoundUniqueInput = {
+    glossaryItemId: string
+    categoryId: string
+  }
+
+  export type GlossaryItemCategoryCountOrderByAggregateInput = {
+    glossaryItemId?: SortOrder
+    categoryId?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type GlossaryItemCategoryAvgOrderByAggregateInput = {
+    position?: SortOrder
+  }
+
+  export type GlossaryItemCategoryMaxOrderByAggregateInput = {
+    glossaryItemId?: SortOrder
+    categoryId?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type GlossaryItemCategoryMinOrderByAggregateInput = {
+    glossaryItemId?: SortOrder
+    categoryId?: SortOrder
+    position?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type GlossaryItemCategorySumOrderByAggregateInput = {
+    position?: SortOrder
+  }
+
   export type GuideCreateNestedOneWithoutCategoryInput = {
     create?: XOR<GuideCreateWithoutCategoryInput, GuideUncheckedCreateWithoutCategoryInput>
     connectOrCreate?: GuideCreateOrConnectWithoutCategoryInput
     connect?: GuideWhereUniqueInput
   }
 
+  export type GlossaryItemCategoryCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutCategoryInput, GlossaryItemCategoryUncheckedCreateWithoutCategoryInput> | GlossaryItemCategoryCreateWithoutCategoryInput[] | GlossaryItemCategoryUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutCategoryInput | GlossaryItemCategoryCreateOrConnectWithoutCategoryInput[]
+    createMany?: GlossaryItemCategoryCreateManyCategoryInputEnvelope
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+  }
+
   export type GuideUncheckedCreateNestedOneWithoutCategoryInput = {
     create?: XOR<GuideCreateWithoutCategoryInput, GuideUncheckedCreateWithoutCategoryInput>
     connectOrCreate?: GuideCreateOrConnectWithoutCategoryInput
     connect?: GuideWhereUniqueInput
+  }
+
+  export type GlossaryItemCategoryUncheckedCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutCategoryInput, GlossaryItemCategoryUncheckedCreateWithoutCategoryInput> | GlossaryItemCategoryCreateWithoutCategoryInput[] | GlossaryItemCategoryUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutCategoryInput | GlossaryItemCategoryCreateOrConnectWithoutCategoryInput[]
+    createMany?: GlossaryItemCategoryCreateManyCategoryInputEnvelope
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -11732,6 +16010,20 @@ export namespace Prisma {
     update?: XOR<XOR<GuideUpdateToOneWithWhereWithoutCategoryInput, GuideUpdateWithoutCategoryInput>, GuideUncheckedUpdateWithoutCategoryInput>
   }
 
+  export type GlossaryItemCategoryUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutCategoryInput, GlossaryItemCategoryUncheckedCreateWithoutCategoryInput> | GlossaryItemCategoryCreateWithoutCategoryInput[] | GlossaryItemCategoryUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutCategoryInput | GlossaryItemCategoryCreateOrConnectWithoutCategoryInput[]
+    upsert?: GlossaryItemCategoryUpsertWithWhereUniqueWithoutCategoryInput | GlossaryItemCategoryUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: GlossaryItemCategoryCreateManyCategoryInputEnvelope
+    set?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    disconnect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    delete?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    update?: GlossaryItemCategoryUpdateWithWhereUniqueWithoutCategoryInput | GlossaryItemCategoryUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: GlossaryItemCategoryUpdateManyWithWhereWithoutCategoryInput | GlossaryItemCategoryUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
+  }
+
   export type GuideUncheckedUpdateOneWithoutCategoryNestedInput = {
     create?: XOR<GuideCreateWithoutCategoryInput, GuideUncheckedCreateWithoutCategoryInput>
     connectOrCreate?: GuideCreateOrConnectWithoutCategoryInput
@@ -11740,6 +16032,20 @@ export namespace Prisma {
     delete?: GuideWhereInput | boolean
     connect?: GuideWhereUniqueInput
     update?: XOR<XOR<GuideUpdateToOneWithWhereWithoutCategoryInput, GuideUpdateWithoutCategoryInput>, GuideUncheckedUpdateWithoutCategoryInput>
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutCategoryInput, GlossaryItemCategoryUncheckedCreateWithoutCategoryInput> | GlossaryItemCategoryCreateWithoutCategoryInput[] | GlossaryItemCategoryUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutCategoryInput | GlossaryItemCategoryCreateOrConnectWithoutCategoryInput[]
+    upsert?: GlossaryItemCategoryUpsertWithWhereUniqueWithoutCategoryInput | GlossaryItemCategoryUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: GlossaryItemCategoryCreateManyCategoryInputEnvelope
+    set?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    disconnect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    delete?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    update?: GlossaryItemCategoryUpdateWithWhereUniqueWithoutCategoryInput | GlossaryItemCategoryUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: GlossaryItemCategoryUpdateManyWithWhereWithoutCategoryInput | GlossaryItemCategoryUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
   }
 
   export type CategoryCreateNestedOneWithoutGuideInput = {
@@ -12040,6 +16346,136 @@ export namespace Prisma {
     update?: XOR<XOR<GuideTableUpdateToOneWithWhereWithoutRowsInput, GuideTableUpdateWithoutRowsInput>, GuideTableUncheckedUpdateWithoutRowsInput>
   }
 
+  export type GlossaryDetailCreateNestedManyWithoutGlossaryItemInput = {
+    create?: XOR<GlossaryDetailCreateWithoutGlossaryItemInput, GlossaryDetailUncheckedCreateWithoutGlossaryItemInput> | GlossaryDetailCreateWithoutGlossaryItemInput[] | GlossaryDetailUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryDetailCreateOrConnectWithoutGlossaryItemInput | GlossaryDetailCreateOrConnectWithoutGlossaryItemInput[]
+    createMany?: GlossaryDetailCreateManyGlossaryItemInputEnvelope
+    connect?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+  }
+
+  export type GlossaryItemCategoryCreateNestedManyWithoutGlossaryItemInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput> | GlossaryItemCategoryCreateWithoutGlossaryItemInput[] | GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput | GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput[]
+    createMany?: GlossaryItemCategoryCreateManyGlossaryItemInputEnvelope
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+  }
+
+  export type GlossaryDetailUncheckedCreateNestedManyWithoutGlossaryItemInput = {
+    create?: XOR<GlossaryDetailCreateWithoutGlossaryItemInput, GlossaryDetailUncheckedCreateWithoutGlossaryItemInput> | GlossaryDetailCreateWithoutGlossaryItemInput[] | GlossaryDetailUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryDetailCreateOrConnectWithoutGlossaryItemInput | GlossaryDetailCreateOrConnectWithoutGlossaryItemInput[]
+    createMany?: GlossaryDetailCreateManyGlossaryItemInputEnvelope
+    connect?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+  }
+
+  export type GlossaryItemCategoryUncheckedCreateNestedManyWithoutGlossaryItemInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput> | GlossaryItemCategoryCreateWithoutGlossaryItemInput[] | GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput | GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput[]
+    createMany?: GlossaryItemCategoryCreateManyGlossaryItemInputEnvelope
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type GlossaryDetailUpdateManyWithoutGlossaryItemNestedInput = {
+    create?: XOR<GlossaryDetailCreateWithoutGlossaryItemInput, GlossaryDetailUncheckedCreateWithoutGlossaryItemInput> | GlossaryDetailCreateWithoutGlossaryItemInput[] | GlossaryDetailUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryDetailCreateOrConnectWithoutGlossaryItemInput | GlossaryDetailCreateOrConnectWithoutGlossaryItemInput[]
+    upsert?: GlossaryDetailUpsertWithWhereUniqueWithoutGlossaryItemInput | GlossaryDetailUpsertWithWhereUniqueWithoutGlossaryItemInput[]
+    createMany?: GlossaryDetailCreateManyGlossaryItemInputEnvelope
+    set?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    disconnect?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    delete?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    connect?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    update?: GlossaryDetailUpdateWithWhereUniqueWithoutGlossaryItemInput | GlossaryDetailUpdateWithWhereUniqueWithoutGlossaryItemInput[]
+    updateMany?: GlossaryDetailUpdateManyWithWhereWithoutGlossaryItemInput | GlossaryDetailUpdateManyWithWhereWithoutGlossaryItemInput[]
+    deleteMany?: GlossaryDetailScalarWhereInput | GlossaryDetailScalarWhereInput[]
+  }
+
+  export type GlossaryItemCategoryUpdateManyWithoutGlossaryItemNestedInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput> | GlossaryItemCategoryCreateWithoutGlossaryItemInput[] | GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput | GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput[]
+    upsert?: GlossaryItemCategoryUpsertWithWhereUniqueWithoutGlossaryItemInput | GlossaryItemCategoryUpsertWithWhereUniqueWithoutGlossaryItemInput[]
+    createMany?: GlossaryItemCategoryCreateManyGlossaryItemInputEnvelope
+    set?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    disconnect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    delete?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    update?: GlossaryItemCategoryUpdateWithWhereUniqueWithoutGlossaryItemInput | GlossaryItemCategoryUpdateWithWhereUniqueWithoutGlossaryItemInput[]
+    updateMany?: GlossaryItemCategoryUpdateManyWithWhereWithoutGlossaryItemInput | GlossaryItemCategoryUpdateManyWithWhereWithoutGlossaryItemInput[]
+    deleteMany?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
+  }
+
+  export type GlossaryDetailUncheckedUpdateManyWithoutGlossaryItemNestedInput = {
+    create?: XOR<GlossaryDetailCreateWithoutGlossaryItemInput, GlossaryDetailUncheckedCreateWithoutGlossaryItemInput> | GlossaryDetailCreateWithoutGlossaryItemInput[] | GlossaryDetailUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryDetailCreateOrConnectWithoutGlossaryItemInput | GlossaryDetailCreateOrConnectWithoutGlossaryItemInput[]
+    upsert?: GlossaryDetailUpsertWithWhereUniqueWithoutGlossaryItemInput | GlossaryDetailUpsertWithWhereUniqueWithoutGlossaryItemInput[]
+    createMany?: GlossaryDetailCreateManyGlossaryItemInputEnvelope
+    set?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    disconnect?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    delete?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    connect?: GlossaryDetailWhereUniqueInput | GlossaryDetailWhereUniqueInput[]
+    update?: GlossaryDetailUpdateWithWhereUniqueWithoutGlossaryItemInput | GlossaryDetailUpdateWithWhereUniqueWithoutGlossaryItemInput[]
+    updateMany?: GlossaryDetailUpdateManyWithWhereWithoutGlossaryItemInput | GlossaryDetailUpdateManyWithWhereWithoutGlossaryItemInput[]
+    deleteMany?: GlossaryDetailScalarWhereInput | GlossaryDetailScalarWhereInput[]
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateManyWithoutGlossaryItemNestedInput = {
+    create?: XOR<GlossaryItemCategoryCreateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput> | GlossaryItemCategoryCreateWithoutGlossaryItemInput[] | GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput[]
+    connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput | GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput[]
+    upsert?: GlossaryItemCategoryUpsertWithWhereUniqueWithoutGlossaryItemInput | GlossaryItemCategoryUpsertWithWhereUniqueWithoutGlossaryItemInput[]
+    createMany?: GlossaryItemCategoryCreateManyGlossaryItemInputEnvelope
+    set?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    disconnect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    delete?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+    update?: GlossaryItemCategoryUpdateWithWhereUniqueWithoutGlossaryItemInput | GlossaryItemCategoryUpdateWithWhereUniqueWithoutGlossaryItemInput[]
+    updateMany?: GlossaryItemCategoryUpdateManyWithWhereWithoutGlossaryItemInput | GlossaryItemCategoryUpdateManyWithWhereWithoutGlossaryItemInput[]
+    deleteMany?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
+  }
+
+  export type GlossaryItemCreateNestedOneWithoutDetailsInput = {
+    create?: XOR<GlossaryItemCreateWithoutDetailsInput, GlossaryItemUncheckedCreateWithoutDetailsInput>
+    connectOrCreate?: GlossaryItemCreateOrConnectWithoutDetailsInput
+    connect?: GlossaryItemWhereUniqueInput
+  }
+
+  export type GlossaryItemUpdateOneRequiredWithoutDetailsNestedInput = {
+    create?: XOR<GlossaryItemCreateWithoutDetailsInput, GlossaryItemUncheckedCreateWithoutDetailsInput>
+    connectOrCreate?: GlossaryItemCreateOrConnectWithoutDetailsInput
+    upsert?: GlossaryItemUpsertWithoutDetailsInput
+    connect?: GlossaryItemWhereUniqueInput
+    update?: XOR<XOR<GlossaryItemUpdateToOneWithWhereWithoutDetailsInput, GlossaryItemUpdateWithoutDetailsInput>, GlossaryItemUncheckedUpdateWithoutDetailsInput>
+  }
+
+  export type GlossaryItemCreateNestedOneWithoutRelatedCategoriesInput = {
+    create?: XOR<GlossaryItemCreateWithoutRelatedCategoriesInput, GlossaryItemUncheckedCreateWithoutRelatedCategoriesInput>
+    connectOrCreate?: GlossaryItemCreateOrConnectWithoutRelatedCategoriesInput
+    connect?: GlossaryItemWhereUniqueInput
+  }
+
+  export type CategoryCreateNestedOneWithoutGlossaryLinksInput = {
+    create?: XOR<CategoryCreateWithoutGlossaryLinksInput, CategoryUncheckedCreateWithoutGlossaryLinksInput>
+    connectOrCreate?: CategoryCreateOrConnectWithoutGlossaryLinksInput
+    connect?: CategoryWhereUniqueInput
+  }
+
+  export type GlossaryItemUpdateOneRequiredWithoutRelatedCategoriesNestedInput = {
+    create?: XOR<GlossaryItemCreateWithoutRelatedCategoriesInput, GlossaryItemUncheckedCreateWithoutRelatedCategoriesInput>
+    connectOrCreate?: GlossaryItemCreateOrConnectWithoutRelatedCategoriesInput
+    upsert?: GlossaryItemUpsertWithoutRelatedCategoriesInput
+    connect?: GlossaryItemWhereUniqueInput
+    update?: XOR<XOR<GlossaryItemUpdateToOneWithWhereWithoutRelatedCategoriesInput, GlossaryItemUpdateWithoutRelatedCategoriesInput>, GlossaryItemUncheckedUpdateWithoutRelatedCategoriesInput>
+  }
+
+  export type CategoryUpdateOneRequiredWithoutGlossaryLinksNestedInput = {
+    create?: XOR<CategoryCreateWithoutGlossaryLinksInput, CategoryUncheckedCreateWithoutGlossaryLinksInput>
+    connectOrCreate?: CategoryCreateOrConnectWithoutGlossaryLinksInput
+    upsert?: CategoryUpsertWithoutGlossaryLinksInput
+    connect?: CategoryWhereUniqueInput
+    update?: XOR<XOR<CategoryUpdateToOneWithWhereWithoutGlossaryLinksInput, CategoryUpdateWithoutGlossaryLinksInput>, CategoryUncheckedUpdateWithoutGlossaryLinksInput>
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -12199,6 +16635,19 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type GuideCreateWithoutCategoryInput = {
     id?: string
     title: string
@@ -12220,6 +16669,28 @@ export namespace Prisma {
   export type GuideCreateOrConnectWithoutCategoryInput = {
     where: GuideWhereUniqueInput
     create: XOR<GuideCreateWithoutCategoryInput, GuideUncheckedCreateWithoutCategoryInput>
+  }
+
+  export type GlossaryItemCategoryCreateWithoutCategoryInput = {
+    position: number
+    createdAt?: Date | string
+    glossaryItem: GlossaryItemCreateNestedOneWithoutRelatedCategoriesInput
+  }
+
+  export type GlossaryItemCategoryUncheckedCreateWithoutCategoryInput = {
+    glossaryItemId: string
+    position: number
+    createdAt?: Date | string
+  }
+
+  export type GlossaryItemCategoryCreateOrConnectWithoutCategoryInput = {
+    where: GlossaryItemCategoryWhereUniqueInput
+    create: XOR<GlossaryItemCategoryCreateWithoutCategoryInput, GlossaryItemCategoryUncheckedCreateWithoutCategoryInput>
+  }
+
+  export type GlossaryItemCategoryCreateManyCategoryInputEnvelope = {
+    data: GlossaryItemCategoryCreateManyCategoryInput | GlossaryItemCategoryCreateManyCategoryInput[]
+    skipDuplicates?: boolean
   }
 
   export type GuideUpsertWithoutCategoryInput = {
@@ -12251,6 +16722,32 @@ export namespace Prisma {
     tabs?: GuideTabUncheckedUpdateManyWithoutGuideNestedInput
   }
 
+  export type GlossaryItemCategoryUpsertWithWhereUniqueWithoutCategoryInput = {
+    where: GlossaryItemCategoryWhereUniqueInput
+    update: XOR<GlossaryItemCategoryUpdateWithoutCategoryInput, GlossaryItemCategoryUncheckedUpdateWithoutCategoryInput>
+    create: XOR<GlossaryItemCategoryCreateWithoutCategoryInput, GlossaryItemCategoryUncheckedCreateWithoutCategoryInput>
+  }
+
+  export type GlossaryItemCategoryUpdateWithWhereUniqueWithoutCategoryInput = {
+    where: GlossaryItemCategoryWhereUniqueInput
+    data: XOR<GlossaryItemCategoryUpdateWithoutCategoryInput, GlossaryItemCategoryUncheckedUpdateWithoutCategoryInput>
+  }
+
+  export type GlossaryItemCategoryUpdateManyWithWhereWithoutCategoryInput = {
+    where: GlossaryItemCategoryScalarWhereInput
+    data: XOR<GlossaryItemCategoryUpdateManyMutationInput, GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryInput>
+  }
+
+  export type GlossaryItemCategoryScalarWhereInput = {
+    AND?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
+    OR?: GlossaryItemCategoryScalarWhereInput[]
+    NOT?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
+    glossaryItemId?: StringFilter<"GlossaryItemCategory"> | string
+    categoryId?: StringFilter<"GlossaryItemCategory"> | string
+    position?: IntFilter<"GlossaryItemCategory"> | number
+    createdAt?: DateTimeFilter<"GlossaryItemCategory"> | Date | string
+  }
+
   export type CategoryCreateWithoutGuideInput = {
     id?: string
     slug: string
@@ -12263,6 +16760,7 @@ export namespace Prisma {
     imageAlt: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    glossaryLinks?: GlossaryItemCategoryCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateWithoutGuideInput = {
@@ -12277,6 +16775,7 @@ export namespace Prisma {
     imageAlt: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    glossaryLinks?: GlossaryItemCategoryUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryCreateOrConnectWithoutGuideInput = {
@@ -12345,6 +16844,7 @@ export namespace Prisma {
     imageAlt?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    glossaryLinks?: GlossaryItemCategoryUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateWithoutGuideInput = {
@@ -12359,6 +16859,7 @@ export namespace Prisma {
     imageAlt?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    glossaryLinks?: GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type GuideTabUpsertWithWhereUniqueWithoutGuideInput = {
@@ -12976,6 +17477,318 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type GlossaryDetailCreateWithoutGlossaryItemInput = {
+    id?: string
+    content: string
+    position: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GlossaryDetailUncheckedCreateWithoutGlossaryItemInput = {
+    id?: string
+    content: string
+    position: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GlossaryDetailCreateOrConnectWithoutGlossaryItemInput = {
+    where: GlossaryDetailWhereUniqueInput
+    create: XOR<GlossaryDetailCreateWithoutGlossaryItemInput, GlossaryDetailUncheckedCreateWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryDetailCreateManyGlossaryItemInputEnvelope = {
+    data: GlossaryDetailCreateManyGlossaryItemInput | GlossaryDetailCreateManyGlossaryItemInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type GlossaryItemCategoryCreateWithoutGlossaryItemInput = {
+    position: number
+    createdAt?: Date | string
+    category: CategoryCreateNestedOneWithoutGlossaryLinksInput
+  }
+
+  export type GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput = {
+    categoryId: string
+    position: number
+    createdAt?: Date | string
+  }
+
+  export type GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput = {
+    where: GlossaryItemCategoryWhereUniqueInput
+    create: XOR<GlossaryItemCategoryCreateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryItemCategoryCreateManyGlossaryItemInputEnvelope = {
+    data: GlossaryItemCategoryCreateManyGlossaryItemInput | GlossaryItemCategoryCreateManyGlossaryItemInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type GlossaryDetailUpsertWithWhereUniqueWithoutGlossaryItemInput = {
+    where: GlossaryDetailWhereUniqueInput
+    update: XOR<GlossaryDetailUpdateWithoutGlossaryItemInput, GlossaryDetailUncheckedUpdateWithoutGlossaryItemInput>
+    create: XOR<GlossaryDetailCreateWithoutGlossaryItemInput, GlossaryDetailUncheckedCreateWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryDetailUpdateWithWhereUniqueWithoutGlossaryItemInput = {
+    where: GlossaryDetailWhereUniqueInput
+    data: XOR<GlossaryDetailUpdateWithoutGlossaryItemInput, GlossaryDetailUncheckedUpdateWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryDetailUpdateManyWithWhereWithoutGlossaryItemInput = {
+    where: GlossaryDetailScalarWhereInput
+    data: XOR<GlossaryDetailUpdateManyMutationInput, GlossaryDetailUncheckedUpdateManyWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryDetailScalarWhereInput = {
+    AND?: GlossaryDetailScalarWhereInput | GlossaryDetailScalarWhereInput[]
+    OR?: GlossaryDetailScalarWhereInput[]
+    NOT?: GlossaryDetailScalarWhereInput | GlossaryDetailScalarWhereInput[]
+    id?: StringFilter<"GlossaryDetail"> | string
+    glossaryItemId?: StringFilter<"GlossaryDetail"> | string
+    content?: StringFilter<"GlossaryDetail"> | string
+    position?: IntFilter<"GlossaryDetail"> | number
+    createdAt?: DateTimeFilter<"GlossaryDetail"> | Date | string
+    updatedAt?: DateTimeFilter<"GlossaryDetail"> | Date | string
+  }
+
+  export type GlossaryItemCategoryUpsertWithWhereUniqueWithoutGlossaryItemInput = {
+    where: GlossaryItemCategoryWhereUniqueInput
+    update: XOR<GlossaryItemCategoryUpdateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedUpdateWithoutGlossaryItemInput>
+    create: XOR<GlossaryItemCategoryCreateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedCreateWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryItemCategoryUpdateWithWhereUniqueWithoutGlossaryItemInput = {
+    where: GlossaryItemCategoryWhereUniqueInput
+    data: XOR<GlossaryItemCategoryUpdateWithoutGlossaryItemInput, GlossaryItemCategoryUncheckedUpdateWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryItemCategoryUpdateManyWithWhereWithoutGlossaryItemInput = {
+    where: GlossaryItemCategoryScalarWhereInput
+    data: XOR<GlossaryItemCategoryUpdateManyMutationInput, GlossaryItemCategoryUncheckedUpdateManyWithoutGlossaryItemInput>
+  }
+
+  export type GlossaryItemCreateWithoutDetailsInput = {
+    id?: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    relatedCategories?: GlossaryItemCategoryCreateNestedManyWithoutGlossaryItemInput
+  }
+
+  export type GlossaryItemUncheckedCreateWithoutDetailsInput = {
+    id?: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    relatedCategories?: GlossaryItemCategoryUncheckedCreateNestedManyWithoutGlossaryItemInput
+  }
+
+  export type GlossaryItemCreateOrConnectWithoutDetailsInput = {
+    where: GlossaryItemWhereUniqueInput
+    create: XOR<GlossaryItemCreateWithoutDetailsInput, GlossaryItemUncheckedCreateWithoutDetailsInput>
+  }
+
+  export type GlossaryItemUpsertWithoutDetailsInput = {
+    update: XOR<GlossaryItemUpdateWithoutDetailsInput, GlossaryItemUncheckedUpdateWithoutDetailsInput>
+    create: XOR<GlossaryItemCreateWithoutDetailsInput, GlossaryItemUncheckedCreateWithoutDetailsInput>
+    where?: GlossaryItemWhereInput
+  }
+
+  export type GlossaryItemUpdateToOneWithWhereWithoutDetailsInput = {
+    where?: GlossaryItemWhereInput
+    data: XOR<GlossaryItemUpdateWithoutDetailsInput, GlossaryItemUncheckedUpdateWithoutDetailsInput>
+  }
+
+  export type GlossaryItemUpdateWithoutDetailsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    relatedCategories?: GlossaryItemCategoryUpdateManyWithoutGlossaryItemNestedInput
+  }
+
+  export type GlossaryItemUncheckedUpdateWithoutDetailsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    relatedCategories?: GlossaryItemCategoryUncheckedUpdateManyWithoutGlossaryItemNestedInput
+  }
+
+  export type GlossaryItemCreateWithoutRelatedCategoriesInput = {
+    id?: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    details?: GlossaryDetailCreateNestedManyWithoutGlossaryItemInput
+  }
+
+  export type GlossaryItemUncheckedCreateWithoutRelatedCategoriesInput = {
+    id?: string
+    slug: string
+    term: string
+    shortDefinition: string
+    featured?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    details?: GlossaryDetailUncheckedCreateNestedManyWithoutGlossaryItemInput
+  }
+
+  export type GlossaryItemCreateOrConnectWithoutRelatedCategoriesInput = {
+    where: GlossaryItemWhereUniqueInput
+    create: XOR<GlossaryItemCreateWithoutRelatedCategoriesInput, GlossaryItemUncheckedCreateWithoutRelatedCategoriesInput>
+  }
+
+  export type CategoryCreateWithoutGlossaryLinksInput = {
+    id?: string
+    slug: string
+    position: number
+    title: string
+    summary: string
+    abv: string
+    origin: string
+    imageUrl: string
+    imageAlt: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guide?: GuideCreateNestedOneWithoutCategoryInput
+  }
+
+  export type CategoryUncheckedCreateWithoutGlossaryLinksInput = {
+    id?: string
+    slug: string
+    position: number
+    title: string
+    summary: string
+    abv: string
+    origin: string
+    imageUrl: string
+    imageAlt: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guide?: GuideUncheckedCreateNestedOneWithoutCategoryInput
+  }
+
+  export type CategoryCreateOrConnectWithoutGlossaryLinksInput = {
+    where: CategoryWhereUniqueInput
+    create: XOR<CategoryCreateWithoutGlossaryLinksInput, CategoryUncheckedCreateWithoutGlossaryLinksInput>
+  }
+
+  export type GlossaryItemUpsertWithoutRelatedCategoriesInput = {
+    update: XOR<GlossaryItemUpdateWithoutRelatedCategoriesInput, GlossaryItemUncheckedUpdateWithoutRelatedCategoriesInput>
+    create: XOR<GlossaryItemCreateWithoutRelatedCategoriesInput, GlossaryItemUncheckedCreateWithoutRelatedCategoriesInput>
+    where?: GlossaryItemWhereInput
+  }
+
+  export type GlossaryItemUpdateToOneWithWhereWithoutRelatedCategoriesInput = {
+    where?: GlossaryItemWhereInput
+    data: XOR<GlossaryItemUpdateWithoutRelatedCategoriesInput, GlossaryItemUncheckedUpdateWithoutRelatedCategoriesInput>
+  }
+
+  export type GlossaryItemUpdateWithoutRelatedCategoriesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    details?: GlossaryDetailUpdateManyWithoutGlossaryItemNestedInput
+  }
+
+  export type GlossaryItemUncheckedUpdateWithoutRelatedCategoriesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    term?: StringFieldUpdateOperationsInput | string
+    shortDefinition?: StringFieldUpdateOperationsInput | string
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    details?: GlossaryDetailUncheckedUpdateManyWithoutGlossaryItemNestedInput
+  }
+
+  export type CategoryUpsertWithoutGlossaryLinksInput = {
+    update: XOR<CategoryUpdateWithoutGlossaryLinksInput, CategoryUncheckedUpdateWithoutGlossaryLinksInput>
+    create: XOR<CategoryCreateWithoutGlossaryLinksInput, CategoryUncheckedCreateWithoutGlossaryLinksInput>
+    where?: CategoryWhereInput
+  }
+
+  export type CategoryUpdateToOneWithWhereWithoutGlossaryLinksInput = {
+    where?: CategoryWhereInput
+    data: XOR<CategoryUpdateWithoutGlossaryLinksInput, CategoryUncheckedUpdateWithoutGlossaryLinksInput>
+  }
+
+  export type CategoryUpdateWithoutGlossaryLinksInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    summary?: StringFieldUpdateOperationsInput | string
+    abv?: StringFieldUpdateOperationsInput | string
+    origin?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guide?: GuideUpdateOneWithoutCategoryNestedInput
+  }
+
+  export type CategoryUncheckedUpdateWithoutGlossaryLinksInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    summary?: StringFieldUpdateOperationsInput | string
+    abv?: StringFieldUpdateOperationsInput | string
+    origin?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guide?: GuideUncheckedUpdateOneWithoutCategoryNestedInput
+  }
+
+  export type GlossaryItemCategoryCreateManyCategoryInput = {
+    glossaryItemId: string
+    position: number
+    createdAt?: Date | string
+  }
+
+  export type GlossaryItemCategoryUpdateWithoutCategoryInput = {
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    glossaryItem?: GlossaryItemUpdateOneRequiredWithoutRelatedCategoriesNestedInput
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateWithoutCategoryInput = {
+    glossaryItemId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryInput = {
+    glossaryItemId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type GuideTabCreateManyGuideInput = {
     id?: string
     slug: string
@@ -13210,6 +18023,62 @@ export namespace Prisma {
     position?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryDetailCreateManyGlossaryItemInput = {
+    id?: string
+    content: string
+    position: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GlossaryItemCategoryCreateManyGlossaryItemInput = {
+    categoryId: string
+    position: number
+    createdAt?: Date | string
+  }
+
+  export type GlossaryDetailUpdateWithoutGlossaryItemInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryDetailUncheckedUpdateWithoutGlossaryItemInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryDetailUncheckedUpdateManyWithoutGlossaryItemInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryItemCategoryUpdateWithoutGlossaryItemInput = {
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    category?: CategoryUpdateOneRequiredWithoutGlossaryLinksNestedInput
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateWithoutGlossaryItemInput = {
+    categoryId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GlossaryItemCategoryUncheckedUpdateManyWithoutGlossaryItemInput = {
+    categoryId?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

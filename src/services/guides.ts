@@ -6,7 +6,7 @@ import type {
   SeedGuideTable,
 } from "../domain/contracts";
 import { guideDetailInclude } from "../domain/serializers";
-import { prisma } from "../lib/prisma";
+import { getPrismaOrThrow } from "../lib/prisma";
 
 type SectionMutationInput = SeedGuideSection & {
   tabSlug?: string;
@@ -69,6 +69,7 @@ function toGuideTableCreate(
 }
 
 async function requireCategory(slug: string) {
+  const prisma = getPrismaOrThrow();
   const category = await prisma.category.findUnique({
     where: { slug },
     select: { id: true, slug: true, title: true },
@@ -82,6 +83,7 @@ async function requireCategory(slug: string) {
 }
 
 async function requireGuideTab(categorySlug: string, tabSlug: string) {
+  const prisma = getPrismaOrThrow();
   const tab = await prisma.guideTab.findFirst({
     where: {
       slug: tabSlug,
@@ -108,6 +110,7 @@ async function requireGuideTab(categorySlug: string, tabSlug: string) {
 }
 
 export async function listGuides() {
+  const prisma = getPrismaOrThrow();
   return prisma.guide.findMany({
     include: {
       category: true,
@@ -124,6 +127,7 @@ export async function listGuides() {
 }
 
 export async function getGuideByCategorySlug(categorySlug: string) {
+  const prisma = getPrismaOrThrow();
   return prisma.guide.findFirst({
     where: {
       category: {
@@ -135,6 +139,7 @@ export async function getGuideByCategorySlug(categorySlug: string) {
 }
 
 export async function replaceGuideForCategory(categorySlug: string, payload: GuideUpsertInput) {
+  const prisma = getPrismaOrThrow();
   const category = await requireCategory(categorySlug);
 
   await prisma.guide.deleteMany({
@@ -164,6 +169,7 @@ export async function replaceGuideForCategory(categorySlug: string, payload: Gui
 }
 
 export async function createSectionForGuide(categorySlug: string, payload: SectionMutationInput) {
+  const prisma = getPrismaOrThrow();
   const tab = await requireGuideTab(categorySlug, payload.tabSlug ?? "");
 
   const existingSections = await prisma.guideSection.count({
@@ -204,6 +210,7 @@ export async function updateSectionForGuide(
   sectionId: string,
   payload: SectionMutationInput,
 ) {
+  const prisma = getPrismaOrThrow();
   const section = await prisma.guideSection.findFirst({
     where: {
       id: sectionId,
@@ -264,6 +271,7 @@ export async function updateSectionForGuide(
 }
 
 export async function deleteSectionForGuide(categorySlug: string, sectionId: string) {
+  const prisma = getPrismaOrThrow();
   const section = await prisma.guideSection.findFirst({
     where: {
       id: sectionId,

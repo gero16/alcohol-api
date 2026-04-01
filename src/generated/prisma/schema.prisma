@@ -8,18 +8,19 @@ datasource db {
 }
 
 model Category {
-  id        String   @id @default(cuid())
-  slug      String   @unique
-  position  Int
-  title     String
-  summary   String
-  abv       String
-  origin    String
-  imageUrl  String
-  imageAlt  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  guide     Guide?
+  id            String                 @id @default(cuid())
+  slug          String                 @unique
+  position      Int
+  title         String
+  summary       String
+  abv           String
+  origin        String
+  imageUrl      String
+  imageAlt      String
+  createdAt     DateTime               @default(now())
+  updatedAt     DateTime               @updatedAt
+  guide         Guide?
+  glossaryLinks GlossaryItemCategory[]
 }
 
 model Guide {
@@ -115,4 +116,41 @@ model GuideTableRow {
   table       GuideTable @relation(fields: [tableId], references: [id], onDelete: Cascade)
 
   @@index([tableId, position])
+}
+
+model GlossaryItem {
+  id                String                 @id @default(cuid())
+  slug              String                 @unique
+  term              String
+  shortDefinition   String
+  featured          Boolean                @default(false)
+  createdAt         DateTime               @default(now())
+  updatedAt         DateTime               @updatedAt
+  details           GlossaryDetail[]
+  relatedCategories GlossaryItemCategory[]
+}
+
+model GlossaryDetail {
+  id             String       @id @default(cuid())
+  glossaryItemId String
+  content        String
+  position       Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  glossaryItem   GlossaryItem @relation(fields: [glossaryItemId], references: [id], onDelete: Cascade)
+
+  @@index([glossaryItemId, position])
+}
+
+model GlossaryItemCategory {
+  glossaryItemId String
+  categoryId     String
+  position       Int
+  createdAt      DateTime     @default(now())
+  glossaryItem   GlossaryItem @relation(fields: [glossaryItemId], references: [id], onDelete: Cascade)
+  category       Category     @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([glossaryItemId, categoryId])
+  @@index([categoryId, position])
+  @@index([glossaryItemId, position])
 }

@@ -1,6 +1,7 @@
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../generated/prisma";
+import { createDatabaseUnavailableError } from "./database";
 
 declare global {
   // eslint-disable-next-line no-var
@@ -9,21 +10,33 @@ declare global {
 
 const databaseUrl = process.env.DATABASE_URL;
 
-if (!databaseUrl) {
-  throw new Error("DATABASE_URL is required to initialize Prisma with PostgreSQL.");
-}
+function createPrismaClient() {
+  if (!databaseUrl) {
+    return null;
+  }
 
-const adapter = new PrismaPg({
-  connectionString: databaseUrl,
-});
+  const adapter = new PrismaPg({
+    connectionString: databaseUrl,
+  });
 
-export const prisma =
-  global.__alcoholPrisma__ ??
-  new PrismaClient({
+  return new PrismaClient({
     adapter,
     log: process.env.NODE_ENV === "development" ? ["warn", "error"] : ["error"],
   });
+}
 
-if (process.env.NODE_ENV !== "production") {
+export const prisma = global.__alcoholPrisma__ ?? createPrismaClient();
+
+if (process.env.NODE_ENV !== "production" && prisma) {
   global.__alcoholPrisma__ = prisma;
+}
+
+export function getPrismaOrThrow() {
+  if (!prisma) {
+    throw createDatabaseUnavailableError(
+      "DATABASE_URL no está configurada. La base de datos no está disponible.",
+    );
+  }
+
+  return prisma;
 }

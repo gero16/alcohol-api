@@ -85,8 +85,22 @@
           "noteContent": "En el Viejo Mundo, muchos vinos se identifican por la región o la denominación de origen, como Rioja, donde puede predominar el Tempranillo pero la etiqueta destaca el lugar. En el Nuevo Mundo, como América, Australia o Sudáfrica, es más habitual identificar el vino por la uva principal.",
           "sections": [
             {
+              "slug": "conceptos-basicos",
+              "title": "1. Conceptos básicos para empezar",
+              "subtitle": "Cinco ideas simples que ayudan a entender casi cualquier vino",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vino servida junto a una botella",
+              "paragraphs": [
+                "Mosto es el jugo de la uva antes de convertirse en vino. Cuando ese jugo fermenta, las levaduras transforman sus azúcares naturales en alcohol.",
+                "Cuerpo es la sensación de peso o volumen que deja el vino en la boca. Un vino ligero se siente más liviano y fácil de beber; uno con más cuerpo se nota más amplio, intenso o denso.",
+                "Taninos son sustancias naturales que vienen sobre todo de las pieles y semillas de la uva, y a veces también de la barrica. Se sienten como sequedad o aspereza en la boca, algo parecido a un té negro muy cargado.",
+                "Acidez es la sensación de frescura que hace que un vino se sienta vivo, ágil y refrescante. No significa que el vino esté malo: es una parte clave del equilibrio.",
+                "Azúcar residual es el azúcar natural que queda en el vino después de la fermentación. Cuanto más queda, más dulce puede sentirse el vino."
+              ]
+            },
+            {
               "slug": "varietales",
-              "title": "1. Vinos varietales",
+              "title": "2. Vinos varietales",
               "subtitle": "Un vino varietal está elaborado predominantemente con un solo tipo de uva.",
               "imageUrl": "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Viñedo con hileras de uvas maduras al atardecer",
@@ -98,7 +112,7 @@
             },
             {
               "slug": "monovarietales",
-              "title": "2. Vinos monovarietales",
+              "title": "3. Vinos monovarietales",
               "subtitle": "Aunque a menudo se usan como sinónimos de los varietales, el término monovarietal es más estricto.",
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino servida junto a una botella",
@@ -110,7 +124,7 @@
             },
             {
               "slug": "cortes",
-              "title": "3. Vinos de corte",
+              "title": "4. Vinos de corte",
               "subtitle": "También llamados blend, assemblage o coupage, son vinos elaborados con dos o más variedades de uva.",
               "imageUrl": "https://images.unsplash.com/photo-1524594154908-eddba9c7e5c6?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Varias copas de vino listas para una cata",
@@ -122,7 +136,7 @@
             },
             {
               "slug": "multivarietales",
-              "title": "4. Vinos multivarietales",
+              "title": "5. Vinos multivarietales",
               "subtitle": "Es un término menos común, pero útil para blends que reúnen muchas cepas distintas.",
               "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Botellas y copas variadas sobre una mesa de degustación",
@@ -283,11 +297,11 @@
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino tinto intenso servida",
               "paragraphs": [
-                "Cuando se dice que un vino tiene cuerpo, se habla de la sensación de peso o volumen que deja en la boca. Un vino de poco cuerpo se siente más liviano; uno de gran cuerpo se nota más intenso, denso y envolvente.",
-                "Los taninos son sustancias naturales que vienen sobre todo de las pieles y semillas de la uva, y a veces también de la madera de la barrica. Se sienten como una sequedad o aspereza en la boca, algo parecido a la sensación de un té negro muy cargado.",
+                "Los tintos suelen mostrar más taninos que otros tipos de vino porque fermentan en contacto con las pieles de la uva. Por eso a menudo se sienten más estructurados, más secos y con más presencia en la boca.",
                 "Ligeros: tienen poco tanino y resultan fáciles de beber, como Pinot Noir o Gamay.",
                 "De cuerpo medio: buscan equilibrio entre frescura y estructura, como Merlot o Tempranillo.",
-                "De gran cuerpo: son intensos, oscuros y con mucho tanino, ideales para carnes rojas, como Cabernet Sauvignon, Malbec o Syrah."
+                "De gran cuerpo: son intensos, oscuros y con mucho tanino, ideales para carnes rojas, como Cabernet Sauvignon, Malbec o Syrah.",
+                "También pueden cambiar mucho según la crianza: algunos tintos son muy frutados y directos, mientras otros ganan notas de madera, especias o cacao cuando pasan por barrica."
               ]
             },
             {
@@ -297,9 +311,11 @@
               "imageUrl": "https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino blanco brillante sobre una mesa",
               "paragraphs": [
+                "Los vinos blancos suelen destacar más por frescura, acidez, fruta y aromas que por taninos. Por eso muchas personas los sienten más ligeros y directos que los tintos.",
                 "Secos y frescos: muy ácidos y con poco o ningún azúcar residual, como Sauvignon Blanc, Pinot Grigio o Albariño.",
                 "Con cuerpo o untuosos: a menudo pasan por barrica y desarrollan notas de vainilla o mantequilla, como Chardonnay o Viognier.",
-                "Aromáticos: destacan por sus aromas florales o frutales intensos, como Riesling, Torrontés o Gewürztraminer."
+                "Aromáticos: destacan por sus aromas florales o frutales intensos, como Riesling, Torrontés o Gewürztraminer.",
+                "No todos los blancos son iguales: algunos buscan ser muy livianos y refrescantes, otros resultan más cremosos, amplios o gastronómicos, especialmente si tienen más cuerpo o crianza."
               ]
             },
             {
@@ -310,7 +326,9 @@
               "imageAlt": "Copa de vino rosado con tono salmón",
               "paragraphs": [
                 "Ese contacto dura solo unas horas, hasta lograr el tono deseado.",
-                "Pueden ir desde perfiles muy secos hasta estilos más dulces, según la elaboración y el mercado."
+                "Por eso el color puede variar mucho: algunos rosados son muy pálidos y delicados, mientras otros muestran tonos más intensos y frutados.",
+                "Pueden ir desde perfiles muy secos hasta estilos más dulces, según la elaboración y el mercado.",
+                "Muchos rosados combinan la frescura de un blanco con parte de la fruta y la estructura suave de un tinto, lo que los vuelve muy versátiles para clima cálido, aperitivos o comidas livianas."
               ]
             },
             {

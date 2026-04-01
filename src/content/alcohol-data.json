@@ -748,8 +748,8 @@
               "imageUrl": "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Equipo de destilación usado para elaborar bebidas espirituosas",
               "paragraphs": [
-                "Alambique es el equipo donde se realiza la destilación. Ahí se calienta el líquido fermentado, se separan los vapores alcohólicos y luego se vuelven a convertir en líquido.",
-                "Cabezas, corazón y colas son las partes que salen durante la destilación. En simple: las cabezas suelen contener compuestos menos deseables, el corazón es la parte más limpia y equilibrada, y las colas aportan notas más pesadas o ásperas.",
+                "Alambique es el equipo donde se realiza la destilación. Ahí se calienta un líquido fermentado para que una parte se convierta en vapor. Después ese vapor se enfría y vuelve a hacerse líquido. Esa es la base de la destilación.",
+                "Cabezas, corazón y colas son las partes que van saliendo durante ese proceso. Dicho muy simple: las cabezas son lo primero que sale y suelen ser menos deseables, el corazón es la parte del medio y normalmente la más limpia y equilibrada, y las colas son lo último que sale y suelen sentirse más pesadas o ásperas.",
                 "Cask strength o barrel proof significa que un destilado se embotella con una graduación muy alta, casi tal como salió de la barrica, sin rebajarlo demasiado con agua.",
                 "Reposado es un término muy usado en tequila y otros destilados para indicar que la bebida descansó un tiempo en madera. No suele ser una crianza larguísima, pero ya cambia color, suavidad y aromas.",
                 "Aprender estas palabras ayuda mucho porque explican por qué dos destilados del mismo tipo pueden sentirse muy distintos en intensidad, limpieza, textura o influencia de barrica."
@@ -802,8 +802,8 @@
                 },
                 {
                   "term": "2. Destilar y separar fracciones",
-                  "description": "El líquido fermentado se calienta para evaporar alcoholes y compuestos aromáticos. Luego se condensan y se separan cabezas, corazón y colas.",
-                  "reference": "El corazón suele ser la parte más equilibrada y segura para construir el destilado comercial.",
+                  "description": "El líquido fermentado se calienta. Al calentarlo, una parte se convierte en vapor. Ese vapor lleva alcohol y algunos aromas, y luego se enfría para que vuelva a hacerse líquido. Ahí aparece el destilado. Durante esa salida se distinguen tres partes: las cabezas, que salen primero y suelen ser menos deseables; el corazón, que es la parte más limpia y equilibrada; y las colas, que salen al final y suelen ser más pesadas o ásperas.",
+                  "reference": "Dicho muy fácil: destilar no es solo hervir alcohol. Es calentar un fermentado, captar el vapor, volverlo líquido y elegir qué parte sirve para el producto final.",
                   "imageUrl": "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Equipo de destilación metálico en una destilería"
                 },
@@ -1284,7 +1284,8 @@
                 "El vodka busca pureza y neutralidad aromática, por eso suele tener menos rasgos aromáticos intensos que ginebra, ron o whisky.",
                 "La graduación comercial más habitual se mueve alrededor de 37,5 % a 40 % vol., aunque algunas versiones premium o regionales pueden subir un poco más.",
                 "Puede elaborarse con trigo, centeno, patata u otras materias primas, pero muchas veces lo que más se nota es la textura y la limpieza en boca.",
-                "Para alguien que empieza, es útil pensar que el vodka no intenta impresionar con muchos aromas, sino ofrecer una base limpia y versátil."
+                "Para alguien que empieza, es útil pensar que el vodka no intenta impresionar con muchos aromas, sino ofrecer una base limpia y versátil.",
+                "Eso explica por qué dos destilados pueden partir de ingredientes parecidos y aun así no terminar siendo lo mismo. Un whisky también puede nacer de cereales, pero busca conservar más carácter del grano y además sumar barrica; el vodka, en cambio, suele buscar la máxima limpieza posible."
               ]
             },
             {
@@ -1297,7 +1298,9 @@
                 "El vodka parte de una materia prima fermentable como trigo, centeno, maíz, patata u otros almidones o azúcares. Esa base se fermenta para generar alcohol.",
                 "Después se destila varias veces con el objetivo de obtener un perfil muy limpio y con pocos aromas dominantes.",
                 "Muchos productores también filtran el destilado con carbón u otros medios para suavizarlo todavía más y mejorar la sensación en boca.",
-                "Finalmente se ajusta la graduación con agua y se embotella. El resultado ideal es un destilado claro, limpio y versátil."
+                "Finalmente se ajusta la graduación con agua y se embotella. El resultado ideal es un destilado claro, limpio y versátil.",
+                "La diferencia clave con otros destilados está en la intención del proceso: en vodka se intenta quitar gran parte de los rasgos intensos de la materia prima, mientras que en whisky, ron, tequila o mezcal normalmente se busca que el origen y el método se noten más en el sabor.",
+                "Por eso no alcanza con decir \"está hecho de cereal\" o \"está hecho de una base fermentada\". Lo que define al vodka es que el productor persigue neutralidad, pureza y textura, no tanto identidad aromática marcada."
               ]
             },
             {

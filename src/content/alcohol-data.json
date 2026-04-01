@@ -24,7 +24,7 @@
       "slug": "destilados",
       "position": 2,
       "title": "Destilados",
-      "summary": "Concentración por destilación (whisky, ron, ginebra, vodka, tequila, etc.). Mayor graduación que vinos o cervezas.",
+      "summary": "Un destilado es una bebida en la que se concentra el alcohol mediante destilación. Por eso whisky, ron, ginebra, vodka o tequila suelen tener mucha más graduación que vino o cerveza.",
       "abv": "35–50 % vol. (habitual en botella)",
       "origin": "Según producto: Escocia, Caribe, Europa del Este, México…",
       "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
@@ -735,9 +735,24 @@
               "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Botellas y vaso de bebidas destiladas",
               "paragraphs": [
+                "Un destilado es una bebida en la que primero se crea un fermentado y luego se calienta para separar y concentrar el alcohol. Ese proceso se llama destilación.",
                 "Los destilados parten de una bebida ya fermentada, como vino, cerveza, mosto de cereales o jugo de caña, y luego se someten a una destilación para concentrar alcohol y aromas.",
                 "Esa concentración explica por qué suelen tener mucha más graduación que vino, cerveza o sidra. No todos saben igual: la materia prima, el alambique y la crianza modifican mucho el perfil final.",
                 "Para entenderlos con facilidad, conviene pensar en tres preguntas: de qué se elaboran, cómo se destilan y si pasan o no por madera antes de embotellarse."
+              ]
+            },
+            {
+              "slug": "conceptos-basicos-destilados",
+              "title": "Conceptos básicos para entender destilados",
+              "subtitle": "Términos que aparecen seguido y conviene conocer desde el principio",
+              "imageUrl": "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Equipo de destilación usado para elaborar bebidas espirituosas",
+              "paragraphs": [
+                "Alambique es el equipo donde se realiza la destilación. Ahí se calienta el líquido fermentado, se separan los vapores alcohólicos y luego se vuelven a convertir en líquido.",
+                "Cabezas, corazón y colas son las partes que salen durante la destilación. En simple: las cabezas suelen contener compuestos menos deseables, el corazón es la parte más limpia y equilibrada, y las colas aportan notas más pesadas o ásperas.",
+                "Cask strength o barrel proof significa que un destilado se embotella con una graduación muy alta, casi tal como salió de la barrica, sin rebajarlo demasiado con agua.",
+                "Reposado es un término muy usado en tequila y otros destilados para indicar que la bebida descansó un tiempo en madera. No suele ser una crianza larguísima, pero ya cambia color, suavidad y aromas.",
+                "Aprender estas palabras ayuda mucho porque explican por qué dos destilados del mismo tipo pueden sentirse muy distintos en intensidad, limpieza, textura o influencia de barrica."
               ]
             },
             {
@@ -824,6 +839,7 @@
               "imageAlt": "Vaso de whisky servido junto a una botella",
               "paragraphs": [
                 "Puede elaborarse con cebada, maíz, centeno u otros cereales, y su identidad cambia mucho entre Escocia, Irlanda, Estados Unidos, Japón y otros productores.",
+                "En botella suele moverse aproximadamente entre 40 % y 46 % vol., aunque hay versiones más intensas llamadas cask strength o barrel proof que superan claramente ese rango.",
                 "La crianza en barrica es clave: aporta color ámbar y notas tostadas, de vainilla, frutos secos o humo, según el tipo de madera y el tiempo de reposo.",
                 "Para principiantes es útil compararlo con ron añejo o brandy para notar cómo cambia un destilado cuando la base original es otra."
               ]
@@ -836,6 +852,7 @@
               "imageAlt": "Ron servido en vaso corto con hielo",
               "paragraphs": [
                 "El ron puede partir de melaza o jugo de caña y mostrar estilos ligeros, oscuros, añejos o con más carga especiada según el país y el proceso.",
+                "La graduación habitual en botella suele rondar entre 37,5 % y 40 % vol., aunque algunos rones overproof o de alta graduación pasan de 50 % vol.",
                 "Muchos rones jóvenes se usan en coctelería, mientras los añejos se valoran más para beber con calma y observar la influencia de la madera.",
                 "Es un buen ejemplo para ver que un destilado puede parecer dulce sin contener necesariamente mucho azúcar residual."
               ]
@@ -849,6 +866,7 @@
               "paragraphs": [
                 "El vodka persigue limpieza y neutralidad, por lo que suele emplearse como base para mezclas donde el protagonismo está en otros ingredientes.",
                 "La ginebra, en cambio, busca identidad aromática a partir del enebro y botánicos como cítricos, especias o hierbas.",
+                "Ambos suelen embotellarse cerca de 37,5 % a 40 % vol., aunque algunas ginebras suben algo más para sostener mejor sus aromas botánicos.",
                 "Compararlas es útil porque ambas pueden verse parecidas en la copa, pero en nariz y final resultan muy distintas."
               ]
             }
@@ -863,6 +881,10 @@
                   "label": "Familia"
                 },
                 {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
                   "key": "composition",
                   "label": "Cómo es"
                 },
@@ -874,26 +896,31 @@
               "rows": [
                 {
                   "term": "Whisky / whiskey",
+                  "abv": "40-46 % vol. aprox.",
                   "composition": "Destilado de cereales, a menudo con crianza en madera.",
                   "objective": "Ayuda a entender cómo grano y barrica moldean aroma, cuerpo y color."
                 },
                 {
                   "term": "Ron",
+                  "abv": "37,5-40 % vol. aprox.",
                   "composition": "Procede de caña de azúcar o melaza; puede ser ligero, especiado o añejo.",
                   "objective": "Muestra cómo el origen tropical y la maduración cambian dulzor percibido y textura."
                 },
                 {
                   "term": "Ginebra",
+                  "abv": "37,5-47 % vol. aprox.",
                   "composition": "Destilado aromatizado donde enebro y botánicos tienen gran protagonismo.",
                   "objective": "Sirve para reconocer perfiles herbales, cítricos y secos."
                 },
                 {
                   "term": "Vodka",
+                  "abv": "37,5-40 % vol. aprox.",
                   "composition": "Destilado neutro y limpio, normalmente de cereal o patata.",
                   "objective": "Permite entender la lógica de los destilados más puros y orientados a mezcla."
                 },
                 {
                   "term": "Tequila / mezcal",
+                  "abv": "38-45 % vol. aprox.",
                   "composition": "Destilados de agave con perfiles que van de frescos a ahumados.",
                   "objective": "Ayudan a ver el peso de la materia prima y del método tradicional en el resultado final."
                 }
@@ -917,8 +944,10 @@
               "imageAlt": "Vaso de whisky servido junto a una botella",
               "paragraphs": [
                 "El whisky es un destilado elaborado a partir de cereales como cebada, maíz, centeno o trigo. Primero se fermentan esos cereales, luego se destilan y normalmente se dejan reposar en barricas.",
+                "La mayoría de las botellas comerciales se mueven alrededor de 40 % a 46 % vol., aunque algunas ediciones especiales salen con graduaciones más altas.",
                 "Ese paso por madera le da buena parte de su personalidad: color ámbar, notas de vainilla, caramelo, especias, frutos secos o humo, según el tipo de barrica y el tiempo de crianza.",
-                "Para quien empieza, una forma simple de entenderlo es esta: el whisky combina tres grandes factores, que son el cereal, la destilación y la barrica."
+                "Para quien empieza, una forma simple de entenderlo es esta: el whisky combina tres grandes factores, que son el cereal, la destilación y la barrica.",
+                "Según el país y el estilo, puede sentirse más suave y mieloso, más seco y especiado, o muy ahumado si interviene turba en el proceso."
               ]
             },
             {
@@ -930,6 +959,7 @@
               "paragraphs": [
                 "El proceso suele empezar con cereal malteado o cocido, que se mezcla con agua para extraer azúcares fermentables. Después se añade levadura para crear una bebida alcohólica base.",
                 "Esa base se destila para concentrar alcohol y aromas. Luego el destilado se guarda en barricas, donde cambia poco a poco de color, textura y complejidad.",
+                "Durante la crianza la madera puede aportar vainilla, coco, caramelo, frutos secos, tostado o humo suave, dependiendo de si la barrica fue nueva, usada o contenía otro vino o destilado antes.",
                 "Finalmente se ajusta la graduación y se embotella. Según el productor, puede filtrarse más o menos, mezclarse con otros lotes o presentarse como una expresión muy concreta."
               ]
             },
@@ -956,6 +986,10 @@
                   "label": "Estilo"
                 },
                 {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
                   "key": "composition",
                   "label": "Perfil general"
                 },
@@ -967,26 +1001,31 @@
               "rows": [
                 {
                   "term": "Scotch más suave",
+                  "abv": "40-43 % vol. aprox.",
                   "composition": "Puede mostrar notas de cereal, miel, fruta madura, vainilla o madera elegante, sin humo dominante.",
                   "objective": "Es una buena puerta de entrada para familiarizarse con el whisky sin ir directo a perfiles extremos."
                 },
                 {
                   "term": "Bourbon",
+                  "abv": "40-45 % vol. aprox.",
                   "composition": "Suele ser más amable, con recuerdos a caramelo, vainilla, maíz dulce, madera y especias suaves.",
                   "objective": "Ayuda a reconocer cómo el maíz y la barrica nueva pueden dar un perfil más redondo y accesible."
                 },
                 {
                   "term": "Irish whiskey",
+                  "abv": "40-43 % vol. aprox.",
                   "composition": "A menudo resulta más ligero, limpio y fácil de beber, con fruta, cereal y poca agresividad.",
                   "objective": "Sirve para empezar con un estilo directo y normalmente amistoso para principiantes."
                 },
                 {
                   "term": "Rye whiskey",
+                  "abv": "40-50 % vol. aprox.",
                   "composition": "Más seco, especiado y con sensación algo más punzante que otros estilos.",
                   "objective": "Permite descubrir cómo cambia el perfil cuando el centeno tiene más protagonismo."
                 },
                 {
                   "term": "Peated o ahumado",
+                  "abv": "40-46 % vol. aprox.",
                   "composition": "Aromas intensos de humo, turba, medicina, tierra o brasas, según el productor.",
                   "objective": "Muestra el lado más extremo y divisivo del whisky; suele entenderse mejor después de probar estilos más suaves."
                 }
@@ -1050,8 +1089,23 @@
               "imageAlt": "Ron servido en vaso corto con hielo",
               "paragraphs": [
                 "El ron es un destilado elaborado a partir de productos de la caña de azúcar, sobre todo melaza o jugo de caña fermentado.",
+                "La graduación típica en botella suele estar entre 37,5 % y 40 % vol., aunque hay rones de alta graduación que superan con facilidad ese rango.",
                 "Según el país, el método de destilación y el tiempo en barrica, puede resultar ligero, especiado, afrutado, tostado o bastante serio.",
-                "Para empezar, conviene recordar que no todo ron sabe a vainilla o caramelo: algunos son frescos y secos, mientras otros son más redondos y golosos."
+                "Para empezar, conviene recordar que no todo ron sabe a vainilla o caramelo: algunos son frescos y secos, mientras otros son más redondos y golosos.",
+                "También es útil saber que existen tradiciones distintas: algunos rones se sienten más ligeros y limpios, otros más pesados, vegetales o muy marcados por la barrica."
+              ]
+            },
+            {
+              "slug": "como-se-hace-ron",
+              "title": "Cómo se hace el ron",
+              "subtitle": "Fermentación de caña, destilación y a veces crianza tropical",
+              "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Materia prima y destilería usada para elaborar ron",
+              "paragraphs": [
+                "El ron empieza con melaza o jugo de caña de azúcar. Ese líquido fermenta con levaduras para crear una base alcohólica que luego se destila.",
+                "Después de la destilación, algunos rones se embotellan jóvenes y transparentes, mientras otros pasan por barricas para ganar color, suavidad y notas de vainilla, caramelo, cacao, coco o especias.",
+                "En climas cálidos la crianza puede avanzar más rápido que en otros destilados, por eso incluso un ron de pocos años puede mostrar bastante influencia de la madera.",
+                "Al final se ajusta la graduación, se filtra si hace falta y se embotella como ron blanco, dorado, añejo o de alta graduación."
               ]
             },
             {
@@ -1063,7 +1117,8 @@
               "paragraphs": [
                 "Un ron blanco suele pensarse para mezcla y perfil más limpio, mientras un ron dorado o añejo puede mostrar más madera, especias y profundidad.",
                 "Aun así, color y edad no lo explican todo: algunos rones jóvenes son muy expresivos y algunos oscuros pueden ser más sencillos de lo que parecen.",
-                "Lo más útil para principiantes es comparar un ron ligero con uno añejo y notar cómo cambia la textura, el dulzor percibido y el peso de la barrica."
+                "Lo más útil para principiantes es comparar un ron ligero con uno añejo y notar cómo cambia la textura, el dulzor percibido y el peso de la barrica.",
+                "También conviene distinguir entre dulzor real y dulzor percibido: el ron puede parecer dulce por la caña, la vainilla o la madera aunque no tenga tanta azúcar en la copa."
               ]
             }
           ],
@@ -1077,6 +1132,10 @@
                   "label": "Estilo"
                 },
                 {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
                   "key": "composition",
                   "label": "Perfil general"
                 },
@@ -1088,21 +1147,25 @@
               "rows": [
                 {
                   "term": "Ron blanco",
+                  "abv": "37,5-40 % vol. aprox.",
                   "composition": "Más limpio, ligero y habitual en cócteles o mezclas frescas.",
                   "objective": "Ayuda a entender el lado más directo y mezclable del ron."
                 },
                 {
                   "term": "Ron dorado",
+                  "abv": "37,5-40 % vol. aprox.",
                   "composition": "Algo más redondo, con madera suave y notas de vainilla o caramelo.",
                   "objective": "Muestra cómo la crianza cambia el perfil sin volverlo necesariamente pesado."
                 },
                 {
                   "term": "Ron añejo",
+                  "abv": "38-45 % vol. aprox.",
                   "composition": "Más estructura, barrica, especias y profundidad aromática.",
                   "objective": "Sirve para descubrir el ron que puede tomarse con más calma y atención."
                 },
                 {
                   "term": "Ron especiado",
+                  "abv": "35-40 % vol. aprox.",
                   "composition": "Canela, vainilla, clavo u otras especias destacan sobre la base del destilado.",
                   "objective": "Permite reconocer estilos más fáciles de identificar para quien empieza."
                 }
@@ -1126,8 +1189,22 @@
               "imageAlt": "Botella y copa de ginebra servida",
               "paragraphs": [
                 "La ginebra parte de una base alcohólica neutra que se aromatiza con botánicos, y el enebro debe ser el aroma principal.",
+                "En botella suele moverse aproximadamente entre 37,5 % y 47 % vol., aunque muchas versiones clásicas quedan cerca de 40 % a 43 % vol.",
                 "Según la receta, pueden aparecer notas cítricas, florales, herbales, especiadas o resinosas.",
                 "Para principiantes, la forma más simple de entenderla es pensarla como un destilado aromático, no como una bebida dulce ni como un vodka con sabor."
+              ]
+            },
+            {
+              "slug": "como-se-hace-ginebra",
+              "title": "Cómo se hace la ginebra",
+              "subtitle": "Base neutra más redestilación o infusión de botánicos",
+              "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Botánicos y equipo usado para elaborar ginebra",
+              "paragraphs": [
+                "Primero se obtiene o se parte de un alcohol neutro, normalmente de cereal. Esa base por sí sola recuerda más al vodka que a una ginebra terminada.",
+                "Luego se añaden botánicos como enebro, pieles de cítricos, cilantro, raíz de angélica, especias u otras hierbas. En muchos casos se vuelve a destilar todo junto para integrar aromas.",
+                "El equilibrio entre botánicos cambia muchísimo el resultado: una receta puede sentirse seca y resinosa, mientras otra se orienta a limón, pimienta, flores o hierbas frescas.",
+                "Finalmente se ajusta la graduación con agua y se embotella, normalmente sin paso por barrica para conservar un perfil limpio y brillante."
               ]
             },
             {
@@ -1139,7 +1216,8 @@
               "paragraphs": [
                 "Una ginebra seca resalta más el enebro y los botánicos clásicos, mientras otras versiones modernas priorizan cítricos, flores o especias.",
                 "La mezcla con tónica puede hacerla más accesible, pero también tapar matices si la proporción no está equilibrada.",
-                "La mejor manera de empezar es probar una ginebra sola en pequeña cantidad y luego compararla con una mezcla simple para notar qué cambia."
+                "La mejor manera de empezar es probar una ginebra sola en pequeña cantidad y luego compararla con una mezcla simple para notar qué cambia.",
+                "También ayuda usar el mismo garnish en distintas ginebras para detectar si cambia más el destilado o solo la decoración."
               ]
             }
           ],
@@ -1153,6 +1231,10 @@
                   "label": "Estilo"
                 },
                 {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
                   "key": "composition",
                   "label": "Perfil general"
                 },
@@ -1164,16 +1246,19 @@
               "rows": [
                 {
                   "term": "London Dry",
+                  "abv": "40-47 % vol. aprox.",
                   "composition": "Seca, directa y con enebro muy claro, a menudo con cítricos y especias.",
                   "objective": "Es la referencia más útil para entender la idea clásica de la ginebra."
                 },
                 {
                   "term": "Ginebra cítrica",
+                  "abv": "37,5-43 % vol. aprox.",
                   "composition": "Más fresca, brillante y amable, con limón, naranja o pomelo en primer plano.",
                   "objective": "Ayuda a entrar en la categoría con un perfil más accesible."
                 },
                 {
                   "term": "Ginebra floral o herbal",
+                  "abv": "40-45 % vol. aprox.",
                   "composition": "Lavanda, pepino, hierbas o notas verdes más visibles.",
                   "objective": "Muestra cómo una misma categoría puede cambiar mucho sin dejar de ser ginebra."
                 }
@@ -1197,8 +1282,22 @@
               "imageAlt": "Botella de vodka transparente con vaso",
               "paragraphs": [
                 "El vodka busca pureza y neutralidad aromática, por eso suele tener menos rasgos aromáticos intensos que ginebra, ron o whisky.",
+                "La graduación comercial más habitual se mueve alrededor de 37,5 % a 40 % vol., aunque algunas versiones premium o regionales pueden subir un poco más.",
                 "Puede elaborarse con trigo, centeno, patata u otras materias primas, pero muchas veces lo que más se nota es la textura y la limpieza en boca.",
                 "Para alguien que empieza, es útil pensar que el vodka no intenta impresionar con muchos aromas, sino ofrecer una base limpia y versátil."
+              ]
+            },
+            {
+              "slug": "como-se-hace-vodka",
+              "title": "Cómo se hace el vodka",
+              "subtitle": "Fermentación, destilación y filtrado para buscar limpieza",
+              "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Equipo y materia prima usados para elaborar vodka",
+              "paragraphs": [
+                "El vodka parte de una materia prima fermentable como trigo, centeno, maíz, patata u otros almidones o azúcares. Esa base se fermenta para generar alcohol.",
+                "Después se destila varias veces con el objetivo de obtener un perfil muy limpio y con pocos aromas dominantes.",
+                "Muchos productores también filtran el destilado con carbón u otros medios para suavizarlo todavía más y mejorar la sensación en boca.",
+                "Finalmente se ajusta la graduación con agua y se embotella. El resultado ideal es un destilado claro, limpio y versátil."
               ]
             },
             {
@@ -1210,11 +1309,54 @@
               "paragraphs": [
                 "Al probarlo, muchas personas notan primero si resulta seco, sedoso, punzante o muy limpio, más que identificar aromas concretos.",
                 "Eso hace que el vodka sea muy útil en coctelería, porque no compite demasiado con otros ingredientes.",
-                "Tomarlo muy frío suele hacerlo más amable, aunque también reduce todavía más cualquier pequeño matiz aromático."
+                "Tomarlo muy frío suele hacerlo más amable, aunque también reduce todavía más cualquier pequeño matiz aromático.",
+                "Si quieres comparar vodkas, intenta usar la misma temperatura y servirlos solos en pequeñas cantidades, porque el frío extremo puede ocultar diferencias sutiles."
               ]
             }
           ],
           "tables": [
+            {
+              "slug": "estilos-vodka",
+              "title": "Perfiles de vodka para orientarte",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Perfil"
+                },
+                {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo se siente"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Vodka clásico de cereal",
+                  "abv": "37,5-40 % vol. aprox.",
+                  "composition": "Limpio, seco y bastante neutro, con textura más o menos suave según el productor.",
+                  "objective": "Es la referencia básica para entender el vodka como destilado neutro."
+                },
+                {
+                  "term": "Vodka de patata",
+                  "abv": "37,5-40 % vol. aprox.",
+                  "composition": "Puede sentirse algo más denso, cremoso o redondo en boca.",
+                  "objective": "Ayuda a notar que incluso un destilado neutro cambia según la materia prima."
+                },
+                {
+                  "term": "Vodka saborizado",
+                  "abv": "30-40 % vol. aprox.",
+                  "composition": "Añade fruta, vainilla, hierbas u otros aromas sobre la base limpia del vodka.",
+                  "objective": "Muestra el lado más accesible y mezclable de la categoría."
+                }
+              ]
+            },
             {
               "slug": "formas-vodka",
               "title": "Cómo se suele consumir el vodka",
@@ -1268,8 +1410,23 @@
               "imageAlt": "Vasos de tequila y botella servidos en mesa",
               "paragraphs": [
                 "Ambos son destilados hechos a partir de agave, pero el tequila se asocia sobre todo al agave azul y a una denominación muy concreta, mientras el mezcal abarca una familia más amplia.",
+                "El tequila suele embotellarse alrededor de 38 % a 40 % vol., mientras muchos mezcales se mueven más cerca de 40 % a 45 % vol. y a veces aún más.",
                 "El mezcal suele relacionarse con perfiles más ahumados o rústicos, aunque no todos lo son igual.",
-                "Para empezar, basta con recordar que comparten origen vegetal, pero su elaboración y su estilo pueden separarlos bastante."
+                "Para empezar, basta con recordar que comparten origen vegetal, pero su elaboración y su estilo pueden separarlos bastante.",
+                "Dentro de esta familia, la planta, la cocción y la crianza explican gran parte de las diferencias que se sienten en la copa."
+              ]
+            },
+            {
+              "slug": "como-se-hacen-agave",
+              "title": "Cómo se hacen tequila y mezcal",
+              "subtitle": "Cocción del agave, fermentación y destilación con estilos distintos",
+              "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Proceso y materia prima de destilados de agave",
+              "paragraphs": [
+                "Todo empieza con las piñas de agave, que se cocinan para transformar sus almidones y compuestos complejos en azúcares aprovechables.",
+                "Después esas piñas cocidas se trituran para extraer jugos o mostos, que fermentan con levaduras y luego se destilan.",
+                "En muchos mezcales tradicionales la cocción en hornos bajo tierra aporta parte del humo característico, mientras el tequila suele buscar perfiles más limpios y controlados según el método y la destilería.",
+                "Si luego pasan por barrica, aparecen categorías como reposado o añejo, con más vainilla, madera y redondez sobre la base vegetal del agave."
               ]
             },
             {
@@ -1281,7 +1438,8 @@
               "paragraphs": [
                 "Un tequila joven puede sentirse más limpio, vegetal, cítrico o picante, mientras algunos mezcales muestran humo, tierra y una sensación más artesanal.",
                 "La categoría reposado o añejo también cambia mucho el perfil por el paso por barrica.",
-                "La mejor manera de entrar en este mundo es comparar un blanco/joven con uno reposado, y si puedes, poner al lado un mezcal para notar cómo cambia el carácter del agave."
+                "La mejor manera de entrar en este mundo es comparar un blanco/joven con uno reposado, y si puedes, poner al lado un mezcal para notar cómo cambia el carácter del agave.",
+                "No conviene juzgarlos solo como shots: servidos con calma muestran mucha más diferencia en textura, aroma y final."
               ]
             }
           ],
@@ -1295,6 +1453,10 @@
                   "label": "Estilo"
                 },
                 {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
                   "key": "composition",
                   "label": "Perfil general"
                 },
@@ -1306,16 +1468,19 @@
               "rows": [
                 {
                   "term": "Tequila blanco",
+                  "abv": "38-40 % vol. aprox.",
                   "composition": "Más directo, vegetal, cítrico y con menos influencia de barrica.",
                   "objective": "Es el mejor punto de partida para reconocer el agave en estado más puro."
                 },
                 {
                   "term": "Tequila reposado o añejo",
+                  "abv": "38-40 % vol. aprox.",
                   "composition": "Más redondo, con vainilla, madera y especias encima del perfil de agave.",
                   "objective": "Ayuda a notar cómo la barrica suaviza y transforma el destilado."
                 },
                 {
                   "term": "Mezcal joven",
+                  "abv": "40-45 % vol. aprox.",
                   "composition": "Puede mostrar humo, tierra, hierbas secas y un carácter más salvaje.",
                   "objective": "Sirve para descubrir el lado más intenso y distintivo de los destilados de agave."
                 }

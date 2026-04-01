@@ -883,7 +883,7 @@
         },
         {
           "slug": "whisky-guia",
-          "label": "Whisky desde cero",
+          "label": "Whisky",
           "position": 3,
           "panelTitle": "Guía básica del whisky para principiantes",
           "noteTitle": "Idea clave",
@@ -1016,7 +1016,7 @@
         },
         {
           "slug": "ron-guia",
-          "label": "Ron desde cero",
+          "label": "Ron",
           "position": 4,
           "panelTitle": "Guía básica del ron para principiantes",
           "noteTitle": "Idea clave",
@@ -1092,7 +1092,7 @@
         },
         {
           "slug": "ginebra-guia",
-          "label": "Ginebra desde cero",
+          "label": "Ginebra",
           "position": 5,
           "panelTitle": "Guía básica de la ginebra para principiantes",
           "noteTitle": "Idea clave",
@@ -1163,7 +1163,7 @@
         },
         {
           "slug": "vodka-guia",
-          "label": "Vodka desde cero",
+          "label": "Vodka",
           "position": 6,
           "panelTitle": "Guía básica del vodka para principiantes",
           "noteTitle": "Idea clave",

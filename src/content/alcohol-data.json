@@ -393,7 +393,7 @@
           "label": "Historia e ingredientes",
           "position": 0,
           "noteTitle": "Dato clave",
-          "noteContent": "La cerveza no se clasifica solo por color. Dos cervezas doradas pueden ser muy distintas si cambian la levadura, el lúpulo, la fermentación, el agua o el tiempo de maduración.",
+          "noteContent": "La cerveza es una bebida fermentada hecha sobre todo a partir de cereales, agua, lúpulo y levadura. El color ayuda a orientarse, pero no alcanza por sí solo para entender cómo va a oler o saber una cerveza.",
           "sections": [
             {
               "slug": "historia",
@@ -414,9 +414,10 @@
               "imageUrl": "https://images.unsplash.com/photo-1584225064785-c62a8b43d148?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Ingredientes para elaborar cerveza como cebada y lúpulo",
               "paragraphs": [
-                "El agua suele ser el componente mayoritario y afecta el perfil final por su contenido mineral. Según el estilo, puede favorecer sensaciones más secas, redondas o amargas.",
-                "La malta se obtiene al germinar y secar cereales, habitualmente cebada. Aporta azúcares fermentables, color, cuerpo y notas que pueden recordar a pan, cereal, galleta, caramelo o tostado.",
-                "El lúpulo añade amargor, aromas herbales, florales, resinosos o cítricos, y ayuda a equilibrar el dulzor de la malta. La levadura transforma los azúcares en alcohol y CO2, además de generar compuestos aromáticos característicos."
+                "El agua suele ser el componente mayoritario. Puede parecer el ingrediente menos llamativo, pero influye en cómo se siente la cerveza: más seca, más redonda, más suave o con el amargor más marcado.",
+                "La malta se obtiene al germinar y secar cereales, habitualmente cebada. Aporta los azúcares que luego fermentarán, pero también mucho del sabor y del color: desde notas a pan o galleta hasta caramelo, tostado o café.",
+                "El lúpulo es una flor que añade amargor y aroma. Según la variedad y el momento en que se use, puede recordar a hierbas, flores, cítricos, resina o frutas tropicales.",
+                "La levadura es la que convierte los azúcares del mosto en alcohol y gas. También genera aromas propios. Dicho fácil: sin levadura no habría cerveza como tal, solo un líquido dulce de cereal."
               ]
             }
           ]
@@ -546,8 +547,8 @@
               "imageAlt": "Diferentes vasos de cerveza servidos en una barra",
               "paragraphs": [
                 "Una manera muy usada de clasificar la cerveza es fijarse en cómo trabaja la levadura. Esto da lugar a grandes familias como las ale, las lager y las cervezas de fermentación espontánea o mixta.",
-                "Las ale suelen tener aromas más notorios y variados, mientras que muchas lager presentan un perfil más limpio y directo. Las espontáneas y mixtas suelen destacar por su complejidad y, a veces, por una acidez más marcada.",
-                "Para alguien que empieza, esta clasificación es útil porque explica por qué dos cervezas pueden parecer parecidas a simple vista, pero oler y saber de forma muy distinta."
+                "Las ale suelen dar perfiles más expresivos, a veces con notas frutales o especiadas. Muchas lager, en cambio, se sienten más limpias, secas y directas. Las espontáneas o mixtas suelen ser más raras, complejas o ácidas.",
+                "Para alguien que empieza, esta clasificación sirve para entender algo importante: dos cervezas del mismo color pueden ser muy distintas si cambia la levadura y la forma de fermentar."
               ]
             },
             {
@@ -558,8 +559,8 @@
               "imageAlt": "Cervezas de distintos colores en vasos",
               "paragraphs": [
                 "También se puede clasificar por lo que percibimos al verla y beberla: color, cuerpo, dulzor, sequedad y amargor. Por eso se habla de cervezas claras, ámbar, rojas, tostadas u oscuras.",
-                "El \"cuerpo\" se refiere a la sensación de peso o densidad en la boca. Algunas cervezas se sienten ligeras y refrescantes, mientras que otras resultan más densas, cremosas o intensas.",
-                "Este criterio es muy útil para principiantes porque permite describir la experiencia de manera sencilla, aunque no cuenta toda la historia técnica del estilo."
+                "El \"cuerpo\" es la sensación de peso o volumen que deja la cerveza en la boca. Una cerveza con poco cuerpo se siente más ligera; una con más cuerpo se nota más redonda, cremosa o densa.",
+                "Este criterio es muy útil para principiantes porque describe la experiencia de forma fácil. No reemplaza la clasificación técnica, pero ayuda mucho a empezar a ordenar lo que uno ve y siente."
               ]
             },
             {
@@ -631,8 +632,9 @@
               "imageUrl": "https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Cerveza lager clara servida en vaso alto",
               "paragraphs": [
-                "Se fermenta con levaduras que trabajan a temperaturas bajas y luego suele pasar por maduración en frío. Esto favorece un perfil más limpio y nítido.",
-                "Dentro de esta familia están muchas cervezas comerciales internacionales, así como estilos como pilsner, helles, bock o dunkel."
+                "Se fermenta con levaduras que trabajan a temperaturas bajas y luego suele pasar por maduración en frío. Eso favorece un perfil más limpio, estable y fácil de reconocer.",
+                "Muchas cervezas industriales del mundo son lager, pero la familia es mucho más amplia que una rubia comercial. Aquí entran estilos como pilsner, helles, bock o dunkel.",
+                "Para quien empieza, las lager suelen ser una buena puerta de entrada porque dejan ver con claridad el cereal, el frescor y el equilibrio entre malta y lúpulo."
               ]
             },
             {
@@ -642,8 +644,9 @@
               "imageUrl": "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Vaso de cerveza ale de color ámbar",
               "paragraphs": [
-                "Las ales suelen fermentar a temperaturas más elevadas que las lager, lo que favorece la aparición de ésteres y perfiles más afrutados o especiados.",
-                "Aquí se encuentran estilos como pale ale, IPA, bitter, brown ale, saison o Belgian ale."
+                "Las ales suelen fermentar a temperaturas más elevadas que las lager, lo que favorece la aparición de perfiles más afrutados, especiados o complejos.",
+                "Aquí se encuentran estilos como pale ale, IPA, bitter, brown ale, saison o Belgian ale.",
+                "En términos simples, muchas ales se sienten más expresivas y con más personalidad aromática que una lager clásica."
               ]
             },
             {
@@ -735,6 +738,53 @@
                   "composition": "Cervezas donde la acidez, la fruta, la barrica o fermentaciones menos comunes tienen protagonismo.",
                   "objective": "Ayudan a descubrir que la cerveza también puede ser compleja y muy distinta de lo habitual."
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "por-color",
+          "label": "Por color",
+          "position": 5,
+          "panelTitle": "Cervezas por color",
+          "sections": [
+            {
+              "slug": "claras",
+              "title": "Cervezas claras",
+              "subtitle": "Más livianas a la vista, pero no siempre simples",
+              "imageUrl": "https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cerveza clara servida en vaso alto",
+              "paragraphs": [
+                "Las cervezas claras suelen verse doradas, rubias o amarillo pálido porque usan maltas menos tostadas. Eso hace que el color sea más liviano y que el perfil a menudo resulte más fresco y directo.",
+                "Mucha gente piensa que una cerveza clara siempre es suave, pero no necesariamente. Puede ser muy fácil de beber, como muchas lager, o bastante intensa en aroma y amargor, como algunas pale ale o IPA claras.",
+                "En general, cuando alguien empieza, las claras ayudan mucho porque permiten reconocer con facilidad notas de cereal, pan, lúpulo fresco, amargor limpio y sensación refrescante.",
+                "Dicho simple: se llaman claras por el color, no porque siempre tengan poco sabor."
+              ]
+            },
+            {
+              "slug": "ambar-rojas",
+              "title": "Cervezas ámbar y rojas",
+              "subtitle": "Más color, más sensación de malta y perfiles intermedios",
+              "imageUrl": "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cerveza ámbar servida en vaso",
+              "paragraphs": [
+                "Las cervezas ámbar y rojas suelen usar maltas algo más tostadas que las claras. Por eso ganan tonos cobrizos, anaranjados o rojizos y suelen mostrar más notas a galleta, caramelo suave, pan tostado o frutos secos ligeros.",
+                "Muchas personas las sienten como un punto intermedio entre lo muy refrescante y lo muy tostado. No suelen ser tan livianas como algunas rubias ni tan profundas como una porter o stout.",
+                "Son muy útiles para principiantes porque ayudan a notar cómo el color empieza a acompañar un cambio real en sabor, cuerpo y sensación maltosa.",
+                "En términos simples: cuanto más se tuesta la malta, más probable es que aparezcan color ámbar, más sabor a cereal tostado y una sensación algo más redonda."
+              ]
+            },
+            {
+              "slug": "oscuras",
+              "title": "Cervezas oscuras",
+              "subtitle": "Tostado, cacao, café y perfiles más profundos",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cerveza oscura servida en copa",
+              "paragraphs": [
+                "Las cervezas oscuras usan maltas más tostadas o más oscuras, y por eso pueden mostrar colores marrón profundo, caoba o casi negro.",
+                "Ese tostado suele traducirse en sabores que recuerdan a café, cacao, pan tostado, caramelo oscuro, regaliz o frutos secos. Algunas son secas y directas; otras pueden ser cremosas, dulces o muy intensas.",
+                "No todas las oscuras son pesadas ni muy alcohólicas. Hay ejemplos suaves y fáciles, y otros mucho más densos o complejos. El color ayuda a orientarse, pero no cuenta toda la historia.",
+                "Para alguien que empieza, la idea simple es esta: una cerveza oscura suele ofrecer más sensación de tostado y profundidad que una clara, aunque no siempre tenga más alcohol."
               ]
             }
           ]

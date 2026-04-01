@@ -4,6 +4,8 @@ import {
   exportBackupDataset,
   getCategoryFromBackup,
   getCategoryFromDatabase,
+  getGlossaryItemFromBackup,
+  getGlossaryItemFromDatabase,
   getGuideDetailFromBackup,
   getGuideDetailFromDatabase,
   listCategoriesFromBackup,
@@ -77,5 +79,12 @@ export async function listGlossary(): Promise<ApiGlossaryItem[]> {
   return withBackupFallback(listGlossaryFromDatabase, async () => {
     const dataset = await loadBackupDataset();
     return listGlossaryFromBackup(dataset);
+  });
+}
+
+export async function getGlossaryBySlug(slug: string): Promise<ApiGlossaryItem | null> {
+  return withBackupFallback(() => getGlossaryItemFromDatabase(slug), async () => {
+    const dataset = await loadBackupDataset();
+    return getGlossaryItemFromBackup(dataset, slug);
   });
 }

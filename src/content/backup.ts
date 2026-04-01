@@ -275,6 +275,21 @@ export function listGlossaryFromBackup(dataset: SeedDataset): ApiGlossaryItem[] 
     }));
 }
 
+export function getGlossaryItemFromBackup(dataset: SeedDataset, slug: string): ApiGlossaryItem | null {
+  const item = dataset.glossary.find((entry) => entry.slug === slug);
+
+  if (!item) {
+    return null;
+  }
+
+  return {
+    ...item,
+    details: [...item.details],
+    relatedCategories: [...item.relatedCategories],
+    featured: item.featured || undefined,
+  };
+}
+
 export async function listGlossaryFromDatabase(): Promise<ApiGlossaryItem[]> {
   const prisma = getPrismaOrThrow();
   const glossary = await prisma.glossaryItem.findMany({
@@ -283,6 +298,16 @@ export async function listGlossaryFromDatabase(): Promise<ApiGlossaryItem[]> {
   });
 
   return glossary.map(toApiGlossaryItem);
+}
+
+export async function getGlossaryItemFromDatabase(slug: string): Promise<ApiGlossaryItem | null> {
+  const prisma = getPrismaOrThrow();
+  const item = await prisma.glossaryItem.findUnique({
+    where: { slug },
+    include: glossaryItemInclude,
+  });
+
+  return item ? toApiGlossaryItem(item) : null;
 }
 
 export async function listGuideSummariesFromDatabase(): Promise<ApiGuideSummary[]> {

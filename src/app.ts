@@ -3,6 +3,7 @@ import cors from "@fastify/cors";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
 import { categoriesRoutes } from "./routes/categories";
+import { glossaryRoutes } from "./routes/glossary";
 import { guidesRoutes } from "./routes/guides";
 
 export function buildApp() {
@@ -56,6 +57,10 @@ export function buildApp() {
 
   app.register(guidesRoutes, {
     prefix: "/guides",
+  });
+
+  app.register(glossaryRoutes, {
+    prefix: "/glossary",
   });
 
   return app;

@@ -4,7 +4,7 @@
       "slug": "vino",
       "position": 0,
       "title": "Vino",
-      "summary": "El vino se obtiene al fermentar el jugo de la uva, llamado mosto. Puede ser tinto, blanco o rosado, y el alcohol aparece cuando las levaduras transforman los azúcares naturales de la fruta.",
+      "summary": "El vino se obtiene al fermentar el jugo de la uva, llamado mosto. Fermentar significa que las levaduras transforman los azúcares naturales de la fruta en alcohol. Puede ser tinto, blanco o rosado.",
       "abv": "9–15 % vol. (típico)",
       "origin": "Mediterráneo y regiones vinícolas mundiales",
       "imageUrl": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=80",
@@ -14,7 +14,7 @@
       "slug": "cerveza",
       "position": 1,
       "title": "Cerveza",
-      "summary": "Elaborada con malta de cereales (cebada habitualmente), lúpulo y agua. Fermentación alcohólica con estilos muy diversos.",
+      "summary": "Elaborada con malta de cereales (cebada habitualmente), lúpulo y agua. En la fermentación, las levaduras transforman los azúcares del mosto en alcohol y gas. De ahí salen estilos muy diversos.",
       "abv": "4–8 % vol. (mayoría de estilos comerciales)",
       "origin": "Global; tradiciones centroeuropeas y artesanales",
       "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
@@ -54,7 +54,7 @@
       "slug": "sidra",
       "position": 5,
       "title": "Sidra y similares",
-      "summary": "Fermentación de zumo de manzana u otros frutos. Perfil más ligero que muchos vinos tintos.",
+      "summary": "Se obtiene al fermentar zumo de manzana u otros frutos. Fermentar significa que las levaduras transforman sus azúcares en alcohol y aromas. Suele tener un perfil más ligero que muchos vinos tintos.",
       "abv": "4–8 % vol.",
       "origin": "Asturias, País Vasco, Normandía, Reino Unido",
       "imageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=1200&q=80",
@@ -64,7 +64,7 @@
       "slug": "champagne",
       "position": 6,
       "title": "Espumoso",
-      "summary": "Vinos con segunda fermentación (o método Charmat) que generan burbujas de CO₂ disuelto.",
+      "summary": "Vinos con segunda fermentación, es decir, una nueva acción de levaduras sobre azúcares que genera alcohol extra y sobre todo burbujas de CO2 disuelto. Puede ocurrir en botella o en tanque, según el método.",
       "abv": "11–13 % vol.",
       "origin": "Champagne (Francia), Cava (España), Prosecco (Italia)…",
       "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
@@ -91,11 +91,11 @@
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino servida junto a una botella",
               "paragraphs": [
-                "Mosto es el jugo de la uva antes de convertirse en vino. Cuando ese jugo fermenta, las levaduras transforman sus azúcares naturales en alcohol.",
+                "Mosto es el jugo de la uva antes de convertirse en vino. Cuando ese jugo fermenta, las levaduras transforman sus azúcares naturales en alcohol. Dicho fácil: fermentar es el paso en el que un jugo dulce empieza a convertirse en bebida alcohólica.",
                 "Cuerpo es la sensación de peso o volumen que deja el vino en la boca. Un vino ligero se siente más liviano y fácil de beber; uno con más cuerpo se nota más amplio, intenso o denso.",
                 "Taninos son sustancias naturales que vienen sobre todo de las pieles y semillas de la uva, y a veces también de la barrica. Se sienten como sequedad o aspereza en la boca, algo parecido a un té negro muy cargado.",
                 "Acidez es la sensación de frescura que hace que un vino se sienta vivo, ágil y refrescante. No significa que el vino esté malo: es una parte clave del equilibrio.",
-                "Azúcar residual es el azúcar natural que queda en el vino después de la fermentación. Cuanto más queda, más dulce puede sentirse el vino."
+                "Azúcar residual es el azúcar natural que queda en el vino después de la fermentación. Si las levaduras no consumen todo el azúcar, una parte queda en el vino y puede hacerlo sentirse más dulce."
               ]
             }
           ]
@@ -230,7 +230,7 @@
                 },
                 {
                   "term": "Vinos espumosos",
-                  "description": "Contienen gas carbónico natural gracias a una segunda fermentación, ya sea en botella como Champagne o Cava, o en tanque como Prosecco.",
+                  "description": "Contienen gas carbónico natural gracias a una segunda fermentación, o sea una nueva acción de levaduras sobre azúcar que produce burbujas dentro de la botella o del tanque. Así se elaboran estilos como Champagne, Cava o Prosecco.",
                   "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Copa de espumoso con burbujas y botella al fondo"
                 }
@@ -302,11 +302,11 @@
             {
               "slug": "tintos",
               "title": "1. Vinos tintos",
-              "subtitle": "Se elaboran con uvas tintas y fermentan junto con sus pieles, lo que aporta color, textura y taninos.",
+              "subtitle": "Se elaboran con uvas tintas y fermentan junto con sus pieles, es decir, el jugo se convierte en alcohol mientras sigue en contacto con la parte de la uva que aporta color, textura y taninos.",
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino tinto intenso servida",
               "paragraphs": [
-                "Los tintos suelen mostrar más taninos que otros tipos de vino porque fermentan en contacto con las pieles de la uva. Por eso a menudo se sienten más estructurados, más secos y con más presencia en la boca.",
+                "Los tintos suelen mostrar más taninos que otros tipos de vino porque fermentan en contacto con las pieles de la uva. Mientras el jugo se va convirtiendo en alcohol, también extrae color, taninos y más estructura de esas pieles.",
                 "Ligeros: tienen poco tanino y resultan fáciles de beber, como Pinot Noir o Gamay.",
                 "De cuerpo medio: buscan equilibrio entre frescura y estructura, como Merlot o Tempranillo.",
                 "De gran cuerpo: son intensos, oscuros y con mucho tanino, ideales para carnes rojas, como Cabernet Sauvignon, Malbec o Syrah.",
@@ -316,7 +316,7 @@
             {
               "slug": "blancos",
               "title": "2. Vinos blancos",
-              "subtitle": "Pueden elaborarse con uvas blancas o con uvas tintas a las que se les retira la piel. En ese caso fermenta solo el jugo de la uva, llamado mosto.",
+              "subtitle": "Pueden elaborarse con uvas blancas o con uvas tintas a las que se les retira la piel. En ese caso fermenta solo el jugo de la uva, llamado mosto, sin casi contacto con pieles.",
               "imageUrl": "https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino blanco brillante sobre una mesa",
               "paragraphs": [
@@ -337,7 +337,7 @@
                 "Lo importante para entenderlos es esto: el color del vino sale sobre todo de la piel de la uva tinta, no del jugo. Como ese contacto dura poco, el vino se vuelve rosado en lugar de tinto.",
                 "Por eso generalmente no son una mezcla de vino tinto y vino blanco. Lo más habitual es que se hagan con uvas tintas, pero retirando las pieles antes de que den demasiado color, tanino y estructura.",
                 "Ese contacto puede durar solo unas horas. Si el jugo casi no toca las pieles, el rosado queda muy pálido y delicado; si el contacto dura más, el color se intensifica y el perfil puede sentirse más frutado o con algo más de cuerpo.",
-                "La diferencia con un tinto es que el tinto fermenta mucho más tiempo con las pieles, por eso gana más color, más taninos y más estructura. La diferencia con un blanco es que el blanco normalmente no toma casi nada de color de pieles tintas o se hace con uvas blancas.",
+                "La diferencia con un tinto es que el tinto fermenta mucho más tiempo con las pieles, o sea pasa más tiempo convirtiéndose en alcohol mientras sigue extrayendo color y taninos. La diferencia con un blanco es que el blanco normalmente no toma casi nada de color de pieles tintas o se hace con uvas blancas.",
                 "Por eso muchas personas sienten que el rosado queda en un punto intermedio: suele ser más fresco y ligero que muchos tintos, pero con más fruta y algo más de textura que muchos blancos muy simples.",
                 "Pueden ir desde perfiles muy secos hasta estilos más dulces, según la elaboración y el mercado. También hay rosados más gastronómicos y otros más ligeros y fáciles de beber.",
                 "En términos simples, un rosado no es \"medio tinto\" ni \"medio blanco\": es su propio estilo, definido sobre todo por cuánto tiempo el jugo estuvo en contacto con las pieles de uva tinta."
@@ -346,7 +346,7 @@
             {
               "slug": "espumosos-estilo",
               "title": "4. Vinos espumosos",
-              "subtitle": "Contienen gas carbónico disuelto creado de forma natural durante una segunda fermentación.",
+              "subtitle": "Contienen gas carbónico disuelto creado de forma natural durante una segunda fermentación, es decir, una nueva acción de levaduras que genera burbujas.",
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copas de vino espumoso en una celebración",
               "paragraphs": [
@@ -375,8 +375,8 @@
               "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Vino dulce servido en copa pequeña de postre",
               "paragraphs": [
-                "Dulces de postre: se detiene la fermentación para conservar azúcar natural, o se usan uvas pasas o congeladas, como Sauternes, Tokaji o Late Harvest.",
-                "Generosos o fortificados: se les añade alcohol durante o después de la fermentación, elevando la graduación alcohólica, como Jerez, Oporto o Madeira."
+                "Dulces de postre: se detiene la fermentación antes de que las levaduras consuman todo el azúcar, o se usan uvas pasas o congeladas, como Sauternes, Tokaji o Late Harvest.",
+                "Generosos o fortificados: se les añade alcohol durante o después de la fermentación, es decir, mientras o después de que las levaduras transforman azúcar en alcohol, elevando así la graduación alcohólica, como Jerez, Oporto o Madeira."
               ]
             }
           ]
@@ -393,7 +393,7 @@
           "label": "Historia e ingredientes",
           "position": 0,
           "noteTitle": "Dato clave",
-          "noteContent": "La cerveza es una bebida fermentada hecha sobre todo a partir de cereales, agua, lúpulo y levadura. El color ayuda a orientarse, pero no alcanza por sí solo para entender cómo va a oler o saber una cerveza.",
+          "noteContent": "La cerveza es una bebida fermentada hecha sobre todo a partir de cereales, agua, lúpulo y levadura. Fermentada significa que las levaduras transforman los azúcares del mosto en alcohol y gas. El color ayuda a orientarse, pero no alcanza por sí solo para entender cómo va a oler o saber una cerveza.",
           "sections": [
             {
               "slug": "historia",
@@ -402,7 +402,7 @@
               "imageUrl": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Jarras de cerveza sobre una mesa de madera",
               "paragraphs": [
-                "La cerveza es una de las bebidas fermentadas más antiguas de la humanidad. Existen registros de preparaciones de cereales fermentados en Mesopotamia y Egipto hace miles de años, donde cumplía funciones alimentarias, rituales y sociales.",
+                "La cerveza es una de las bebidas fermentadas más antiguas de la humanidad. Existen registros de preparaciones de cereales fermentados en Mesopotamia y Egipto hace miles de años, donde las levaduras ya transformaban azúcares en alcohol y gas, y donde la bebida cumplía funciones alimentarias, rituales y sociales.",
                 "Con el tiempo, su elaboración se consolidó en Europa. Los monasterios medievales mejoraron técnicas de cocción, fermentación y conservación, mientras que la incorporación del lúpulo ganó importancia por su capacidad para aportar amargor, aroma y estabilidad.",
                 "En la edad moderna y contemporánea, la industrialización permitió controlar mejor la levadura, la temperatura y la higiene. Más tarde, el movimiento artesanal recuperó estilos históricos y dio lugar a una enorme diversidad de cervezas regionales y experimentales."
               ]
@@ -415,7 +415,7 @@
               "imageAlt": "Ingredientes para elaborar cerveza como cebada y lúpulo",
               "paragraphs": [
                 "El agua suele ser el componente mayoritario. Puede parecer el ingrediente menos llamativo, pero influye en cómo se siente la cerveza: más seca, más redonda, más suave o con el amargor más marcado.",
-                "La malta se obtiene al germinar y secar cereales, habitualmente cebada. Aporta los azúcares que luego fermentarán, pero también mucho del sabor y del color: desde notas a pan o galleta hasta caramelo, tostado o café.",
+                "La malta se obtiene al germinar y secar cereales, habitualmente cebada. Aporta los azúcares que luego fermentarán, es decir, los que la levadura convertirá en alcohol y gas, pero también mucho del sabor y del color: desde notas a pan o galleta hasta caramelo, tostado o café.",
                 "El lúpulo es una flor que añade amargor y aroma. Según la variedad y el momento en que se use, puede recordar a hierbas, flores, cítricos, resina o frutas tropicales.",
                 "La levadura es la que convierte los azúcares del mosto en alcohol y gas. También genera aromas propios. Dicho fácil: sin levadura no habría cerveza como tal, solo un líquido dulce de cereal."
               ]
@@ -455,7 +455,7 @@
                 },
                 {
                   "term": "2. Mezclar el grano con agua caliente",
-                  "description": "Después, ese grano preparado se mezcla con agua caliente. El calor ayuda a sacar color, sabor y azúcares del cereal. El líquido dulce que sale de este proceso se llama mosto, y todavía no es cerveza: es como la base de la cerveza antes de fermentar.",
+                  "description": "Después, ese grano preparado se mezcla con agua caliente. El calor ayuda a sacar color, sabor y azúcares del cereal. El líquido dulce que sale de este proceso se llama mosto, y todavía no es cerveza: es la base que luego fermentará, es decir, la que la levadura transformará en alcohol y gas.",
                   "reference": "Si lo piensas fácil: aquí se hace una especie de infusión de cereal de la que sale un jugo dulce.",
                   "imageUrl": "https://plus.unsplash.com/premium_photo-1682148370179-803c1e406cb3?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Equipos de elaboración de cerveza usados para el proceso de maceración"
@@ -470,13 +470,13 @@
                 {
                   "term": "4. Enfriar y poner levadura",
                   "description": "Cuando el líquido ya hervido se enfría, se le agrega levadura. La levadura es un microorganismo que se alimenta de los azúcares del mosto y los transforma en alcohol y gas. Aquí ocurre lo más importante: el mosto deja de ser solo un líquido dulce y empieza a convertirse en cerveza.",
-                  "reference": "La idea clave es esta: sin levadura no habría alcohol ni burbujas naturales de fermentación.",
+                  "reference": "La idea clave es esta: sin levadura no habría alcohol ni burbujas naturales, porque la fermentación es justamente ese trabajo de la levadura sobre el azúcar.",
                   "imageUrl": "https://plus.unsplash.com/premium_photo-1682146545156-959b159f8669?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Área de fermentación en una microcervecería con equipos y tanques"
                 },
                 {
                   "term": "5. Dejar reposar, ajustar y envasar",
-                  "description": "Después de fermentar, la cerveza se deja reposar para que los sabores se ordenen mejor. Luego puede filtrarse o no, dependiendo del estilo. Finalmente se envasa en botella, lata o barril, y se ajusta la cantidad de gas para que tenga la espuma y la sensación en boca esperadas.",
+                  "description": "Después de fermentar, o sea después de que la levadura ya transformó buena parte del azúcar en alcohol y gas, la cerveza se deja reposar para que los sabores se ordenen mejor. Luego puede filtrarse o no, dependiendo del estilo. Finalmente se envasa en botella, lata o barril, y se ajusta la cantidad de gas para que tenga la espuma y la sensación en boca esperadas.",
                   "reference": "En resumen: al final se termina de pulir la cerveza para que quede lista para beber.",
                   "imageUrl": "https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Botellas de cerveza alineadas para su envasado"
@@ -546,7 +546,7 @@
               "imageUrl": "https://images.unsplash.com/photo-1485879136085-498e55ac8f06?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Diferentes vasos de cerveza servidos en una barra",
               "paragraphs": [
-                "Una manera muy usada de clasificar la cerveza es fijarse en cómo trabaja la levadura. Esto da lugar a grandes familias como las ale, las lager y las cervezas de fermentación espontánea o mixta.",
+                "Una manera muy usada de clasificar la cerveza es fijarse en cómo trabaja la levadura durante la fermentación, o sea durante el momento en que transforma azúcares en alcohol y gas. Esto da lugar a grandes familias como las ale, las lager y las cervezas de fermentación espontánea o mixta.",
                 "Las ale suelen dar perfiles más expresivos, a veces con notas frutales o especiadas. Muchas lager, en cambio, se sienten más limpias, secas y directas. Las espontáneas o mixtas suelen ser más raras, complejas o ácidas.",
                 "Para alguien que empieza, esta clasificación sirve para entender algo importante: dos cervezas del mismo color pueden ser muy distintas si cambia la levadura y la forma de fermentar."
               ]
@@ -597,7 +597,7 @@
               "rows": [
                 {
                   "term": "Según la fermentación",
-                  "composition": "Ale, lager, fermentación espontánea o mixta.",
+                  "composition": "Ale, lager, fermentación espontánea o mixta. Cambia según cómo actúa la levadura y en qué condiciones transforma los azúcares.",
                   "objective": "La levadura y la temperatura determinan aromas, limpieza del perfil y carácter del estilo."
                 },
                 {
@@ -806,11 +806,11 @@
             {
               "slug": "que-son",
               "title": "Qué son los destilados",
-              "subtitle": "Bebidas concentradas por destilación a partir de un fermentado",
+              "subtitle": "Bebidas concentradas por destilación a partir de un fermentado, o sea de una base donde las levaduras ya produjeron alcohol",
               "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Botellas y vaso de bebidas destiladas",
               "paragraphs": [
-                "Un destilado es una bebida en la que primero se crea un fermentado y luego se calienta para separar y concentrar el alcohol. Ese proceso se llama destilación.",
+                "Un destilado es una bebida en la que primero se crea un fermentado y luego se calienta para separar y concentrar el alcohol. Fermentar significa que las levaduras transforman azúcares en alcohol. Ese paso previo es indispensable antes de destilar.",
                 "Los destilados parten de una bebida ya fermentada, como vino, cerveza, mosto de cereales o jugo de caña, y luego se someten a una destilación para concentrar alcohol y aromas.",
                 "Esa concentración explica por qué suelen tener mucha más graduación que vino, cerveza o sidra. No todos saben igual: la materia prima, el alambique y la crianza modifican mucho el perfil final.",
                 "Para entenderlos con facilidad, conviene pensar en tres preguntas: de qué se elaboran, cómo se destilan y si pasan o no por madera antes de embotellarse."
@@ -823,7 +823,7 @@
               "imageUrl": "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Equipo de destilación usado para elaborar bebidas espirituosas",
               "paragraphs": [
-                "Alambique es el equipo donde se realiza la destilación. Ahí se calienta un líquido fermentado para que una parte se convierta en vapor. Después ese vapor se enfría y vuelve a hacerse líquido. Esa es la base de la destilación.",
+                "Alambique es el equipo donde se realiza la destilación. Ahí se calienta un líquido fermentado, es decir, un líquido donde las levaduras ya generaron alcohol, para que una parte se convierta en vapor. Después ese vapor se enfría y vuelve a hacerse líquido. Esa es la base de la destilación.",
                 "Cabezas, corazón y colas son las partes que van saliendo durante ese proceso. Dicho muy simple: las cabezas son lo primero que sale y suelen ser menos deseables, el corazón es la parte del medio y normalmente la más limpia y equilibrada, y las colas son lo último que sale y suelen sentirse más pesadas o ásperas.",
                 "Cask strength o barrel proof significa que un destilado se embotella con una graduación muy alta, casi tal como salió de la barrica, sin rebajarlo demasiado con agua.",
                 "Reposado es un término muy usado en tequila y otros destilados para indicar que la bebida descansó un tiempo en madera. No suele ser una crianza larguísima, pero ya cambia color, suavidad y aromas.",
@@ -870,7 +870,7 @@
               "rows": [
                 {
                   "term": "1. Fermentar una base",
-                  "description": "Antes de destilar, hay que producir un fermentado: mosto de cereales, vino, jugo de caña o agave cocido, según el producto final.",
+                  "description": "Antes de destilar, hay que producir un fermentado: mosto de cereales, vino, jugo de caña o agave cocido, según el producto final. En esa fermentación, las levaduras transforman azúcares en alcohol.",
                   "reference": "Sin fermentación previa no hay alcohol que concentrar después en el alambique.",
                   "imageUrl": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Fermentado base usado antes de la destilación"
@@ -1018,7 +1018,7 @@
               "imageUrl": "https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Vaso de whisky servido junto a una botella",
               "paragraphs": [
-                "El whisky es un destilado elaborado a partir de cereales como cebada, maíz, centeno o trigo. Primero se fermentan esos cereales, luego se destilan y normalmente se dejan reposar en barricas.",
+                "El whisky es un destilado elaborado a partir de cereales como cebada, maíz, centeno o trigo. Primero se fermenta una base hecha con esos cereales, o sea las levaduras transforman sus azúcares en alcohol; luego se destila y normalmente se deja reposar en barricas.",
                 "La mayoría de las botellas comerciales se mueven alrededor de 40 % a 46 % vol., aunque algunas ediciones especiales salen con graduaciones más altas.",
                 "Ese paso por madera le da buena parte de su personalidad: color ámbar, notas de vainilla, caramelo, especias, frutos secos o humo, según el tipo de barrica y el tiempo de crianza.",
                 "Para quien empieza, una forma simple de entenderlo es esta: el whisky combina tres grandes factores, que son el cereal, la destilación y la barrica.",
@@ -1163,7 +1163,7 @@
               "imageUrl": "https://images.unsplash.com/photo-1575650772417-e6b418b0d065?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Ron servido en vaso corto con hielo",
               "paragraphs": [
-                "El ron es un destilado elaborado a partir de productos de la caña de azúcar, sobre todo melaza o jugo de caña fermentado.",
+                "El ron es un destilado elaborado a partir de productos de la caña de azúcar, sobre todo melaza o jugo de caña fermentado, es decir, una base donde las levaduras ya transformaron azúcar en alcohol.",
                 "La graduación típica en botella suele estar entre 37,5 % y 40 % vol., aunque hay rones de alta graduación que superan con facilidad ese rango.",
                 "Según el país, el método de destilación y el tiempo en barrica, puede resultar ligero, especiado, afrutado, tostado o bastante serio.",
                 "Para empezar, conviene recordar que no todo ron sabe a vainilla o caramelo: algunos son frescos y secos, mientras otros son más redondos y golosos.",
@@ -2998,7 +2998,7 @@
               "imageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Botella y vaso de sidra servida",
               "paragraphs": [
-                "La sidra se obtiene fermentando jugo de manzana, aunque existen variantes de pera y otras frutas fermentadas en algunas regiones.",
+                "La sidra se obtiene fermentando jugo de manzana, aunque existen variantes de pera y otras frutas fermentadas en algunas regiones. Eso significa que las levaduras transforman los azúcares naturales del jugo en alcohol y aromas.",
                 "Su perfil puede ir de seco y ácido a afrutado y amable, con o sin burbuja, según la tradición local y el método de elaboración.",
                 "Es útil verla como una familia intermedia: más ligera que muchos vinos tintos, pero con una identidad fermentativa muy distinta a cerveza o espumoso."
               ]
@@ -3050,7 +3050,7 @@
                 },
                 {
                   "term": "2. Fermentación",
-                  "description": "El mosto fermenta con levaduras seleccionadas o autóctonas, transformando azúcares en alcohol y desarrollando aromas de fruta, flores o notas rústicas.",
+                  "description": "El mosto fermenta con levaduras seleccionadas o autóctonas, transformando azúcares en alcohol y desarrollando aromas de fruta, flores o notas rústicas. Dicho simple: el jugo dulce empieza a convertirse en sidra.",
                   "reference": "Temperatura y levadura influyen mucho en si la sidra queda limpia, salvaje o muy aromática.",
                   "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Fermentación de bebidas en recipientes"
@@ -3229,6 +3229,7 @@
               "imageAlt": "Copa de vino espumoso con burbujas",
               "paragraphs": [
                 "Los espumosos son vinos en los que el dióxido de carbono queda disuelto de forma natural, generando burbuja y una textura distinta a la del vino tranquilo.",
+                "Eso ocurre gracias a una segunda fermentación, es decir, un nuevo trabajo de levaduras sobre azúcares que produce gas dentro de la botella o del tanque.",
                 "No todos son iguales: Champagne, Cava, Prosecco y otros estilos cambian por uva, método, tiempo sobre lías y nivel de dulzor.",
                 "Para entenderlos bien conviene observar tres cosas: cómo se forman las burbujas, qué tan secos son y qué estilo aromático buscan."
               ]
@@ -3274,13 +3275,13 @@
                 {
                   "term": "1. Elaborar un vino base",
                   "description": "Todo espumoso parte de un vino tranquilo inicial, normalmente fresco, con buena acidez y alcohol moderado.",
-                  "reference": "Ese vino base está pensado para soportar una segunda fermentación sin perder equilibrio.",
+                  "reference": "Ese vino base está pensado para soportar una segunda fermentación, o sea una nueva transformación de azúcar en alcohol y gas, sin perder equilibrio.",
                   "imageUrl": "https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Copa de vino claro usada como base de espumoso"
                 },
                 {
                   "term": "2. Segunda fermentación",
-                  "description": "Se añade azúcar y levaduras para generar gas carbónico dentro de botella o tanque, según el método elegido.",
+                  "description": "Se añade azúcar y levaduras para generar gas carbónico dentro de botella o tanque, según el método elegido. En otras palabras, se provoca una nueva fermentación para que aparezcan las burbujas.",
                   "reference": "Aquí nacen la burbuja y buena parte de la textura final.",
                   "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Copas con espumoso servido"
@@ -3438,6 +3439,140 @@
           ]
         }
       ]
+    }
+  ],
+  "glossary": [
+    {
+      "slug": "fermentacion",
+      "term": "Fermentación",
+      "shortDefinition": "Proceso en el que las levaduras transforman azúcares en alcohol, gas y nuevos aromas.",
+      "details": [
+        "Dicho muy fácil: un jugo o mosto dulce empieza a convertirse en una bebida alcohólica.",
+        "En vino fermenta el mosto de uva, en cerveza fermenta el mosto de cereales, y en sidra fermenta el jugo de manzana.",
+        "En espumosos también puede haber una segunda fermentación, que es la que genera las burbujas."
+      ],
+      "relatedCategories": ["vino", "cerveza", "sidra", "champagne", "destilados"],
+      "featured": true
+    },
+    {
+      "slug": "mosto",
+      "term": "Mosto",
+      "shortDefinition": "Líquido base con azúcares que todavía no terminó de convertirse en bebida alcohólica.",
+      "details": [
+        "En vino, el mosto es el jugo de la uva antes de fermentar.",
+        "En cerveza, el mosto es el líquido dulce que se obtiene del grano y que luego fermentará con levaduras.",
+        "Es una palabra clave porque muchas bebidas alcohólicas empiezan justamente como mosto."
+      ],
+      "relatedCategories": ["vino", "cerveza", "sidra", "destilados"],
+      "featured": true
+    },
+    {
+      "slug": "levaduras",
+      "term": "Levaduras",
+      "shortDefinition": "Microorganismos que hacen posible la fermentación al transformar azúcar en alcohol y gas.",
+      "details": [
+        "Sin levaduras no habría vino, cerveza, sidra ni base alcohólica para muchos destilados.",
+        "Además de producir alcohol, también influyen en aromas, textura y estilo final.",
+        "Según la bebida, pueden ser seleccionadas por el productor o aparecer de forma más espontánea."
+      ],
+      "relatedCategories": ["vino", "cerveza", "sidra", "champagne", "destilados"],
+      "featured": true
+    },
+    {
+      "slug": "cuerpo",
+      "term": "Cuerpo",
+      "shortDefinition": "Sensación de peso o volumen que deja una bebida en la boca.",
+      "details": [
+        "Una bebida ligera se siente más liviana y fácil; una con más cuerpo se siente más amplia, redonda o densa.",
+        "No depende solo del alcohol: también influyen azúcares, textura, taninos o la forma de elaboración.",
+        "Se usa mucho para comparar vinos y cervezas."
+      ],
+      "relatedCategories": ["vino", "cerveza"],
+      "featured": true
+    },
+    {
+      "slug": "taninos",
+      "term": "Taninos",
+      "shortDefinition": "Sustancias naturales que suelen dar sensación de sequedad o aspereza en la boca.",
+      "details": [
+        "En vino aparecen sobre todo por el contacto con pieles, semillas y a veces por la madera.",
+        "Se sienten un poco como un té negro muy cargado: secan la boca y dan estructura.",
+        "Por eso suelen mencionarse más en tintos que en blancos simples."
+      ],
+      "relatedCategories": ["vino", "sidra"],
+      "featured": true
+    },
+    {
+      "slug": "destilacion",
+      "term": "Destilación",
+      "shortDefinition": "Proceso de calentar una bebida fermentada para separar y concentrar alcohol y aromas.",
+      "details": [
+        "Primero hace falta una base fermentada. Después esa base se calienta para generar vapor con alcohol y compuestos aromáticos.",
+        "Ese vapor se enfría y vuelve a hacerse líquido. Ahí aparece el destilado.",
+        "Whisky, ron, ginebra, vodka y tequila son ejemplos de bebidas que pasan por destilación."
+      ],
+      "relatedCategories": ["destilados", "licores"],
+      "featured": true
+    },
+    {
+      "slug": "alambique",
+      "term": "Alambique",
+      "shortDefinition": "Equipo donde se realiza la destilación.",
+      "details": [
+        "Ahí se calienta el fermentado para que parte del líquido se convierta en vapor.",
+        "Luego ese vapor se condensa y vuelve a hacerse líquido.",
+        "El tipo de alambique puede influir en el carácter final del destilado."
+      ],
+      "relatedCategories": ["destilados"],
+      "featured": false
+    },
+    {
+      "slug": "barrica",
+      "term": "Barrica",
+      "shortDefinition": "Recipiente de madera usado para criar o madurar algunas bebidas.",
+      "details": [
+        "La barrica no solo guarda la bebida: también puede aportar vainilla, especias, tostado, frutos secos o suavidad.",
+        "Se usa mucho en vino y en varios destilados como whisky, ron o brandy.",
+        "El tiempo en barrica cambia color, aroma y textura."
+      ],
+      "relatedCategories": ["vino", "destilados"],
+      "featured": false
+    },
+    {
+      "slug": "lias",
+      "term": "Lías",
+      "shortDefinition": "Restos finos de levaduras y otras partículas que quedan tras la fermentación.",
+      "details": [
+        "En algunos vinos y espumosos se deja la bebida en contacto con esas lías para ganar textura y complejidad.",
+        "Eso puede aportar notas de panadería, crema o mayor sensación de volumen.",
+        "Es un término frecuente al hablar de Champagne, Cava y ciertos blancos con crianza."
+      ],
+      "relatedCategories": ["vino", "champagne"],
+      "featured": false
+    },
+    {
+      "slug": "maceracion",
+      "term": "Maceración",
+      "shortDefinition": "Contacto de un líquido con ingredientes sólidos para extraer color, aroma o sabor.",
+      "details": [
+        "En vino puede referirse al contacto del jugo con pieles y semillas.",
+        "En licores suele usarse para extraer sabor de frutas, hierbas, raíces o especias.",
+        "Es una palabra útil porque explica de dónde salen muchos colores y aromas."
+      ],
+      "relatedCategories": ["vino", "licores", "aperitivos"],
+      "featured": false
+    },
+    {
+      "slug": "azucar-residual",
+      "term": "Azúcar residual",
+      "shortDefinition": "Azúcar natural que queda en la bebida después de la fermentación.",
+      "details": [
+        "Si las levaduras no consumen todo el azúcar disponible, una parte queda en el producto final.",
+        "Cuanto más azúcar residual queda, más dulce puede sentirse la bebida.",
+        "Se menciona mucho en vinos, espumosos y algunas sidras."
+      ],
+      "relatedCategories": ["vino", "champagne", "sidra"],
+      "featured": false
     }
   ]
 }

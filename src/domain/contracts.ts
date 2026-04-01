@@ -67,9 +67,19 @@ export type SeedGuide = {
   tabs: SeedGuideTab[];
 };
 
+export type SeedGlossaryItem = {
+  slug: string;
+  term: string;
+  shortDefinition: string;
+  details: string[];
+  relatedCategories: string[];
+  featured?: boolean;
+};
+
 export type SeedDataset = {
   categories: SeedCategory[];
   guides: SeedGuide[];
+  glossary: SeedGlossaryItem[];
 };
 
 export type GuideUpsertInput = {
@@ -133,3 +143,5 @@ export type ApiGuideSummary = {
   type: string;
   tabsCount: number;
 };
+
+export type ApiGlossaryItem = SeedGlossaryItem;

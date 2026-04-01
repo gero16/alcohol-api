@@ -14,7 +14,7 @@
       "slug": "cerveza",
       "position": 1,
       "title": "Cerveza",
-      "summary": "Elaborada con malta de cereales (cebada habitualmente), lúpulo y agua. En la fermentación, las levaduras transforman los azúcares del mosto en alcohol y gas. De ahí salen estilos muy diversos.",
+      "summary": "Bebida alcohólica hecha sobre todo con cereales, agua, lúpulo y levaduras. Puede sentirse más fresca, amarga, maltosa, ligera o intensa según el estilo, y su color puede ir desde muy pálido hasta casi negro.",
       "abv": "4–8 % vol. (mayoría de estilos comerciales)",
       "origin": "Global; tradiciones centroeuropeas y artesanales",
       "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
@@ -393,7 +393,7 @@
           "label": "Historia e ingredientes",
           "position": 0,
           "noteTitle": "Dato clave",
-          "noteContent": "La cerveza es una bebida fermentada hecha sobre todo a partir de cereales, agua, lúpulo y levadura. Fermentada significa que las levaduras transforman los azúcares del mosto en alcohol y gas. El color ayuda a orientarse, pero no alcanza por sí solo para entender cómo va a oler o saber una cerveza.",
+          "noteContent": "La cerveza no es una sola cosa. Puede cambiar muchísimo en color, cuerpo, amargor, aroma y sensación en boca. El color ayuda a orientarse, pero no alcanza por sí solo para saber cómo va a sentirse una cerveza.",
           "sections": [
             {
               "slug": "historia",
@@ -455,29 +455,29 @@
                 },
                 {
                   "term": "2. Mezclar el grano con agua caliente",
-                  "description": "Después, ese grano preparado se mezcla con agua caliente. El calor ayuda a sacar color, sabor y azúcares del cereal. El líquido dulce que sale de este proceso se llama mosto, y todavía no es cerveza: es la base que luego fermentará, es decir, la que la levadura transformará en alcohol y gas.",
-                  "reference": "Si lo piensas fácil: aquí se hace una especie de infusión de cereal de la que sale un jugo dulce.",
+                  "description": "Después, ese grano preparado se mezcla con agua caliente. El calor ayuda a sacar color, sabor y azúcares del cereal. A esta etapa muchas veces se la llama maceración. El líquido dulce que sale de este proceso se llama mosto, y todavía no es cerveza: es la base que luego fermentará, es decir, la que las levaduras transformarán en alcohol y gas.",
+                  "reference": "Si lo piensas fácil: aquí se hace una especie de infusión de cereal de la que sale un jugo dulce llamado mosto.",
                   "imageUrl": "https://plus.unsplash.com/premium_photo-1682148370179-803c1e406cb3?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Equipos de elaboración de cerveza usados para el proceso de maceración"
                 },
                 {
                   "term": "3. Hervir el líquido y añadir lúpulo",
-                  "description": "Ese mosto se hierve. Durante la cocción se añade lúpulo, una planta que da amargor y también aromas que pueden ser florales, herbales, cítricos o resinosos. Según cuándo se agregue el lúpulo, la cerveza puede quedar más amarga o más aromática.",
-                  "reference": "Dicho de forma sencilla: en esta parte se cocina la base de la cerveza y se le empieza a dar su personalidad.",
+                  "description": "Ese mosto se hierve. Durante la cocción se añade lúpulo, una planta que da amargor y también aromas que pueden ser florales, herbales, cítricos o resinosos. Según cuándo se agregue el lúpulo, la cerveza puede quedar más amarga o más aromática. Aquí todavía no ocurre la fermentación: primero se cocina y ordena la base.",
+                  "reference": "Dicho de forma sencilla: en esta parte se cocina el mosto y se le empieza a dar personalidad antes de la fermentación.",
                   "imageUrl": "https://images.unsplash.com/photo-1750180583457-4da9215739a9?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Conos de lúpulo utilizados para aportar aroma y amargor a la cerveza"
                 },
                 {
                   "term": "4. Enfriar y poner levadura",
-                  "description": "Cuando el líquido ya hervido se enfría, se le agrega levadura. La levadura es un microorganismo que se alimenta de los azúcares del mosto y los transforma en alcohol y gas. Aquí ocurre lo más importante: el mosto deja de ser solo un líquido dulce y empieza a convertirse en cerveza.",
-                  "reference": "La idea clave es esta: sin levadura no habría alcohol ni burbujas naturales, porque la fermentación es justamente ese trabajo de la levadura sobre el azúcar.",
+                  "description": "Cuando el líquido ya hervido se enfría, se le agregan levaduras. Aquí empieza la fermentación. Las levaduras son microorganismos que se alimentan de los azúcares del mosto y los transforman en alcohol y gas. En este punto el mosto deja de ser solo un líquido dulce y empieza a convertirse en cerveza.",
+                  "reference": "La idea clave es esta: fermentación significa justamente ese trabajo de las levaduras sobre el azúcar del mosto.",
                   "imageUrl": "https://plus.unsplash.com/premium_photo-1682146545156-959b159f8669?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Área de fermentación en una microcervecería con equipos y tanques"
                 },
                 {
                   "term": "5. Dejar reposar, ajustar y envasar",
-                  "description": "Después de fermentar, o sea después de que la levadura ya transformó buena parte del azúcar en alcohol y gas, la cerveza se deja reposar para que los sabores se ordenen mejor. Luego puede filtrarse o no, dependiendo del estilo. Finalmente se envasa en botella, lata o barril, y se ajusta la cantidad de gas para que tenga la espuma y la sensación en boca esperadas.",
-                  "reference": "En resumen: al final se termina de pulir la cerveza para que quede lista para beber.",
+                  "description": "Después de fermentar, o sea después de que las levaduras ya transformaron buena parte del azúcar en alcohol y gas, la cerveza se deja reposar para que los sabores se ordenen mejor. Luego puede filtrarse o no, dependiendo del estilo. Finalmente se envasa en botella, lata o barril, y se ajusta la cantidad de gas para que tenga la espuma y la sensación en boca esperadas.",
+                  "reference": "En resumen: la fermentación ya ocurrió antes; aquí se termina de pulir la cerveza para que quede lista para beber.",
                   "imageUrl": "https://images.unsplash.com/photo-1563379091339-03246963d29a?auto=format&fit=crop&w=1200&q=80",
                   "imageAlt": "Botellas de cerveza alineadas para su envasado"
                 }
@@ -751,40 +751,40 @@
             {
               "slug": "claras",
               "title": "Cervezas claras",
-              "subtitle": "Más livianas a la vista, pero no siempre simples",
+              "subtitle": "Rubias o doradas, y por lo general más frescas y directas en su perfil",
               "imageUrl": "https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Cerveza clara servida en vaso alto",
               "paragraphs": [
-                "Las cervezas claras suelen verse doradas, rubias o amarillo pálido porque usan maltas menos tostadas. Eso hace que el color sea más liviano y que el perfil a menudo resulte más fresco y directo.",
-                "Mucha gente piensa que una cerveza clara siempre es suave, pero no necesariamente. Puede ser muy fácil de beber, como muchas lager, o bastante intensa en aroma y amargor, como algunas pale ale o IPA claras.",
-                "En general, cuando alguien empieza, las claras ayudan mucho porque permiten reconocer con facilidad notas de cereal, pan, lúpulo fresco, amargor limpio y sensación refrescante.",
-                "Dicho simple: se llaman claras por el color, no porque siempre tengan poco sabor."
+                "Las cervezas claras suelen verse rubias, doradas o amarillo pálido porque usan maltas poco tostadas. Por eso normalmente muestran menos notas tostadas y un perfil más limpio a la vista y al beberlas.",
+                "Lo más común es que se sientan más frescas, más livianas o más crujientes que una cerveza ámbar u oscura. Suelen aparecer sabores a cereal, pan suave, galleta, lúpulo fresco y un amargor limpio.",
+                "Eso no significa que siempre sean suaves. Algunas claras son muy fáciles de beber, como muchas lager, pero otras pueden ser bastante intensas en aroma y amargor, como varias pale ale o IPA.",
+                "La diferencia principal frente a las otras subcategorías es que suelen tener menos sensación de caramelo, menos tostado y menos profundidad oscura. En términos simples: el color claro suele acompañar una sensación más fresca y directa."
               ]
             },
             {
               "slug": "ambar-rojas",
               "title": "Cervezas ámbar y rojas",
-              "subtitle": "Más color, más sensación de malta y perfiles intermedios",
+              "subtitle": "Tonos cobrizos o rojizos y un punto medio entre frescura y tostado",
               "imageUrl": "https://images.unsplash.com/photo-1566633806327-68e152aaf26d?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Cerveza ámbar servida en vaso",
               "paragraphs": [
-                "Las cervezas ámbar y rojas suelen usar maltas algo más tostadas que las claras. Por eso ganan tonos cobrizos, anaranjados o rojizos y suelen mostrar más notas a galleta, caramelo suave, pan tostado o frutos secos ligeros.",
-                "Muchas personas las sienten como un punto intermedio entre lo muy refrescante y lo muy tostado. No suelen ser tan livianas como algunas rubias ni tan profundas como una porter o stout.",
-                "Son muy útiles para principiantes porque ayudan a notar cómo el color empieza a acompañar un cambio real en sabor, cuerpo y sensación maltosa.",
-                "En términos simples: cuanto más se tuesta la malta, más probable es que aparezcan color ámbar, más sabor a cereal tostado y una sensación algo más redonda."
+                "Las cervezas ámbar y rojas usan maltas algo más tostadas que las claras. Por eso ganan tonos anaranjados, cobrizos o rojizos y también una sensación de malta más evidente.",
+                "En sabor suelen aparecer notas de pan tostado, galleta, caramelo suave, toffee ligero o frutos secos. Muchas personas las sienten más redondas y algo menos refrescantes que una rubia clara.",
+                "Son una categoría muy útil para principiantes porque muestran bien el punto intermedio entre una cerveza muy fresca y una muy tostada. No suelen ser tan livianas como muchas claras ni tan profundas como varias oscuras.",
+                "La diferencia frente a una clara es que normalmente se sienten más maltosas y con más color. La diferencia frente a una oscura es que todavía no suelen dominar sabores como café, cacao o tostado fuerte."
               ]
             },
             {
               "slug": "oscuras",
               "title": "Cervezas oscuras",
-              "subtitle": "Tostado, cacao, café y perfiles más profundos",
+              "subtitle": "Marrones, caoba o casi negras, con perfiles más tostados y profundos",
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Cerveza oscura servida en copa",
               "paragraphs": [
-                "Las cervezas oscuras usan maltas más tostadas o más oscuras, y por eso pueden mostrar colores marrón profundo, caoba o casi negro.",
-                "Ese tostado suele traducirse en sabores que recuerdan a café, cacao, pan tostado, caramelo oscuro, regaliz o frutos secos. Algunas son secas y directas; otras pueden ser cremosas, dulces o muy intensas.",
-                "No todas las oscuras son pesadas ni muy alcohólicas. Hay ejemplos suaves y fáciles, y otros mucho más densos o complejos. El color ayuda a orientarse, pero no cuenta toda la historia.",
-                "Para alguien que empieza, la idea simple es esta: una cerveza oscura suele ofrecer más sensación de tostado y profundidad que una clara, aunque no siempre tenga más alcohol."
+                "Las cervezas oscuras usan maltas más tostadas o directamente muy oscuras. Por eso pueden verse marrón profundo, caoba o casi negras, y suelen mostrar una personalidad más marcada.",
+                "En sabor es donde más se nota la diferencia: aparecen recuerdos a café, cacao, pan muy tostado, caramelo oscuro, regaliz o frutos secos. Algunas son secas y firmes; otras pueden sentirse cremosas, dulces o densas.",
+                "Muchas personas creen que una cerveza oscura siempre tiene mucho alcohol o siempre es pesada, pero no necesariamente. Hay oscuras suaves y fáciles de beber, y también otras mucho más intensas.",
+                "La diferencia frente a una clara o una ámbar suele estar en la profundidad del tostado. En términos simples: cuanto más oscura es la malta, más probable es que aparezcan sabores a café, cacao o tostado fuerte."
               ]
             }
           ]

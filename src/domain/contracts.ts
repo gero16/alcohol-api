@@ -144,4 +144,21 @@ export type ApiGuideSummary = {
   tabsCount: number;
 };
 
+export type ApiSubcategoryDetail = {
+  id: string;
+  slug: string;
+  label: string;
+  subtitle?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  previewText: string;
+  category: ApiCategory;
+  guide: {
+    id: string;
+    title: string;
+    type: string;
+  };
+  tab: ApiGuideTab;
+};
+
 export type ApiGlossaryItem = SeedGlossaryItem;

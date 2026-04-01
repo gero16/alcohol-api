@@ -5,6 +5,7 @@ import swaggerUi from "@fastify/swagger-ui";
 import { categoriesRoutes } from "./routes/categories";
 import { glossaryRoutes } from "./routes/glossary";
 import { guidesRoutes } from "./routes/guides";
+import { subcategoriesRoutes } from "./routes/subcategories";
 
 export function buildApp() {
   const app = Fastify({
@@ -61,6 +62,10 @@ export function buildApp() {
 
   app.register(glossaryRoutes, {
     prefix: "/glossary",
+  });
+
+  app.register(subcategoriesRoutes, {
+    prefix: "/subcategories",
   });
 
   return app;

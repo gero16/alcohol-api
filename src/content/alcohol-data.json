@@ -59,16 +59,6 @@
       "origin": "Asturias, País Vasco, Normandía, Reino Unido",
       "imageUrl": "https://images.unsplash.com/photo-1609951651556-5334e2706168?auto=format&fit=crop&w=1200&q=80",
       "imageAlt": "Botella y vaso de sidra servida"
-    },
-    {
-      "slug": "champagne",
-      "position": 6,
-      "title": "Espumoso",
-      "summary": "Vinos con segunda fermentación, es decir, una nueva acción de levaduras sobre azúcares que genera alcohol extra y sobre todo burbujas de CO2 disuelto. Puede ocurrir en botella o en tanque, según el método.",
-      "abv": "11–13 % vol.",
-      "origin": "Champagne (Francia), Cava (España), Prosecco (Italia)…",
-      "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
-      "imageAlt": "Copa de vino espumoso con burbujas"
     }
   ],
   "guides": [
@@ -344,15 +334,15 @@
               ]
             },
             {
-              "slug": "espumosos-estilo",
-              "title": "4. Vinos espumosos",
+              "slug": "espumantes",
+              "title": "4. Espumantes",
               "subtitle": "Contienen gas carbónico disuelto creado de forma natural durante una segunda fermentación, es decir, una nueva acción de levaduras que genera burbujas.",
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copas de vino espumoso en una celebración",
               "paragraphs": [
-                "Champagne: exclusivo de esa región de Francia.",
-                "Cava: espumoso español elaborado con método tradicional.",
-                "Prosecco: espumoso italiano, normalmente más afrutado y ligero."
+                "Los espumantes son vinos con burbujas formadas por una segunda fermentación o toma de espuma.",
+                "No todos son iguales: Champagne, Cava, Prosecco y otros estilos cambian por método, tiempo sobre lías y nivel de dulzor.",
+                "Dentro de vinos conviene tratarlos como una familia propia, porque comparten origen vínico pero se comportan distinto a un vino tranquilo."
               ]
             },
             {
@@ -377,6 +367,207 @@
               "paragraphs": [
                 "Dulces de postre: se detiene la fermentación antes de que las levaduras consuman todo el azúcar, o se usan uvas pasas o congeladas, como Sauternes, Tokaji o Late Harvest.",
                 "Generosos o fortificados: se les añade alcohol durante o después de la fermentación, es decir, mientras o después de que las levaduras transforman azúcar en alcohol, elevando así la graduación alcohólica, como Jerez, Oporto o Madeira."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "espumantes",
+          "label": "Espumantes",
+          "position": 5,
+          "panelTitle": "Guía completa de los espumantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "No todo espumante es Champagne y no toda burbuja significa el mismo estilo. Método, dulzor y tiempo sobre lías son las claves para leer bien esta familia dentro de los vinos.",
+          "sections": [
+            {
+              "slug": "que-son",
+              "title": "Qué son los espumantes",
+              "subtitle": "Vinos con burbujas formadas por una segunda fermentación o toma de espuma",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vino espumoso con burbujas",
+              "paragraphs": [
+                "Los espumantes son vinos en los que el dióxido de carbono queda disuelto de forma natural, generando burbuja y una textura distinta a la del vino tranquilo.",
+                "Eso ocurre gracias a una segunda fermentación, es decir, un nuevo trabajo de levaduras sobre azúcares que produce gas dentro de la botella o del tanque.",
+                "No todos son iguales: Champagne, Cava, Prosecco y otros estilos cambian por uva, método, tiempo sobre lías y nivel de dulzor.",
+                "Para entenderlos bien conviene observar tres cosas: cómo se forman las burbujas, qué tan secos son y qué estilo aromático buscan."
+              ]
+            },
+            {
+              "slug": "por-que-importa-el-metodo",
+              "title": "Por qué importa el método",
+              "subtitle": "La forma de crear la burbuja cambia textura, aromas y precio",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa espumosa servida en mesa",
+              "paragraphs": [
+                "El método tradicional genera una burbuja más fina y complejidad de pan tostado o bollería cuando hay crianza sobre lías.",
+                "El método Charmat suele dar perfiles más primarios, frutales y ligeros, muy expresivos y fáciles de beber.",
+                "Ese detalle técnico ayuda mucho a entender por qué dos espumantes de graduación parecida pueden sentirse tan distintos."
+              ]
+            },
+            {
+              "slug": "champagne-cava",
+              "title": "Champagne y Cava de método tradicional",
+              "subtitle": "Burbuja más fina y perfil más complejo",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas de espumoso servidas para celebración",
+              "paragraphs": [
+                "Suelen mostrar notas de pan, brioche, frutos secos o manzana madura cuando pasan tiempo sobre lías.",
+                "La textura resulta más cremosa y la burbuja suele sentirse más pequeña e integrada.",
+                "Son una gran referencia para entender el lado más serio, gastronómico y clásico del espumante."
+              ]
+            },
+            {
+              "slug": "prosecco-y-frutales",
+              "title": "Espumantes frutales y de tanque",
+              "subtitle": "Más directos, jóvenes y fáciles de beber",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de espumoso joven y brillante",
+              "paragraphs": [
+                "Prosecco y estilos similares priorizan fruta blanca, flores y sensación fresca más que notas de panadería.",
+                "Funcionan muy bien como aperitivo o en contextos informales donde se busca vivacidad y ligereza.",
+                "Compararlos con un espumante de método tradicional ayuda a notar cómo la técnica cambia el lenguaje aromático."
+              ]
+            },
+            {
+              "slug": "dulzor",
+              "title": "Interpretar el nivel de dulzor",
+              "subtitle": "Una etiqueta seca no siempre significa lo que parece",
+              "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Espumoso servido para cata",
+              "paragraphs": [
+                "Términos como brut nature, brut o demi-sec ayudan a anticipar la sensación de azúcar residual.",
+                "Esa clasificación es muy útil porque condiciona maridaje, percepción de acidez y estilo de consumo.",
+                "Es uno de los primeros códigos que conviene aprender al mirar una botella de espumante."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "elaboracion-espumantes",
+              "title": "Cómo se elaboran",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Término"
+                },
+                {
+                  "key": "description",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "reference",
+                  "label": "Referencia"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "1. Elaborar un vino base",
+                  "description": "Todo espumante parte de un vino tranquilo inicial, normalmente fresco, con buena acidez y alcohol moderado.",
+                  "reference": "Ese vino base está pensado para soportar una segunda fermentación, o sea una nueva transformación de azúcar en alcohol y gas, sin perder equilibrio.",
+                  "imageUrl": "https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copa de vino claro usada como base de espumoso"
+                },
+                {
+                  "term": "2. Segunda fermentación",
+                  "description": "Se añade azúcar y levaduras para generar gas carbónico dentro de botella o tanque, según el método elegido. En otras palabras, se provoca una nueva fermentación para que aparezcan las burbujas.",
+                  "reference": "Aquí nacen la burbuja y buena parte de la textura final.",
+                  "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Copas con espumoso servido"
+                },
+                {
+                  "term": "3. Crianza sobre lías o afinado",
+                  "description": "Muchos espumantes reposan con las levaduras muertas para ganar complejidad, notas de panadería y burbuja más integrada.",
+                  "reference": "Cuanto más larga la crianza, mayor sensación de profundidad y cremosidad.",
+                  "imageUrl": "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Botellas reposando durante el afinado"
+                },
+                {
+                  "term": "4. Ajuste de dulzor y expedición",
+                  "description": "Antes del cierre final se puede corregir el nivel de azúcar para definir estilos más secos o más amables.",
+                  "reference": "Ese ajuste explica categorías como brut nature, brut, extra dry o demi-sec.",
+                  "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+                  "imageAlt": "Espumoso servido en copa fina"
+                }
+              ]
+            },
+            {
+              "slug": "metodos-estilos",
+              "title": "Métodos, estilos y dulzor",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Categoría"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo es"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué enseña"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Método tradicional",
+                  "composition": "Segunda fermentación en botella; más complejidad y burbuja fina.",
+                  "objective": "Ayuda a reconocer el estilo de Champagne y muchos Cava."
+                },
+                {
+                  "term": "Método Charmat",
+                  "composition": "Segunda fermentación en tanque; perfil más frutal y directo.",
+                  "objective": "Explica por qué algunos espumantes resultan más ligeros y accesibles."
+                },
+                {
+                  "term": "Brut nature / extra brut / brut",
+                  "composition": "Estilos más secos, con muy poco o poco azúcar añadido.",
+                  "objective": "Sirven para interpretar la etiqueta y anticipar sensación en boca."
+                },
+                {
+                  "term": "Sec / demi-sec",
+                  "composition": "Perfiles con mayor dulzor percibido.",
+                  "objective": "Muestran que no todos los espumantes son totalmente secos."
+                }
+              ]
+            },
+            {
+              "slug": "servicio-consumo-espumantes",
+              "title": "Servicio y consumo",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Descripción"
+                },
+                {
+                  "key": "objective",
+                  "label": "Por qué importa"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Temperatura de servicio",
+                  "composition": "Suele servirse bien frío, pero sin apagar por completo aroma y textura.",
+                  "objective": "Un exceso de frío puede esconder complejidad y finura de burbuja."
+                },
+                {
+                  "term": "Tipo de copa",
+                  "composition": "La copa estrecha conserva burbuja; una copa más amplia deja ver más aromas.",
+                  "objective": "Ayuda a decidir si priorizar frescura visual o expresión aromática."
+                },
+                {
+                  "term": "Maridaje",
+                  "composition": "Puede acompañar aperitivos, fritos, mariscos, quesos e incluso postres según su dulzor.",
+                  "objective": "Muestra la enorme versatilidad gastronómica del espumante."
+                },
+                {
+                  "term": "Celebración y consumo responsable",
+                  "composition": "Su imagen festiva no reduce su contenido alcohólico ni el efecto del ritmo de consumo.",
+                  "objective": "Recuerda que la burbuja puede hacer que se beba rápido sin medir la cantidad real."
+                }
               ]
             }
           ]
@@ -3304,237 +3495,6 @@
           ]
         }
       ]
-    },
-    {
-      "categorySlug": "champagne",
-      "title": "Guía completa del espumoso",
-      "type": "guide",
-      "tabs": [
-        {
-          "slug": "que-son",
-          "label": "Qué son",
-          "position": 0,
-          "noteTitle": "Idea clave",
-          "noteContent": "No todo espumoso es Champagne y no toda burbuja significa el mismo estilo. Método, dulzor y tiempo sobre lías son las claves para leer bien esta categoría.",
-          "sections": [
-            {
-              "slug": "que-son",
-              "title": "Qué son los espumosos",
-              "subtitle": "Vinos con burbujas formadas por una segunda fermentación o toma de espuma",
-              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
-              "imageAlt": "Copa de vino espumoso con burbujas",
-              "paragraphs": [
-                "Los espumosos son vinos en los que el dióxido de carbono queda disuelto de forma natural, generando burbuja y una textura distinta a la del vino tranquilo.",
-                "Eso ocurre gracias a una segunda fermentación, es decir, un nuevo trabajo de levaduras sobre azúcares que produce gas dentro de la botella o del tanque.",
-                "No todos son iguales: Champagne, Cava, Prosecco y otros estilos cambian por uva, método, tiempo sobre lías y nivel de dulzor.",
-                "Para entenderlos bien conviene observar tres cosas: cómo se forman las burbujas, qué tan secos son y qué estilo aromático buscan."
-              ]
-            },
-            {
-              "slug": "por-que-importa-el-metodo",
-              "title": "Por qué importa el método",
-              "subtitle": "La forma de crear la burbuja cambia textura, aromas y precio",
-              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
-              "imageAlt": "Copa espumosa servida en mesa",
-              "paragraphs": [
-                "El método tradicional genera una burbuja más fina y complejidad de pan tostado o bollería cuando hay crianza sobre lías.",
-                "El método Charmat suele dar perfiles más primarios, frutales y ligeros, muy expresivos y fáciles de beber.",
-                "Ese detalle técnico ayuda mucho a entender por qué dos espumosos de graduación parecida pueden sentirse tan distintos."
-              ]
-            }
-          ]
-        },
-        {
-          "slug": "elaboracion",
-          "label": "Cómo se elabora",
-          "position": 1,
-          "panelTitle": "Cómo se elabora",
-          "tables": [
-            {
-              "slug": "elaboracion",
-              "title": "Cómo se elabora",
-              "columns": [
-                {
-                  "key": "term",
-                  "label": "Término"
-                },
-                {
-                  "key": "description",
-                  "label": "Descripción"
-                },
-                {
-                  "key": "reference",
-                  "label": "Referencia"
-                }
-              ],
-              "rows": [
-                {
-                  "term": "1. Elaborar un vino base",
-                  "description": "Todo espumoso parte de un vino tranquilo inicial, normalmente fresco, con buena acidez y alcohol moderado.",
-                  "reference": "Ese vino base está pensado para soportar una segunda fermentación, o sea una nueva transformación de azúcar en alcohol y gas, sin perder equilibrio.",
-                  "imageUrl": "https://images.unsplash.com/photo-1474722883778-792e7990302f?auto=format&fit=crop&w=1200&q=80",
-                  "imageAlt": "Copa de vino claro usada como base de espumoso"
-                },
-                {
-                  "term": "2. Segunda fermentación",
-                  "description": "Se añade azúcar y levaduras para generar gas carbónico dentro de botella o tanque, según el método elegido. En otras palabras, se provoca una nueva fermentación para que aparezcan las burbujas.",
-                  "reference": "Aquí nacen la burbuja y buena parte de la textura final.",
-                  "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
-                  "imageAlt": "Copas con espumoso servido"
-                },
-                {
-                  "term": "3. Crianza sobre lías o afinado",
-                  "description": "Muchos espumosos reposan con las levaduras muertas para ganar complejidad, notas de panadería y burbuja más integrada.",
-                  "reference": "Cuanto más larga la crianza, mayor sensación de profundidad y cremosidad.",
-                  "imageUrl": "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=1200&q=80",
-                  "imageAlt": "Botellas reposando durante el afinado"
-                },
-                {
-                  "term": "4. Ajuste de dulzor y expedición",
-                  "description": "Antes del cierre final se puede corregir el nivel de azúcar para definir estilos más secos o más amables.",
-                  "reference": "Ese ajuste explica categorías como brut nature, brut, extra dry o demi-sec.",
-                  "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
-                  "imageAlt": "Espumoso servido en copa fina"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "slug": "estilos",
-          "label": "Métodos y estilos",
-          "position": 2,
-          "panelTitle": "Métodos, estilos y dulzor",
-          "sections": [
-            {
-              "slug": "champagne-cava",
-              "title": "Champagne y Cava de método tradicional",
-              "subtitle": "Burbuja más fina y perfil más complejo",
-              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
-              "imageAlt": "Copas de espumoso servidas para celebración",
-              "paragraphs": [
-                "Suelen mostrar notas de pan, brioche, frutos secos o manzana madura cuando pasan tiempo sobre lías.",
-                "La textura resulta más cremosa y la burbuja suele sentirse más pequeña e integrada.",
-                "Son una gran referencia para entender el lado más serio, gastronómico y clásico del espumoso."
-              ]
-            },
-            {
-              "slug": "prosecco-y-frutales",
-              "title": "Espumosos frutales y de tanque",
-              "subtitle": "Más directos, jóvenes y fáciles de beber",
-              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
-              "imageAlt": "Copa de espumoso joven y brillante",
-              "paragraphs": [
-                "Prosecco y estilos similares priorizan fruta blanca, flores y sensación fresca más que notas de panadería.",
-                "Funcionan muy bien como aperitivo o en contextos informales donde se busca vivacidad y ligereza.",
-                "Compararlos con un espumoso de método tradicional ayuda a notar cómo la técnica cambia el lenguaje aromático."
-              ]
-            },
-            {
-              "slug": "dulzor",
-              "title": "Interpretar el nivel de dulzor",
-              "subtitle": "Una etiqueta seca no siempre significa lo que parece",
-              "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
-              "imageAlt": "Espumoso servido para cata",
-              "paragraphs": [
-                "Términos como brut nature, brut o demi-sec ayudan a anticipar la sensación de azúcar residual.",
-                "Esa clasificación es muy útil porque condiciona maridaje, percepción de acidez y estilo de consumo.",
-                "Es uno de los primeros códigos que conviene aprender al mirar una botella de espumoso."
-              ]
-            }
-          ],
-          "tables": [
-            {
-              "slug": "metodos-estilos",
-              "title": "Métodos, estilos y dulzor",
-              "columns": [
-                {
-                  "key": "term",
-                  "label": "Categoría"
-                },
-                {
-                  "key": "composition",
-                  "label": "Cómo es"
-                },
-                {
-                  "key": "objective",
-                  "label": "Qué enseña"
-                }
-              ],
-              "rows": [
-                {
-                  "term": "Método tradicional",
-                  "composition": "Segunda fermentación en botella; más complejidad y burbuja fina.",
-                  "objective": "Ayuda a reconocer el estilo de Champagne y muchos Cava."
-                },
-                {
-                  "term": "Método Charmat",
-                  "composition": "Segunda fermentación en tanque; perfil más frutal y directo.",
-                  "objective": "Explica por qué algunos espumosos resultan más ligeros y accesibles."
-                },
-                {
-                  "term": "Brut nature / extra brut / brut",
-                  "composition": "Estilos más secos, con muy poco o poco azúcar añadido.",
-                  "objective": "Sirven para interpretar la etiqueta y anticipar sensación en boca."
-                },
-                {
-                  "term": "Sec / demi-sec",
-                  "composition": "Perfiles con mayor dulzor percibido.",
-                  "objective": "Muestran que no todos los espumosos son totalmente secos."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "slug": "servicio",
-          "label": "Servicio",
-          "position": 3,
-          "panelTitle": "Servicio y consumo",
-          "tables": [
-            {
-              "slug": "servicio-consumo",
-              "title": "Servicio y consumo",
-              "columns": [
-                {
-                  "key": "term",
-                  "label": "Aspecto"
-                },
-                {
-                  "key": "composition",
-                  "label": "Descripción"
-                },
-                {
-                  "key": "objective",
-                  "label": "Por qué importa"
-                }
-              ],
-              "rows": [
-                {
-                  "term": "Temperatura de servicio",
-                  "composition": "Suele servirse bien frío, pero sin apagar por completo aroma y textura.",
-                  "objective": "Un exceso de frío puede esconder complejidad y finura de burbuja."
-                },
-                {
-                  "term": "Tipo de copa",
-                  "composition": "La copa estrecha conserva burbuja; una copa más amplia deja ver más aromas.",
-                  "objective": "Ayuda a decidir si priorizar frescura visual o expresión aromática."
-                },
-                {
-                  "term": "Maridaje",
-                  "composition": "Puede acompañar aperitivos, fritos, mariscos, quesos e incluso postres según su dulzor.",
-                  "objective": "Muestra la enorme versatilidad gastronómica del espumoso."
-                },
-                {
-                  "term": "Celebración y consumo responsable",
-                  "composition": "Su imagen festiva no reduce su contenido alcohólico ni el efecto del ritmo de consumo.",
-                  "objective": "Recuerda que la burbuja puede hacer que se beba rápido sin medir la cantidad real."
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "glossary": [
@@ -3547,7 +3507,7 @@
         "En vino fermenta el mosto de uva, en cerveza fermenta el mosto de cereales, y en sidra fermenta el jugo de manzana.",
         "En espumosos también puede haber una segunda fermentación, que es la que genera las burbujas."
       ],
-      "relatedCategories": ["vino", "cerveza", "sidra", "champagne", "destilados"],
+      "relatedCategories": ["vino", "cerveza", "sidra", "destilados"],
       "featured": true
     },
     {
@@ -3571,7 +3531,7 @@
         "Además de producir alcohol, también influyen en aromas, textura y estilo final.",
         "Según la bebida, pueden ser seleccionadas por el productor o aparecer de forma más espontánea."
       ],
-      "relatedCategories": ["vino", "cerveza", "sidra", "champagne", "destilados"],
+      "relatedCategories": ["vino", "cerveza", "sidra", "destilados"],
       "featured": true
     },
     {
@@ -3656,7 +3616,7 @@
         "Eso puede aportar notas de panadería, crema o mayor sensación de volumen.",
         "Es un término frecuente al hablar de Champagne, Cava y ciertos blancos con crianza."
       ],
-      "relatedCategories": ["vino", "champagne"],
+      "relatedCategories": ["vino"],
       "featured": false
     },
     {
@@ -3680,7 +3640,7 @@
         "Cuanto más azúcar residual queda, más dulce puede sentirse la bebida.",
         "Se menciona mucho en vinos, espumosos y algunas sidras."
       ],
-      "relatedCategories": ["vino", "champagne", "sidra"],
+      "relatedCategories": ["vino", "sidra"],
       "featured": false
     }
   ]

@@ -1798,7 +1798,7 @@
         {
           "slug": "ejemplos",
           "label": "Ejemplos",
-          "position": 6,
+          "position": 14,
           "panelTitle": "Ejemplos conocidos",
           "tables": [
             {
@@ -2065,6 +2065,264 @@
                   "composition": "Solo, con hielo o mezclado, según costumbre y país.",
                   "objective": "Muestra que el servicio cambia mucho la percepción de un licor tan intenso."
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "triple-sec",
+          "label": "Triple sec / licor de naranja",
+          "position": 6,
+          "panelTitle": "Guía básica del triple sec para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "El triple sec no suele pensarse como bebida para tomar sola, sino como licor cítrico muy importante en coctelería. Su valor está en aportar naranja, dulzor y perfume a una mezcla.",
+          "sections": [
+            {
+              "slug": "que-es-triple-sec",
+              "title": "Qué es el triple sec",
+              "subtitle": "Un licor cítrico de naranja muy usado en cócteles",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cóctel cítrico servido en una copa",
+              "paragraphs": [
+                "El triple sec es un licor de naranja. Suele tener un perfil cítrico, fragante y dulce, con aromas que recuerdan a piel de naranja fresca o seca.",
+                "Su graduación habitual puede variar bastante, pero muchas botellas se mueven entre 20 % y 40 % vol. según el estilo y la marca.",
+                "Para alguien que empieza, conviene entenderlo más como una herramienta de coctelería que como un licor de sobremesa. Aparece en muchísimos tragos clásicos precisamente porque suma aroma, dulzor y un sabor muy fácil de reconocer.",
+                "No busca ser tan herbal como un licor amargo ni tan denso como una crema. Su personalidad está en lo cítrico y lo aromático."
+              ]
+            },
+            {
+              "slug": "como-se-hace-triple-sec",
+              "title": "Cómo se hace el triple sec",
+              "subtitle": "Alcohol más cáscaras de naranja y ajuste de dulzor",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Ingredientes cítricos y bebidas aromáticas servidas",
+              "paragraphs": [
+                "Suele partir de una base alcohólica neutra sobre la que se trabaja con pieles de naranja u otros cítricos.",
+                "Esas cáscaras se maceran, infusionan o en algunos casos se redestilan para capturar mejor sus aceites y aromas.",
+                "Después se ajusta el dulzor para que el licor quede equilibrado y listo para mezclarse con otros ingredientes sin volverse agresivo ni demasiado seco.",
+                "Dicho fácil: es alcohol al que se le construye un perfil claro de naranja."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "limoncello",
+          "label": "Limoncello",
+          "position": 7,
+          "panelTitle": "Guía básica del limoncello para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Limoncello es uno de los ejemplos más claros de licor frutal: dulce, muy cítrico y normalmente servido bien frío como sobremesa o digestivo amable.",
+          "sections": [
+            {
+              "slug": "que-es-limoncello",
+              "title": "Qué es el limoncello",
+              "subtitle": "Un licor italiano de limón, intenso y fresco",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa con licor claro servido muy frío",
+              "paragraphs": [
+                "El limoncello es un licor elaborado a partir de la piel del limón. Su perfil suele ser muy cítrico, dulce, brillante y fácil de reconocer.",
+                "La graduación habitual suele moverse aproximadamente entre 25 % y 32 % vol., según la receta y la marca.",
+                "Muchas personas lo asocian a Italia y a la sobremesa, porque suele servirse muy frío en porciones pequeñas.",
+                "Para principiantes es útil porque muestra de forma muy clara cómo un licor puede construirse alrededor de una sola fruta y aun así tener mucha identidad."
+              ]
+            },
+            {
+              "slug": "como-se-hace-limoncello",
+              "title": "Cómo se hace el limoncello",
+              "subtitle": "Piel de limón, alcohol y luego dulzor",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cítricos y bebida aromática servida",
+              "paragraphs": [
+                "Lo habitual es dejar pieles de limón en contacto con alcohol para que liberen aceites, sabor y aroma.",
+                "Después se añade una parte dulce, normalmente en forma de jarabe, para que el resultado quede redondo y agradable.",
+                "El equilibrio es importante: si domina demasiado el alcohol, resulta áspero; si domina demasiado el azúcar, pierde frescura.",
+                "Dicho fácil: es un licor construido para que el limón sea el protagonista desde el primer sorbo."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "amaretto",
+          "label": "Amaretto",
+          "position": 8,
+          "panelTitle": "Guía básica del amaretto para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Amaretto es un licor de perfil dulce, redondo y muy asociado a almendra. Es uno de los licores más fáciles de reconocer por su sabor.",
+          "sections": [
+            {
+              "slug": "que-es-amaretto",
+              "title": "Qué es el amaretto",
+              "subtitle": "Un licor dulce con perfil de almendra y caramelo",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Mesa con bebida de sobremesa servida",
+              "paragraphs": [
+                "Amaretto es un licor conocido sobre todo por su sabor que recuerda a almendra, mazapán, caramelo y especias suaves.",
+                "Su graduación habitual suele moverse aproximadamente entre 20 % y 28 % vol.",
+                "Suele sentirse mucho más amable y goloso que un licor herbal o amargo, por eso muchas personas lo encuentran fácil de beber al principio.",
+                "Puede tomarse solo, con hielo o en cócteles y postres, y funciona muy bien para entender la familia de licores de frutos secos y sobremesa."
+              ]
+            },
+            {
+              "slug": "como-entender-amaretto",
+              "title": "Cómo empezar a entenderlo",
+              "subtitle": "Menos herbal, más goloso y más de sobremesa",
+              "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Licor dulce servido en copa",
+              "paragraphs": [
+                "Comparado con Jägermeister o Fernet, el amaretto resulta mucho menos amargo y mucho más redondo.",
+                "Comparado con un licor de crema, suele ser menos denso y menos lácteo, aunque sigue teniendo un costado claramente dulce.",
+                "Para un principiante, la idea simple es esta: amaretto pertenece al mundo de los licores suaves de sabor reconocible, más cercanos a sobremesa que a aperitivo."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "frangelico",
+          "label": "Frangelico",
+          "position": 9,
+          "panelTitle": "Guía básica de Frangelico para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Frangelico es un licor de avellana, suave y de sobremesa. Sirve muy bien para entender cómo cambia un licor cuando se mueve hacia frutos secos y notas dulces.",
+          "sections": [
+            {
+              "slug": "que-es-frangelico",
+              "title": "Qué es Frangelico",
+              "subtitle": "Un licor de avellana, cacao suave y vainilla",
+              "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Licor servido en copa pequeña de sobremesa",
+              "paragraphs": [
+                "Frangelico es un licor conocido por su perfil de avellana, con notas dulces que pueden recordar a cacao suave, vainilla o postre.",
+                "Su graduación habitual ronda el 20 % vol., así que suele sentirse más amable que muchos licores herbales fuertes.",
+                "Es un buen ejemplo de licor de frutos secos con perfil suave, pensado muchas veces para sobremesa, cafés o tragos golosos.",
+                "Para alguien que empieza, es útil porque se reconoce rápido y no suele resultar tan desafiante como un licor amargo."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "licor-cafe",
+          "label": "Licor de café",
+          "position": 10,
+          "panelTitle": "Guía básica del licor de café para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "El licor de café es uno de los ejemplos más claros de licor de sobremesa y coctelería. Une alcohol, dulzor y notas tostadas muy fáciles de reconocer.",
+          "sections": [
+            {
+              "slug": "que-es-licor-cafe",
+              "title": "Qué es el licor de café",
+              "subtitle": "Un licor dulce y tostado, muy ligado a sobremesa y cócteles",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Bebida oscura servida en vaso corto",
+              "paragraphs": [
+                "El licor de café combina base alcohólica, café y dulzor. El resultado suele recordar a espresso, cacao, caramelo o postre.",
+                "Su graduación habitual suele variar bastante, pero muchas versiones se mueven entre 15 % y 25 % vol.",
+                "Es muy común en tragos, postres y cafés, porque aporta sabor claro y reconocible sin exigir mucho al paladar para entenderlo.",
+                "Para principiantes es una gran puerta de entrada al mundo de los licores de sobremesa."
+              ]
+            },
+            {
+              "slug": "como-se-hace-licor-cafe",
+              "title": "Cómo se hace el licor de café",
+              "subtitle": "Base alcohólica, café y ajuste dulce",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Ingredientes de café y bebida aromática",
+              "paragraphs": [
+                "Se parte de una base alcohólica y se trabaja con café o extractos de café para transferir notas tostadas y aromáticas.",
+                "Después se ajusta el dulzor para que el licor no quede demasiado agresivo ni demasiado seco.",
+                "Dicho fácil: busca que el café sea protagonista, pero en una versión dulce y alcohólica."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "sambuca",
+          "label": "Sambuca",
+          "position": 11,
+          "panelTitle": "Guía básica de la sambuca para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Sambuca es un licor anisado: muy aromático, dulce y fácil de reconocer. Si te gusta o no suele depender bastante de tu relación con el sabor a anís.",
+          "sections": [
+            {
+              "slug": "que-es-sambuca",
+              "title": "Qué es la sambuca",
+              "subtitle": "Un licor anisado, dulce y de aroma muy marcado",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Bebida anisada servida en vaso corto",
+              "paragraphs": [
+                "La sambuca es un licor muy asociado al anís. Su perfil suele sentirse dulce, aromático y bastante dominante en nariz y boca.",
+                "Su graduación habitual suele moverse aproximadamente entre 38 % y 42 % vol., así que puede ser más fuerte de lo que parece por su sabor dulce.",
+                "Es un ejemplo muy útil porque muestra cómo un licor puede estar casi definido por un sabor central muy claro.",
+                "Para principiantes, la clave es simple: si no gusta el anís, probablemente no resulte fácil; si sí gusta, se vuelve una categoría muy reconocible."
+              ]
+            },
+            {
+              "slug": "como-entender-sambuca",
+              "title": "Cómo empezar a entenderla",
+              "subtitle": "Muy aromática, intensa y distinta de un licor herbal",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Mesa con bebida servida y acompañamientos",
+              "paragraphs": [
+                "Comparada con un licor herbal como Jägermeister o Fernet, la sambuca suele ser menos compleja en hierbas y mucho más directa en su sabor principal.",
+                "Comparada con un amaretto o una crema, puede sentirse más alcohólica y más punzante por el anís.",
+                "Por eso conviene leerla como un licor de identidad muy concentrada y no como una bebida neutra o fácil para mezclar con cualquier cosa."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "chartreuse-benedictine",
+          "label": "Chartreuse y Benedictine",
+          "position": 12,
+          "panelTitle": "Guía básica de Chartreuse y Benedictine para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Chartreuse y Benedictine sirven para entender el extremo más complejo, botánico e histórico del mundo de los licores. No suelen ser la entrada más fácil, pero sí una de las más interesantes.",
+          "sections": [
+            {
+              "slug": "que-son-chartreuse-benedictine",
+              "title": "Qué son Chartreuse y Benedictine",
+              "subtitle": "Licores herbales intensos, históricos y muy complejos",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas con licores herbales servidos",
+              "paragraphs": [
+                "Chartreuse y Benedictine son licores herbales de tradición histórica, conocidos por recetas complejas y perfiles botánicos intensos.",
+                "Su graduación puede variar bastante según la etiqueta, pero suele moverse aproximadamente entre 40 % y 55 % vol.",
+                "No suelen ser tan fáciles o directos como un limoncello o un amaretto. Más bien invitan a notar capas de hierbas, especias, dulzor, amargor y sensación balsámica.",
+                "Para alguien que empieza, sirven sobre todo para entender que algunos licores están pensados como recetas profundas y no solo como bebidas dulces."
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "crema-irlandesa",
+          "label": "Crema irlandesa",
+          "position": 13,
+          "panelTitle": "Guía básica de la crema irlandesa para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "La crema irlandesa muestra un lado muy distinto del mundo de los licores: más textura, más suavidad y una sensación mucho más cercana a sobremesa que a destilado clásico.",
+          "sections": [
+            {
+              "slug": "que-es-crema-irlandesa",
+              "title": "Qué es la crema irlandesa",
+              "subtitle": "Un licor cremoso, dulce y de perfil muy amable",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Licor cremoso servido en copa",
+              "paragraphs": [
+                "La crema irlandesa combina alcohol con crema y sabores como cacao, vainilla o café. El resultado suele ser suave, dulce y muy ligado a sobremesa.",
+                "Su graduación habitual suele rondar entre 15 % y 20 % vol., por lo que muchas personas la sienten menos agresiva que otros licores.",
+                "Es una referencia muy clara para entender cómo cambia un licor cuando la textura cremosa pasa a ser parte central de la experiencia.",
+                "Para principiantes, es uno de los perfiles más fáciles de reconocer y uno de los más alejados del mundo seco y botánico de un Fernet o un Jägermeister."
+              ]
+            },
+            {
+              "slug": "como-entender-crema-irlandesa",
+              "title": "Cómo empezar a entenderla",
+              "subtitle": "Más textura, más dulzor y menos agresividad alcohólica",
+              "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Bebida cremosa servida en una copa",
+              "paragraphs": [
+                "Comparada con un licor frutal o herbal, la crema irlandesa suele sentirse más densa, más golosa y más cercana a postre.",
+                "Funciona muy bien fría, sola, en cafés o en recetas dulces, porque ahí luce más su textura que su intensidad alcohólica.",
+                "Dicho fácil: es una forma de entender que un licor también puede parecerse más a una sobremesa líquida que a un destilado clásico."
               ]
             }
           ]

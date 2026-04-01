@@ -3508,7 +3508,8 @@
       "shortDefinition": "Proceso de calentar una bebida fermentada para separar y concentrar alcohol y aromas.",
       "details": [
         "Primero hace falta una base fermentada. Después esa base se calienta para generar vapor con alcohol y compuestos aromáticos.",
-        "Ese vapor se enfría y vuelve a hacerse líquido. Ahí aparece el destilado.",
+        "La idea importante es que no todas las sustancias se vaporizan igual ni al mismo tiempo: algunas lo hacen antes y otras después, porque responden a temperaturas distintas.",
+        "Eso permite separar partes del proceso, como cabezas, corazón y colas. Luego ese vapor se enfría y vuelve a hacerse líquido. Ahí aparece el destilado.",
         "Whisky, ron, ginebra, vodka y tequila son ejemplos de bebidas que pasan por destilación."
       ],
       "relatedCategories": ["destilados", "licores"],

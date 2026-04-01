@@ -6,10 +6,9 @@ import { replaceGlossaryItems } from "../src/services/glossary";
 import { replaceGuideForCategory } from "../src/services/guides";
 
 const dataset = alcoholData as SeedDataset;
+const prisma = getPrismaOrThrow();
 
 async function main() {
-  const prisma = getPrismaOrThrow();
-
   await prisma.glossaryItem.deleteMany();
   await prisma.guide.deleteMany();
   await prisma.category.deleteMany();

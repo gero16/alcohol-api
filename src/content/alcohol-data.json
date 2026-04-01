@@ -1145,6 +1145,54 @@
                   "objective": "Es una buena opción si quieres acostumbrarte poco a poco a su sabor sin empezar por una cata directa."
                 }
               ]
+            },
+            {
+              "slug": "cocteles-whisky",
+              "title": "Cócteles comunes con whisky",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Trago"
+                },
+                {
+                  "key": "composition",
+                  "label": "Ingredientes"
+                },
+                {
+                  "key": "description",
+                  "label": "Cómo se prepara"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Old Fashioned",
+                  "composition": "Whisky, azúcar o almíbar simple, bitter aromático y piel de naranja. A veces se añade una cereza.",
+                  "description": "Se coloca el azúcar o almíbar con el bitter en un vaso corto, se añade whisky, hielo y se mezcla suavemente. Se termina con piel de naranja.",
+                  "objective": "Ayuda a entender el whisky con muy pocos agregados: sigue dominando la base, pero se vuelve más redondo y especiado."
+                },
+                {
+                  "term": "Whisky Sour",
+                  "composition": "Whisky, jugo de limón y almíbar simple. Opcionalmente clara de huevo para dar espuma.",
+                  "description": "Se agita todo con hielo, o primero sin hielo si lleva clara, y luego se cuela en copa o vaso bajo con hielo.",
+                  "objective": "Muestra cómo el ácido y el dulzor pueden hacer el whisky mucho más accesible sin borrar su sabor."
+                },
+                {
+                  "term": "Whisky Highball",
+                  "composition": "Whisky, agua con gas o soda y mucho hielo. A veces una rodaja de limón.",
+                  "description": "Se sirve whisky en vaso alto con bastante hielo y se completa con soda bien fría, mezclando con suavidad.",
+                  "objective": "Es una de las formas más fáciles de empezar: refresca, baja la sensación alcohólica y deja ver aromas sin tanta agresividad."
+                },
+                {
+                  "term": "Manhattan",
+                  "composition": "Whisky, vermut rojo y bitter aromático, normalmente con cereza como garnish.",
+                  "description": "Se mezcla con hielo en vaso mezclador, se enfría bien y se cuela en copa de cóctel.",
+                  "objective": "Ayuda a ver un lado más serio y clásico del whisky, donde la madera, las especias y el vermut se equilibran."
+                }
+              ]
             }
           ]
         },
@@ -1243,6 +1291,54 @@
                   "abv": "35-40 % vol. aprox.",
                   "composition": "Canela, vainilla, clavo u otras especias destacan sobre la base del destilado.",
                   "objective": "Permite reconocer estilos más fáciles de identificar para quien empieza."
+                }
+              ]
+            },
+            {
+              "slug": "cocteles-ron",
+              "title": "Cócteles comunes con ron",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Trago"
+                },
+                {
+                  "key": "composition",
+                  "label": "Ingredientes"
+                },
+                {
+                  "key": "description",
+                  "label": "Cómo se prepara"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Cuba Libre",
+                  "composition": "Ron blanco o dorado, cola, hielo y gajo o jugo de lima.",
+                  "description": "Se sirve el ron sobre hielo en vaso alto, se añade cola y se termina con lima, mezclando suavemente.",
+                  "objective": "Es una entrada muy común al ron y ayuda a reconocer su perfil dentro de una mezcla simple y muy conocida."
+                },
+                {
+                  "term": "Mojito",
+                  "composition": "Ron blanco, menta o hierbabuena, lima, azúcar o almíbar, soda y hielo.",
+                  "description": "Se mezclan suavemente menta, lima y azúcar en el vaso, se añade ron, bastante hielo y se completa con soda.",
+                  "objective": "Muestra el lado más fresco y ligero del ron, muy útil para entender por qué el ron blanco se usa tanto en coctelería."
+                },
+                {
+                  "term": "Daiquiri clásico",
+                  "composition": "Ron blanco, jugo de lima y almíbar simple.",
+                  "description": "Se agita con hielo y se cuela en copa fría. No lleva frutas licuadas en su versión clásica.",
+                  "objective": "Ayuda a entender la base del ron con una receta corta: dulce, ácido y destilado en equilibrio."
+                },
+                {
+                  "term": "Piña Colada",
+                  "composition": "Ron, crema o leche de coco y jugo o crema de piña. Suele llevar hielo triturado.",
+                  "description": "Se bate o licúa todo junto hasta lograr una textura fría y cremosa, y se sirve en vaso alto o copa amplia.",
+                  "objective": "Muestra el lado más tropical, amable y goloso del ron, muy distinto del ron para beber solo."
                 }
               ]
             }

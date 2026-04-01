@@ -356,8 +356,21 @@
               ]
             },
             {
+              "slug": "medio-y-medio",
+              "title": "5. Medio y medio",
+              "subtitle": "Una mezcla muy reconocida en Uruguay, más cultural que técnica",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas de vino espumoso servidas en una mesa",
+              "paragraphs": [
+                "En Uruguay, el medio y medio es una bebida muy conocida que suele mezclar vino blanco espumoso o espumante con vino blanco dulce o licoroso.",
+                "La idea general es lograr una bebida fresca, con burbujas, algo dulce y más amable para muchas personas que un espumoso muy seco tomado solo.",
+                "Lo importante es entender que no suele verse como una categoría universal del vino, como tinto, blanco, rosado o espumoso. Se entiende más bien como una mezcla preparada y muy ligada a la cultura uruguaya.",
+                "Por eso encaja cerca del mundo de los vinos espumosos y dulces, pero con identidad propia como costumbre local. En términos simples: no es un estilo clásico internacional, sino una variante muy reconocible en Uruguay."
+              ]
+            },
+            {
               "slug": "dulces-generosos",
-              "title": "5. Vinos dulces y generosos",
+              "title": "6. Vinos dulces y generosos",
               "subtitle": "Incluyen estilos donde el azúcar residual o la fortificación cambian de forma notable el perfil final.",
               "imageUrl": "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Vino dulce servido en copa pequeña de postre",

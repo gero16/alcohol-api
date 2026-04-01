@@ -4,7 +4,7 @@
       "slug": "vino",
       "position": 0,
       "title": "Vino",
-      "summary": "Fermentación del mosto de uva. Variedades tintas, blancas y rosadas; el alcohol proviene de la conversión de azúcares naturales por levaduras.",
+      "summary": "El vino se obtiene al fermentar el jugo de la uva, llamado mosto. Puede ser tinto, blanco o rosado, y el alcohol aparece cuando las levaduras transforman los azúcares naturales de la fruta.",
       "abv": "9–15 % vol. (típico)",
       "origin": "Mediterráneo y regiones vinícolas mundiales",
       "imageUrl": "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1200&q=80",
@@ -279,7 +279,7 @@
             {
               "slug": "tintos",
               "title": "1. Vinos tintos",
-              "subtitle": "Se elaboran con uvas tintas y fermentan con los hollejos, lo que aporta color y taninos.",
+              "subtitle": "Se elaboran con uvas tintas y fermentan junto con sus pieles, lo que aporta color, textura y taninos.",
               "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino tinto intenso servida",
               "paragraphs": [
@@ -291,7 +291,7 @@
             {
               "slug": "blancos",
               "title": "2. Vinos blancos",
-              "subtitle": "Pueden elaborarse con uvas blancas o con uvas tintas vinificadas sin piel, fermentando solo el mosto.",
+              "subtitle": "Pueden elaborarse con uvas blancas o con uvas tintas a las que se les retira la piel. En ese caso fermenta solo el jugo de la uva, llamado mosto.",
               "imageUrl": "https://images.unsplash.com/photo-1560512823-829485b8bf24?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino blanco brillante sobre una mesa",
               "paragraphs": [
@@ -303,7 +303,7 @@
             {
               "slug": "rosados",
               "title": "3. Vinos rosados",
-              "subtitle": "Generalmente no son una mezcla de tinto y blanco, sino vinos elaborados con breve contacto del mosto con pieles de uva tinta.",
+              "subtitle": "Generalmente no son una mezcla de tinto y blanco, sino vinos hechos dejando el jugo de la uva en contacto con las pieles tintas solo durante poco tiempo.",
               "imageUrl": "https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=1200&q=80",
               "imageAlt": "Copa de vino rosado con tono salmón",
               "paragraphs": [
@@ -2023,6 +2023,214 @@
                   "composition": "Aperitivos vínicos aromatizados, frescos y elegantes, a menudo servidos muy fríos o mezclados.",
                   "objective": "Muestran una versión más suave, vínica y aromática del universo aperitivo.",
                   "abv": "17 % vol. aprox."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "marcas-y-estilos",
+          "label": "Más aperitivos",
+          "position": 5,
+          "panelTitle": "Más aperitivos conocidos",
+          "noteTitle": "Cómo leer esta pestaña",
+          "noteContent": "Aquí se mezclan aperitivos de base vínica, bitter italianos, quinquinas francesas, aperitivos herbales y anisados mediterráneos. No todos saben igual ni cumplen exactamente la misma función, pero juntos muestran la amplitud real del mundo aperitivo.",
+          "sections": [
+            {
+              "slug": "cynar",
+              "title": "Cynar",
+              "subtitle": "Herbal, oscuro y con amargor terroso",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Aperitivo oscuro servido en vaso con hielo",
+              "paragraphs": [
+                "Cynar es un aperitivo italiano de perfil herbal y amargo, conocido por su vínculo con la alcachofa entre muchos de sus botánicos. No sabe simplemente a alcachofa: más bien ofrece un carácter vegetal, balsámico y ligeramente terroso.",
+                "Su graduación habitual suele rondar el 16,5 % vol. en muchas versiones actuales, así que queda en una zona intermedia muy útil para entender que no todos los aperitivos amargos son ligeros como Aperol ni tan intensos como algunos bitter más fuertes.",
+                "Se bebe con hielo, soda, agua tónica o como parte de tragos donde se busca un amargor más oscuro, menos cítrico y más botánico.",
+                "Para alguien que empieza, Cynar enseña muy bien la diferencia entre un amargor fresco y naranja, como el de Aperol, y un amargor más profundo, vegetal y de raíz.",
+                "También ayuda a entender que muchos aperitivos no están pensados solo para terrazas veraniegas: algunos tienen un perfil más serio, gastronómico y casi digestivo, aunque sigan cumpliendo función aperitiva."
+              ]
+            },
+            {
+              "slug": "punt-e-mes",
+              "title": "Punt e Mes",
+              "subtitle": "Entre vermut y bitter, con más amargor que un vermut clásico",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de vermut oscuro servida con hielo",
+              "paragraphs": [
+                "Punt e Mes suele entenderse como una referencia intermedia entre el vermut rojo y los aperitivos bitter. Mantiene una base vínica clara, pero con una amargura más marcada y un perfil más serio.",
+                "Para principiantes, es muy útil porque deja ver cómo un aperitivo de vino puede avanzar hacia un territorio más adulto, intenso y estructurado sin llegar a ser un destilado.",
+                "Funciona muy bien solo con hielo, con soda o en coctelería clásica cuando se quiere un vermut con más tensión amarga.",
+                "Su nombre ya sugiere esa lógica de equilibrio entre dulzor y amargor, y por eso es muy didáctico para entender que la categoría aperitiva también se mueve mucho en matices, no solo en estilos extremos.",
+                "Si el vermut rojo representa una entrada más amable y redonda, Punt e Mes muestra cómo el mismo mundo vínico puede volverse más firme, especiado y claramente aperitivo."
+              ]
+            },
+            {
+              "slug": "select",
+              "title": "Select",
+              "subtitle": "Bitter veneciano de perfil rojo, amargo y elegante",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Cóctel aperitivo rojo servido en copa con hielo",
+              "paragraphs": [
+                "Select pertenece a la familia de los bitter italianos de color intenso y amargor claro, pero con una personalidad algo distinta a Campari: suele sentirse especiado, cítrico y algo más seco en determinadas mezclas.",
+                "Es una buena referencia para entender que dentro de los bitter rojos no hay un único perfil. Dos bebidas visualmente parecidas pueden cambiar mucho en dulzor percibido, profundidad herbal y final amargo.",
+                "Suele aparecer en variantes de spritz o combinaciones con espumoso y soda, donde muestra una cara muy aperitiva y gastronómica.",
+                "En comparación con Aperol, suele sentirse menos amable y más seco; frente a Campari, puede parecer algo menos agresivo y más afinado según el contexto de servicio.",
+                "Eso lo convierte en una gran botella para quien ya entendió lo básico del spritz y quiere notar cómo cambia un aperitivo cuando el equilibrio se desplaza hacia un amargor más elegante."
+              ]
+            },
+            {
+              "slug": "suze",
+              "title": "Suze",
+              "subtitle": "Amargor de genciana y perfil más seco",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Aperitivo claro servido en vaso corto",
+              "paragraphs": [
+                "Suze es una referencia clásica del aperitivo francés ligado a la genciana. Su perfil suele sentirse más seco, raíz, herbal y menos dulce que muchos aperitivos italianos populares.",
+                "Para quien está empezando, es una gran botella para descubrir que el aperitivo también puede ser claramente amargo sin necesidad de ser rojo, cítrico o muy azucarado.",
+                "Con hielo, soda o en combinaciones simples permite percibir muy bien la familia de los aperitivos amargos de raíz.",
+                "Su interés está en que obliga a prestar más atención a la textura seca y al carácter botánico, en vez de apoyarse tanto en fruta o dulzor.",
+                "Si alguien quiere entender por qué el aperitivo francés suele sentirse distinto al italiano, Suze es una de las comparaciones más claras."
+              ]
+            },
+            {
+              "slug": "cocchi-americano",
+              "title": "Cocchi Americano",
+              "subtitle": "Aperitivo vínico aromático, fresco y muy versátil",
+              "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copa de aperitivo vínico claro servida fría",
+              "paragraphs": [
+                "Cocchi Americano es una referencia muy útil dentro de los aperitivos vínicos aromatizados. Suele ofrecer una mezcla de cítricos, hierbas, flores y una amargura moderada, más elegante que agresiva.",
+                "Se entiende bien como puente entre vermut, quinquina y aperitivo moderno de bar, porque mantiene mucha identidad de vino aromatizado pero con un perfil muy brillante y apetecible.",
+                "Sirve para ver que el mundo aperitivo no es solo rojo y amargo: también existe una línea más clara, perfumada y refinada.",
+                "Para mucha gente resulta más fácil de beber solo muy frío o con una mezcla muy simple, porque no necesita tanto apoyo de soda o espumoso para resultar agradable.",
+                "Es una muy buena botella para enseñar que un aperitivo puede ser complejo y botánico sin sentirse pesado ni excesivamente amargo."
+              ]
+            },
+            {
+              "slug": "dubonnet-y-byrrh",
+              "title": "Dubonnet, Byrrh y otras quinquinas",
+              "subtitle": "Aperitivos vínicos de tradición francesa",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas de aperitivo vínico servidas en mesa",
+              "paragraphs": [
+                "Dubonnet, Byrrh y otras quinquinas muestran un lado muy histórico del aperitivo europeo. Suelen partir de vino aromatizado con botánicos y notas amargas vinculadas a la quina o a perfiles medicinales tradicionales.",
+                "Frente a un bitter italiano moderno, estas bebidas suelen percibirse más vínicas, más antiguas en estilo y algo más sobrias o elegantes.",
+                "Son muy buenas para entender que el aperitivo tiene una larga relación con la mesa, el vino aromatizado y la tradición francesa de bebidas de apertura.",
+                "También ayudan a ver que la categoría aperitiva no nació solo desde la coctelería contemporánea, sino desde fórmulas históricas donde vino, botánicos y función digestiva convivían en una misma bebida.",
+                "Para una guía amplia, estas quinquinas son importantes porque enseñan el lado más clásico, casi de café europeo, del aperitivo."
+              ]
+            },
+            {
+              "slug": "pimms",
+              "title": "Pimm's",
+              "subtitle": "Más ligero, especiado y muy ligado al servicio largo",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Bebida aperitiva larga con frutas y hielo",
+              "paragraphs": [
+                "Pimm's ocupa un lugar algo distinto dentro de la conversación aperitiva porque suele consumirse muy mezclado, largo y refrescante, con frutas, hielo y gaseosa o limonada.",
+                "Su valor en la guía está en mostrar que el aperitivo también puede ser social, ligero y muy orientado al servicio largo, no solo a vasos cortos o perfiles amargos de bar clásico.",
+                "Es una referencia útil para personas que buscan una entrada muy amable al universo de los aperitivos.",
+                "Más que destacar por un amargor fuerte, se reconoce por una sensación especiada, frutal y de bebida larga para clima templado o encuentros al aire libre.",
+                "Eso lo hace interesante porque amplía la categoría hacia estilos donde importa tanto la forma de servir como la bebida base en sí."
+              ]
+            },
+            {
+              "slug": "pastis-y-anisados",
+              "title": "Pastis y anisados aperitivos",
+              "subtitle": "El lado mediterráneo, anisado y muy identitario",
+              "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Bebida anisada servida con agua y hielo",
+              "paragraphs": [
+                "Pastis y otros anisados mediterráneos muestran una familia distinta: aromática, licorosa y muy marcada por el anís, a veces acompañada de regaliz, hierbas y especias.",
+                "Aunque muchas personas no los asocian de inmediato con la palabra aperitivo, en varias culturas se toman claramente antes de comer, diluidos con agua o hielo.",
+                "Sirven para ampliar el mapa mental del aperitivo: no todo tiene que ser cítrico o bitter; también hay aperitivos anisados con identidad fortísima.",
+                "Su servicio rebajado con agua cambia mucho la percepción, porque suaviza el alcohol y abre los aromas, mostrando que la forma de tomar un aperitivo puede ser tan importante como la receta.",
+                "Son especialmente útiles para entender el costado mediterráneo más tradicional y popular del aperitivo, muy distinto al universo del spritz y de los bitter rojos."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "mapa-aperitivos-conocidos",
+              "title": "Mapa rápido de aperitivos conocidos",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Nombre"
+                },
+                {
+                  "key": "abv",
+                  "label": "Graduación habitual"
+                },
+                {
+                  "key": "composition",
+                  "label": "Perfil"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Aperol",
+                  "abv": "11 % vol. aprox.",
+                  "composition": "Naranja, amable, cítrico y de amargor moderado.",
+                  "objective": "Es una de las puertas de entrada más accesibles al aperitivo moderno."
+                },
+                {
+                  "term": "Campari",
+                  "abv": "20,5-28,5 % vol. aprox.",
+                  "composition": "Más amargo, botánico e intenso, con mucho peso en coctelería clásica.",
+                  "objective": "Muestra el lado más serio y claramente amargo del bitter italiano."
+                },
+                {
+                  "term": "Cynar",
+                  "abv": "16,5 % vol. aprox.",
+                  "composition": "Herbal, vegetal, oscuro y con amargor de raíz.",
+                  "objective": "Ayuda a descubrir aperitivos menos cítricos y más terrosos."
+                },
+                {
+                  "term": "Punt e Mes",
+                  "abv": "16 % vol. aprox.",
+                  "composition": "Vínico, dulce-amargo y más intenso que muchos vermuts rojos.",
+                  "objective": "Sirve para entender el puente entre vermut y bitter."
+                },
+                {
+                  "term": "Select",
+                  "abv": "17,5 % vol. aprox.",
+                  "composition": "Bitter rojo con especias, cítricos y amargor elegante.",
+                  "objective": "Permite comparar bitter italianos más allá de Aperol y Campari."
+                },
+                {
+                  "term": "Suze",
+                  "abv": "15-20 % vol. aprox.",
+                  "composition": "Seco, amargo y claramente marcado por genciana y raíz.",
+                  "objective": "Muestra la tradición francesa de aperitivos más secos y botánicos."
+                },
+                {
+                  "term": "Cocchi Americano",
+                  "abv": "16,5 % vol. aprox.",
+                  "composition": "Vínico, aromático, cítrico y elegante.",
+                  "objective": "Ayuda a reconocer la rama de aperitivos claros y refinados."
+                },
+                {
+                  "term": "Dubonnet / Byrrh",
+                  "abv": "14-18 % vol. aprox.",
+                  "composition": "Aperitivos vínicos tradicionales con notas quinado-botánicas.",
+                  "objective": "Sirven para entender la dimensión histórica del aperitivo europeo."
+                },
+                {
+                  "term": "Pimm's",
+                  "abv": "25 % vol. aprox.",
+                  "composition": "Especiado y pensado para servicio largo con hielo, frutas y mezcla.",
+                  "objective": "Enseña el lado más social, largo y refrescante del aperitivo."
+                },
+                {
+                  "term": "Pastis y anisados",
+                  "abv": "40-45 % vol. aprox., normalmente diluidos",
+                  "composition": "Anisado, herbal y muy identitario, con servicio habitual rebajado.",
+                  "objective": "Amplía la idea de aperitivo hacia la tradición mediterránea anisada."
                 }
               ]
             }

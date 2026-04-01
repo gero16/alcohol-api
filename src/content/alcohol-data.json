@@ -1671,7 +1671,8 @@
               "paragraphs": [
                 "Muchos nacen de recetas monásticas, regionales o digestivas, y combinan hierbas, raíces y especias de manera más intensa.",
                 "Pueden parecer medicinales, balsámicos o amargos según la receta, y por eso no siempre son los más fáciles al inicio.",
-                "Aun así, son excelentes para mostrar que el universo del licor es mucho más amplio que las opciones dulces y frutales."
+                "Aun así, son excelentes para mostrar que el universo del licor es mucho más amplio que las opciones dulces y frutales.",
+                "Jägermeister encaja bien aquí: es un licor herbal alemán, de perfil intenso y especiado, que muchas personas conocen por tomarse muy frío o en shots, aunque también puede entenderse como un ejemplo claro de licor de hierbas y digestivo."
               ]
             },
             {
@@ -1781,7 +1782,7 @@
         {
           "slug": "ejemplos",
           "label": "Ejemplos",
-          "position": 4,
+          "position": 5,
           "panelTitle": "Ejemplos conocidos",
           "tables": [
             {
@@ -1813,10 +1814,22 @@
                   "abv": "20-40 % vol. aprox."
                 },
                 {
+                  "term": "Limoncello",
+                  "composition": "Muy cítrico, dulce y con fuerte presencia de piel de limón.",
+                  "objective": "Ayuda a entender los licores frutales intensos que suelen tomarse fríos o como sobremesa.",
+                  "abv": "25-32 % vol. aprox."
+                },
+                {
                   "term": "Amaretto",
                   "composition": "Perfil de almendra, caramelo y especias suaves.",
                   "objective": "Muestra la familia de licores de frutos secos y sobremesa.",
                   "abv": "20-28 % vol. aprox."
+                },
+                {
+                  "term": "Frangelico",
+                  "composition": "Avellana, cacao suave, vainilla y perfil redondo de sobremesa.",
+                  "objective": "Permite comparar licores de frutos secos más suaves frente a perfiles herbales o amargos.",
+                  "abv": "20 % vol. aprox."
                 },
                 {
                   "term": "Licor de café",
@@ -1825,10 +1838,119 @@
                   "abv": "15-25 % vol. aprox."
                 },
                 {
+                  "term": "Jägermeister",
+                  "composition": "Licor herbal alemán con perfil especiado, balsámico, algo amargo y claramente digestivo.",
+                  "objective": "Sirve para entender la familia de licores de hierbas intensos, menos frutales y menos golosos que otros ejemplos populares.",
+                  "abv": "35 % vol. aprox."
+                },
+                {
+                  "term": "Sambuca",
+                  "composition": "Licor anisado, dulce y muy aromático, con perfil claramente marcado por el anís.",
+                  "objective": "Muestra cómo un licor puede ser muy reconocible por un solo sabor dominante.",
+                  "abv": "38-42 % vol. aprox."
+                },
+                {
+                  "term": "Chartreuse o Benedictine",
+                  "composition": "Licores herbales complejos, intensos y de tradición monástica o histórica.",
+                  "objective": "Sirven para ubicar el extremo más botánico, especiado y profundo dentro del mundo de los licores.",
+                  "abv": "40-55 % vol. aprox. según etiqueta"
+                },
+                {
                   "term": "Crema irlandesa",
                   "composition": "Textura cremosa y sabor a cacao, vainilla o café.",
                   "objective": "Permite entender el segmento más suave y goloso.",
                   "abv": "15-20 % vol. aprox."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "jagermeister",
+          "label": "Jägermeister",
+          "position": 4,
+          "panelTitle": "Guía básica de Jägermeister para principiantes",
+          "noteTitle": "Idea clave",
+          "noteContent": "Jägermeister no es un destilado puro como whisky o vodka, ni un aperitivo clásico como vermut o Aperol. Encaja mejor como licor herbal: intenso, especiado, algo amargo y pensado muchas veces para tomarse muy frío o como digestivo.",
+          "sections": [
+            {
+              "slug": "que-es-jagermeister",
+              "title": "Qué es Jägermeister",
+              "subtitle": "Un licor herbal alemán, intenso y muy reconocible",
+              "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Copas con bebida herbal servida en mesa",
+              "paragraphs": [
+                "Jägermeister es un licor herbal alemán elaborado con una mezcla amplia de hierbas, raíces, especias y cáscaras. Su perfil suele sentirse balsámico, especiado, ligeramente amargo y con una dulzura presente, pero no tan golosa como la de muchos licores de postre.",
+                "Su graduación habitual ronda el 35 % vol., así que tiene bastante más fuerza que un aperitivo medio y bastante más presencia alcohólica que muchas cremas o licores suaves.",
+                "Para alguien que empieza, una forma simple de ubicarlo es esta: no es un whisky, no es un vodka y tampoco es solo un shot de fiesta. Es un licor de hierbas con identidad muy marcada.",
+                "Por eso puede gustar o sorprender desde el principio: combina sensación dulce, especias, amargor y un fondo casi medicinal o digestivo que no aparece tanto en otros licores populares."
+              ]
+            },
+            {
+              "slug": "como-se-hace-jagermeister",
+              "title": "Cómo se hace Jägermeister",
+              "subtitle": "Alcohol, botánicos, maceración y reposo para integrar sabores",
+              "imageUrl": "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Ingredientes aromáticos y bebidas servidas en copas",
+              "paragraphs": [
+                "Como otros licores herbales, parte de una base alcohólica sobre la que se trabaja con botánicos. Esos botánicos pueden incluir hierbas, raíces, especias, frutas secas y cáscaras aromáticas.",
+                "Luego esos ingredientes se maceran o infusionan para que transfieran sabor y aroma al alcohol. Después se ajusta la receta con dulzor y se deja reposar para que el conjunto se vuelva más integrado.",
+                "La diferencia con un destilado puro está en que aquí no se busca neutralidad ni sabor limpio de una sola materia prima. Se busca una mezcla compleja de sabores añadidos, construida como receta.",
+                "Dicho fácil: Jägermeister no intenta saber a cereal, caña o agave como un destilado base. Intenta saber a su combinación de hierbas, especias y notas digestivas."
+              ]
+            },
+            {
+              "slug": "como-entender-jagermeister",
+              "title": "Cómo empezar a entenderlo",
+              "subtitle": "Muy frío, solo o en mezcla, pero con un perfil siempre intenso",
+              "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+              "imageAlt": "Mesa con bebidas y acompañamientos",
+              "paragraphs": [
+                "Mucha gente lo conoce por tomarse muy frío y en shots, porque así resulta más fácil de beber y su textura se siente más compacta. El frío también suaviza parte del impacto del alcohol y de las hierbas.",
+                "Aun así, si se quiere entender mejor, conviene probar una cantidad pequeña sin que esté heladísimo. Así se notan más el costado herbal, el amargor, las especias y la sensación digestiva.",
+                "También puede aparecer en tragos mezclados con bebidas energéticas o en cócteles, pero esa no es la única forma de leerlo. Mirarlo solo como bebida de fiesta hace perder parte de su identidad como licor herbal.",
+                "Para un principiante, lo más útil es compararlo mentalmente con otras familias: es menos neutro que un vodka, menos vínico que un aperitivo, y menos dulce de postre que una crema. Eso ayuda mucho a ubicarlo."
+              ]
+            }
+          ],
+          "tables": [
+            {
+              "slug": "jagermeister-claves",
+              "title": "Claves rápidas para ubicarlo",
+              "columns": [
+                {
+                  "key": "term",
+                  "label": "Aspecto"
+                },
+                {
+                  "key": "composition",
+                  "label": "Cómo es"
+                },
+                {
+                  "key": "objective",
+                  "label": "Qué ayuda a entender"
+                }
+              ],
+              "rows": [
+                {
+                  "term": "Tipo de bebida",
+                  "composition": "Licor herbal alemán, no destilado puro ni aperitivo clásico.",
+                  "objective": "Ayuda a colocarlo en la familia correcta dentro del mapa del alcohol."
+                },
+                {
+                  "term": "Graduación habitual",
+                  "composition": "35 % vol. aprox.",
+                  "objective": "Recuerda que, aunque se sirva en shots pequeños, su carga alcohólica sigue siendo relevante."
+                },
+                {
+                  "term": "Perfil",
+                  "composition": "Herbal, especiado, balsámico, algo amargo y con dulzor moderado.",
+                  "objective": "Permite entender por qué no se parece ni a un vodka ni a un licor de crema."
+                },
+                {
+                  "term": "Uso común",
+                  "composition": "Muy frío, solo, en shot o en mezclas simples.",
+                  "objective": "Muestra cómo la forma de servicio cambia bastante la percepción del producto."
                 }
               ]
             }

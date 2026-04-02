@@ -16,7 +16,7 @@ export function buildApp() {
   app.register(cors, {
     origin: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-admin-migration-secret"],
   });
 
   app.register(swagger, {

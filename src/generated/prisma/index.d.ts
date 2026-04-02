@@ -4233,6 +4233,7 @@ export namespace Prisma {
     noteTitle: string | null
     noteContent: string | null
     position: number | null
+    semanticKey: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -4246,6 +4247,7 @@ export namespace Prisma {
     noteTitle: string | null
     noteContent: string | null
     position: number | null
+    semanticKey: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -4259,6 +4261,7 @@ export namespace Prisma {
     noteTitle: number
     noteContent: number
     position: number
+    semanticKey: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -4282,6 +4285,7 @@ export namespace Prisma {
     noteTitle?: true
     noteContent?: true
     position?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -4295,6 +4299,7 @@ export namespace Prisma {
     noteTitle?: true
     noteContent?: true
     position?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -4308,6 +4313,7 @@ export namespace Prisma {
     noteTitle?: true
     noteContent?: true
     position?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -4408,6 +4414,7 @@ export namespace Prisma {
     noteTitle: string | null
     noteContent: string | null
     position: number
+    semanticKey: string | null
     createdAt: Date
     updatedAt: Date
     _count: GuideTabCountAggregateOutputType | null
@@ -4440,6 +4447,7 @@ export namespace Prisma {
     noteTitle?: boolean
     noteContent?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     guide?: boolean | GuideDefaultArgs<ExtArgs>
@@ -4457,6 +4465,7 @@ export namespace Prisma {
     noteTitle?: boolean
     noteContent?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     guide?: boolean | GuideDefaultArgs<ExtArgs>
@@ -4471,6 +4480,7 @@ export namespace Prisma {
     noteTitle?: boolean
     noteContent?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     guide?: boolean | GuideDefaultArgs<ExtArgs>
@@ -4485,11 +4495,12 @@ export namespace Prisma {
     noteTitle?: boolean
     noteContent?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type GuideTabOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "guideId" | "slug" | "label" | "panelTitle" | "noteTitle" | "noteContent" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTab"]>
+  export type GuideTabOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "guideId" | "slug" | "label" | "panelTitle" | "noteTitle" | "noteContent" | "position" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTab"]>
   export type GuideTabInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     guide?: boolean | GuideDefaultArgs<ExtArgs>
     sections?: boolean | GuideTab$sectionsArgs<ExtArgs>
@@ -4519,6 +4530,10 @@ export namespace Prisma {
       noteTitle: string | null
       noteContent: string | null
       position: number
+      /**
+       * Vocabulario compartido (intro, origin, drinks, …) para cruzar vino, destilados y licores.
+       */
+      semanticKey: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["guideTab"]>
@@ -4955,6 +4970,7 @@ export namespace Prisma {
     readonly noteTitle: FieldRef<"GuideTab", 'String'>
     readonly noteContent: FieldRef<"GuideTab", 'String'>
     readonly position: FieldRef<"GuideTab", 'Int'>
+    readonly semanticKey: FieldRef<"GuideTab", 'String'>
     readonly createdAt: FieldRef<"GuideTab", 'DateTime'>
     readonly updatedAt: FieldRef<"GuideTab", 'DateTime'>
   }
@@ -5453,6 +5469,7 @@ export namespace Prisma {
     imageUrl: string | null
     imageAlt: string | null
     position: number | null
+    semanticKey: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5466,6 +5483,7 @@ export namespace Prisma {
     imageUrl: string | null
     imageAlt: string | null
     position: number | null
+    semanticKey: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -5479,6 +5497,7 @@ export namespace Prisma {
     imageUrl: number
     imageAlt: number
     position: number
+    semanticKey: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -5502,6 +5521,7 @@ export namespace Prisma {
     imageUrl?: true
     imageAlt?: true
     position?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5515,6 +5535,7 @@ export namespace Prisma {
     imageUrl?: true
     imageAlt?: true
     position?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -5528,6 +5549,7 @@ export namespace Prisma {
     imageUrl?: true
     imageAlt?: true
     position?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -5628,6 +5650,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey: string | null
     createdAt: Date
     updatedAt: Date
     _count: GuideSectionCountAggregateOutputType | null
@@ -5660,6 +5683,7 @@ export namespace Prisma {
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
@@ -5676,6 +5700,7 @@ export namespace Prisma {
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
@@ -5690,6 +5715,7 @@ export namespace Prisma {
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
@@ -5704,11 +5730,12 @@ export namespace Prisma {
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type GuideSectionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "title" | "subtitle" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideSection"]>
+  export type GuideSectionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "title" | "subtitle" | "imageUrl" | "imageAlt" | "position" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideSection"]>
   export type GuideSectionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
     paragraphs?: boolean | GuideSection$paragraphsArgs<ExtArgs>
@@ -5736,6 +5763,7 @@ export namespace Prisma {
       imageUrl: string
       imageAlt: string
       position: number
+      semanticKey: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["guideSection"]>
@@ -6171,6 +6199,7 @@ export namespace Prisma {
     readonly imageUrl: FieldRef<"GuideSection", 'String'>
     readonly imageAlt: FieldRef<"GuideSection", 'String'>
     readonly position: FieldRef<"GuideSection", 'Int'>
+    readonly semanticKey: FieldRef<"GuideSection", 'String'>
     readonly createdAt: FieldRef<"GuideSection", 'DateTime'>
     readonly updatedAt: FieldRef<"GuideSection", 'DateTime'>
   }
@@ -7752,6 +7781,8 @@ export namespace Prisma {
     slug: string | null
     title: string | null
     position: number | null
+    sectionSlug: string | null
+    semanticKey: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -7762,6 +7793,8 @@ export namespace Prisma {
     slug: string | null
     title: string | null
     position: number | null
+    sectionSlug: string | null
+    semanticKey: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -7773,6 +7806,8 @@ export namespace Prisma {
     title: number
     columns: number
     position: number
+    sectionSlug: number
+    semanticKey: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -7793,6 +7828,8 @@ export namespace Prisma {
     slug?: true
     title?: true
     position?: true
+    sectionSlug?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -7803,6 +7840,8 @@ export namespace Prisma {
     slug?: true
     title?: true
     position?: true
+    sectionSlug?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -7814,6 +7853,8 @@ export namespace Prisma {
     title?: true
     columns?: true
     position?: true
+    sectionSlug?: true
+    semanticKey?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -7912,6 +7953,8 @@ export namespace Prisma {
     title: string
     columns: JsonValue
     position: number
+    sectionSlug: string | null
+    semanticKey: string | null
     createdAt: Date
     updatedAt: Date
     _count: GuideTableCountAggregateOutputType | null
@@ -7942,6 +7985,8 @@ export namespace Prisma {
     title?: boolean
     columns?: boolean
     position?: boolean
+    sectionSlug?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
@@ -7956,6 +8001,8 @@ export namespace Prisma {
     title?: boolean
     columns?: boolean
     position?: boolean
+    sectionSlug?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
@@ -7968,6 +8015,8 @@ export namespace Prisma {
     title?: boolean
     columns?: boolean
     position?: boolean
+    sectionSlug?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
@@ -7980,11 +8029,13 @@ export namespace Prisma {
     title?: boolean
     columns?: boolean
     position?: boolean
+    sectionSlug?: boolean
+    semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type GuideTableOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "title" | "columns" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTable"]>
+  export type GuideTableOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "title" | "columns" | "position" | "sectionSlug" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTable"]>
   export type GuideTableInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
     rows?: boolean | GuideTable$rowsArgs<ExtArgs>
@@ -8010,6 +8061,11 @@ export namespace Prisma {
       title: string
       columns: Prisma.JsonValue
       position: number
+      /**
+       * Si se informa, en fichas de destilado con varias secciones la tabla se muestra en la pestaña de esa sección (slug de GuideSection en la misma pestaña).
+       */
+      sectionSlug: string | null
+      semanticKey: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["guideTable"]>
@@ -8443,6 +8499,8 @@ export namespace Prisma {
     readonly title: FieldRef<"GuideTable", 'String'>
     readonly columns: FieldRef<"GuideTable", 'Json'>
     readonly position: FieldRef<"GuideTable", 'Int'>
+    readonly sectionSlug: FieldRef<"GuideTable", 'String'>
+    readonly semanticKey: FieldRef<"GuideTable", 'String'>
     readonly createdAt: FieldRef<"GuideTable", 'DateTime'>
     readonly updatedAt: FieldRef<"GuideTable", 'DateTime'>
   }
@@ -13472,6 +13530,7 @@ export namespace Prisma {
     noteTitle: 'noteTitle',
     noteContent: 'noteContent',
     position: 'position',
+    semanticKey: 'semanticKey',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -13488,6 +13547,7 @@ export namespace Prisma {
     imageUrl: 'imageUrl',
     imageAlt: 'imageAlt',
     position: 'position',
+    semanticKey: 'semanticKey',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -13514,6 +13574,8 @@ export namespace Prisma {
     title: 'title',
     columns: 'columns',
     position: 'position',
+    sectionSlug: 'sectionSlug',
+    semanticKey: 'semanticKey',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -13865,6 +13927,7 @@ export namespace Prisma {
     noteTitle?: StringNullableFilter<"GuideTab"> | string | null
     noteContent?: StringNullableFilter<"GuideTab"> | string | null
     position?: IntFilter<"GuideTab"> | number
+    semanticKey?: StringNullableFilter<"GuideTab"> | string | null
     createdAt?: DateTimeFilter<"GuideTab"> | Date | string
     updatedAt?: DateTimeFilter<"GuideTab"> | Date | string
     guide?: XOR<GuideScalarRelationFilter, GuideWhereInput>
@@ -13881,6 +13944,7 @@ export namespace Prisma {
     noteTitle?: SortOrderInput | SortOrder
     noteContent?: SortOrderInput | SortOrder
     position?: SortOrder
+    semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     guide?: GuideOrderByWithRelationInput
@@ -13901,6 +13965,7 @@ export namespace Prisma {
     noteTitle?: StringNullableFilter<"GuideTab"> | string | null
     noteContent?: StringNullableFilter<"GuideTab"> | string | null
     position?: IntFilter<"GuideTab"> | number
+    semanticKey?: StringNullableFilter<"GuideTab"> | string | null
     createdAt?: DateTimeFilter<"GuideTab"> | Date | string
     updatedAt?: DateTimeFilter<"GuideTab"> | Date | string
     guide?: XOR<GuideScalarRelationFilter, GuideWhereInput>
@@ -13917,6 +13982,7 @@ export namespace Prisma {
     noteTitle?: SortOrderInput | SortOrder
     noteContent?: SortOrderInput | SortOrder
     position?: SortOrder
+    semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: GuideTabCountOrderByAggregateInput
@@ -13938,6 +14004,7 @@ export namespace Prisma {
     noteTitle?: StringNullableWithAggregatesFilter<"GuideTab"> | string | null
     noteContent?: StringNullableWithAggregatesFilter<"GuideTab"> | string | null
     position?: IntWithAggregatesFilter<"GuideTab"> | number
+    semanticKey?: StringNullableWithAggregatesFilter<"GuideTab"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"GuideTab"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"GuideTab"> | Date | string
   }
@@ -13954,6 +14021,7 @@ export namespace Prisma {
     imageUrl?: StringFilter<"GuideSection"> | string
     imageAlt?: StringFilter<"GuideSection"> | string
     position?: IntFilter<"GuideSection"> | number
+    semanticKey?: StringNullableFilter<"GuideSection"> | string | null
     createdAt?: DateTimeFilter<"GuideSection"> | Date | string
     updatedAt?: DateTimeFilter<"GuideSection"> | Date | string
     tab?: XOR<GuideTabScalarRelationFilter, GuideTabWhereInput>
@@ -13969,6 +14037,7 @@ export namespace Prisma {
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     tab?: GuideTabOrderByWithRelationInput
@@ -13988,6 +14057,7 @@ export namespace Prisma {
     imageUrl?: StringFilter<"GuideSection"> | string
     imageAlt?: StringFilter<"GuideSection"> | string
     position?: IntFilter<"GuideSection"> | number
+    semanticKey?: StringNullableFilter<"GuideSection"> | string | null
     createdAt?: DateTimeFilter<"GuideSection"> | Date | string
     updatedAt?: DateTimeFilter<"GuideSection"> | Date | string
     tab?: XOR<GuideTabScalarRelationFilter, GuideTabWhereInput>
@@ -14003,6 +14073,7 @@ export namespace Prisma {
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: GuideSectionCountOrderByAggregateInput
@@ -14024,6 +14095,7 @@ export namespace Prisma {
     imageUrl?: StringWithAggregatesFilter<"GuideSection"> | string
     imageAlt?: StringWithAggregatesFilter<"GuideSection"> | string
     position?: IntWithAggregatesFilter<"GuideSection"> | number
+    semanticKey?: StringNullableWithAggregatesFilter<"GuideSection"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"GuideSection"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"GuideSection"> | Date | string
   }
@@ -14100,6 +14172,8 @@ export namespace Prisma {
     title?: StringFilter<"GuideTable"> | string
     columns?: JsonFilter<"GuideTable">
     position?: IntFilter<"GuideTable"> | number
+    sectionSlug?: StringNullableFilter<"GuideTable"> | string | null
+    semanticKey?: StringNullableFilter<"GuideTable"> | string | null
     createdAt?: DateTimeFilter<"GuideTable"> | Date | string
     updatedAt?: DateTimeFilter<"GuideTable"> | Date | string
     tab?: XOR<GuideTabScalarRelationFilter, GuideTabWhereInput>
@@ -14113,6 +14187,8 @@ export namespace Prisma {
     title?: SortOrder
     columns?: SortOrder
     position?: SortOrder
+    sectionSlug?: SortOrderInput | SortOrder
+    semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     tab?: GuideTabOrderByWithRelationInput
@@ -14130,6 +14206,8 @@ export namespace Prisma {
     title?: StringFilter<"GuideTable"> | string
     columns?: JsonFilter<"GuideTable">
     position?: IntFilter<"GuideTable"> | number
+    sectionSlug?: StringNullableFilter<"GuideTable"> | string | null
+    semanticKey?: StringNullableFilter<"GuideTable"> | string | null
     createdAt?: DateTimeFilter<"GuideTable"> | Date | string
     updatedAt?: DateTimeFilter<"GuideTable"> | Date | string
     tab?: XOR<GuideTabScalarRelationFilter, GuideTabWhereInput>
@@ -14143,6 +14221,8 @@ export namespace Prisma {
     title?: SortOrder
     columns?: SortOrder
     position?: SortOrder
+    sectionSlug?: SortOrderInput | SortOrder
+    semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: GuideTableCountOrderByAggregateInput
@@ -14162,6 +14242,8 @@ export namespace Prisma {
     title?: StringWithAggregatesFilter<"GuideTable"> | string
     columns?: JsonWithAggregatesFilter<"GuideTable">
     position?: IntWithAggregatesFilter<"GuideTable"> | number
+    sectionSlug?: StringNullableWithAggregatesFilter<"GuideTable"> | string | null
+    semanticKey?: StringNullableWithAggregatesFilter<"GuideTable"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"GuideTable"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"GuideTable"> | Date | string
   }
@@ -14629,6 +14711,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     guide: GuideCreateNestedOneWithoutTabsInput
@@ -14645,6 +14728,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     sections?: GuideSectionUncheckedCreateNestedManyWithoutTabInput
@@ -14659,6 +14743,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneRequiredWithoutTabsNestedInput
@@ -14675,6 +14760,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUncheckedUpdateManyWithoutTabNestedInput
@@ -14690,6 +14776,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -14702,6 +14789,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -14715,6 +14803,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -14727,6 +14816,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     tab: GuideTabCreateNestedOneWithoutSectionsInput
@@ -14742,6 +14832,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     paragraphs?: GuideParagraphUncheckedCreateNestedManyWithoutSectionInput
@@ -14755,6 +14846,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tab?: GuideTabUpdateOneRequiredWithoutSectionsNestedInput
@@ -14770,6 +14862,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     paragraphs?: GuideParagraphUncheckedUpdateManyWithoutSectionNestedInput
@@ -14784,6 +14877,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -14796,6 +14890,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -14809,6 +14904,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -14881,6 +14977,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     tab: GuideTabCreateNestedOneWithoutTablesInput
@@ -14894,6 +14992,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     rows?: GuideTableRowUncheckedCreateNestedManyWithoutTableInput
@@ -14905,6 +15005,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tab?: GuideTabUpdateOneRequiredWithoutTablesNestedInput
@@ -14918,6 +15020,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     rows?: GuideTableRowUncheckedUpdateManyWithoutTableNestedInput
@@ -14930,6 +15034,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -14940,6 +15046,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -14951,6 +15059,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -15504,6 +15614,7 @@ export namespace Prisma {
     noteTitle?: SortOrder
     noteContent?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15521,6 +15632,7 @@ export namespace Prisma {
     noteTitle?: SortOrder
     noteContent?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15534,6 +15646,7 @@ export namespace Prisma {
     noteTitle?: SortOrder
     noteContent?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15589,6 +15702,7 @@ export namespace Prisma {
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15606,6 +15720,7 @@ export namespace Prisma {
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15619,6 +15734,7 @@ export namespace Prisma {
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15712,6 +15828,8 @@ export namespace Prisma {
     title?: SortOrder
     columns?: SortOrder
     position?: SortOrder
+    sectionSlug?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15726,6 +15844,8 @@ export namespace Prisma {
     slug?: SortOrder
     title?: SortOrder
     position?: SortOrder
+    sectionSlug?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -15736,6 +15856,8 @@ export namespace Prisma {
     slug?: SortOrder
     title?: SortOrder
     position?: SortOrder
+    sectionSlug?: SortOrder
+    semanticKey?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -16791,6 +16913,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     sections?: GuideSectionCreateNestedManyWithoutTabInput
@@ -16805,6 +16928,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     sections?: GuideSectionUncheckedCreateNestedManyWithoutTabInput
@@ -16890,6 +17014,7 @@ export namespace Prisma {
     noteTitle?: StringNullableFilter<"GuideTab"> | string | null
     noteContent?: StringNullableFilter<"GuideTab"> | string | null
     position?: IntFilter<"GuideTab"> | number
+    semanticKey?: StringNullableFilter<"GuideTab"> | string | null
     createdAt?: DateTimeFilter<"GuideTab"> | Date | string
     updatedAt?: DateTimeFilter<"GuideTab"> | Date | string
   }
@@ -16925,6 +17050,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     paragraphs?: GuideParagraphCreateNestedManyWithoutSectionInput
@@ -16938,6 +17064,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     paragraphs?: GuideParagraphUncheckedCreateNestedManyWithoutSectionInput
@@ -16959,6 +17086,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     rows?: GuideTableRowCreateNestedManyWithoutTableInput
@@ -16970,6 +17099,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     rows?: GuideTableRowUncheckedCreateNestedManyWithoutTableInput
@@ -17042,6 +17173,7 @@ export namespace Prisma {
     imageUrl?: StringFilter<"GuideSection"> | string
     imageAlt?: StringFilter<"GuideSection"> | string
     position?: IntFilter<"GuideSection"> | number
+    semanticKey?: StringNullableFilter<"GuideSection"> | string | null
     createdAt?: DateTimeFilter<"GuideSection"> | Date | string
     updatedAt?: DateTimeFilter<"GuideSection"> | Date | string
   }
@@ -17072,6 +17204,8 @@ export namespace Prisma {
     title?: StringFilter<"GuideTable"> | string
     columns?: JsonFilter<"GuideTable">
     position?: IntFilter<"GuideTable"> | number
+    sectionSlug?: StringNullableFilter<"GuideTable"> | string | null
+    semanticKey?: StringNullableFilter<"GuideTable"> | string | null
     createdAt?: DateTimeFilter<"GuideTable"> | Date | string
     updatedAt?: DateTimeFilter<"GuideTable"> | Date | string
   }
@@ -17084,6 +17218,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     guide: GuideCreateNestedOneWithoutTabsInput
@@ -17099,6 +17234,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     tables?: GuideTableUncheckedCreateNestedManyWithoutTabInput
@@ -17154,6 +17290,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneRequiredWithoutTabsNestedInput
@@ -17169,6 +17306,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tables?: GuideTableUncheckedUpdateManyWithoutTabNestedInput
@@ -17210,6 +17348,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     tab: GuideTabCreateNestedOneWithoutSectionsInput
@@ -17224,6 +17363,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17252,6 +17392,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tab?: GuideTabUpdateOneRequiredWithoutSectionsNestedInput
@@ -17266,6 +17407,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17278,6 +17420,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     guide: GuideCreateNestedOneWithoutTabsInput
@@ -17293,6 +17436,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     sections?: GuideSectionUncheckedCreateNestedManyWithoutTabInput
@@ -17362,6 +17506,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneRequiredWithoutTabsNestedInput
@@ -17377,6 +17522,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUncheckedUpdateManyWithoutTabNestedInput
@@ -17423,6 +17569,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     tab: GuideTabCreateNestedOneWithoutTablesInput
@@ -17435,6 +17583,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17461,6 +17611,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tab?: GuideTabUpdateOneRequiredWithoutTablesNestedInput
@@ -17473,6 +17625,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17797,6 +17951,7 @@ export namespace Prisma {
     noteTitle?: string | null
     noteContent?: string | null
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17809,6 +17964,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUpdateManyWithoutTabNestedInput
@@ -17823,6 +17979,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUncheckedUpdateManyWithoutTabNestedInput
@@ -17837,6 +17994,7 @@ export namespace Prisma {
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17849,6 +18007,7 @@ export namespace Prisma {
     imageUrl: string
     imageAlt: string
     position: number
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17859,6 +18018,8 @@ export namespace Prisma {
     title: string
     columns: JsonNullValueInput | InputJsonValue
     position: number
+    sectionSlug?: string | null
+    semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -17871,6 +18032,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     paragraphs?: GuideParagraphUpdateManyWithoutSectionNestedInput
@@ -17884,6 +18046,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     paragraphs?: GuideParagraphUncheckedUpdateManyWithoutSectionNestedInput
@@ -17897,6 +18060,7 @@ export namespace Prisma {
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -17907,6 +18071,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     rows?: GuideTableRowUpdateManyWithoutTableNestedInput
@@ -17918,6 +18084,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     rows?: GuideTableRowUncheckedUpdateManyWithoutTableNestedInput
@@ -17929,6 +18097,8 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
+    sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

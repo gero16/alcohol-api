@@ -115,6 +115,7 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
       panelTitle: tab.panelTitle ?? undefined,
       noteTitle: tab.noteTitle ?? undefined,
       noteContent: tab.noteContent ?? undefined,
+      semanticKey: tab.semanticKey ?? undefined,
       sections: tab.sections.map((section) => ({
         id: section.id,
         slug: section.slug,
@@ -122,6 +123,7 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
         subtitle: section.subtitle,
         imageUrl: section.imageUrl,
         imageAlt: section.imageAlt,
+        semanticKey: section.semanticKey ?? undefined,
         paragraphs: section.paragraphs.map((paragraph) => paragraph.content),
       })),
       tables: tab.tables.map((table): ApiGuideTable => {
@@ -133,6 +135,8 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
           slug: table.slug,
           title: table.title,
           displayMode,
+          sectionSlug: table.sectionSlug ?? undefined,
+          semanticKey: table.semanticKey ?? undefined,
           columns,
           rows: table.rows.map((row) => ({
             id: row.id,

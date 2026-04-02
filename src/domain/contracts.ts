@@ -28,6 +28,8 @@ export type SeedGuideSection = {
   subtitle: string;
   imageUrl: string;
   imageAlt: string;
+  /** Vocabulario compartido: intro, origin, types, drinks, etc. */
+  semanticKey?: string;
   paragraphs: string[];
 };
 
@@ -45,6 +47,9 @@ export type SeedGuideTableRow = {
 export type SeedGuideTable = {
   slug: string;
   title: string;
+  /** Slug de una sección de la misma pestaña; en guías partidas por sección (destilados) la tabla aparece ahí en lugar de en «Tablas y notas». */
+  sectionSlug?: string;
+  semanticKey?: string;
   columns: TableColumn[];
   rows: SeedGuideTableRow[];
 };
@@ -56,6 +61,7 @@ export type SeedGuideTab = {
   panelTitle?: string;
   noteTitle?: string;
   noteContent?: string;
+  semanticKey?: string;
   sections?: SeedGuideSection[];
   tables?: SeedGuideTable[];
 };
@@ -100,6 +106,7 @@ export type ApiGuideSection = {
   subtitle: string;
   imageUrl: string;
   imageAlt: string;
+  semanticKey?: string;
   paragraphs: string[];
 };
 
@@ -112,6 +119,8 @@ export type ApiGuideTable = {
   slug: string;
   title: string;
   displayMode: "table" | "cards";
+  sectionSlug?: string;
+  semanticKey?: string;
   columns: TableColumn[];
   rows: ApiGuideTableRow[];
 };
@@ -123,6 +132,7 @@ export type ApiGuideTab = {
   panelTitle?: string;
   noteTitle?: string;
   noteContent?: string;
+  semanticKey?: string;
   sections: ApiGuideSection[];
   tables: ApiGuideTable[];
 };

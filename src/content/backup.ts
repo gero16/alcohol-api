@@ -65,6 +65,7 @@ function toApiGuideDetailFromSeed(guide: SeedGuide, dataset: SeedDataset): ApiGu
       panelTitle: tab.panelTitle,
       noteTitle: tab.noteTitle,
       noteContent: tab.noteContent,
+      semanticKey: tab.semanticKey,
       sections: (tab.sections ?? []).map((section) => ({
         id: toBackupId("guide-section", guide.categorySlug, tab.slug, section.slug),
         slug: section.slug,
@@ -72,6 +73,7 @@ function toApiGuideDetailFromSeed(guide: SeedGuide, dataset: SeedDataset): ApiGu
         subtitle: section.subtitle,
         imageUrl: section.imageUrl,
         imageAlt: section.imageAlt,
+        semanticKey: section.semanticKey,
         paragraphs: [...section.paragraphs],
       })),
       tables: (tab.tables ?? []).map((table) => ({
@@ -79,6 +81,8 @@ function toApiGuideDetailFromSeed(guide: SeedGuide, dataset: SeedDataset): ApiGu
         slug: table.slug,
         title: table.title,
         displayMode: table.rows.some((row) => row.imageUrl) ? "cards" : "table",
+        sectionSlug: table.sectionSlug,
+        semanticKey: table.semanticKey,
         columns: table.columns,
         rows: table.rows.map((row, rowIndex) => ({
           id: toBackupId("guide-table-row", guide.categorySlug, tab.slug, table.slug, String(rowIndex)),
@@ -126,17 +130,21 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
         panelTitle: tab.panelTitle ?? undefined,
         noteTitle: tab.noteTitle ?? undefined,
         noteContent: tab.noteContent ?? undefined,
+        semanticKey: tab.semanticKey ?? undefined,
         sections: tab.sections.map((section) => ({
           slug: section.slug,
           title: section.title,
           subtitle: section.subtitle,
           imageUrl: section.imageUrl,
           imageAlt: section.imageAlt,
+          semanticKey: section.semanticKey ?? undefined,
           paragraphs: section.paragraphs.map((paragraph) => paragraph.content),
         })),
         tables: tab.tables.map((table) => ({
           slug: table.slug,
           title: table.title,
+          sectionSlug: table.sectionSlug ?? undefined,
+          semanticKey: table.semanticKey ?? undefined,
           columns: table.columns as TableColumn[],
           rows: table.rows.map((row) => ({
             term: row.term,

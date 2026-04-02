@@ -5,6 +5,7 @@ import type {
   SeedGuideTab,
   SeedGuideTable,
 } from "../domain/contracts";
+import { parseGuideSemanticKey, assertGuideSemanticKeysInPayload } from "../domain/guideSemantics";
 import { guideDetailInclude } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
 
@@ -21,6 +22,7 @@ function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideI
     noteTitle: tab.noteTitle,
     noteContent: tab.noteContent,
     position: tab.position,
+    semanticKey: parseGuideSemanticKey(tab.semanticKey),
     sections: {
       create: (tab.sections ?? []).map((section, index) => ({
         slug: section.slug,
@@ -29,6 +31,7 @@ function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideI
         imageUrl: section.imageUrl,
         imageAlt: section.imageAlt,
         position: index,
+        semanticKey: parseGuideSemanticKey(section.semanticKey),
         paragraphs: {
           create: section.paragraphs.map((content, paragraphIndex) => ({
             content,
@@ -47,11 +50,14 @@ function toGuideTableCreate(
   table: SeedGuideTable,
   index: number,
 ): Prisma.GuideTableCreateWithoutTabInput {
+  const sectionSlug = table.sectionSlug?.trim();
   return {
     slug: table.slug,
     title: table.title,
     columns: table.columns,
     position: index,
+    sectionSlug: sectionSlug && sectionSlug.length > 0 ? sectionSlug : null,
+    semanticKey: parseGuideSemanticKey(table.semanticKey),
     rows: {
       create: table.rows.map((row, rowIndex) => ({
         term: row.term,
@@ -138,9 +144,23 @@ export async function getGuideByCategorySlug(categorySlug: string) {
   });
 }
 
+function assertTableSectionSlugsMatchTabs(payload: GuideUpsertInput) {
+  for (const tab of payload.tabs) {
+    const sectionSlugs = new Set((tab.sections ?? []).map((s) => s.slug.trim()).filter(Boolean));
+    for (const table of tab.tables ?? []) {
+      const hint = table.sectionSlug?.trim();
+      if (hint && !sectionSlugs.has(hint)) {
+        throw new Error(`INVALID_TABLE_SECTION_SLUG:${table.slug}:${hint}`);
+      }
+    }
+  }
+}
+
 export async function replaceGuideForCategory(categorySlug: string, payload: GuideUpsertInput) {
   const prisma = getPrismaOrThrow();
   const category = await requireCategory(categorySlug);
+  assertTableSectionSlugsMatchTabs(payload);
+  assertGuideSemanticKeysInPayload(payload);
 
   await prisma.guide.deleteMany({
     where: {
@@ -189,6 +209,7 @@ export async function createSectionForGuide(categorySlug: string, payload: Secti
       imageUrl: payload.imageUrl,
       imageAlt: payload.imageAlt,
       position: payload.position ?? existingSections,
+      semanticKey: parseGuideSemanticKey(payload.semanticKey),
       paragraphs: {
         create: payload.paragraphs.map((content, index) => ({
           content,
@@ -254,6 +275,7 @@ export async function updateSectionForGuide(
       imageUrl: payload.imageUrl,
       imageAlt: payload.imageAlt,
       position: payload.position ?? section.position,
+      semanticKey: parseGuideSemanticKey(payload.semanticKey),
       paragraphs: {
         create: payload.paragraphs.map((content, index) => ({
           content,

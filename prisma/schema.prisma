@@ -35,7 +35,7 @@ model Guide {
 }
 
 model GuideTab {
-  id          String         @id @default(cuid())
+  id           String         @id @default(cuid())
   guideId      String
   slug         String
   label        String
@@ -43,6 +43,8 @@ model GuideTab {
   noteTitle    String?
   noteContent  String?
   position     Int
+  /// Vocabulario compartido (intro, origin, drinks, …) para cruzar vino, destilados y licores.
+  semanticKey  String?
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
   guide        Guide          @relation(fields: [guideId], references: [id], onDelete: Cascade)
@@ -54,7 +56,7 @@ model GuideTab {
 }
 
 model GuideSection {
-  id         String           @id @default(cuid())
+  id          String           @id @default(cuid())
   tabId       String
   slug        String
   title       String
@@ -62,6 +64,7 @@ model GuideSection {
   imageUrl    String
   imageAlt    String
   position    Int
+  semanticKey String?
   createdAt   DateTime         @default(now())
   updatedAt   DateTime         @updatedAt
   tab         GuideTab         @relation(fields: [tabId], references: [id], onDelete: Cascade)
@@ -84,16 +87,19 @@ model GuideParagraph {
 }
 
 model GuideTable {
-  id        String         @id @default(cuid())
-  tabId      String
-  slug       String
-  title      String
-  columns    Json
-  position   Int
-  createdAt  DateTime       @default(now())
-  updatedAt  DateTime       @updatedAt
-  tab        GuideTab       @relation(fields: [tabId], references: [id], onDelete: Cascade)
-  rows       GuideTableRow[]
+  id           String         @id @default(cuid())
+  tabId        String
+  slug         String
+  title        String
+  columns      Json
+  position     Int
+  /// Si se informa, en fichas de destilado con varias secciones la tabla se muestra en la pestaña de esa sección (slug de GuideSection en la misma pestaña).
+  sectionSlug  String?
+  semanticKey  String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  tab          GuideTab       @relation(fields: [tabId], references: [id], onDelete: Cascade)
+  rows         GuideTableRow[]
 
   @@unique([tabId, slug])
   @@index([tabId, position])

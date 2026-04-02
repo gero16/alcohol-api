@@ -7,12 +7,18 @@ import {
   listGuides as listGuidesWithFallback,
   refreshBackupSnapshot,
 } from "../services/content";
+import { GUIDE_SEMANTIC_KEYS } from "../domain/guideSemantics";
 import {
   createSectionForGuide,
   deleteSectionForGuide,
   replaceGuideForCategory,
   updateSectionForGuide,
 } from "../services/guides";
+
+const guideSemanticKeySchema = {
+  type: "string",
+  enum: GUIDE_SEMANTIC_KEYS as unknown as [string, ...string[]],
+} as const;
 
 const tableColumnSchema = {
   type: "object",
@@ -63,6 +69,7 @@ const guideSchema = {
           panelTitle: { type: "string" },
           noteTitle: { type: "string" },
           noteContent: { type: "string" },
+          semanticKey: guideSemanticKeySchema,
           sections: {
             type: "array",
             items: {
@@ -79,6 +86,7 @@ const guideSchema = {
                   type: "array",
                   items: { type: "string", minLength: 1 },
                 },
+                semanticKey: guideSemanticKeySchema,
               },
             },
           },
@@ -91,6 +99,8 @@ const guideSchema = {
               properties: {
                 slug: { type: "string", minLength: 1 },
                 title: { type: "string", minLength: 1 },
+                sectionSlug: { type: "string" },
+                semanticKey: guideSemanticKeySchema,
                 columns: {
                   type: "array",
                   items: tableColumnSchema,
@@ -124,6 +134,7 @@ const sectionSchema = {
       type: "array",
       items: { type: "string", minLength: 1 },
     },
+    semanticKey: guideSemanticKeySchema,
   },
 } as const;
 
@@ -146,6 +157,21 @@ function handleGuideError(error: unknown) {
 
   if (error instanceof Error && error.message.startsWith("GUIDE_TAB_NOT_FOUND:")) {
     return { statusCode: 404, message: "Pestaña de guía no encontrada" };
+  }
+
+  if (error instanceof Error && error.message.startsWith("INVALID_TABLE_SECTION_SLUG:")) {
+    return {
+      statusCode: 400,
+      message:
+        "Una tabla referencia un slug de sección que no existe en su pestaña. Revisa el campo «Sección» en el admin.",
+    };
+  }
+
+  if (error instanceof Error && error.message.startsWith("INVALID_GUIDE_SEMANTIC_KEY:")) {
+    return {
+      statusCode: 400,
+      message: "Hay un valor de «tipo semántico» no reconocido. Usa solo las opciones del desplegable del admin.",
+    };
   }
 
   return null;

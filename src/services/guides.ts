@@ -4,9 +4,10 @@ import type {
   SeedGuideSection,
   SeedGuideTab,
   SeedGuideTable,
+  TableColumn,
 } from "../domain/contracts";
 import { parseGuideSemanticKey, assertGuideSemanticKeysInPayload } from "../domain/guideSemantics";
-import { guideDetailInclude } from "../domain/serializers";
+import { guideDetailInclude, type GuideDetailRecord } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
 
 type SectionMutationInput = SeedGuideSection & {
@@ -144,6 +145,48 @@ export async function getGuideByCategorySlug(categorySlug: string) {
   });
 }
 
+function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
+  return {
+    title: record.title,
+    type: record.type,
+    tabs: record.tabs.map((tab, tabIndex) => ({
+      slug: tab.slug,
+      label: tab.label,
+      position: tabIndex,
+      panelTitle: tab.panelTitle ?? undefined,
+      noteTitle: tab.noteTitle ?? undefined,
+      noteContent: tab.noteContent ?? undefined,
+      semanticKey: tab.semanticKey ?? undefined,
+      sections: tab.sections.map((section) => ({
+        slug: section.slug,
+        title: section.title,
+        subtitle: section.subtitle,
+        imageUrl: section.imageUrl,
+        imageAlt: section.imageAlt,
+        semanticKey: section.semanticKey ?? undefined,
+        paragraphs: section.paragraphs.map((p) => p.content),
+      })),
+      tables: tab.tables.map((table) => ({
+        slug: table.slug,
+        title: table.title,
+        sectionSlug: table.sectionSlug ?? undefined,
+        semanticKey: table.semanticKey ?? undefined,
+        columns: table.columns as TableColumn[],
+        rows: table.rows.map((row) => ({
+          term: row.term,
+          composition: row.composition ?? undefined,
+          objective: row.objective ?? undefined,
+          description: row.description ?? undefined,
+          reference: row.reference ?? undefined,
+          abv: row.abv ?? undefined,
+          imageUrl: row.imageUrl ?? undefined,
+          imageAlt: row.imageAlt ?? undefined,
+        })),
+      })),
+    })),
+  };
+}
+
 function assertTableSectionSlugsMatchTabs(payload: GuideUpsertInput) {
   for (const tab of payload.tabs) {
     const sectionSlugs = new Set((tab.sections ?? []).map((s) => s.slug.trim()).filter(Boolean));
@@ -185,6 +228,48 @@ export async function replaceGuideForCategory(categorySlug: string, payload: Gui
       },
     },
     include: guideDetailInclude,
+  });
+}
+
+/**
+ * Fusiona pestañas por `slug`: sustituye si ya existen o añade al final.
+ * Reindexa `position` en orden. Útil para no reenviar toda la guía en un PUT.
+ */
+export async function mergeGuideTabsForCategory(categorySlug: string, incomingTabs: SeedGuideTab[]) {
+  const prisma = getPrismaOrThrow();
+  const record = await prisma.guide.findFirst({
+    where: { category: { slug: categorySlug } },
+    include: guideDetailInclude,
+  });
+
+  if (!record) {
+    throw new Error(`CATEGORY_NOT_FOUND:${categorySlug}`);
+  }
+
+  if (incomingTabs.length === 0) {
+    return record;
+  }
+
+  const base = guideRecordToUpsertInput(record);
+  const merged = [...base.tabs];
+
+  for (const patch of incomingTabs) {
+    const i = merged.findIndex((t) => t.slug === patch.slug);
+    if (i >= 0) {
+      merged[i] = { ...patch, position: i };
+    } else {
+      merged.push(patch);
+    }
+  }
+
+  merged.forEach((tab, index) => {
+    tab.position = index;
+  });
+
+  return replaceGuideForCategory(categorySlug, {
+    title: base.title,
+    type: base.type,
+    tabs: merged,
   });
 }
 

@@ -1,0 +1,321 @@
+[
+  {
+    "slug": "ron-clasificacion",
+    "label": "Ron: clasificación",
+    "position": 5,
+    "panelTitle": "Clasificación del ron",
+    "noteTitle": "Idea clave",
+    "noteContent": "El ron no es una sola receta: cambia según país, caña o melaza, tipo de destilación y años en barrica. Varios criterios sirven a la vez; ninguno cuenta toda la historia.",
+    "sections": [
+      {
+        "slug": "ron-clas-origen",
+        "title": "Clasificación por origen y escuela",
+        "subtitle": "Islas, Latinoamérica y estilos coloniales que marcan sabor y regulación",
+        "imageUrl": "https://images.unsplash.com/photo-1575650772417-e6b418b0d065?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Ron servido en vaso con hielo",
+        "paragraphs": [
+          "Cuba, Puerto Rico, República Dominicana, Jamaica, Barbados, Trinidad y otros países caribeños tienen tradiciones distintas: unos priorizan rones más suaves y limpios, otros cuerpo, esterificación o notas fermentadas más intensas.",
+          "El rhum agricole de Martinica y Guadalupe parte sobre todo de jugo de caña fresco, no de melaza, y está regulado por denominaciones que marcan un perfil herbáceo y terroso muy reconocible.",
+          "Centroamérica y Sudamérica producen rones con identidad propia; algunos mercados distinguen entre estilo \"español\" (más redondo y suave), \"inglés\" (más estructurado) o \"francés\" (agrícola), aunque son etiquetas orientativas, no leyes universales.",
+          "Más allá del mapa, lo útil para quien empieza es preguntarse si el ron busca frescura para mezclar, equilibrio para beber solo o complejidad casi de cata."
+        ]
+      },
+      {
+        "slug": "ron-clas-materia",
+        "title": "Clasificación por materia prima",
+        "subtitle": "Melaza, jugo de caña y mieles: la base dulce define parte del carácter",
+        "imageUrl": "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Materias primas y granos en elaboración de bebidas",
+        "paragraphs": [
+          "La melaza es el subproducto oscuro y denso de la refinación del azúcar; fermentada y destilada da muchos rones comerciales del mundo por su disponibilidad y regularidad.",
+          "El jugo o guarapo de caña fresco, usado en rhum agricole, suele aportar notas vegetales, hierba, fruta cítrica o tierra que contrastan con el perfil más \"caramelo\" de muchos rones de melaza.",
+          "Algunos productos combinan bases o añaden miel de caña en la fermentación; el detalle exacto suele leerse en la botella o ficha del productor.",
+          "La materia prima no fija el color: un ron blanco puede venir de melaza sin crianza, y un añejo oscuro puede ser filtrado y clarificado antes de embotellar."
+        ]
+      },
+      {
+        "slug": "ron-clas-destilacion",
+        "title": "Clasificación por destilación",
+        "subtitle": "Alambique, columna y mezclas: de lo intenso a lo cristalino",
+        "imageUrl": "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Equipos de destilación en una destilería",
+        "paragraphs": [
+          "Los alambiques de descontinuo o pot still concentran más congéneres, es decir, aromas y sabores distintos del alcohol puro; en ron se asocian a expresiones más pesadas, frutales fermentados o \"funky\".",
+          "La destilación en columna continua produce un espiritu más neutro y alcohólico, base de muchos rones blancos y de gran volumen antes de mezclar o criar.",
+          "Muchos rones comerciales mezclan destilados de distintos alambiques o añaden una fracción de alta graduación para equilibrar suavidad y carácter.",
+          "La graduación de salida del alambique y el corte de cabezas y colas influyen en si el ron se siente limpio, vegetal, esterificado o más agresivo."
+        ]
+      },
+      {
+        "slug": "ron-clas-crianza",
+        "title": "Clasificación por crianza, color y etiquetado",
+        "subtitle": "Blanco, dorado, añejo, solera y edades declaradas",
+        "imageUrl": "https://images.unsplash.com/photo-1569919659476-f0852f6834b7?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Barricas de madera en bodega",
+        "paragraphs": [
+          "Ron blanco o plata suele filtrarse o descansar poco en madera; se orienta a cócteles y perfiles directos de caña o melaza.",
+          "Ron dorado puede mezclar algo de barrica con ajuste de color o suavidad; no siempre indica muchos años de envejecimiento.",
+          "Ron añejo implica tiempo en barrica que redondea, aporta vainilla, especias, fruta seca o roble; las reglas exactas dependen del país.",
+          "Sistemas tipo solera mezclan añadas en cascada: la etiqueta puede mostrar un número que resume el blend, no la edad del ron más joven en todos los casos.",
+          "Siempre conviene leer el país de origen y la denominación local: \"añejo\" en un sitio no equivale exactamente al mismo término en otro."
+        ]
+      },
+      {
+        "slug": "ron-clas-sensorial",
+        "title": "Clasificación por perfil en copa",
+        "subtitle": "Ligero, especiado, afrutado, vegetal o meloso",
+        "imageUrl": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Copas y bebidas sobre una barra",
+        "paragraphs": [
+          "Ligero o estilo \"sec\" en boca se siente más directo, con menos dulzor percibido y a veces notas minerales o alcohólicas limpias.",
+          "Especiado abarca vainilla, canela, clavo o pimienta, ya vengan de la barrica, de la caña cocida o de un spiced rum aromatizado.",
+          "Afrutado tropical incluye plátano, piña, coco o cítricos; puede ser natural del fermentado o reforzado en mezclas comerciales.",
+          "Vegetal o herbáceo es típico de jugo de caña y algunos rones pocos filtrados; el meloso recuerda a miel, caramelo o ron con carga de dulzor añadido en ciertos productos.",
+          "Esta forma de clasificar ayuda a elegir botella o cóctel sin memorizar todas las denominaciones legales del Caribe."
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "slug": "ron-clasificacion-general",
+        "title": "Resumen de criterios de clasificación",
+        "columns": [
+          { "key": "term", "label": "Criterio" },
+          { "key": "composition", "label": "Ejemplos" },
+          { "key": "objective", "label": "Qué aporta" }
+        ],
+        "rows": [
+          {
+            "term": "Origen / escuela",
+            "composition": "Caribe, Centroamérica, rhum agricole, estilos históricos español, inglés o francés.",
+            "objective": "Sitúa tradición regulatoria y expectativas de sabor."
+          },
+          {
+            "term": "Materia prima",
+            "composition": "Melaza, jugo de caña, mieles; a veces mezclas.",
+            "objective": "Explica vegetal vs caramelo y cuerpo de base."
+          },
+          {
+            "term": "Destilación",
+            "composition": "Columna, alambique, blend de cortes.",
+            "objective": "Relaciona limpieza con intensidad aromática."
+          },
+          {
+            "term": "Crianza y etiqueta",
+            "composition": "Blanco, dorado, añejo, solera, edad declarada.",
+            "objective": "Conecta color, suavidad y tiempo en madera (según norma local)."
+          },
+          {
+            "term": "Perfil",
+            "composition": "Seco, dulce percibido, especiado, funky, agrícola.",
+            "objective": "Elige maridaje o cóctel según gusto."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ron-tipos-estilos",
+    "label": "Ron: tipos y estilos",
+    "position": 6,
+    "panelTitle": "Tipos y estilos principales",
+    "sections": [
+      {
+        "slug": "tipo-ron-espanol-suave",
+        "title": "Ron de estilo español / latinoamericano suave",
+        "subtitle": "Perfiles redondos, a menudo muy mezclables",
+        "imageUrl": "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Cóctel tropical con hielo",
+        "paragraphs": [
+          "Asociado sobre todo a tradiciones cubanas, dominicanas o puertorriqueñas, suele buscar suavidad, limpieza y versatilidad en Cuba Libre, mojito o daiquiri.",
+          "Muchas marcas filtran o ajustan el producto para un perfil estable año tras año.",
+          "No confundir suavidad con falta de calidad: la intención es a menudo equilibrio y bebibilidad, no agresividad en nariz."
+        ]
+      },
+      {
+        "slug": "tipo-ron-jamaicano",
+        "title": "Ron jamaicano y estilos \"high ester\"",
+        "subtitle": "Más cuerpo, fruta fermentada y personalidad marcada",
+        "imageUrl": "https://images.unsplash.com/photo-1546171753-97f53535a31a?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Bebida ámbar en vaso sobre mesa",
+        "paragraphs": [
+          "Jamaica es famosa por rones con mayor carga de ésteres, compuestos que recuerdan plátano maduro, piña, solvente suave o notas fermentadas.",
+          "Suelen mezclarse en pequeña proporción en blends mundiales para dar profundidad.",
+          "Para principiantes puede ser intenso; conviene probarlo en cócteles clásicos o en mezclas donde el dulzor equilibre."
+        ]
+      },
+      {
+        "slug": "tipo-ron-barbados-trinidad",
+        "title": "Ron de Barbados y Trinidad y Tobago",
+        "subtitle": "Equilibrio entre elegancia y estructura",
+        "imageUrl": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Botellas de destilados en fila",
+        "paragraphs": [
+          "Barbados a menudo muestra rones equilibrados, con malta o melaza y perfiles que pueden ir de secos a algo más dulzones según marca.",
+          "Trinidad ha aportado estilos reconocibles en coctelería clásica; la escena actual mezcla tradición y blends exportados.",
+          "Son buena zona de entrenamiento entre un ron muy suave y uno extremadamente funky."
+        ]
+      },
+      {
+        "slug": "tipo-rhum-agricole",
+        "title": "Rhum agricole",
+        "subtitle": "Jugo de caña, terroir francés del Caribe",
+        "imageUrl": "https://images.unsplash.com/photo-1542843137-8791d6861662?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Interior de bar con botellas",
+        "paragraphs": [
+          "Elaborado principalmente a partir de jugo de caña fermentado en Martinica y otras islas con normativa AOC o tradición agrícola.",
+          "Blanco puede sentirse herbáceo, casi vegetal; los vieux o añejos ganan complejidad de barrica sin perder del todo el carácter de caña fresca.",
+          "Tienda blanco en ti punch o cócteles secos; los añejos permiten compararlos con whisky por estructura."
+        ]
+      },
+      {
+        "slug": "tipo-ron-guatemala-centroamerica",
+        "title": "Ron de Guatemala y Centroamérica",
+        "subtitle": "Solera, crianza en altitud y perfiles melosos",
+        "imageUrl": "https://images.unsplash.com/photo-1563223771-375783ee91ad?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Vasos con bebidas sobre barra de madera",
+        "paragraphs": [
+          "Varias casas usan sistemas de solera o blends largos que dan suavidad y notas de fruta seca, chocolate o caramelo.",
+          "La altitud del envejecimiento puede moderar la evaporación frente al clima isleño bajo.",
+          "Muy populares como ron de sorbo; conviene leer si llevan azúcar añadido según normativa del país de venta."
+        ]
+      },
+      {
+        "slug": "tipo-spiced-y-flavored",
+        "title": "Spiced rum y rones aromatizados",
+        "subtitle": "Especias, vainilla o sabores añadidos",
+        "imageUrl": "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Vaso corto con bebida oscura e hielo",
+        "paragraphs": [
+          "Se aromatizan con especias, vainilla, cítricos o incluso edulcorantes; el perfil es muy accesible y olfativo.",
+          "En cata formal a veces se tratan aparte del ron \"puro\", pero en coctelería son muy usados.",
+          "Revisar etiqueta: no son equivalentes a un añejo tradicional aunque el color sea oscuro."
+        ]
+      },
+      {
+        "slug": "tipo-overproof",
+        "title": "Overproof y ron de alta graduación",
+        "subtitle": "Por encima de 40–45 % vol. para punch o cócteles técnicos",
+        "imageUrl": "https://images.unsplash.com/photo-1470337458703-46ea485ddd8e?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Trago servido en bar",
+        "paragraphs": [
+          "Suelen superar los 50 % vol.; aportan intensidad en recetas clásicas o en fuego controlado de barra.",
+          "No están pensados para beberse en vaso largo sin diluir.",
+          "Útiles para entender cómo el alcohol transporta ésteres y especias en mezcla."
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "slug": "ron-tipos-resumen",
+        "title": "Tipos y estilos frecuentes",
+        "columns": [
+          { "key": "term", "label": "Tipo" },
+          { "key": "composition", "label": "Perfil general" },
+          { "key": "objective", "label": "Qué ayuda a entender" }
+        ],
+        "rows": [
+          {
+            "term": "Estilo suave caribeño",
+            "composition": "Limpio, redondo, ideal en refrescos y clásicos.",
+            "objective": "Base de la coctelería más conocida."
+          },
+          {
+            "term": "Jamaicano / intenso",
+            "composition": "Más ésteres y fruta fermentada.",
+            "objective": "Complejidad en mezcla o para paladares experimentales."
+          },
+          {
+            "term": "Agricole",
+            "composition": "Herbáceo, jugo de caña, AOC en Martinica.",
+            "objective": "Otra familia aromática distinta de la melaza."
+          },
+          {
+            "term": "Centroamérica / solera",
+            "composition": "Suave, a menudo meloso o afrutado seco.",
+            "objective": "Ron de sorbo sin ir a whisky."
+          },
+          {
+            "term": "Spiced / overproof",
+            "composition": "Aromatizado o muy alcohólico.",
+            "objective": "Uso específico en barra, no siempre cata pura."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ron-por-aspecto",
+    "label": "Ron: color y uso",
+    "position": 7,
+    "panelTitle": "Por tono y uso (orientativo)",
+    "noteTitle": "Aviso",
+    "noteContent": "El color puede venir de la barrica, de caramelo natural o de ajustes permitidos según país. Para elegir bien, combina color con etiqueta, origen y, sobre todo, nariz y boca.",
+    "sections": [
+      {
+        "slug": "ron-tono-blanco",
+        "title": "Blanco o plata",
+        "subtitle": "Cristalino, foco en caña y mezcla",
+        "imageUrl": "https://images.unsplash.com/photo-1436076863939-06870fe779c2?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Bebida clara en vaso alto",
+        "paragraphs": [
+          "Suele pasar poco tiempo en madera o filtrarse para quitar color; algunos reposan en barrica y luego se clarifican.",
+          "En boca predomina la frescura alcohólica, notas vegetales leves o cítricos del fermentado.",
+          "Es el estrella del mojito, daiquiri y muchos highballs tropicales."
+        ]
+      },
+      {
+        "slug": "ron-tono-dorado",
+        "title": "Dorado y ámbar",
+        "subtitle": "Equilibrio entre suavidad y notas de madera",
+        "imageUrl": "https://images.unsplash.com/photo-1575650772417-e6b418b0d065?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Ron dorado en vaso",
+        "paragraphs": [
+          "Puede ser mezcla de rones jóvenes con algo de añejo, o crianza moderada.",
+          "Aparecen vainilla suave, caramelo ligero y especias dulces.",
+          "Funciona solo con hielo o en cócteles donde se quiera más cuerpo que un blanco."
+        ]
+      },
+      {
+        "slug": "ron-tono-oscuro",
+        "title": "Oscuro, negro y añejo profundo",
+        "subtitle": "Barrica larga, solera o melaza tostada",
+        "imageUrl": "https://images.unsplash.com/photo-1608270586620-248524c67de9?auto=format&fit=crop&w=1200&q=80",
+        "imageAlt": "Copas con bebidas oscuras",
+        "paragraphs": [
+          "Los añejos largos muestran chocolate, café, cuero, fruta seca o roble tostado.",
+          "Algunos rones oscuros comerciales obtienen color de caramelo sin tantos años; la etiqueta y el origen aclaran el estilo.",
+          "Ideal para sorbo, after dinner o cócteles clásicos tipo Old Fashioned con ron."
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "slug": "ron-color-uso",
+        "title": "Tono, uso frecuente y sensación",
+        "columns": [
+          { "key": "term", "label": "Tono" },
+          { "key": "composition", "label": "Uso habitual" },
+          { "key": "objective", "label": "Sensación típica" }
+        ],
+        "rows": [
+          {
+            "term": "Blanco / plata",
+            "composition": "Cócteles claros, refrescos, alta versatilidad.",
+            "objective": "Fresco, directo, poca capa de madera."
+          },
+          {
+            "term": "Dorado",
+            "composition": "Mezcla y sorbo suave con hielo.",
+            "objective": "Vainilla ligera, más redondez."
+          },
+          {
+            "term": "Oscuro / añejo",
+            "composition": "Sorbo, postre, cócteles robustos.",
+            "objective": "Especias, fruta seca, persistencia."
+          }
+        ]
+      }
+    ]
+  }
+]

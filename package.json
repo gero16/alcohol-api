@@ -13,7 +13,8 @@
     "backup:export": "tsx src/scripts/export-backup.ts",
     "backup:bootstrap": "tsx src/scripts/bootstrap-backup.ts",
     "glossary:import": "tsx src/scripts/import-glossary.ts",
-    "content:sync": "npm run db:push && npm run db:seed"
+    "content:sync": "npm run db:push && npm run db:seed",
+    "content:inject-ron-tabs": "tsx src/scripts/splice-ron-tabs-into-alcohol-data.ts"
   },
   "keywords": [
     "fastify",

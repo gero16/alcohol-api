@@ -12,6 +12,7 @@ import { GUIDE_SEMANTIC_KEYS } from "../domain/guideSemantics";
 import {
   createSectionForGuide,
   deleteSectionForGuide,
+  mergeGuideTabsForCategory,
   replaceGuideForCategory,
   updateSectionForGuide,
 } from "../services/guides";
@@ -116,6 +117,15 @@ const guideSchema = {
         },
       },
     },
+  },
+} as const;
+
+const mergeTabsBodySchema = {
+  type: "object",
+  required: ["tabs"],
+  additionalProperties: false,
+  properties: {
+    tabs: guideSchema.properties.tabs,
   },
 } as const;
 
@@ -295,6 +305,57 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
 
         if (isDatabaseUnavailableError(error)) {
           return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
+        }
+
+        throw error;
+      }
+    },
+  );
+
+  app.patch(
+    "/:categorySlug/tabs",
+    {
+      schema: {
+        tags: ["Guides"],
+        summary: "Fusionar pestañas en una guía (por slug)",
+        description:
+          "Sustituye pestañas cuyo slug coincida con el cuerpo o añade pestañas nuevas al final. No elimina el resto de la guía. Reindexa posiciones en orden.",
+        params: {
+          type: "object",
+          required: ["categorySlug"],
+          properties: {
+            categorySlug: { type: "string" },
+          },
+        },
+        body: mergeTabsBodySchema,
+      },
+    },
+    async (request, reply) => {
+      const { categorySlug } = request.params as { categorySlug: string };
+      const body = request.body as { tabs: GuideUpsertInput["tabs"] };
+
+      try {
+        await mergeGuideTabsForCategory(categorySlug, body.tabs);
+        await refreshBackupSnapshot(app.log);
+        const guide = await getGuideByCategorySlugWithFallback(categorySlug);
+
+        if (!guide) {
+          return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
+        }
+
+        return guide;
+      } catch (error) {
+        const handled = handleGuideError(error);
+        if (handled) {
+          return reply.code(handled.statusCode).send({ message: handled.message });
+        }
+
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
+        }
+
+        if (error instanceof Error && error.message.startsWith("CATEGORY_NOT_FOUND:")) {
+          return reply.code(404).send({ message: "Categoría no encontrada" });
         }
 
         throw error;

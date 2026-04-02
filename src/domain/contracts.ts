@@ -145,6 +145,48 @@ export type ApiGuideDetail = {
   tabs: ApiGuideTab[];
 };
 
+/** Vista homogénea por tipo semántico (misma forma para vino, whisky en destilados, etc.). */
+export type ApiSemanticGuideBlockTab = {
+  kind: "tab";
+  semanticKey: string;
+  tabSlug: string;
+  tabLabel: string;
+  panelTitle?: string;
+  noteTitle?: string;
+  noteContent?: string;
+  sections: ApiGuideSection[];
+  tables: ApiGuideTable[];
+};
+
+export type ApiSemanticGuideBlockSection = {
+  kind: "section";
+  semanticKey: string;
+  tabSlug: string;
+  tabLabel: string;
+  section: ApiGuideSection;
+  tables: ApiGuideTable[];
+};
+
+export type ApiSemanticGuideBlockTable = {
+  kind: "table";
+  semanticKey: string;
+  tabSlug: string;
+  tabLabel: string;
+  table: ApiGuideTable;
+};
+
+export type ApiSemanticGuideBlock =
+  | ApiSemanticGuideBlockTab
+  | ApiSemanticGuideBlockSection
+  | ApiSemanticGuideBlockTable;
+
+export type ApiSemanticGuideIndex = {
+  categorySlug: string;
+  guideTitle: string;
+  /** Agrupado por clave semántica (intro, making, types, drinks, …). */
+  buckets: Record<string, ApiSemanticGuideBlock[]>;
+};
+
 export type ApiGuideSummary = {
   id: string;
   categorySlug: string;

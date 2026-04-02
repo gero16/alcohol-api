@@ -7,6 +7,7 @@ import {
   listGuides as listGuidesWithFallback,
   refreshBackupSnapshot,
 } from "../services/content";
+import { buildSemanticGuideIndex } from "../services/guideSemanticIndex";
 import { GUIDE_SEMANTIC_KEYS } from "../domain/guideSemantics";
 import {
   createSectionForGuide,
@@ -213,6 +214,46 @@ export const guidesRoutes: FastifyPluginAsync = async (app) => {
       }
 
       return guide;
+    },
+  );
+
+  app.get(
+    "/:categorySlug/semantic-index",
+    {
+      schema: {
+        tags: ["Guides"],
+        summary: "Guía agrupada por tipo semántico (consumo homogéneo)",
+        description:
+          "Devuelve `buckets` por clave (intro, making, types, …). En vino suele bastar con asignar la clave a cada pestaña; en whisky, a secciones/tablas y filtrar con tabSlug=whisky-guia.",
+        params: {
+          type: "object",
+          required: ["categorySlug"],
+          properties: {
+            categorySlug: { type: "string" },
+          },
+        },
+        querystring: {
+          type: "object",
+          properties: {
+            tabSlug: { type: "string" },
+            semanticKey: { type: "string" },
+          },
+        },
+      },
+    },
+    async (request, reply) => {
+      const { categorySlug } = request.params as { categorySlug: string };
+      const query = request.query as { tabSlug?: string; semanticKey?: string };
+      const guide = await getGuideByCategorySlugWithFallback(categorySlug);
+
+      if (!guide) {
+        return reply.code(404).send({ message: "Guía no encontrada para esa categoría" });
+      }
+
+      return buildSemanticGuideIndex(guide, {
+        tabSlug: query.tabSlug,
+        semanticKey: query.semanticKey,
+      });
     },
   );
 

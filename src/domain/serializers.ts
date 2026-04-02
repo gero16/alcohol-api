@@ -14,6 +14,9 @@ export const guideDetailInclude = {
   tabs: {
     orderBy: { position: "asc" },
     include: {
+      classifications: {
+        orderBy: { position: "asc" },
+      },
       sections: {
         orderBy: { position: "asc" },
         include: {
@@ -116,6 +119,15 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
       noteTitle: tab.noteTitle ?? undefined,
       noteContent: tab.noteContent ?? undefined,
       semanticKey: tab.semanticKey ?? undefined,
+      classifications: tab.classifications.map((c) => ({
+        id: c.id,
+        slug: c.slug,
+        subtitle: c.subtitle,
+        body: c.body,
+        imageUrl: c.imageUrl,
+        imageAlt: c.imageAlt,
+        semanticKey: c.semanticKey ?? undefined,
+      })),
       sections: tab.sections.map((section) => ({
         id: section.id,
         slug: section.slug,

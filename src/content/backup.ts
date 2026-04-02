@@ -34,6 +34,14 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
         noteTitle: tab.noteTitle ?? undefined,
         noteContent: tab.noteContent ?? undefined,
         semanticKey: tab.semanticKey ?? undefined,
+        classifications: tab.classifications.map((c) => ({
+          slug: c.slug,
+          subtitle: c.subtitle,
+          body: c.body,
+          imageUrl: c.imageUrl || undefined,
+          imageAlt: c.imageAlt || undefined,
+          semanticKey: c.semanticKey ?? undefined,
+        })),
         sections: tab.sections.map((section) => ({
           slug: section.slug,
           title: section.title,

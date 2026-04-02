@@ -47,12 +47,32 @@ model GuideTab {
   semanticKey  String?
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
-  guide        Guide          @relation(fields: [guideId], references: [id], onDelete: Cascade)
-  sections     GuideSection[]
-  tables       GuideTable[]
+  guide             Guide                  @relation(fields: [guideId], references: [id], onDelete: Cascade)
+  sections          GuideSection[]
+  tables            GuideTable[]
+  classifications   GuideClassification[]
 
   @@unique([guideId, slug])
   @@index([guideId, position])
+}
+
+/// Bloques breves de marco o clasificación: subtítulo, un cuerpo de texto e imagen opcional (sin título de tarjeta como GuideSection).
+model GuideClassification {
+  id          String   @id @default(cuid())
+  tabId       String
+  slug        String
+  subtitle    String   @default("")
+  body        String   @db.Text
+  imageUrl    String   @default("")
+  imageAlt    String   @default("")
+  position    Int
+  semanticKey String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tab         GuideTab @relation(fields: [tabId], references: [id], onDelete: Cascade)
+
+  @@unique([tabId, slug])
+  @@index([tabId, position])
 }
 
 model GuideSection {

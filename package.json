@@ -5,7 +5,8 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "prisma generate && tsc -p tsconfig.json --noEmit",
+    "build": "prisma db push && prisma generate && tsc -p tsconfig.json --noEmit",
+    "build:types": "prisma generate && tsc -p tsconfig.json --noEmit",
     "start": "tsx src/server.ts",
     "prisma:generate": "prisma generate",
     "db:push": "prisma db push",

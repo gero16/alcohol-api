@@ -1,6 +1,7 @@
 import { Prisma } from "../generated/prisma";
 import type {
   GuideUpsertInput,
+  SeedGuideClassification,
   SeedGuideSection,
   SeedGuideTab,
   SeedGuideTable,
@@ -24,6 +25,17 @@ function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideI
     noteContent: tab.noteContent,
     position: tab.position,
     semanticKey: parseGuideSemanticKey(tab.semanticKey),
+    classifications: {
+      create: (tab.classifications ?? []).map((c: SeedGuideClassification, index) => ({
+        slug: c.slug,
+        subtitle: c.subtitle ?? "",
+        body: c.body,
+        imageUrl: c.imageUrl?.trim() ? c.imageUrl : "",
+        imageAlt: c.imageAlt?.trim() ? c.imageAlt : "",
+        position: index,
+        semanticKey: parseGuideSemanticKey(c.semanticKey),
+      })),
+    },
     sections: {
       create: (tab.sections ?? []).map((section, index) => ({
         slug: section.slug,
@@ -157,6 +169,14 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
       noteTitle: tab.noteTitle ?? undefined,
       noteContent: tab.noteContent ?? undefined,
       semanticKey: tab.semanticKey ?? undefined,
+      classifications: tab.classifications.map((c) => ({
+        slug: c.slug,
+        subtitle: c.subtitle,
+        body: c.body,
+        imageUrl: c.imageUrl,
+        imageAlt: c.imageAlt,
+        semanticKey: c.semanticKey ?? undefined,
+      })),
       sections: tab.sections.map((section) => ({
         slug: section.slug,
         title: section.title,

@@ -29,6 +29,11 @@ export type Guide = $Result.DefaultSelection<Prisma.$GuidePayload>
  */
 export type GuideTab = $Result.DefaultSelection<Prisma.$GuideTabPayload>
 /**
+ * Model GuideClassification
+ * Bloques breves de marco o clasificación: subtítulo, un cuerpo de texto e imagen opcional (sin título de tarjeta como GuideSection).
+ */
+export type GuideClassification = $Result.DefaultSelection<Prisma.$GuideClassificationPayload>
+/**
  * Model GuideSection
  * 
  */
@@ -214,6 +219,16 @@ export class PrismaClient<
     * ```
     */
   get guideTab(): Prisma.GuideTabDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.guideClassification`: Exposes CRUD operations for the **GuideClassification** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more GuideClassifications
+    * const guideClassifications = await prisma.guideClassification.findMany()
+    * ```
+    */
+  get guideClassification(): Prisma.GuideClassificationDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.guideSection`: Exposes CRUD operations for the **GuideSection** model.
@@ -721,6 +736,7 @@ export namespace Prisma {
     Category: 'Category',
     Guide: 'Guide',
     GuideTab: 'GuideTab',
+    GuideClassification: 'GuideClassification',
     GuideSection: 'GuideSection',
     GuideParagraph: 'GuideParagraph',
     GuideTable: 'GuideTable',
@@ -743,7 +759,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "category" | "guide" | "guideTab" | "guideSection" | "guideParagraph" | "guideTable" | "guideTableRow" | "glossaryItem" | "glossaryDetail" | "glossaryItemCategory"
+      modelProps: "category" | "guide" | "guideTab" | "guideClassification" | "guideSection" | "guideParagraph" | "guideTable" | "guideTableRow" | "glossaryItem" | "glossaryDetail" | "glossaryItemCategory"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -966,6 +982,80 @@ export namespace Prisma {
           count: {
             args: Prisma.GuideTabCountArgs<ExtArgs>
             result: $Utils.Optional<GuideTabCountAggregateOutputType> | number
+          }
+        }
+      }
+      GuideClassification: {
+        payload: Prisma.$GuideClassificationPayload<ExtArgs>
+        fields: Prisma.GuideClassificationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.GuideClassificationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.GuideClassificationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>
+          }
+          findFirst: {
+            args: Prisma.GuideClassificationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.GuideClassificationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>
+          }
+          findMany: {
+            args: Prisma.GuideClassificationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>[]
+          }
+          create: {
+            args: Prisma.GuideClassificationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>
+          }
+          createMany: {
+            args: Prisma.GuideClassificationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.GuideClassificationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>[]
+          }
+          delete: {
+            args: Prisma.GuideClassificationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>
+          }
+          update: {
+            args: Prisma.GuideClassificationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>
+          }
+          deleteMany: {
+            args: Prisma.GuideClassificationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.GuideClassificationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.GuideClassificationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>[]
+          }
+          upsert: {
+            args: Prisma.GuideClassificationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$GuideClassificationPayload>
+          }
+          aggregate: {
+            args: Prisma.GuideClassificationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateGuideClassification>
+          }
+          groupBy: {
+            args: Prisma.GuideClassificationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<GuideClassificationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.GuideClassificationCountArgs<ExtArgs>
+            result: $Utils.Optional<GuideClassificationCountAggregateOutputType> | number
           }
         }
       }
@@ -1598,6 +1688,7 @@ export namespace Prisma {
     category?: CategoryOmit
     guide?: GuideOmit
     guideTab?: GuideTabOmit
+    guideClassification?: GuideClassificationOmit
     guideSection?: GuideSectionOmit
     guideParagraph?: GuideParagraphOmit
     guideTable?: GuideTableOmit
@@ -1749,11 +1840,13 @@ export namespace Prisma {
   export type GuideTabCountOutputType = {
     sections: number
     tables: number
+    classifications: number
   }
 
   export type GuideTabCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sections?: boolean | GuideTabCountOutputTypeCountSectionsArgs
     tables?: boolean | GuideTabCountOutputTypeCountTablesArgs
+    classifications?: boolean | GuideTabCountOutputTypeCountClassificationsArgs
   }
 
   // Custom InputTypes
@@ -1779,6 +1872,13 @@ export namespace Prisma {
    */
   export type GuideTabCountOutputTypeCountTablesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: GuideTableWhereInput
+  }
+
+  /**
+   * GuideTabCountOutputType without action
+   */
+  export type GuideTabCountOutputTypeCountClassificationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GuideClassificationWhereInput
   }
 
 
@@ -4453,6 +4553,7 @@ export namespace Prisma {
     guide?: boolean | GuideDefaultArgs<ExtArgs>
     sections?: boolean | GuideTab$sectionsArgs<ExtArgs>
     tables?: boolean | GuideTab$tablesArgs<ExtArgs>
+    classifications?: boolean | GuideTab$classificationsArgs<ExtArgs>
     _count?: boolean | GuideTabCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["guideTab"]>
 
@@ -4505,6 +4606,7 @@ export namespace Prisma {
     guide?: boolean | GuideDefaultArgs<ExtArgs>
     sections?: boolean | GuideTab$sectionsArgs<ExtArgs>
     tables?: boolean | GuideTab$tablesArgs<ExtArgs>
+    classifications?: boolean | GuideTab$classificationsArgs<ExtArgs>
     _count?: boolean | GuideTabCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type GuideTabIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4520,6 +4622,7 @@ export namespace Prisma {
       guide: Prisma.$GuidePayload<ExtArgs>
       sections: Prisma.$GuideSectionPayload<ExtArgs>[]
       tables: Prisma.$GuideTablePayload<ExtArgs>[]
+      classifications: Prisma.$GuideClassificationPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -4933,6 +5036,7 @@ export namespace Prisma {
     guide<T extends GuideDefaultArgs<ExtArgs> = {}>(args?: Subset<T, GuideDefaultArgs<ExtArgs>>): Prisma__GuideClient<$Result.GetResult<Prisma.$GuidePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     sections<T extends GuideTab$sectionsArgs<ExtArgs> = {}>(args?: Subset<T, GuideTab$sectionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GuideSectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     tables<T extends GuideTab$tablesArgs<ExtArgs> = {}>(args?: Subset<T, GuideTab$tablesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GuideTablePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    classifications<T extends GuideTab$classificationsArgs<ExtArgs> = {}>(args?: Subset<T, GuideTab$classificationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5422,6 +5526,30 @@ export namespace Prisma {
   }
 
   /**
+   * GuideTab.classifications
+   */
+  export type GuideTab$classificationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    where?: GuideClassificationWhereInput
+    orderBy?: GuideClassificationOrderByWithRelationInput | GuideClassificationOrderByWithRelationInput[]
+    cursor?: GuideClassificationWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: GuideClassificationScalarFieldEnum | GuideClassificationScalarFieldEnum[]
+  }
+
+  /**
    * GuideTab without action
    */
   export type GuideTabDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5437,6 +5565,1181 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: GuideTabInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model GuideClassification
+   */
+
+  export type AggregateGuideClassification = {
+    _count: GuideClassificationCountAggregateOutputType | null
+    _avg: GuideClassificationAvgAggregateOutputType | null
+    _sum: GuideClassificationSumAggregateOutputType | null
+    _min: GuideClassificationMinAggregateOutputType | null
+    _max: GuideClassificationMaxAggregateOutputType | null
+  }
+
+  export type GuideClassificationAvgAggregateOutputType = {
+    position: number | null
+  }
+
+  export type GuideClassificationSumAggregateOutputType = {
+    position: number | null
+  }
+
+  export type GuideClassificationMinAggregateOutputType = {
+    id: string | null
+    tabId: string | null
+    slug: string | null
+    subtitle: string | null
+    body: string | null
+    imageUrl: string | null
+    imageAlt: string | null
+    position: number | null
+    semanticKey: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type GuideClassificationMaxAggregateOutputType = {
+    id: string | null
+    tabId: string | null
+    slug: string | null
+    subtitle: string | null
+    body: string | null
+    imageUrl: string | null
+    imageAlt: string | null
+    position: number | null
+    semanticKey: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type GuideClassificationCountAggregateOutputType = {
+    id: number
+    tabId: number
+    slug: number
+    subtitle: number
+    body: number
+    imageUrl: number
+    imageAlt: number
+    position: number
+    semanticKey: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type GuideClassificationAvgAggregateInputType = {
+    position?: true
+  }
+
+  export type GuideClassificationSumAggregateInputType = {
+    position?: true
+  }
+
+  export type GuideClassificationMinAggregateInputType = {
+    id?: true
+    tabId?: true
+    slug?: true
+    subtitle?: true
+    body?: true
+    imageUrl?: true
+    imageAlt?: true
+    position?: true
+    semanticKey?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type GuideClassificationMaxAggregateInputType = {
+    id?: true
+    tabId?: true
+    slug?: true
+    subtitle?: true
+    body?: true
+    imageUrl?: true
+    imageAlt?: true
+    position?: true
+    semanticKey?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type GuideClassificationCountAggregateInputType = {
+    id?: true
+    tabId?: true
+    slug?: true
+    subtitle?: true
+    body?: true
+    imageUrl?: true
+    imageAlt?: true
+    position?: true
+    semanticKey?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type GuideClassificationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GuideClassification to aggregate.
+     */
+    where?: GuideClassificationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GuideClassifications to fetch.
+     */
+    orderBy?: GuideClassificationOrderByWithRelationInput | GuideClassificationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: GuideClassificationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GuideClassifications from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GuideClassifications.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned GuideClassifications
+    **/
+    _count?: true | GuideClassificationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: GuideClassificationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: GuideClassificationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: GuideClassificationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: GuideClassificationMaxAggregateInputType
+  }
+
+  export type GetGuideClassificationAggregateType<T extends GuideClassificationAggregateArgs> = {
+        [P in keyof T & keyof AggregateGuideClassification]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateGuideClassification[P]>
+      : GetScalarType<T[P], AggregateGuideClassification[P]>
+  }
+
+
+
+
+  export type GuideClassificationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: GuideClassificationWhereInput
+    orderBy?: GuideClassificationOrderByWithAggregationInput | GuideClassificationOrderByWithAggregationInput[]
+    by: GuideClassificationScalarFieldEnum[] | GuideClassificationScalarFieldEnum
+    having?: GuideClassificationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: GuideClassificationCountAggregateInputType | true
+    _avg?: GuideClassificationAvgAggregateInputType
+    _sum?: GuideClassificationSumAggregateInputType
+    _min?: GuideClassificationMinAggregateInputType
+    _max?: GuideClassificationMaxAggregateInputType
+  }
+
+  export type GuideClassificationGroupByOutputType = {
+    id: string
+    tabId: string
+    slug: string
+    subtitle: string
+    body: string
+    imageUrl: string
+    imageAlt: string
+    position: number
+    semanticKey: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: GuideClassificationCountAggregateOutputType | null
+    _avg: GuideClassificationAvgAggregateOutputType | null
+    _sum: GuideClassificationSumAggregateOutputType | null
+    _min: GuideClassificationMinAggregateOutputType | null
+    _max: GuideClassificationMaxAggregateOutputType | null
+  }
+
+  type GetGuideClassificationGroupByPayload<T extends GuideClassificationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<GuideClassificationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof GuideClassificationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], GuideClassificationGroupByOutputType[P]>
+            : GetScalarType<T[P], GuideClassificationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type GuideClassificationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    tabId?: boolean
+    slug?: boolean
+    subtitle?: boolean
+    body?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    position?: boolean
+    semanticKey?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    tab?: boolean | GuideTabDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["guideClassification"]>
+
+  export type GuideClassificationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    tabId?: boolean
+    slug?: boolean
+    subtitle?: boolean
+    body?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    position?: boolean
+    semanticKey?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    tab?: boolean | GuideTabDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["guideClassification"]>
+
+  export type GuideClassificationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    tabId?: boolean
+    slug?: boolean
+    subtitle?: boolean
+    body?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    position?: boolean
+    semanticKey?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    tab?: boolean | GuideTabDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["guideClassification"]>
+
+  export type GuideClassificationSelectScalar = {
+    id?: boolean
+    tabId?: boolean
+    slug?: boolean
+    subtitle?: boolean
+    body?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    position?: boolean
+    semanticKey?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type GuideClassificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "subtitle" | "body" | "imageUrl" | "imageAlt" | "position" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideClassification"]>
+  export type GuideClassificationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tab?: boolean | GuideTabDefaultArgs<ExtArgs>
+  }
+  export type GuideClassificationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tab?: boolean | GuideTabDefaultArgs<ExtArgs>
+  }
+  export type GuideClassificationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tab?: boolean | GuideTabDefaultArgs<ExtArgs>
+  }
+
+  export type $GuideClassificationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "GuideClassification"
+    objects: {
+      tab: Prisma.$GuideTabPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      tabId: string
+      slug: string
+      subtitle: string
+      body: string
+      imageUrl: string
+      imageAlt: string
+      position: number
+      semanticKey: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["guideClassification"]>
+    composites: {}
+  }
+
+  type GuideClassificationGetPayload<S extends boolean | null | undefined | GuideClassificationDefaultArgs> = $Result.GetResult<Prisma.$GuideClassificationPayload, S>
+
+  type GuideClassificationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<GuideClassificationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: GuideClassificationCountAggregateInputType | true
+    }
+
+  export interface GuideClassificationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['GuideClassification'], meta: { name: 'GuideClassification' } }
+    /**
+     * Find zero or one GuideClassification that matches the filter.
+     * @param {GuideClassificationFindUniqueArgs} args - Arguments to find a GuideClassification
+     * @example
+     * // Get one GuideClassification
+     * const guideClassification = await prisma.guideClassification.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends GuideClassificationFindUniqueArgs>(args: SelectSubset<T, GuideClassificationFindUniqueArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one GuideClassification that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {GuideClassificationFindUniqueOrThrowArgs} args - Arguments to find a GuideClassification
+     * @example
+     * // Get one GuideClassification
+     * const guideClassification = await prisma.guideClassification.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends GuideClassificationFindUniqueOrThrowArgs>(args: SelectSubset<T, GuideClassificationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GuideClassification that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GuideClassificationFindFirstArgs} args - Arguments to find a GuideClassification
+     * @example
+     * // Get one GuideClassification
+     * const guideClassification = await prisma.guideClassification.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends GuideClassificationFindFirstArgs>(args?: SelectSubset<T, GuideClassificationFindFirstArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first GuideClassification that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GuideClassificationFindFirstOrThrowArgs} args - Arguments to find a GuideClassification
+     * @example
+     * // Get one GuideClassification
+     * const guideClassification = await prisma.guideClassification.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends GuideClassificationFindFirstOrThrowArgs>(args?: SelectSubset<T, GuideClassificationFindFirstOrThrowArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more GuideClassifications that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GuideClassificationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all GuideClassifications
+     * const guideClassifications = await prisma.guideClassification.findMany()
+     * 
+     * // Get first 10 GuideClassifications
+     * const guideClassifications = await prisma.guideClassification.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const guideClassificationWithIdOnly = await prisma.guideClassification.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends GuideClassificationFindManyArgs>(args?: SelectSubset<T, GuideClassificationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a GuideClassification.
+     * @param {GuideClassificationCreateArgs} args - Arguments to create a GuideClassification.
+     * @example
+     * // Create one GuideClassification
+     * const GuideClassification = await prisma.guideClassification.create({
+     *   data: {
+     *     // ... data to create a GuideClassification
+     *   }
+     * })
+     * 
+     */
+    create<T extends GuideClassificationCreateArgs>(args: SelectSubset<T, GuideClassificationCreateArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many GuideClassifications.
+     * @param {GuideClassificationCreateManyArgs} args - Arguments to create many GuideClassifications.
+     * @example
+     * // Create many GuideClassifications
+     * const guideClassification = await prisma.guideClassification.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends GuideClassificationCreateManyArgs>(args?: SelectSubset<T, GuideClassificationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many GuideClassifications and returns the data saved in the database.
+     * @param {GuideClassificationCreateManyAndReturnArgs} args - Arguments to create many GuideClassifications.
+     * @example
+     * // Create many GuideClassifications
+     * const guideClassification = await prisma.guideClassification.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many GuideClassifications and only return the `id`
+     * const guideClassificationWithIdOnly = await prisma.guideClassification.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends GuideClassificationCreateManyAndReturnArgs>(args?: SelectSubset<T, GuideClassificationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a GuideClassification.
+     * @param {GuideClassificationDeleteArgs} args - Arguments to delete one GuideClassification.
+     * @example
+     * // Delete one GuideClassification
+     * const GuideClassification = await prisma.guideClassification.delete({
+     *   where: {
+     *     // ... filter to delete one GuideClassification
+     *   }
+     * })
+     * 
+     */
+    delete<T extends GuideClassificationDeleteArgs>(args: SelectSubset<T, GuideClassificationDeleteArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one GuideClassification.
+     * @param {GuideClassificationUpdateArgs} args - Arguments to update one GuideClassification.
+     * @example
+     * // Update one GuideClassification
+     * const guideClassification = await prisma.guideClassification.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends GuideClassificationUpdateArgs>(args: SelectSubset<T, GuideClassificationUpdateArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more GuideClassifications.
+     * @param {GuideClassificationDeleteManyArgs} args - Arguments to filter GuideClassifications to delete.
+     * @example
+     * // Delete a few GuideClassifications
+     * const { count } = await prisma.guideClassification.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends GuideClassificationDeleteManyArgs>(args?: SelectSubset<T, GuideClassificationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GuideClassifications.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GuideClassificationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many GuideClassifications
+     * const guideClassification = await prisma.guideClassification.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends GuideClassificationUpdateManyArgs>(args: SelectSubset<T, GuideClassificationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more GuideClassifications and returns the data updated in the database.
+     * @param {GuideClassificationUpdateManyAndReturnArgs} args - Arguments to update many GuideClassifications.
+     * @example
+     * // Update many GuideClassifications
+     * const guideClassification = await prisma.guideClassification.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more GuideClassifications and only return the `id`
+     * const guideClassificationWithIdOnly = await prisma.guideClassification.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends GuideClassificationUpdateManyAndReturnArgs>(args: SelectSubset<T, GuideClassificationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one GuideClassification.
+     * @param {GuideClassificationUpsertArgs} args - Arguments to update or create a GuideClassification.
+     * @example
+     * // Update or create a GuideClassification
+     * const guideClassification = await prisma.guideClassification.upsert({
+     *   create: {
+     *     // ... data to create a GuideClassification
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the GuideClassification we want to update
+     *   }
+     * })
+     */
+    upsert<T extends GuideClassificationUpsertArgs>(args: SelectSubset<T, GuideClassificationUpsertArgs<ExtArgs>>): Prisma__GuideClassificationClient<$Result.GetResult<Prisma.$GuideClassificationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of GuideClassifications.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GuideClassificationCountArgs} args - Arguments to filter GuideClassifications to count.
+     * @example
+     * // Count the number of GuideClassifications
+     * const count = await prisma.guideClassification.count({
+     *   where: {
+     *     // ... the filter for the GuideClassifications we want to count
+     *   }
+     * })
+    **/
+    count<T extends GuideClassificationCountArgs>(
+      args?: Subset<T, GuideClassificationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], GuideClassificationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a GuideClassification.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GuideClassificationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends GuideClassificationAggregateArgs>(args: Subset<T, GuideClassificationAggregateArgs>): Prisma.PrismaPromise<GetGuideClassificationAggregateType<T>>
+
+    /**
+     * Group by GuideClassification.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {GuideClassificationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends GuideClassificationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: GuideClassificationGroupByArgs['orderBy'] }
+        : { orderBy?: GuideClassificationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, GuideClassificationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetGuideClassificationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the GuideClassification model
+   */
+  readonly fields: GuideClassificationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for GuideClassification.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__GuideClassificationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    tab<T extends GuideTabDefaultArgs<ExtArgs> = {}>(args?: Subset<T, GuideTabDefaultArgs<ExtArgs>>): Prisma__GuideTabClient<$Result.GetResult<Prisma.$GuideTabPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the GuideClassification model
+   */
+  interface GuideClassificationFieldRefs {
+    readonly id: FieldRef<"GuideClassification", 'String'>
+    readonly tabId: FieldRef<"GuideClassification", 'String'>
+    readonly slug: FieldRef<"GuideClassification", 'String'>
+    readonly subtitle: FieldRef<"GuideClassification", 'String'>
+    readonly body: FieldRef<"GuideClassification", 'String'>
+    readonly imageUrl: FieldRef<"GuideClassification", 'String'>
+    readonly imageAlt: FieldRef<"GuideClassification", 'String'>
+    readonly position: FieldRef<"GuideClassification", 'Int'>
+    readonly semanticKey: FieldRef<"GuideClassification", 'String'>
+    readonly createdAt: FieldRef<"GuideClassification", 'DateTime'>
+    readonly updatedAt: FieldRef<"GuideClassification", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * GuideClassification findUnique
+   */
+  export type GuideClassificationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * Filter, which GuideClassification to fetch.
+     */
+    where: GuideClassificationWhereUniqueInput
+  }
+
+  /**
+   * GuideClassification findUniqueOrThrow
+   */
+  export type GuideClassificationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * Filter, which GuideClassification to fetch.
+     */
+    where: GuideClassificationWhereUniqueInput
+  }
+
+  /**
+   * GuideClassification findFirst
+   */
+  export type GuideClassificationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * Filter, which GuideClassification to fetch.
+     */
+    where?: GuideClassificationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GuideClassifications to fetch.
+     */
+    orderBy?: GuideClassificationOrderByWithRelationInput | GuideClassificationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GuideClassifications.
+     */
+    cursor?: GuideClassificationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GuideClassifications from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GuideClassifications.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GuideClassifications.
+     */
+    distinct?: GuideClassificationScalarFieldEnum | GuideClassificationScalarFieldEnum[]
+  }
+
+  /**
+   * GuideClassification findFirstOrThrow
+   */
+  export type GuideClassificationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * Filter, which GuideClassification to fetch.
+     */
+    where?: GuideClassificationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GuideClassifications to fetch.
+     */
+    orderBy?: GuideClassificationOrderByWithRelationInput | GuideClassificationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for GuideClassifications.
+     */
+    cursor?: GuideClassificationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GuideClassifications from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GuideClassifications.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GuideClassifications.
+     */
+    distinct?: GuideClassificationScalarFieldEnum | GuideClassificationScalarFieldEnum[]
+  }
+
+  /**
+   * GuideClassification findMany
+   */
+  export type GuideClassificationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * Filter, which GuideClassifications to fetch.
+     */
+    where?: GuideClassificationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of GuideClassifications to fetch.
+     */
+    orderBy?: GuideClassificationOrderByWithRelationInput | GuideClassificationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing GuideClassifications.
+     */
+    cursor?: GuideClassificationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` GuideClassifications from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` GuideClassifications.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of GuideClassifications.
+     */
+    distinct?: GuideClassificationScalarFieldEnum | GuideClassificationScalarFieldEnum[]
+  }
+
+  /**
+   * GuideClassification create
+   */
+  export type GuideClassificationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a GuideClassification.
+     */
+    data: XOR<GuideClassificationCreateInput, GuideClassificationUncheckedCreateInput>
+  }
+
+  /**
+   * GuideClassification createMany
+   */
+  export type GuideClassificationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many GuideClassifications.
+     */
+    data: GuideClassificationCreateManyInput | GuideClassificationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * GuideClassification createManyAndReturn
+   */
+  export type GuideClassificationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * The data used to create many GuideClassifications.
+     */
+    data: GuideClassificationCreateManyInput | GuideClassificationCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GuideClassification update
+   */
+  export type GuideClassificationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a GuideClassification.
+     */
+    data: XOR<GuideClassificationUpdateInput, GuideClassificationUncheckedUpdateInput>
+    /**
+     * Choose, which GuideClassification to update.
+     */
+    where: GuideClassificationWhereUniqueInput
+  }
+
+  /**
+   * GuideClassification updateMany
+   */
+  export type GuideClassificationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update GuideClassifications.
+     */
+    data: XOR<GuideClassificationUpdateManyMutationInput, GuideClassificationUncheckedUpdateManyInput>
+    /**
+     * Filter which GuideClassifications to update
+     */
+    where?: GuideClassificationWhereInput
+    /**
+     * Limit how many GuideClassifications to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * GuideClassification updateManyAndReturn
+   */
+  export type GuideClassificationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * The data used to update GuideClassifications.
+     */
+    data: XOR<GuideClassificationUpdateManyMutationInput, GuideClassificationUncheckedUpdateManyInput>
+    /**
+     * Filter which GuideClassifications to update
+     */
+    where?: GuideClassificationWhereInput
+    /**
+     * Limit how many GuideClassifications to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * GuideClassification upsert
+   */
+  export type GuideClassificationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the GuideClassification to update in case it exists.
+     */
+    where: GuideClassificationWhereUniqueInput
+    /**
+     * In case the GuideClassification found by the `where` argument doesn't exist, create a new GuideClassification with this data.
+     */
+    create: XOR<GuideClassificationCreateInput, GuideClassificationUncheckedCreateInput>
+    /**
+     * In case the GuideClassification was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<GuideClassificationUpdateInput, GuideClassificationUncheckedUpdateInput>
+  }
+
+  /**
+   * GuideClassification delete
+   */
+  export type GuideClassificationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
+    /**
+     * Filter which GuideClassification to delete.
+     */
+    where: GuideClassificationWhereUniqueInput
+  }
+
+  /**
+   * GuideClassification deleteMany
+   */
+  export type GuideClassificationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which GuideClassifications to delete
+     */
+    where?: GuideClassificationWhereInput
+    /**
+     * Limit how many GuideClassifications to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * GuideClassification without action
+   */
+  export type GuideClassificationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the GuideClassification
+     */
+    select?: GuideClassificationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the GuideClassification
+     */
+    omit?: GuideClassificationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GuideClassificationInclude<ExtArgs> | null
   }
 
 
@@ -13538,6 +14841,23 @@ export namespace Prisma {
   export type GuideTabScalarFieldEnum = (typeof GuideTabScalarFieldEnum)[keyof typeof GuideTabScalarFieldEnum]
 
 
+  export const GuideClassificationScalarFieldEnum: {
+    id: 'id',
+    tabId: 'tabId',
+    slug: 'slug',
+    subtitle: 'subtitle',
+    body: 'body',
+    imageUrl: 'imageUrl',
+    imageAlt: 'imageAlt',
+    position: 'position',
+    semanticKey: 'semanticKey',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type GuideClassificationScalarFieldEnum = (typeof GuideClassificationScalarFieldEnum)[keyof typeof GuideClassificationScalarFieldEnum]
+
+
   export const GuideSectionScalarFieldEnum: {
     id: 'id',
     tabId: 'tabId',
@@ -13933,6 +15253,7 @@ export namespace Prisma {
     guide?: XOR<GuideScalarRelationFilter, GuideWhereInput>
     sections?: GuideSectionListRelationFilter
     tables?: GuideTableListRelationFilter
+    classifications?: GuideClassificationListRelationFilter
   }
 
   export type GuideTabOrderByWithRelationInput = {
@@ -13950,6 +15271,7 @@ export namespace Prisma {
     guide?: GuideOrderByWithRelationInput
     sections?: GuideSectionOrderByRelationAggregateInput
     tables?: GuideTableOrderByRelationAggregateInput
+    classifications?: GuideClassificationOrderByRelationAggregateInput
   }
 
   export type GuideTabWhereUniqueInput = Prisma.AtLeast<{
@@ -13971,6 +15293,7 @@ export namespace Prisma {
     guide?: XOR<GuideScalarRelationFilter, GuideWhereInput>
     sections?: GuideSectionListRelationFilter
     tables?: GuideTableListRelationFilter
+    classifications?: GuideClassificationListRelationFilter
   }, "id" | "guideId_slug">
 
   export type GuideTabOrderByWithAggregationInput = {
@@ -14007,6 +15330,94 @@ export namespace Prisma {
     semanticKey?: StringNullableWithAggregatesFilter<"GuideTab"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"GuideTab"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"GuideTab"> | Date | string
+  }
+
+  export type GuideClassificationWhereInput = {
+    AND?: GuideClassificationWhereInput | GuideClassificationWhereInput[]
+    OR?: GuideClassificationWhereInput[]
+    NOT?: GuideClassificationWhereInput | GuideClassificationWhereInput[]
+    id?: StringFilter<"GuideClassification"> | string
+    tabId?: StringFilter<"GuideClassification"> | string
+    slug?: StringFilter<"GuideClassification"> | string
+    subtitle?: StringFilter<"GuideClassification"> | string
+    body?: StringFilter<"GuideClassification"> | string
+    imageUrl?: StringFilter<"GuideClassification"> | string
+    imageAlt?: StringFilter<"GuideClassification"> | string
+    position?: IntFilter<"GuideClassification"> | number
+    semanticKey?: StringNullableFilter<"GuideClassification"> | string | null
+    createdAt?: DateTimeFilter<"GuideClassification"> | Date | string
+    updatedAt?: DateTimeFilter<"GuideClassification"> | Date | string
+    tab?: XOR<GuideTabScalarRelationFilter, GuideTabWhereInput>
+  }
+
+  export type GuideClassificationOrderByWithRelationInput = {
+    id?: SortOrder
+    tabId?: SortOrder
+    slug?: SortOrder
+    subtitle?: SortOrder
+    body?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    position?: SortOrder
+    semanticKey?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    tab?: GuideTabOrderByWithRelationInput
+  }
+
+  export type GuideClassificationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    tabId_slug?: GuideClassificationTabIdSlugCompoundUniqueInput
+    AND?: GuideClassificationWhereInput | GuideClassificationWhereInput[]
+    OR?: GuideClassificationWhereInput[]
+    NOT?: GuideClassificationWhereInput | GuideClassificationWhereInput[]
+    tabId?: StringFilter<"GuideClassification"> | string
+    slug?: StringFilter<"GuideClassification"> | string
+    subtitle?: StringFilter<"GuideClassification"> | string
+    body?: StringFilter<"GuideClassification"> | string
+    imageUrl?: StringFilter<"GuideClassification"> | string
+    imageAlt?: StringFilter<"GuideClassification"> | string
+    position?: IntFilter<"GuideClassification"> | number
+    semanticKey?: StringNullableFilter<"GuideClassification"> | string | null
+    createdAt?: DateTimeFilter<"GuideClassification"> | Date | string
+    updatedAt?: DateTimeFilter<"GuideClassification"> | Date | string
+    tab?: XOR<GuideTabScalarRelationFilter, GuideTabWhereInput>
+  }, "id" | "tabId_slug">
+
+  export type GuideClassificationOrderByWithAggregationInput = {
+    id?: SortOrder
+    tabId?: SortOrder
+    slug?: SortOrder
+    subtitle?: SortOrder
+    body?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    position?: SortOrder
+    semanticKey?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: GuideClassificationCountOrderByAggregateInput
+    _avg?: GuideClassificationAvgOrderByAggregateInput
+    _max?: GuideClassificationMaxOrderByAggregateInput
+    _min?: GuideClassificationMinOrderByAggregateInput
+    _sum?: GuideClassificationSumOrderByAggregateInput
+  }
+
+  export type GuideClassificationScalarWhereWithAggregatesInput = {
+    AND?: GuideClassificationScalarWhereWithAggregatesInput | GuideClassificationScalarWhereWithAggregatesInput[]
+    OR?: GuideClassificationScalarWhereWithAggregatesInput[]
+    NOT?: GuideClassificationScalarWhereWithAggregatesInput | GuideClassificationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"GuideClassification"> | string
+    tabId?: StringWithAggregatesFilter<"GuideClassification"> | string
+    slug?: StringWithAggregatesFilter<"GuideClassification"> | string
+    subtitle?: StringWithAggregatesFilter<"GuideClassification"> | string
+    body?: StringWithAggregatesFilter<"GuideClassification"> | string
+    imageUrl?: StringWithAggregatesFilter<"GuideClassification"> | string
+    imageAlt?: StringWithAggregatesFilter<"GuideClassification"> | string
+    position?: IntWithAggregatesFilter<"GuideClassification"> | number
+    semanticKey?: StringNullableWithAggregatesFilter<"GuideClassification"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"GuideClassification"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"GuideClassification"> | Date | string
   }
 
   export type GuideSectionWhereInput = {
@@ -14717,6 +16128,7 @@ export namespace Prisma {
     guide: GuideCreateNestedOneWithoutTabsInput
     sections?: GuideSectionCreateNestedManyWithoutTabInput
     tables?: GuideTableCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabUncheckedCreateInput = {
@@ -14733,6 +16145,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     sections?: GuideSectionUncheckedCreateNestedManyWithoutTabInput
     tables?: GuideTableUncheckedCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationUncheckedCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabUpdateInput = {
@@ -14749,6 +16162,7 @@ export namespace Prisma {
     guide?: GuideUpdateOneRequiredWithoutTabsNestedInput
     sections?: GuideSectionUpdateManyWithoutTabNestedInput
     tables?: GuideTableUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUpdateManyWithoutTabNestedInput
   }
 
   export type GuideTabUncheckedUpdateInput = {
@@ -14765,6 +16179,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUncheckedUpdateManyWithoutTabNestedInput
     tables?: GuideTableUncheckedUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUncheckedUpdateManyWithoutTabNestedInput
   }
 
   export type GuideTabCreateManyInput = {
@@ -14802,6 +16217,103 @@ export namespace Prisma {
     panelTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
     noteContent?: NullableStringFieldUpdateOperationsInput | string | null
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GuideClassificationCreateInput = {
+    id?: string
+    slug: string
+    subtitle?: string
+    body: string
+    imageUrl?: string
+    imageAlt?: string
+    position: number
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    tab: GuideTabCreateNestedOneWithoutClassificationsInput
+  }
+
+  export type GuideClassificationUncheckedCreateInput = {
+    id?: string
+    tabId: string
+    slug: string
+    subtitle?: string
+    body: string
+    imageUrl?: string
+    imageAlt?: string
+    position: number
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GuideClassificationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    tab?: GuideTabUpdateOneRequiredWithoutClassificationsNestedInput
+  }
+
+  export type GuideClassificationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tabId?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GuideClassificationCreateManyInput = {
+    id?: string
+    tabId: string
+    slug: string
+    subtitle?: string
+    body: string
+    imageUrl?: string
+    imageAlt?: string
+    position: number
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GuideClassificationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GuideClassificationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    tabId?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -15587,6 +17099,12 @@ export namespace Prisma {
     none?: GuideTableWhereInput
   }
 
+  export type GuideClassificationListRelationFilter = {
+    every?: GuideClassificationWhereInput
+    some?: GuideClassificationWhereInput
+    none?: GuideClassificationWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -15597,6 +17115,10 @@ export namespace Prisma {
   }
 
   export type GuideTableOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type GuideClassificationOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -15676,6 +17198,61 @@ export namespace Prisma {
   export type GuideTabScalarRelationFilter = {
     is?: GuideTabWhereInput
     isNot?: GuideTabWhereInput
+  }
+
+  export type GuideClassificationTabIdSlugCompoundUniqueInput = {
+    tabId: string
+    slug: string
+  }
+
+  export type GuideClassificationCountOrderByAggregateInput = {
+    id?: SortOrder
+    tabId?: SortOrder
+    slug?: SortOrder
+    subtitle?: SortOrder
+    body?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    position?: SortOrder
+    semanticKey?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GuideClassificationAvgOrderByAggregateInput = {
+    position?: SortOrder
+  }
+
+  export type GuideClassificationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    tabId?: SortOrder
+    slug?: SortOrder
+    subtitle?: SortOrder
+    body?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    position?: SortOrder
+    semanticKey?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GuideClassificationMinOrderByAggregateInput = {
+    id?: SortOrder
+    tabId?: SortOrder
+    slug?: SortOrder
+    subtitle?: SortOrder
+    body?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    position?: SortOrder
+    semanticKey?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type GuideClassificationSumOrderByAggregateInput = {
+    position?: SortOrder
   }
 
   export type GuideParagraphListRelationFilter = {
@@ -16246,6 +17823,13 @@ export namespace Prisma {
     connect?: GuideTableWhereUniqueInput | GuideTableWhereUniqueInput[]
   }
 
+  export type GuideClassificationCreateNestedManyWithoutTabInput = {
+    create?: XOR<GuideClassificationCreateWithoutTabInput, GuideClassificationUncheckedCreateWithoutTabInput> | GuideClassificationCreateWithoutTabInput[] | GuideClassificationUncheckedCreateWithoutTabInput[]
+    connectOrCreate?: GuideClassificationCreateOrConnectWithoutTabInput | GuideClassificationCreateOrConnectWithoutTabInput[]
+    createMany?: GuideClassificationCreateManyTabInputEnvelope
+    connect?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+  }
+
   export type GuideSectionUncheckedCreateNestedManyWithoutTabInput = {
     create?: XOR<GuideSectionCreateWithoutTabInput, GuideSectionUncheckedCreateWithoutTabInput> | GuideSectionCreateWithoutTabInput[] | GuideSectionUncheckedCreateWithoutTabInput[]
     connectOrCreate?: GuideSectionCreateOrConnectWithoutTabInput | GuideSectionCreateOrConnectWithoutTabInput[]
@@ -16258,6 +17842,13 @@ export namespace Prisma {
     connectOrCreate?: GuideTableCreateOrConnectWithoutTabInput | GuideTableCreateOrConnectWithoutTabInput[]
     createMany?: GuideTableCreateManyTabInputEnvelope
     connect?: GuideTableWhereUniqueInput | GuideTableWhereUniqueInput[]
+  }
+
+  export type GuideClassificationUncheckedCreateNestedManyWithoutTabInput = {
+    create?: XOR<GuideClassificationCreateWithoutTabInput, GuideClassificationUncheckedCreateWithoutTabInput> | GuideClassificationCreateWithoutTabInput[] | GuideClassificationUncheckedCreateWithoutTabInput[]
+    connectOrCreate?: GuideClassificationCreateOrConnectWithoutTabInput | GuideClassificationCreateOrConnectWithoutTabInput[]
+    createMany?: GuideClassificationCreateManyTabInputEnvelope
+    connect?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -16300,6 +17891,20 @@ export namespace Prisma {
     deleteMany?: GuideTableScalarWhereInput | GuideTableScalarWhereInput[]
   }
 
+  export type GuideClassificationUpdateManyWithoutTabNestedInput = {
+    create?: XOR<GuideClassificationCreateWithoutTabInput, GuideClassificationUncheckedCreateWithoutTabInput> | GuideClassificationCreateWithoutTabInput[] | GuideClassificationUncheckedCreateWithoutTabInput[]
+    connectOrCreate?: GuideClassificationCreateOrConnectWithoutTabInput | GuideClassificationCreateOrConnectWithoutTabInput[]
+    upsert?: GuideClassificationUpsertWithWhereUniqueWithoutTabInput | GuideClassificationUpsertWithWhereUniqueWithoutTabInput[]
+    createMany?: GuideClassificationCreateManyTabInputEnvelope
+    set?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    disconnect?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    delete?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    connect?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    update?: GuideClassificationUpdateWithWhereUniqueWithoutTabInput | GuideClassificationUpdateWithWhereUniqueWithoutTabInput[]
+    updateMany?: GuideClassificationUpdateManyWithWhereWithoutTabInput | GuideClassificationUpdateManyWithWhereWithoutTabInput[]
+    deleteMany?: GuideClassificationScalarWhereInput | GuideClassificationScalarWhereInput[]
+  }
+
   export type GuideSectionUncheckedUpdateManyWithoutTabNestedInput = {
     create?: XOR<GuideSectionCreateWithoutTabInput, GuideSectionUncheckedCreateWithoutTabInput> | GuideSectionCreateWithoutTabInput[] | GuideSectionUncheckedCreateWithoutTabInput[]
     connectOrCreate?: GuideSectionCreateOrConnectWithoutTabInput | GuideSectionCreateOrConnectWithoutTabInput[]
@@ -16326,6 +17931,34 @@ export namespace Prisma {
     update?: GuideTableUpdateWithWhereUniqueWithoutTabInput | GuideTableUpdateWithWhereUniqueWithoutTabInput[]
     updateMany?: GuideTableUpdateManyWithWhereWithoutTabInput | GuideTableUpdateManyWithWhereWithoutTabInput[]
     deleteMany?: GuideTableScalarWhereInput | GuideTableScalarWhereInput[]
+  }
+
+  export type GuideClassificationUncheckedUpdateManyWithoutTabNestedInput = {
+    create?: XOR<GuideClassificationCreateWithoutTabInput, GuideClassificationUncheckedCreateWithoutTabInput> | GuideClassificationCreateWithoutTabInput[] | GuideClassificationUncheckedCreateWithoutTabInput[]
+    connectOrCreate?: GuideClassificationCreateOrConnectWithoutTabInput | GuideClassificationCreateOrConnectWithoutTabInput[]
+    upsert?: GuideClassificationUpsertWithWhereUniqueWithoutTabInput | GuideClassificationUpsertWithWhereUniqueWithoutTabInput[]
+    createMany?: GuideClassificationCreateManyTabInputEnvelope
+    set?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    disconnect?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    delete?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    connect?: GuideClassificationWhereUniqueInput | GuideClassificationWhereUniqueInput[]
+    update?: GuideClassificationUpdateWithWhereUniqueWithoutTabInput | GuideClassificationUpdateWithWhereUniqueWithoutTabInput[]
+    updateMany?: GuideClassificationUpdateManyWithWhereWithoutTabInput | GuideClassificationUpdateManyWithWhereWithoutTabInput[]
+    deleteMany?: GuideClassificationScalarWhereInput | GuideClassificationScalarWhereInput[]
+  }
+
+  export type GuideTabCreateNestedOneWithoutClassificationsInput = {
+    create?: XOR<GuideTabCreateWithoutClassificationsInput, GuideTabUncheckedCreateWithoutClassificationsInput>
+    connectOrCreate?: GuideTabCreateOrConnectWithoutClassificationsInput
+    connect?: GuideTabWhereUniqueInput
+  }
+
+  export type GuideTabUpdateOneRequiredWithoutClassificationsNestedInput = {
+    create?: XOR<GuideTabCreateWithoutClassificationsInput, GuideTabUncheckedCreateWithoutClassificationsInput>
+    connectOrCreate?: GuideTabCreateOrConnectWithoutClassificationsInput
+    upsert?: GuideTabUpsertWithoutClassificationsInput
+    connect?: GuideTabWhereUniqueInput
+    update?: XOR<XOR<GuideTabUpdateToOneWithWhereWithoutClassificationsInput, GuideTabUpdateWithoutClassificationsInput>, GuideTabUncheckedUpdateWithoutClassificationsInput>
   }
 
   export type GuideTabCreateNestedOneWithoutSectionsInput = {
@@ -16918,6 +18551,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     sections?: GuideSectionCreateNestedManyWithoutTabInput
     tables?: GuideTableCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabUncheckedCreateWithoutGuideInput = {
@@ -16933,6 +18567,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     sections?: GuideSectionUncheckedCreateNestedManyWithoutTabInput
     tables?: GuideTableUncheckedCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationUncheckedCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabCreateOrConnectWithoutGuideInput = {
@@ -17116,6 +18751,42 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type GuideClassificationCreateWithoutTabInput = {
+    id?: string
+    slug: string
+    subtitle?: string
+    body: string
+    imageUrl?: string
+    imageAlt?: string
+    position: number
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GuideClassificationUncheckedCreateWithoutTabInput = {
+    id?: string
+    slug: string
+    subtitle?: string
+    body: string
+    imageUrl?: string
+    imageAlt?: string
+    position: number
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GuideClassificationCreateOrConnectWithoutTabInput = {
+    where: GuideClassificationWhereUniqueInput
+    create: XOR<GuideClassificationCreateWithoutTabInput, GuideClassificationUncheckedCreateWithoutTabInput>
+  }
+
+  export type GuideClassificationCreateManyTabInputEnvelope = {
+    data: GuideClassificationCreateManyTabInput | GuideClassificationCreateManyTabInput[]
+    skipDuplicates?: boolean
+  }
+
   export type GuideUpsertWithoutTabsInput = {
     update: XOR<GuideUpdateWithoutTabsInput, GuideUncheckedUpdateWithoutTabsInput>
     create: XOR<GuideCreateWithoutTabsInput, GuideUncheckedCreateWithoutTabsInput>
@@ -17210,6 +18881,119 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"GuideTable"> | Date | string
   }
 
+  export type GuideClassificationUpsertWithWhereUniqueWithoutTabInput = {
+    where: GuideClassificationWhereUniqueInput
+    update: XOR<GuideClassificationUpdateWithoutTabInput, GuideClassificationUncheckedUpdateWithoutTabInput>
+    create: XOR<GuideClassificationCreateWithoutTabInput, GuideClassificationUncheckedCreateWithoutTabInput>
+  }
+
+  export type GuideClassificationUpdateWithWhereUniqueWithoutTabInput = {
+    where: GuideClassificationWhereUniqueInput
+    data: XOR<GuideClassificationUpdateWithoutTabInput, GuideClassificationUncheckedUpdateWithoutTabInput>
+  }
+
+  export type GuideClassificationUpdateManyWithWhereWithoutTabInput = {
+    where: GuideClassificationScalarWhereInput
+    data: XOR<GuideClassificationUpdateManyMutationInput, GuideClassificationUncheckedUpdateManyWithoutTabInput>
+  }
+
+  export type GuideClassificationScalarWhereInput = {
+    AND?: GuideClassificationScalarWhereInput | GuideClassificationScalarWhereInput[]
+    OR?: GuideClassificationScalarWhereInput[]
+    NOT?: GuideClassificationScalarWhereInput | GuideClassificationScalarWhereInput[]
+    id?: StringFilter<"GuideClassification"> | string
+    tabId?: StringFilter<"GuideClassification"> | string
+    slug?: StringFilter<"GuideClassification"> | string
+    subtitle?: StringFilter<"GuideClassification"> | string
+    body?: StringFilter<"GuideClassification"> | string
+    imageUrl?: StringFilter<"GuideClassification"> | string
+    imageAlt?: StringFilter<"GuideClassification"> | string
+    position?: IntFilter<"GuideClassification"> | number
+    semanticKey?: StringNullableFilter<"GuideClassification"> | string | null
+    createdAt?: DateTimeFilter<"GuideClassification"> | Date | string
+    updatedAt?: DateTimeFilter<"GuideClassification"> | Date | string
+  }
+
+  export type GuideTabCreateWithoutClassificationsInput = {
+    id?: string
+    slug: string
+    label: string
+    panelTitle?: string | null
+    noteTitle?: string | null
+    noteContent?: string | null
+    position: number
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guide: GuideCreateNestedOneWithoutTabsInput
+    sections?: GuideSectionCreateNestedManyWithoutTabInput
+    tables?: GuideTableCreateNestedManyWithoutTabInput
+  }
+
+  export type GuideTabUncheckedCreateWithoutClassificationsInput = {
+    id?: string
+    guideId: string
+    slug: string
+    label: string
+    panelTitle?: string | null
+    noteTitle?: string | null
+    noteContent?: string | null
+    position: number
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    sections?: GuideSectionUncheckedCreateNestedManyWithoutTabInput
+    tables?: GuideTableUncheckedCreateNestedManyWithoutTabInput
+  }
+
+  export type GuideTabCreateOrConnectWithoutClassificationsInput = {
+    where: GuideTabWhereUniqueInput
+    create: XOR<GuideTabCreateWithoutClassificationsInput, GuideTabUncheckedCreateWithoutClassificationsInput>
+  }
+
+  export type GuideTabUpsertWithoutClassificationsInput = {
+    update: XOR<GuideTabUpdateWithoutClassificationsInput, GuideTabUncheckedUpdateWithoutClassificationsInput>
+    create: XOR<GuideTabCreateWithoutClassificationsInput, GuideTabUncheckedCreateWithoutClassificationsInput>
+    where?: GuideTabWhereInput
+  }
+
+  export type GuideTabUpdateToOneWithWhereWithoutClassificationsInput = {
+    where?: GuideTabWhereInput
+    data: XOR<GuideTabUpdateWithoutClassificationsInput, GuideTabUncheckedUpdateWithoutClassificationsInput>
+  }
+
+  export type GuideTabUpdateWithoutClassificationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+    panelTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    noteContent?: NullableStringFieldUpdateOperationsInput | string | null
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guide?: GuideUpdateOneRequiredWithoutTabsNestedInput
+    sections?: GuideSectionUpdateManyWithoutTabNestedInput
+    tables?: GuideTableUpdateManyWithoutTabNestedInput
+  }
+
+  export type GuideTabUncheckedUpdateWithoutClassificationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    guideId?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    label?: StringFieldUpdateOperationsInput | string
+    panelTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    noteTitle?: NullableStringFieldUpdateOperationsInput | string | null
+    noteContent?: NullableStringFieldUpdateOperationsInput | string | null
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    sections?: GuideSectionUncheckedUpdateManyWithoutTabNestedInput
+    tables?: GuideTableUncheckedUpdateManyWithoutTabNestedInput
+  }
+
   export type GuideTabCreateWithoutSectionsInput = {
     id?: string
     slug: string
@@ -17223,6 +19007,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     guide: GuideCreateNestedOneWithoutTabsInput
     tables?: GuideTableCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabUncheckedCreateWithoutSectionsInput = {
@@ -17238,6 +19023,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     tables?: GuideTableUncheckedCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationUncheckedCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabCreateOrConnectWithoutSectionsInput = {
@@ -17295,6 +19081,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneRequiredWithoutTabsNestedInput
     tables?: GuideTableUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUpdateManyWithoutTabNestedInput
   }
 
   export type GuideTabUncheckedUpdateWithoutSectionsInput = {
@@ -17310,6 +19097,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     tables?: GuideTableUncheckedUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUncheckedUpdateManyWithoutTabNestedInput
   }
 
   export type GuideParagraphUpsertWithWhereUniqueWithoutSectionInput = {
@@ -17425,6 +19213,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     guide: GuideCreateNestedOneWithoutTabsInput
     sections?: GuideSectionCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabUncheckedCreateWithoutTablesInput = {
@@ -17440,6 +19229,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     sections?: GuideSectionUncheckedCreateNestedManyWithoutTabInput
+    classifications?: GuideClassificationUncheckedCreateNestedManyWithoutTabInput
   }
 
   export type GuideTabCreateOrConnectWithoutTablesInput = {
@@ -17511,6 +19301,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneRequiredWithoutTabsNestedInput
     sections?: GuideSectionUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUpdateManyWithoutTabNestedInput
   }
 
   export type GuideTabUncheckedUpdateWithoutTablesInput = {
@@ -17526,6 +19317,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUncheckedUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUncheckedUpdateManyWithoutTabNestedInput
   }
 
   export type GuideTableRowUpsertWithWhereUniqueWithoutTableInput = {
@@ -17969,6 +19761,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUpdateManyWithoutTabNestedInput
     tables?: GuideTableUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUpdateManyWithoutTabNestedInput
   }
 
   export type GuideTabUncheckedUpdateWithoutGuideInput = {
@@ -17984,6 +19777,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sections?: GuideSectionUncheckedUpdateManyWithoutTabNestedInput
     tables?: GuideTableUncheckedUpdateManyWithoutTabNestedInput
+    classifications?: GuideClassificationUncheckedUpdateManyWithoutTabNestedInput
   }
 
   export type GuideTabUncheckedUpdateManyWithoutGuideInput = {
@@ -18019,6 +19813,19 @@ export namespace Prisma {
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
+    semanticKey?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type GuideClassificationCreateManyTabInput = {
+    id?: string
+    slug: string
+    subtitle?: string
+    body: string
+    imageUrl?: string
+    imageAlt?: string
+    position: number
     semanticKey?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -18098,6 +19905,45 @@ export namespace Prisma {
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GuideClassificationUpdateWithoutTabInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GuideClassificationUncheckedUpdateWithoutTabInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type GuideClassificationUncheckedUpdateManyWithoutTabInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    subtitle?: StringFieldUpdateOperationsInput | string
+    body?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

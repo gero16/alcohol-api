@@ -157,6 +157,20 @@ exports.Prisma.GuideTabScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.GuideClassificationScalarFieldEnum = {
+  id: 'id',
+  tabId: 'tabId',
+  slug: 'slug',
+  subtitle: 'subtitle',
+  body: 'body',
+  imageUrl: 'imageUrl',
+  imageAlt: 'imageAlt',
+  position: 'position',
+  semanticKey: 'semanticKey',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.GuideSectionScalarFieldEnum = {
   id: 'id',
   tabId: 'tabId',
@@ -265,6 +279,7 @@ exports.Prisma.ModelName = {
   Category: 'Category',
   Guide: 'Guide',
   GuideTab: 'GuideTab',
+  GuideClassification: 'GuideClassification',
   GuideSection: 'GuideSection',
   GuideParagraph: 'GuideParagraph',
   GuideTable: 'GuideTable',

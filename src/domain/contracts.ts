@@ -54,6 +54,16 @@ export type SeedGuideTable = {
   rows: SeedGuideTableRow[];
 };
 
+/** Bloque de marco o clasificación: subtítulo, un texto e imagen opcional (sin título principal tipo tarjeta). */
+export type SeedGuideClassification = {
+  slug: string;
+  subtitle: string;
+  body: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  semanticKey?: string;
+};
+
 export type SeedGuideTab = {
   slug: string;
   label: string;
@@ -62,6 +72,7 @@ export type SeedGuideTab = {
   noteTitle?: string;
   noteContent?: string;
   semanticKey?: string;
+  classifications?: SeedGuideClassification[];
   sections?: SeedGuideSection[];
   tables?: SeedGuideTable[];
 };
@@ -125,6 +136,16 @@ export type ApiGuideTable = {
   rows: ApiGuideTableRow[];
 };
 
+export type ApiGuideClassification = {
+  id: string;
+  slug: string;
+  subtitle: string;
+  body: string;
+  imageUrl: string;
+  imageAlt: string;
+  semanticKey?: string;
+};
+
 export type ApiGuideTab = {
   id: string;
   slug: string;
@@ -133,6 +154,7 @@ export type ApiGuideTab = {
   noteTitle?: string;
   noteContent?: string;
   semanticKey?: string;
+  classifications: ApiGuideClassification[];
   sections: ApiGuideSection[];
   tables: ApiGuideTable[];
 };
@@ -154,6 +176,7 @@ export type ApiSemanticGuideBlockTab = {
   panelTitle?: string;
   noteTitle?: string;
   noteContent?: string;
+  classifications: ApiGuideClassification[];
   sections: ApiGuideSection[];
   tables: ApiGuideTable[];
 };
@@ -175,10 +198,19 @@ export type ApiSemanticGuideBlockTable = {
   table: ApiGuideTable;
 };
 
+export type ApiSemanticGuideBlockClassification = {
+  kind: "classification";
+  semanticKey: string;
+  tabSlug: string;
+  tabLabel: string;
+  classification: ApiGuideClassification;
+};
+
 export type ApiSemanticGuideBlock =
   | ApiSemanticGuideBlockTab
   | ApiSemanticGuideBlockSection
-  | ApiSemanticGuideBlockTable;
+  | ApiSemanticGuideBlockTable
+  | ApiSemanticGuideBlockClassification;
 
 export type ApiSemanticGuideIndex = {
   categorySlug: string;

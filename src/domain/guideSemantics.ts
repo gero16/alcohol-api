@@ -51,6 +51,7 @@ export function parseGuideSemanticKey(raw: string | undefined | null): GuideSema
 export function assertGuideSemanticKeysInPayload(payload: {
   tabs: Array<{
     semanticKey?: string | null;
+    classifications?: Array<{ semanticKey?: string | null }>;
     sections?: Array<{ semanticKey?: string | null }>;
     tables?: Array<{ semanticKey?: string | null }>;
   }>;
@@ -66,6 +67,9 @@ export function assertGuideSemanticKeysInPayload(payload: {
 
   for (const [tabIndex, tab] of payload.tabs.entries()) {
     check(tab.semanticKey, `tabs[${tabIndex}]`);
+    for (const [cIndex, c] of (tab.classifications ?? []).entries()) {
+      check(c.semanticKey, `tabs[${tabIndex}].classifications[${cIndex}]`);
+    }
     for (const [sectionIndex, section] of (tab.sections ?? []).entries()) {
       check(section.semanticKey, `tabs[${tabIndex}].sections[${sectionIndex}]`);
     }

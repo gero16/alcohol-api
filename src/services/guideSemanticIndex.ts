@@ -48,8 +48,23 @@ export function buildSemanticGuideIndex(
         panelTitle: tab.panelTitle,
         noteTitle: tab.noteTitle,
         noteContent: tab.noteContent,
+        classifications: tab.classifications,
         sections: tab.sections,
         tables: tab.tables,
+      });
+    }
+
+    for (const classification of tab.classifications) {
+      const ck = classification.semanticKey?.trim();
+      if (!ck) {
+        continue;
+      }
+      pushBlock(buckets, ck, {
+        kind: "classification",
+        semanticKey: ck,
+        tabSlug,
+        tabLabel,
+        classification,
       });
     }
 

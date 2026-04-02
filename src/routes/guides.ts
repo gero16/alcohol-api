@@ -72,6 +72,22 @@ const guideSchema = {
           noteTitle: { type: "string" },
           noteContent: { type: "string" },
           semanticKey: guideSemanticKeySchema,
+          classifications: {
+            type: "array",
+            items: {
+              type: "object",
+              required: ["slug", "body"],
+              additionalProperties: false,
+              properties: {
+                slug: { type: "string", minLength: 1 },
+                subtitle: { type: "string" },
+                body: { type: "string", minLength: 1 },
+                imageUrl: { type: "string" },
+                imageAlt: { type: "string" },
+                semanticKey: guideSemanticKeySchema,
+              },
+            },
+          },
           sections: {
             type: "array",
             items: {

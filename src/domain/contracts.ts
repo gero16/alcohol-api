@@ -54,11 +54,11 @@ export type SeedGuideTable = {
   rows: SeedGuideTableRow[];
 };
 
-/** Bloque de marco o clasificación: subtítulo, un texto e imagen opcional (sin título principal tipo tarjeta). */
+/** Bloque de marco o clasificación: subtítulo, párrafos e imagen opcional (sin título principal tipo tarjeta). */
 export type SeedGuideClassification = {
   slug: string;
   subtitle: string;
-  body: string;
+  paragraphs: string[];
   imageUrl?: string;
   imageAlt?: string;
   semanticKey?: string;
@@ -140,7 +140,7 @@ export type ApiGuideClassification = {
   id: string;
   slug: string;
   subtitle: string;
-  body: string;
+  paragraphs: string[];
   imageUrl: string;
   imageAlt: string;
   semanticKey?: string;

@@ -162,7 +162,7 @@ exports.Prisma.GuideClassificationScalarFieldEnum = {
   tabId: 'tabId',
   slug: 'slug',
   subtitle: 'subtitle',
-  body: 'body',
+  paragraphs: 'paragraphs',
   imageUrl: 'imageUrl',
   imageAlt: 'imageAlt',
   position: 'position',

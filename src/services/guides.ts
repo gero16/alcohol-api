@@ -7,6 +7,10 @@ import type {
   SeedGuideTable,
   TableColumn,
 } from "../domain/contracts";
+import {
+  classificationParagraphsFromJson,
+  classificationParagraphsToJson,
+} from "../domain/classificationParagraphs";
 import { parseGuideSemanticKey, assertGuideSemanticKeysInPayload } from "../domain/guideSemantics";
 import { guideDetailInclude, type GuideDetailRecord } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
@@ -29,7 +33,7 @@ function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideI
       create: (tab.classifications ?? []).map((c: SeedGuideClassification, index) => ({
         slug: c.slug,
         subtitle: c.subtitle ?? "",
-        body: c.body,
+        paragraphs: classificationParagraphsToJson(c.paragraphs ?? []),
         imageUrl: c.imageUrl?.trim() ? c.imageUrl : "",
         imageAlt: c.imageAlt?.trim() ? c.imageAlt : "",
         position: index,
@@ -172,7 +176,7 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
       classifications: tab.classifications.map((c) => ({
         slug: c.slug,
         subtitle: c.subtitle,
-        body: c.body,
+        paragraphs: classificationParagraphsFromJson(c.paragraphs),
         imageUrl: c.imageUrl,
         imageAlt: c.imageAlt,
         semanticKey: c.semanticKey ?? undefined,

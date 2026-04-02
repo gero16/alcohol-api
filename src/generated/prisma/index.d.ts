@@ -30,7 +30,7 @@ export type Guide = $Result.DefaultSelection<Prisma.$GuidePayload>
 export type GuideTab = $Result.DefaultSelection<Prisma.$GuideTabPayload>
 /**
  * Model GuideClassification
- * Bloques breves de marco o clasificación: subtítulo, un cuerpo de texto e imagen opcional (sin título de tarjeta como GuideSection).
+ * Bloques de marco o clasificación: subtítulo, párrafos e imagen opcional (sin título de tarjeta como GuideSection).
  */
 export type GuideClassification = $Result.DefaultSelection<Prisma.$GuideClassificationPayload>
 /**
@@ -5593,7 +5593,6 @@ export namespace Prisma {
     tabId: string | null
     slug: string | null
     subtitle: string | null
-    body: string | null
     imageUrl: string | null
     imageAlt: string | null
     position: number | null
@@ -5607,7 +5606,6 @@ export namespace Prisma {
     tabId: string | null
     slug: string | null
     subtitle: string | null
-    body: string | null
     imageUrl: string | null
     imageAlt: string | null
     position: number | null
@@ -5621,7 +5619,7 @@ export namespace Prisma {
     tabId: number
     slug: number
     subtitle: number
-    body: number
+    paragraphs: number
     imageUrl: number
     imageAlt: number
     position: number
@@ -5645,7 +5643,6 @@ export namespace Prisma {
     tabId?: true
     slug?: true
     subtitle?: true
-    body?: true
     imageUrl?: true
     imageAlt?: true
     position?: true
@@ -5659,7 +5656,6 @@ export namespace Prisma {
     tabId?: true
     slug?: true
     subtitle?: true
-    body?: true
     imageUrl?: true
     imageAlt?: true
     position?: true
@@ -5673,7 +5669,7 @@ export namespace Prisma {
     tabId?: true
     slug?: true
     subtitle?: true
-    body?: true
+    paragraphs?: true
     imageUrl?: true
     imageAlt?: true
     position?: true
@@ -5774,7 +5770,7 @@ export namespace Prisma {
     tabId: string
     slug: string
     subtitle: string
-    body: string
+    paragraphs: JsonValue
     imageUrl: string
     imageAlt: string
     position: number
@@ -5807,7 +5803,7 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     subtitle?: boolean
-    body?: boolean
+    paragraphs?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -5822,7 +5818,7 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     subtitle?: boolean
-    body?: boolean
+    paragraphs?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -5837,7 +5833,7 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     subtitle?: boolean
-    body?: boolean
+    paragraphs?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -5852,7 +5848,7 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     subtitle?: boolean
-    body?: boolean
+    paragraphs?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -5861,7 +5857,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type GuideClassificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "subtitle" | "body" | "imageUrl" | "imageAlt" | "position" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideClassification"]>
+  export type GuideClassificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "subtitle" | "paragraphs" | "imageUrl" | "imageAlt" | "position" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideClassification"]>
   export type GuideClassificationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
   }
@@ -5882,7 +5878,7 @@ export namespace Prisma {
       tabId: string
       slug: string
       subtitle: string
-      body: string
+      paragraphs: Prisma.JsonValue
       imageUrl: string
       imageAlt: string
       position: number
@@ -6317,7 +6313,7 @@ export namespace Prisma {
     readonly tabId: FieldRef<"GuideClassification", 'String'>
     readonly slug: FieldRef<"GuideClassification", 'String'>
     readonly subtitle: FieldRef<"GuideClassification", 'String'>
-    readonly body: FieldRef<"GuideClassification", 'String'>
+    readonly paragraphs: FieldRef<"GuideClassification", 'Json'>
     readonly imageUrl: FieldRef<"GuideClassification", 'String'>
     readonly imageAlt: FieldRef<"GuideClassification", 'String'>
     readonly position: FieldRef<"GuideClassification", 'Int'>
@@ -14846,7 +14842,7 @@ export namespace Prisma {
     tabId: 'tabId',
     slug: 'slug',
     subtitle: 'subtitle',
-    body: 'body',
+    paragraphs: 'paragraphs',
     imageUrl: 'imageUrl',
     imageAlt: 'imageAlt',
     position: 'position',
@@ -15340,7 +15336,7 @@ export namespace Prisma {
     tabId?: StringFilter<"GuideClassification"> | string
     slug?: StringFilter<"GuideClassification"> | string
     subtitle?: StringFilter<"GuideClassification"> | string
-    body?: StringFilter<"GuideClassification"> | string
+    paragraphs?: JsonFilter<"GuideClassification">
     imageUrl?: StringFilter<"GuideClassification"> | string
     imageAlt?: StringFilter<"GuideClassification"> | string
     position?: IntFilter<"GuideClassification"> | number
@@ -15355,7 +15351,7 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     subtitle?: SortOrder
-    body?: SortOrder
+    paragraphs?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -15374,7 +15370,7 @@ export namespace Prisma {
     tabId?: StringFilter<"GuideClassification"> | string
     slug?: StringFilter<"GuideClassification"> | string
     subtitle?: StringFilter<"GuideClassification"> | string
-    body?: StringFilter<"GuideClassification"> | string
+    paragraphs?: JsonFilter<"GuideClassification">
     imageUrl?: StringFilter<"GuideClassification"> | string
     imageAlt?: StringFilter<"GuideClassification"> | string
     position?: IntFilter<"GuideClassification"> | number
@@ -15389,7 +15385,7 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     subtitle?: SortOrder
-    body?: SortOrder
+    paragraphs?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -15411,7 +15407,7 @@ export namespace Prisma {
     tabId?: StringWithAggregatesFilter<"GuideClassification"> | string
     slug?: StringWithAggregatesFilter<"GuideClassification"> | string
     subtitle?: StringWithAggregatesFilter<"GuideClassification"> | string
-    body?: StringWithAggregatesFilter<"GuideClassification"> | string
+    paragraphs?: JsonWithAggregatesFilter<"GuideClassification">
     imageUrl?: StringWithAggregatesFilter<"GuideClassification"> | string
     imageAlt?: StringWithAggregatesFilter<"GuideClassification"> | string
     position?: IntWithAggregatesFilter<"GuideClassification"> | number
@@ -16227,7 +16223,7 @@ export namespace Prisma {
     id?: string
     slug: string
     subtitle?: string
-    body: string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: string
     imageAlt?: string
     position: number
@@ -16242,7 +16238,7 @@ export namespace Prisma {
     tabId: string
     slug: string
     subtitle?: string
-    body: string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: string
     imageAlt?: string
     position: number
@@ -16255,7 +16251,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     subtitle?: StringFieldUpdateOperationsInput | string
-    body?: StringFieldUpdateOperationsInput | string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
@@ -16270,7 +16266,7 @@ export namespace Prisma {
     tabId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     subtitle?: StringFieldUpdateOperationsInput | string
-    body?: StringFieldUpdateOperationsInput | string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
@@ -16284,7 +16280,7 @@ export namespace Prisma {
     tabId: string
     slug: string
     subtitle?: string
-    body: string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: string
     imageAlt?: string
     position: number
@@ -16297,7 +16293,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     subtitle?: StringFieldUpdateOperationsInput | string
-    body?: StringFieldUpdateOperationsInput | string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
@@ -16311,7 +16307,7 @@ export namespace Prisma {
     tabId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     subtitle?: StringFieldUpdateOperationsInput | string
-    body?: StringFieldUpdateOperationsInput | string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
@@ -17194,6 +17190,29 @@ export namespace Prisma {
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
+  export type JsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
 
   export type GuideTabScalarRelationFilter = {
     is?: GuideTabWhereInput
@@ -17210,7 +17229,7 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     subtitle?: SortOrder
-    body?: SortOrder
+    paragraphs?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -17228,7 +17247,6 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     subtitle?: SortOrder
-    body?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -17242,7 +17260,6 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     subtitle?: SortOrder
-    body?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -17253,6 +17270,32 @@ export namespace Prisma {
 
   export type GuideClassificationSumOrderByAggregateInput = {
     position?: SortOrder
+  }
+  export type JsonWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedJsonFilter<$PrismaModel>
+    _max?: NestedJsonFilter<$PrismaModel>
   }
 
   export type GuideParagraphListRelationFilter = {
@@ -17359,29 +17402,6 @@ export namespace Prisma {
   export type GuideParagraphSumOrderByAggregateInput = {
     position?: SortOrder
   }
-  export type JsonFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-  }
 
   export type GuideTableRowListRelationFilter = {
     every?: GuideTableRowWhereInput
@@ -17441,32 +17461,6 @@ export namespace Prisma {
 
   export type GuideTableSumOrderByAggregateInput = {
     position?: SortOrder
-  }
-  export type JsonWithAggregatesFilter<$PrismaModel = never> =
-    | PatchUndefined<
-        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
-        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
-      >
-    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
-
-  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
-    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    path?: string[]
-    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
-    string_contains?: string | StringFieldRefInput<$PrismaModel>
-    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
-    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
-    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
-    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
-    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedJsonFilter<$PrismaModel>
-    _max?: NestedJsonFilter<$PrismaModel>
   }
 
   export type GuideTableScalarRelationFilter = {
@@ -18755,7 +18749,7 @@ export namespace Prisma {
     id?: string
     slug: string
     subtitle?: string
-    body: string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: string
     imageAlt?: string
     position: number
@@ -18768,7 +18762,7 @@ export namespace Prisma {
     id?: string
     slug: string
     subtitle?: string
-    body: string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: string
     imageAlt?: string
     position: number
@@ -18905,7 +18899,7 @@ export namespace Prisma {
     tabId?: StringFilter<"GuideClassification"> | string
     slug?: StringFilter<"GuideClassification"> | string
     subtitle?: StringFilter<"GuideClassification"> | string
-    body?: StringFilter<"GuideClassification"> | string
+    paragraphs?: JsonFilter<"GuideClassification">
     imageUrl?: StringFilter<"GuideClassification"> | string
     imageAlt?: StringFilter<"GuideClassification"> | string
     position?: IntFilter<"GuideClassification"> | number
@@ -19822,7 +19816,7 @@ export namespace Prisma {
     id?: string
     slug: string
     subtitle?: string
-    body: string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: string
     imageAlt?: string
     position: number
@@ -19914,7 +19908,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     subtitle?: StringFieldUpdateOperationsInput | string
-    body?: StringFieldUpdateOperationsInput | string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
@@ -19927,7 +19921,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     subtitle?: StringFieldUpdateOperationsInput | string
-    body?: StringFieldUpdateOperationsInput | string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
@@ -19940,7 +19934,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     subtitle?: StringFieldUpdateOperationsInput | string
-    body?: StringFieldUpdateOperationsInput | string
+    paragraphs?: JsonNullValueInput | InputJsonValue
     imageUrl?: StringFieldUpdateOperationsInput | string
     imageAlt?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number

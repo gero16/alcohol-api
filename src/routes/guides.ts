@@ -76,12 +76,16 @@ const guideSchema = {
             type: "array",
             items: {
               type: "object",
-              required: ["slug", "body"],
+              required: ["slug", "paragraphs"],
               additionalProperties: false,
               properties: {
                 slug: { type: "string", minLength: 1 },
                 subtitle: { type: "string" },
-                body: { type: "string", minLength: 1 },
+                paragraphs: {
+                  type: "array",
+                  items: { type: "string", minLength: 1 },
+                  minItems: 1,
+                },
                 imageUrl: { type: "string" },
                 imageAlt: { type: "string" },
                 semanticKey: guideSemanticKeySchema,

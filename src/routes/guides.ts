@@ -35,6 +35,18 @@ const tableColumnSchema = {
   },
 } as const;
 
+const classificationBlockSchema = {
+  type: "object",
+  required: ["kind"],
+  additionalProperties: true,
+  properties: {
+    kind: { type: "string", enum: ["subtitle", "paragraph", "image"] },
+    text: { type: "string" },
+    url: { type: "string" },
+    alt: { type: "string" },
+  },
+} as const;
+
 const tableRowSchema = {
   type: "object",
   required: ["term"],
@@ -76,18 +88,14 @@ const guideSchema = {
             type: "array",
             items: {
               type: "object",
-              required: ["slug", "paragraphs"],
+              required: ["slug", "blocks"],
               additionalProperties: false,
               properties: {
                 slug: { type: "string", minLength: 1 },
-                subtitle: { type: "string" },
-                paragraphs: {
+                blocks: {
                   type: "array",
-                  items: { type: "string", minLength: 1 },
-                  minItems: 1,
+                  items: classificationBlockSchema,
                 },
-                imageUrl: { type: "string" },
-                imageAlt: { type: "string" },
                 semanticKey: guideSemanticKeySchema,
               },
             },

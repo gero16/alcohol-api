@@ -30,7 +30,7 @@ export type Guide = $Result.DefaultSelection<Prisma.$GuidePayload>
 export type GuideTab = $Result.DefaultSelection<Prisma.$GuideTabPayload>
 /**
  * Model GuideClassification
- * Bloques de marco o clasificación: subtítulo, párrafos e imagen opcional (sin título de tarjeta como GuideSection).
+ * Marco o clasificación: secuencia ordenada de subtítulos, párrafos e imágenes (JSON).
  */
 export type GuideClassification = $Result.DefaultSelection<Prisma.$GuideClassificationPayload>
 /**
@@ -5592,9 +5592,6 @@ export namespace Prisma {
     id: string | null
     tabId: string | null
     slug: string | null
-    subtitle: string | null
-    imageUrl: string | null
-    imageAlt: string | null
     position: number | null
     semanticKey: string | null
     createdAt: Date | null
@@ -5605,9 +5602,6 @@ export namespace Prisma {
     id: string | null
     tabId: string | null
     slug: string | null
-    subtitle: string | null
-    imageUrl: string | null
-    imageAlt: string | null
     position: number | null
     semanticKey: string | null
     createdAt: Date | null
@@ -5618,10 +5612,7 @@ export namespace Prisma {
     id: number
     tabId: number
     slug: number
-    subtitle: number
-    paragraphs: number
-    imageUrl: number
-    imageAlt: number
+    blocks: number
     position: number
     semanticKey: number
     createdAt: number
@@ -5642,9 +5633,6 @@ export namespace Prisma {
     id?: true
     tabId?: true
     slug?: true
-    subtitle?: true
-    imageUrl?: true
-    imageAlt?: true
     position?: true
     semanticKey?: true
     createdAt?: true
@@ -5655,9 +5643,6 @@ export namespace Prisma {
     id?: true
     tabId?: true
     slug?: true
-    subtitle?: true
-    imageUrl?: true
-    imageAlt?: true
     position?: true
     semanticKey?: true
     createdAt?: true
@@ -5668,10 +5653,7 @@ export namespace Prisma {
     id?: true
     tabId?: true
     slug?: true
-    subtitle?: true
-    paragraphs?: true
-    imageUrl?: true
-    imageAlt?: true
+    blocks?: true
     position?: true
     semanticKey?: true
     createdAt?: true
@@ -5769,10 +5751,7 @@ export namespace Prisma {
     id: string
     tabId: string
     slug: string
-    subtitle: string
-    paragraphs: JsonValue
-    imageUrl: string
-    imageAlt: string
+    blocks: JsonValue
     position: number
     semanticKey: string | null
     createdAt: Date
@@ -5802,10 +5781,7 @@ export namespace Prisma {
     id?: boolean
     tabId?: boolean
     slug?: boolean
-    subtitle?: boolean
-    paragraphs?: boolean
-    imageUrl?: boolean
-    imageAlt?: boolean
+    blocks?: boolean
     position?: boolean
     semanticKey?: boolean
     createdAt?: boolean
@@ -5817,10 +5793,7 @@ export namespace Prisma {
     id?: boolean
     tabId?: boolean
     slug?: boolean
-    subtitle?: boolean
-    paragraphs?: boolean
-    imageUrl?: boolean
-    imageAlt?: boolean
+    blocks?: boolean
     position?: boolean
     semanticKey?: boolean
     createdAt?: boolean
@@ -5832,10 +5805,7 @@ export namespace Prisma {
     id?: boolean
     tabId?: boolean
     slug?: boolean
-    subtitle?: boolean
-    paragraphs?: boolean
-    imageUrl?: boolean
-    imageAlt?: boolean
+    blocks?: boolean
     position?: boolean
     semanticKey?: boolean
     createdAt?: boolean
@@ -5847,17 +5817,14 @@ export namespace Prisma {
     id?: boolean
     tabId?: boolean
     slug?: boolean
-    subtitle?: boolean
-    paragraphs?: boolean
-    imageUrl?: boolean
-    imageAlt?: boolean
+    blocks?: boolean
     position?: boolean
     semanticKey?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type GuideClassificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "subtitle" | "paragraphs" | "imageUrl" | "imageAlt" | "position" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideClassification"]>
+  export type GuideClassificationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "blocks" | "position" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideClassification"]>
   export type GuideClassificationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
   }
@@ -5877,10 +5844,7 @@ export namespace Prisma {
       id: string
       tabId: string
       slug: string
-      subtitle: string
-      paragraphs: Prisma.JsonValue
-      imageUrl: string
-      imageAlt: string
+      blocks: Prisma.JsonValue
       position: number
       semanticKey: string | null
       createdAt: Date
@@ -6312,10 +6276,7 @@ export namespace Prisma {
     readonly id: FieldRef<"GuideClassification", 'String'>
     readonly tabId: FieldRef<"GuideClassification", 'String'>
     readonly slug: FieldRef<"GuideClassification", 'String'>
-    readonly subtitle: FieldRef<"GuideClassification", 'String'>
-    readonly paragraphs: FieldRef<"GuideClassification", 'Json'>
-    readonly imageUrl: FieldRef<"GuideClassification", 'String'>
-    readonly imageAlt: FieldRef<"GuideClassification", 'String'>
+    readonly blocks: FieldRef<"GuideClassification", 'Json'>
     readonly position: FieldRef<"GuideClassification", 'Int'>
     readonly semanticKey: FieldRef<"GuideClassification", 'String'>
     readonly createdAt: FieldRef<"GuideClassification", 'DateTime'>
@@ -14841,10 +14802,7 @@ export namespace Prisma {
     id: 'id',
     tabId: 'tabId',
     slug: 'slug',
-    subtitle: 'subtitle',
-    paragraphs: 'paragraphs',
-    imageUrl: 'imageUrl',
-    imageAlt: 'imageAlt',
+    blocks: 'blocks',
     position: 'position',
     semanticKey: 'semanticKey',
     createdAt: 'createdAt',
@@ -15335,10 +15293,7 @@ export namespace Prisma {
     id?: StringFilter<"GuideClassification"> | string
     tabId?: StringFilter<"GuideClassification"> | string
     slug?: StringFilter<"GuideClassification"> | string
-    subtitle?: StringFilter<"GuideClassification"> | string
-    paragraphs?: JsonFilter<"GuideClassification">
-    imageUrl?: StringFilter<"GuideClassification"> | string
-    imageAlt?: StringFilter<"GuideClassification"> | string
+    blocks?: JsonFilter<"GuideClassification">
     position?: IntFilter<"GuideClassification"> | number
     semanticKey?: StringNullableFilter<"GuideClassification"> | string | null
     createdAt?: DateTimeFilter<"GuideClassification"> | Date | string
@@ -15350,10 +15305,7 @@ export namespace Prisma {
     id?: SortOrder
     tabId?: SortOrder
     slug?: SortOrder
-    subtitle?: SortOrder
-    paragraphs?: SortOrder
-    imageUrl?: SortOrder
-    imageAlt?: SortOrder
+    blocks?: SortOrder
     position?: SortOrder
     semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -15369,10 +15321,7 @@ export namespace Prisma {
     NOT?: GuideClassificationWhereInput | GuideClassificationWhereInput[]
     tabId?: StringFilter<"GuideClassification"> | string
     slug?: StringFilter<"GuideClassification"> | string
-    subtitle?: StringFilter<"GuideClassification"> | string
-    paragraphs?: JsonFilter<"GuideClassification">
-    imageUrl?: StringFilter<"GuideClassification"> | string
-    imageAlt?: StringFilter<"GuideClassification"> | string
+    blocks?: JsonFilter<"GuideClassification">
     position?: IntFilter<"GuideClassification"> | number
     semanticKey?: StringNullableFilter<"GuideClassification"> | string | null
     createdAt?: DateTimeFilter<"GuideClassification"> | Date | string
@@ -15384,10 +15333,7 @@ export namespace Prisma {
     id?: SortOrder
     tabId?: SortOrder
     slug?: SortOrder
-    subtitle?: SortOrder
-    paragraphs?: SortOrder
-    imageUrl?: SortOrder
-    imageAlt?: SortOrder
+    blocks?: SortOrder
     position?: SortOrder
     semanticKey?: SortOrderInput | SortOrder
     createdAt?: SortOrder
@@ -15406,10 +15352,7 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"GuideClassification"> | string
     tabId?: StringWithAggregatesFilter<"GuideClassification"> | string
     slug?: StringWithAggregatesFilter<"GuideClassification"> | string
-    subtitle?: StringWithAggregatesFilter<"GuideClassification"> | string
-    paragraphs?: JsonWithAggregatesFilter<"GuideClassification">
-    imageUrl?: StringWithAggregatesFilter<"GuideClassification"> | string
-    imageAlt?: StringWithAggregatesFilter<"GuideClassification"> | string
+    blocks?: JsonWithAggregatesFilter<"GuideClassification">
     position?: IntWithAggregatesFilter<"GuideClassification"> | number
     semanticKey?: StringNullableWithAggregatesFilter<"GuideClassification"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"GuideClassification"> | Date | string
@@ -16222,10 +16165,7 @@ export namespace Prisma {
   export type GuideClassificationCreateInput = {
     id?: string
     slug: string
-    subtitle?: string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: string
-    imageAlt?: string
+    blocks?: JsonNullValueInput | InputJsonValue
     position: number
     semanticKey?: string | null
     createdAt?: Date | string
@@ -16237,10 +16177,7 @@ export namespace Prisma {
     id?: string
     tabId: string
     slug: string
-    subtitle?: string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: string
-    imageAlt?: string
+    blocks?: JsonNullValueInput | InputJsonValue
     position: number
     semanticKey?: string | null
     createdAt?: Date | string
@@ -16250,10 +16187,7 @@ export namespace Prisma {
   export type GuideClassificationUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    subtitle?: StringFieldUpdateOperationsInput | string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    imageAlt?: StringFieldUpdateOperationsInput | string
+    blocks?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16265,10 +16199,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     tabId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    subtitle?: StringFieldUpdateOperationsInput | string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    imageAlt?: StringFieldUpdateOperationsInput | string
+    blocks?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16279,10 +16210,7 @@ export namespace Prisma {
     id?: string
     tabId: string
     slug: string
-    subtitle?: string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: string
-    imageAlt?: string
+    blocks?: JsonNullValueInput | InputJsonValue
     position: number
     semanticKey?: string | null
     createdAt?: Date | string
@@ -16292,10 +16220,7 @@ export namespace Prisma {
   export type GuideClassificationUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    subtitle?: StringFieldUpdateOperationsInput | string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    imageAlt?: StringFieldUpdateOperationsInput | string
+    blocks?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16306,10 +16231,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     tabId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    subtitle?: StringFieldUpdateOperationsInput | string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    imageAlt?: StringFieldUpdateOperationsInput | string
+    blocks?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -17228,10 +17150,7 @@ export namespace Prisma {
     id?: SortOrder
     tabId?: SortOrder
     slug?: SortOrder
-    subtitle?: SortOrder
-    paragraphs?: SortOrder
-    imageUrl?: SortOrder
-    imageAlt?: SortOrder
+    blocks?: SortOrder
     position?: SortOrder
     semanticKey?: SortOrder
     createdAt?: SortOrder
@@ -17246,9 +17165,6 @@ export namespace Prisma {
     id?: SortOrder
     tabId?: SortOrder
     slug?: SortOrder
-    subtitle?: SortOrder
-    imageUrl?: SortOrder
-    imageAlt?: SortOrder
     position?: SortOrder
     semanticKey?: SortOrder
     createdAt?: SortOrder
@@ -17259,9 +17175,6 @@ export namespace Prisma {
     id?: SortOrder
     tabId?: SortOrder
     slug?: SortOrder
-    subtitle?: SortOrder
-    imageUrl?: SortOrder
-    imageAlt?: SortOrder
     position?: SortOrder
     semanticKey?: SortOrder
     createdAt?: SortOrder
@@ -18748,10 +18661,7 @@ export namespace Prisma {
   export type GuideClassificationCreateWithoutTabInput = {
     id?: string
     slug: string
-    subtitle?: string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: string
-    imageAlt?: string
+    blocks?: JsonNullValueInput | InputJsonValue
     position: number
     semanticKey?: string | null
     createdAt?: Date | string
@@ -18761,10 +18671,7 @@ export namespace Prisma {
   export type GuideClassificationUncheckedCreateWithoutTabInput = {
     id?: string
     slug: string
-    subtitle?: string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: string
-    imageAlt?: string
+    blocks?: JsonNullValueInput | InputJsonValue
     position: number
     semanticKey?: string | null
     createdAt?: Date | string
@@ -18898,10 +18805,7 @@ export namespace Prisma {
     id?: StringFilter<"GuideClassification"> | string
     tabId?: StringFilter<"GuideClassification"> | string
     slug?: StringFilter<"GuideClassification"> | string
-    subtitle?: StringFilter<"GuideClassification"> | string
-    paragraphs?: JsonFilter<"GuideClassification">
-    imageUrl?: StringFilter<"GuideClassification"> | string
-    imageAlt?: StringFilter<"GuideClassification"> | string
+    blocks?: JsonFilter<"GuideClassification">
     position?: IntFilter<"GuideClassification"> | number
     semanticKey?: StringNullableFilter<"GuideClassification"> | string | null
     createdAt?: DateTimeFilter<"GuideClassification"> | Date | string
@@ -19815,10 +19719,7 @@ export namespace Prisma {
   export type GuideClassificationCreateManyTabInput = {
     id?: string
     slug: string
-    subtitle?: string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: string
-    imageAlt?: string
+    blocks?: JsonNullValueInput | InputJsonValue
     position: number
     semanticKey?: string | null
     createdAt?: Date | string
@@ -19907,10 +19808,7 @@ export namespace Prisma {
   export type GuideClassificationUpdateWithoutTabInput = {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    subtitle?: StringFieldUpdateOperationsInput | string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    imageAlt?: StringFieldUpdateOperationsInput | string
+    blocks?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -19920,10 +19818,7 @@ export namespace Prisma {
   export type GuideClassificationUncheckedUpdateWithoutTabInput = {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    subtitle?: StringFieldUpdateOperationsInput | string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    imageAlt?: StringFieldUpdateOperationsInput | string
+    blocks?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -19933,10 +19828,7 @@ export namespace Prisma {
   export type GuideClassificationUncheckedUpdateManyWithoutTabInput = {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
-    subtitle?: StringFieldUpdateOperationsInput | string
-    paragraphs?: JsonNullValueInput | InputJsonValue
-    imageUrl?: StringFieldUpdateOperationsInput | string
-    imageAlt?: StringFieldUpdateOperationsInput | string
+    blocks?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     semanticKey?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string

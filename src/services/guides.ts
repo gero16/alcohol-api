@@ -8,9 +8,9 @@ import type {
   TableColumn,
 } from "../domain/contracts";
 import {
-  classificationParagraphsFromJson,
-  classificationParagraphsToJson,
-} from "../domain/classificationParagraphs";
+  classificationBlocksFromJson,
+  classificationBlocksToJson,
+} from "../domain/classificationBlocks";
 import { parseGuideSemanticKey, assertGuideSemanticKeysInPayload } from "../domain/guideSemantics";
 import { guideDetailInclude, type GuideDetailRecord } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
@@ -32,10 +32,7 @@ function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideI
     classifications: {
       create: (tab.classifications ?? []).map((c: SeedGuideClassification, index) => ({
         slug: c.slug,
-        subtitle: c.subtitle ?? "",
-        paragraphs: classificationParagraphsToJson(c.paragraphs ?? []),
-        imageUrl: c.imageUrl?.trim() ? c.imageUrl : "",
-        imageAlt: c.imageAlt?.trim() ? c.imageAlt : "",
+        blocks: classificationBlocksToJson(c.blocks ?? []),
         position: index,
         semanticKey: parseGuideSemanticKey(c.semanticKey),
       })),
@@ -175,10 +172,7 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
       semanticKey: tab.semanticKey ?? undefined,
       classifications: tab.classifications.map((c) => ({
         slug: c.slug,
-        subtitle: c.subtitle,
-        paragraphs: classificationParagraphsFromJson(c.paragraphs),
-        imageUrl: c.imageUrl,
-        imageAlt: c.imageAlt,
+        blocks: classificationBlocksFromJson(c.blocks),
         semanticKey: c.semanticKey ?? undefined,
       })),
       sections: tab.sections.map((section) => ({

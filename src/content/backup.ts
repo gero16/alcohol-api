@@ -9,7 +9,7 @@ import type {
   SeedGlossaryItem,
   TableColumn,
 } from "../domain/contracts";
-import { classificationParagraphsFromJson } from "../domain/classificationParagraphs";
+import { classificationBlocksFromJson } from "../domain/classificationBlocks";
 import {
   glossaryItemInclude,
   guideDetailInclude,
@@ -37,10 +37,7 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
         semanticKey: tab.semanticKey ?? undefined,
         classifications: tab.classifications.map((c) => ({
           slug: c.slug,
-          subtitle: c.subtitle,
-          paragraphs: classificationParagraphsFromJson(c.paragraphs),
-          imageUrl: c.imageUrl || undefined,
-          imageAlt: c.imageAlt || undefined,
+          blocks: classificationBlocksFromJson(c.blocks),
           semanticKey: c.semanticKey ?? undefined,
         })),
         sections: tab.sections.map((section) => ({

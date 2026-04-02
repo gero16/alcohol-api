@@ -56,15 +56,12 @@ model GuideTab {
   @@index([guideId, position])
 }
 
-/// Bloques de marco o clasificación: subtítulo, párrafos e imagen opcional (sin título de tarjeta como GuideSection).
+/// Marco o clasificación: secuencia ordenada de subtítulos, párrafos e imágenes (JSON).
 model GuideClassification {
   id          String   @id @default(cuid())
   tabId       String
   slug        String
-  subtitle    String   @default("")
-  paragraphs  Json     @default("[]")
-  imageUrl    String   @default("")
-  imageAlt    String   @default("")
+  blocks      Json     @default("[]")
   position    Int
   semanticKey String?
   createdAt   DateTime @default(now())

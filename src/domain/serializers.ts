@@ -8,7 +8,7 @@ import type {
   ApiGuideTable,
   TableColumn,
 } from "./contracts";
-import { classificationParagraphsFromJson } from "./classificationParagraphs";
+import { classificationBlocksFromJson } from "./classificationBlocks";
 
 export const guideDetailInclude = {
   category: true,
@@ -123,10 +123,7 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
       classifications: tab.classifications.map((c) => ({
         id: c.id,
         slug: c.slug,
-        subtitle: c.subtitle,
-        paragraphs: classificationParagraphsFromJson(c.paragraphs),
-        imageUrl: c.imageUrl,
-        imageAlt: c.imageAlt,
+        blocks: classificationBlocksFromJson(c.blocks),
         semanticKey: c.semanticKey ?? undefined,
       })),
       sections: tab.sections.map((section) => ({

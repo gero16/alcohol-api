@@ -11,7 +11,8 @@
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "backup:export": "tsx src/scripts/export-backup.ts",
-    "db:sync": "npm run db:push && npm run db:seed"
+    "db:sync": "npm run db:push && npm run db:seed",
+    "content:sync": "npm run db:sync"
   },
   "keywords": [
     "fastify",

@@ -1,5 +1,3 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
 import type {
   ApiCategory,
   ApiGlossaryItem,
@@ -21,101 +19,6 @@ import {
   type GuideDetailRecord,
 } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
-
-const BACKUP_FILE_PATH = path.resolve(__dirname, "generated-backup.json");
-
-function toBackupId(...parts: string[]) {
-  return `backup:${parts.join(":")}`;
-}
-
-function toApiCategoryFromDatasetCategory(
-  category: SeedDataset["categories"][number],
-  dataset: SeedDataset,
-): ApiCategory {
-  return {
-    id: toBackupId("category", category.slug),
-    slug: category.slug,
-    position: category.position,
-    title: category.title,
-    summary: category.summary,
-    abv: category.abv,
-    origin: category.origin,
-    imageUrl: category.imageUrl,
-    imageAlt: category.imageAlt,
-    hasGuide: dataset.guides.some((guide) => guide.categorySlug === category.slug),
-  };
-}
-
-function toApiGuideDetailFromSeed(guide: SeedGuide, dataset: SeedDataset): ApiGuideDetail {
-  const category = dataset.categories.find((item) => item.slug === guide.categorySlug);
-
-  if (!category) {
-    throw new Error(`BACKUP_CATEGORY_NOT_FOUND:${guide.categorySlug}`);
-  }
-
-  return {
-    id: toBackupId("guide", guide.categorySlug),
-    category: toApiCategoryFromDatasetCategory(category, dataset),
-    title: guide.title,
-    type: guide.type,
-    tabs: guide.tabs.map((tab) => ({
-      id: toBackupId("guide-tab", guide.categorySlug, tab.slug),
-      slug: tab.slug,
-      label: tab.label,
-      panelTitle: tab.panelTitle,
-      noteTitle: tab.noteTitle,
-      noteContent: tab.noteContent,
-      semanticKey: tab.semanticKey,
-      sections: (tab.sections ?? []).map((section) => ({
-        id: toBackupId("guide-section", guide.categorySlug, tab.slug, section.slug),
-        slug: section.slug,
-        title: section.title,
-        subtitle: section.subtitle,
-        imageUrl: section.imageUrl,
-        imageAlt: section.imageAlt,
-        semanticKey: section.semanticKey,
-        paragraphs: [...section.paragraphs],
-      })),
-      tables: (tab.tables ?? []).map((table) => ({
-        id: toBackupId("guide-table", guide.categorySlug, tab.slug, table.slug),
-        slug: table.slug,
-        title: table.title,
-        displayMode: table.rows.some((row) => row.imageUrl) ? "cards" : "table",
-        sectionSlug: table.sectionSlug,
-        semanticKey: table.semanticKey,
-        columns: table.columns,
-        rows: table.rows.map((row, rowIndex) => ({
-          id: toBackupId("guide-table-row", guide.categorySlug, tab.slug, table.slug, String(rowIndex)),
-          term: row.term,
-          composition: row.composition,
-          objective: row.objective,
-          description: row.description,
-          reference: row.reference,
-          abv: row.abv,
-          imageUrl: row.imageUrl,
-          imageAlt: row.imageAlt,
-        })),
-      })),
-    })),
-  };
-}
-
-function toApiGuideSummaryFromSeed(guide: SeedGuide, dataset: SeedDataset): ApiGuideSummary {
-  const category = dataset.categories.find((item) => item.slug === guide.categorySlug);
-
-  if (!category) {
-    throw new Error(`BACKUP_CATEGORY_NOT_FOUND:${guide.categorySlug}`);
-  }
-
-  return {
-    id: toBackupId("guide", guide.categorySlug),
-    categorySlug: guide.categorySlug,
-    categoryTitle: category.title,
-    title: guide.title,
-    type: guide.type,
-    tabsCount: guide.tabs.length,
-  };
-}
 
 function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
   return {
@@ -173,20 +76,7 @@ function toSeedGlossaryItemFromRecord(item: GlossaryItemRecord): SeedGlossaryIte
   };
 }
 
-export function getBackupFilePath() {
-  return BACKUP_FILE_PATH;
-}
-
-export async function loadBackupDataset(): Promise<SeedDataset> {
-  const rawContent = await readFile(BACKUP_FILE_PATH, "utf8");
-  return JSON.parse(rawContent) as SeedDataset;
-}
-
-export async function writeBackupDataset(dataset: SeedDataset) {
-  await mkdir(path.dirname(BACKUP_FILE_PATH), { recursive: true });
-  await writeFile(BACKUP_FILE_PATH, `${JSON.stringify(dataset, null, 2)}\n`, "utf8");
-}
-
+/** Volcado lógico desde PostgreSQL (p. ej. métricas admin o dump por stdout). No escribe archivos. */
 export async function buildSeedDatasetFromDatabase(): Promise<SeedDataset> {
   const prisma = getPrismaOrThrow();
 
@@ -219,82 +109,6 @@ export async function buildSeedDatasetFromDatabase(): Promise<SeedDataset> {
       .sort((left, right) => left.category.position - right.category.position)
       .map(toSeedGuideFromRecord),
     glossary: glossary.map(toSeedGlossaryItemFromRecord),
-  };
-}
-
-export async function exportBackupDataset() {
-  const dataset = await buildSeedDatasetFromDatabase();
-  await writeBackupDataset(dataset);
-  return dataset;
-}
-
-export function listCategoriesFromBackup(dataset: SeedDataset): ApiCategory[] {
-  return dataset.categories
-    .slice()
-    .sort((left, right) => left.position - right.position)
-    .map((category) => toApiCategoryFromDatasetCategory(category, dataset));
-}
-
-export function getCategoryFromBackup(dataset: SeedDataset, slug: string): ApiCategory | null {
-  const category = dataset.categories.find((item) => item.slug === slug);
-  return category ? toApiCategoryFromDatasetCategory(category, dataset) : null;
-}
-
-export function listGuideSummariesFromBackup(dataset: SeedDataset): ApiGuideSummary[] {
-  return dataset.guides
-    .slice()
-    .sort((left, right) => {
-      const leftPosition = dataset.categories.find((category) => category.slug === left.categorySlug)?.position ?? 0;
-      const rightPosition =
-        dataset.categories.find((category) => category.slug === right.categorySlug)?.position ?? 0;
-
-      return leftPosition - rightPosition;
-    })
-    .map((guide) => toApiGuideSummaryFromSeed(guide, dataset));
-}
-
-export function getGuideDetailFromBackup(dataset: SeedDataset, categorySlug: string): ApiGuideDetail | null {
-  const guide = dataset.guides.find((item) => item.categorySlug === categorySlug);
-  return guide ? toApiGuideDetailFromSeed(guide, dataset) : null;
-}
-
-export function listGuideDetailsFromBackup(dataset: SeedDataset): ApiGuideDetail[] {
-  return dataset.guides
-    .slice()
-    .sort((left, right) => {
-      const leftPosition = dataset.categories.find((category) => category.slug === left.categorySlug)?.position ?? 0;
-      const rightPosition =
-        dataset.categories.find((category) => category.slug === right.categorySlug)?.position ?? 0;
-
-      return leftPosition - rightPosition;
-    })
-    .map((guide) => toApiGuideDetailFromSeed(guide, dataset));
-}
-
-export function listGlossaryFromBackup(dataset: SeedDataset): ApiGlossaryItem[] {
-  return dataset.glossary
-    .slice()
-    .sort((left, right) => left.term.localeCompare(right.term, "es"))
-    .map((item) => ({
-      ...item,
-      details: [...item.details],
-      relatedCategories: [...item.relatedCategories],
-      featured: item.featured || undefined,
-    }));
-}
-
-export function getGlossaryItemFromBackup(dataset: SeedDataset, slug: string): ApiGlossaryItem | null {
-  const item = dataset.glossary.find((entry) => entry.slug === slug);
-
-  if (!item) {
-    return null;
-  }
-
-  return {
-    ...item,
-    details: [...item.details],
-    relatedCategories: [...item.relatedCategories],
-    featured: item.featured || undefined,
   };
 }
 

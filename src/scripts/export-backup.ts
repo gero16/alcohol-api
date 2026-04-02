@@ -1,8 +1,12 @@
-import { exportBackupDataset, getBackupFilePath } from "../content/backup";
+import { buildSeedDatasetFromDatabase } from "../content/backup";
 
+/**
+ * Escribe un snapshot JSON por stdout (p. ej. `npm run backup:export > dump.json`).
+ * No crea archivos dentro del repositorio.
+ */
 async function main() {
-  await exportBackupDataset();
-  console.log(`Respaldo JSON generado en ${getBackupFilePath()}.`);
+  const snapshot = await buildSeedDatasetFromDatabase();
+  process.stdout.write(`${JSON.stringify(snapshot, null, 2)}\n`);
 }
 
 main().catch((error) => {

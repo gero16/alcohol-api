@@ -1,40 +1,22 @@
-import alcoholData from "../src/content/alcohol-data.json";
-import { exportBackupDataset } from "../src/content/backup";
-import type { SeedDataset } from "../src/domain/contracts";
 import { getPrismaOrThrow } from "../src/lib/prisma";
-import { replaceGlossaryItems } from "../src/services/glossary";
-import { replaceGuideForCategory } from "../src/services/guides";
 
-const dataset = alcoholData as SeedDataset;
-const prisma = getPrismaOrThrow();
-
+/**
+ * Sin dataset en disco: PostgreSQL es la única fuente de verdad.
+ * Este seed solo comprueba conexión; el contenido se carga por API o herramientas.
+ */
 async function main() {
-  await prisma.glossaryItem.deleteMany();
-  await prisma.guide.deleteMany();
-  await prisma.category.deleteMany();
-
-  for (const category of dataset.categories) {
-    await prisma.category.create({
-      data: category,
-    });
+  const prisma = getPrismaOrThrow();
+  try {
+    await prisma.$connect();
+    console.log(
+      "Seed: conexión a PostgreSQL correcta. Categorías, guías y glosario viven solo en la base (API / admin).",
+    );
+  } finally {
+    await prisma.$disconnect();
   }
-
-  for (const guide of dataset.guides) {
-    await replaceGuideForCategory(guide.categorySlug, guide);
-  }
-
-  await replaceGlossaryItems(dataset.glossary);
-
-  await exportBackupDataset();
 }
 
-main()
-  .then(async () => {
-    await prisma.$disconnect();
-    console.log("Base de datos inicializada desde alcohol-data.json.");
-  })
-  .catch(async (error) => {
-    console.error(error);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

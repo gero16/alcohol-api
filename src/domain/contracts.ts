@@ -5,6 +5,7 @@ export type TableColumnKey =
   | "abv"
   | "ageingMaturation"
   | "distillationMethod"
+  | "profileCharacter"
   | "body"
   | "finish"
   | "regionOrigin"
@@ -47,6 +48,7 @@ export type SeedGuideTableRow = {
   abv?: string;
   ageingMaturation?: string;
   distillationMethod?: string;
+  profileCharacter?: string;
   body?: string;
   finish?: string;
   regionOrigin?: string;

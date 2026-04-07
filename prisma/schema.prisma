@@ -133,6 +133,7 @@ model GuideTableRow {
   abv          String?
   ageingMaturation String?
   distillationMethod String?
+  profileCharacter String?
   body         String?
   finish       String?
   regionOrigin String?

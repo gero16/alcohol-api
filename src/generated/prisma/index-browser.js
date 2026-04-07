@@ -215,6 +215,7 @@ exports.Prisma.GuideTableRowScalarFieldEnum = {
   abv: 'abv',
   ageingMaturation: 'ageingMaturation',
   distillationMethod: 'distillationMethod',
+  profileCharacter: 'profileCharacter',
   body: 'body',
   finish: 'finish',
   regionOrigin: 'regionOrigin',

@@ -160,6 +160,7 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
             distillationMethod: row.distillationMethod ?? undefined,
             profileCharacter: row.profileCharacter ?? undefined,
             body: row.body ?? undefined,
+            intensity: row.intensity ?? undefined,
             finish: row.finish ?? undefined,
             regionOrigin: row.regionOrigin ?? undefined,
             visualColor: row.visualColor ?? undefined,

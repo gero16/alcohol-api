@@ -10239,6 +10239,7 @@ export namespace Prisma {
     distillationMethod: string | null
     profileCharacter: string | null
     body: string | null
+    intensity: string | null
     finish: string | null
     regionOrigin: string | null
     visualColor: string | null
@@ -10265,6 +10266,7 @@ export namespace Prisma {
     distillationMethod: string | null
     profileCharacter: string | null
     body: string | null
+    intensity: string | null
     finish: string | null
     regionOrigin: string | null
     visualColor: string | null
@@ -10291,6 +10293,7 @@ export namespace Prisma {
     distillationMethod: number
     profileCharacter: number
     body: number
+    intensity: number
     finish: number
     regionOrigin: number
     visualColor: number
@@ -10327,6 +10330,7 @@ export namespace Prisma {
     distillationMethod?: true
     profileCharacter?: true
     body?: true
+    intensity?: true
     finish?: true
     regionOrigin?: true
     visualColor?: true
@@ -10353,6 +10357,7 @@ export namespace Prisma {
     distillationMethod?: true
     profileCharacter?: true
     body?: true
+    intensity?: true
     finish?: true
     regionOrigin?: true
     visualColor?: true
@@ -10379,6 +10384,7 @@ export namespace Prisma {
     distillationMethod?: true
     profileCharacter?: true
     body?: true
+    intensity?: true
     finish?: true
     regionOrigin?: true
     visualColor?: true
@@ -10492,6 +10498,7 @@ export namespace Prisma {
     distillationMethod: string | null
     profileCharacter: string | null
     body: string | null
+    intensity: string | null
     finish: string | null
     regionOrigin: string | null
     visualColor: string | null
@@ -10537,6 +10544,7 @@ export namespace Prisma {
     distillationMethod?: boolean
     profileCharacter?: boolean
     body?: boolean
+    intensity?: boolean
     finish?: boolean
     regionOrigin?: boolean
     visualColor?: boolean
@@ -10564,6 +10572,7 @@ export namespace Prisma {
     distillationMethod?: boolean
     profileCharacter?: boolean
     body?: boolean
+    intensity?: boolean
     finish?: boolean
     regionOrigin?: boolean
     visualColor?: boolean
@@ -10591,6 +10600,7 @@ export namespace Prisma {
     distillationMethod?: boolean
     profileCharacter?: boolean
     body?: boolean
+    intensity?: boolean
     finish?: boolean
     regionOrigin?: boolean
     visualColor?: boolean
@@ -10618,6 +10628,7 @@ export namespace Prisma {
     distillationMethod?: boolean
     profileCharacter?: boolean
     body?: boolean
+    intensity?: boolean
     finish?: boolean
     regionOrigin?: boolean
     visualColor?: boolean
@@ -10631,7 +10642,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "reference" | "abv" | "ageingMaturation" | "distillationMethod" | "profileCharacter" | "body" | "finish" | "regionOrigin" | "visualColor" | "tannins" | "acidity" | "examples" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
+  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "reference" | "abv" | "ageingMaturation" | "distillationMethod" | "profileCharacter" | "body" | "intensity" | "finish" | "regionOrigin" | "visualColor" | "tannins" | "acidity" | "examples" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
   export type GuideTableRowInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     table?: boolean | GuideTableDefaultArgs<ExtArgs>
   }
@@ -10660,6 +10671,7 @@ export namespace Prisma {
       distillationMethod: string | null
       profileCharacter: string | null
       body: string | null
+      intensity: string | null
       finish: string | null
       regionOrigin: string | null
       visualColor: string | null
@@ -11107,6 +11119,7 @@ export namespace Prisma {
     readonly distillationMethod: FieldRef<"GuideTableRow", 'String'>
     readonly profileCharacter: FieldRef<"GuideTableRow", 'String'>
     readonly body: FieldRef<"GuideTableRow", 'String'>
+    readonly intensity: FieldRef<"GuideTableRow", 'String'>
     readonly finish: FieldRef<"GuideTableRow", 'String'>
     readonly regionOrigin: FieldRef<"GuideTableRow", 'String'>
     readonly visualColor: FieldRef<"GuideTableRow", 'String'>
@@ -15000,6 +15013,7 @@ export namespace Prisma {
     distillationMethod: 'distillationMethod',
     profileCharacter: 'profileCharacter',
     body: 'body',
+    intensity: 'intensity',
     finish: 'finish',
     regionOrigin: 'regionOrigin',
     visualColor: 'visualColor',
@@ -15754,6 +15768,7 @@ export namespace Prisma {
     distillationMethod?: StringNullableFilter<"GuideTableRow"> | string | null
     profileCharacter?: StringNullableFilter<"GuideTableRow"> | string | null
     body?: StringNullableFilter<"GuideTableRow"> | string | null
+    intensity?: StringNullableFilter<"GuideTableRow"> | string | null
     finish?: StringNullableFilter<"GuideTableRow"> | string | null
     regionOrigin?: StringNullableFilter<"GuideTableRow"> | string | null
     visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -15781,6 +15796,7 @@ export namespace Prisma {
     distillationMethod?: SortOrderInput | SortOrder
     profileCharacter?: SortOrderInput | SortOrder
     body?: SortOrderInput | SortOrder
+    intensity?: SortOrderInput | SortOrder
     finish?: SortOrderInput | SortOrder
     regionOrigin?: SortOrderInput | SortOrder
     visualColor?: SortOrderInput | SortOrder
@@ -15811,6 +15827,7 @@ export namespace Prisma {
     distillationMethod?: StringNullableFilter<"GuideTableRow"> | string | null
     profileCharacter?: StringNullableFilter<"GuideTableRow"> | string | null
     body?: StringNullableFilter<"GuideTableRow"> | string | null
+    intensity?: StringNullableFilter<"GuideTableRow"> | string | null
     finish?: StringNullableFilter<"GuideTableRow"> | string | null
     regionOrigin?: StringNullableFilter<"GuideTableRow"> | string | null
     visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -15838,6 +15855,7 @@ export namespace Prisma {
     distillationMethod?: SortOrderInput | SortOrder
     profileCharacter?: SortOrderInput | SortOrder
     body?: SortOrderInput | SortOrder
+    intensity?: SortOrderInput | SortOrder
     finish?: SortOrderInput | SortOrder
     regionOrigin?: SortOrderInput | SortOrder
     visualColor?: SortOrderInput | SortOrder
@@ -15872,6 +15890,7 @@ export namespace Prisma {
     distillationMethod?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     profileCharacter?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     body?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    intensity?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     finish?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     regionOrigin?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     visualColor?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
@@ -16697,6 +16716,7 @@ export namespace Prisma {
     distillationMethod?: string | null
     profileCharacter?: string | null
     body?: string | null
+    intensity?: string | null
     finish?: string | null
     regionOrigin?: string | null
     visualColor?: string | null
@@ -16724,6 +16744,7 @@ export namespace Prisma {
     distillationMethod?: string | null
     profileCharacter?: string | null
     body?: string | null
+    intensity?: string | null
     finish?: string | null
     regionOrigin?: string | null
     visualColor?: string | null
@@ -16749,6 +16770,7 @@ export namespace Prisma {
     distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
     profileCharacter?: NullableStringFieldUpdateOperationsInput | string | null
     body?: NullableStringFieldUpdateOperationsInput | string | null
+    intensity?: NullableStringFieldUpdateOperationsInput | string | null
     finish?: NullableStringFieldUpdateOperationsInput | string | null
     regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16776,6 +16798,7 @@ export namespace Prisma {
     distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
     profileCharacter?: NullableStringFieldUpdateOperationsInput | string | null
     body?: NullableStringFieldUpdateOperationsInput | string | null
+    intensity?: NullableStringFieldUpdateOperationsInput | string | null
     finish?: NullableStringFieldUpdateOperationsInput | string | null
     regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16802,6 +16825,7 @@ export namespace Prisma {
     distillationMethod?: string | null
     profileCharacter?: string | null
     body?: string | null
+    intensity?: string | null
     finish?: string | null
     regionOrigin?: string | null
     visualColor?: string | null
@@ -16827,6 +16851,7 @@ export namespace Prisma {
     distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
     profileCharacter?: NullableStringFieldUpdateOperationsInput | string | null
     body?: NullableStringFieldUpdateOperationsInput | string | null
+    intensity?: NullableStringFieldUpdateOperationsInput | string | null
     finish?: NullableStringFieldUpdateOperationsInput | string | null
     regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16853,6 +16878,7 @@ export namespace Prisma {
     distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
     profileCharacter?: NullableStringFieldUpdateOperationsInput | string | null
     body?: NullableStringFieldUpdateOperationsInput | string | null
+    intensity?: NullableStringFieldUpdateOperationsInput | string | null
     finish?: NullableStringFieldUpdateOperationsInput | string | null
     regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17654,6 +17680,7 @@ export namespace Prisma {
     distillationMethod?: SortOrder
     profileCharacter?: SortOrder
     body?: SortOrder
+    intensity?: SortOrder
     finish?: SortOrder
     regionOrigin?: SortOrder
     visualColor?: SortOrder
@@ -17684,6 +17711,7 @@ export namespace Prisma {
     distillationMethod?: SortOrder
     profileCharacter?: SortOrder
     body?: SortOrder
+    intensity?: SortOrder
     finish?: SortOrder
     regionOrigin?: SortOrder
     visualColor?: SortOrder
@@ -17710,6 +17738,7 @@ export namespace Prisma {
     distillationMethod?: SortOrder
     profileCharacter?: SortOrder
     body?: SortOrder
+    intensity?: SortOrder
     finish?: SortOrder
     regionOrigin?: SortOrder
     visualColor?: SortOrder
@@ -19437,6 +19466,7 @@ export namespace Prisma {
     distillationMethod?: string | null
     profileCharacter?: string | null
     body?: string | null
+    intensity?: string | null
     finish?: string | null
     regionOrigin?: string | null
     visualColor?: string | null
@@ -19462,6 +19492,7 @@ export namespace Prisma {
     distillationMethod?: string | null
     profileCharacter?: string | null
     body?: string | null
+    intensity?: string | null
     finish?: string | null
     regionOrigin?: string | null
     visualColor?: string | null
@@ -19560,6 +19591,7 @@ export namespace Prisma {
     distillationMethod?: StringNullableFilter<"GuideTableRow"> | string | null
     profileCharacter?: StringNullableFilter<"GuideTableRow"> | string | null
     body?: StringNullableFilter<"GuideTableRow"> | string | null
+    intensity?: StringNullableFilter<"GuideTableRow"> | string | null
     finish?: StringNullableFilter<"GuideTableRow"> | string | null
     regionOrigin?: StringNullableFilter<"GuideTableRow"> | string | null
     visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -20199,6 +20231,7 @@ export namespace Prisma {
     distillationMethod?: string | null
     profileCharacter?: string | null
     body?: string | null
+    intensity?: string | null
     finish?: string | null
     regionOrigin?: string | null
     visualColor?: string | null
@@ -20224,6 +20257,7 @@ export namespace Prisma {
     distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
     profileCharacter?: NullableStringFieldUpdateOperationsInput | string | null
     body?: NullableStringFieldUpdateOperationsInput | string | null
+    intensity?: NullableStringFieldUpdateOperationsInput | string | null
     finish?: NullableStringFieldUpdateOperationsInput | string | null
     regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20249,6 +20283,7 @@ export namespace Prisma {
     distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
     profileCharacter?: NullableStringFieldUpdateOperationsInput | string | null
     body?: NullableStringFieldUpdateOperationsInput | string | null
+    intensity?: NullableStringFieldUpdateOperationsInput | string | null
     finish?: NullableStringFieldUpdateOperationsInput | string | null
     regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20274,6 +20309,7 @@ export namespace Prisma {
     distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
     profileCharacter?: NullableStringFieldUpdateOperationsInput | string | null
     body?: NullableStringFieldUpdateOperationsInput | string | null
+    intensity?: NullableStringFieldUpdateOperationsInput | string | null
     finish?: NullableStringFieldUpdateOperationsInput | string | null
     regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null

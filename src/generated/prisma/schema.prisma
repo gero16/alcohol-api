@@ -135,6 +135,7 @@ model GuideTableRow {
   distillationMethod String?
   profileCharacter   String?
   body               String?
+  intensity          String?
   finish             String?
   regionOrigin       String?
   visualColor        String?

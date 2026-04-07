@@ -9,6 +9,7 @@ export type TableColumnKey =
   | "distillationMethod"
   | "profileCharacter"
   | "body"
+  | "intensity"
   | "finish"
   | "regionOrigin"
   | "visualColor"
@@ -54,6 +55,7 @@ export type SeedGuideTableRow = {
   distillationMethod?: string;
   profileCharacter?: string;
   body?: string;
+  intensity?: string;
   finish?: string;
   regionOrigin?: string;
   visualColor?: string;

@@ -154,6 +154,7 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
             composition: row.composition ?? undefined,
             objective: row.objective ?? undefined,
             description: row.description ?? undefined,
+            reference: row.reference ?? undefined,
             abv: row.abv ?? undefined,
             ageingMaturation: row.ageingMaturation ?? undefined,
             distillationMethod: row.distillationMethod ?? undefined,

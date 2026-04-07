@@ -123,20 +123,29 @@ model GuideTable {
 }
 
 model GuideTableRow {
-  id          String     @id @default(cuid())
-  tableId     String
-  term        String
-  composition String?
-  objective   String?
-  description String?
-  reference   String?
-  abv         String?
-  imageUrl    String?
-  imageAlt    String?
-  position    Int
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  table       GuideTable @relation(fields: [tableId], references: [id], onDelete: Cascade)
+  id                 String     @id @default(cuid())
+  tableId            String
+  term               String
+  composition        String?
+  objective          String?
+  description        String?
+  reference          String?
+  abv                String?
+  ageingMaturation   String?
+  distillationMethod String?
+  body               String?
+  finish             String?
+  regionOrigin       String?
+  visualColor        String?
+  tannins            String?
+  acidity            String?
+  examples           String?
+  imageUrl           String?
+  imageAlt           String?
+  position           Int
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+  table              GuideTable @relation(fields: [tableId], references: [id], onDelete: Cascade)
 
   @@index([tableId, position])
 }

@@ -11,7 +11,6 @@ import {
   classificationBlocksFromJson,
   classificationBlocksToJson,
 } from "../domain/classificationBlocks";
-import { decodeTableRowDescription, encodeTableRowDescription } from "../domain/tableRowDescriptions";
 import { parseGuideSemanticKey, assertGuideSemanticKeysInPayload } from "../domain/guideSemantics";
 import { guideDetailInclude, type GuideDetailRecord } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
@@ -80,9 +79,16 @@ function toGuideTableCreate(
         term: row.term,
         composition: row.composition,
         objective: row.objective,
-        description: encodeTableRowDescription(row),
-        reference: row.reference,
         abv: row.abv,
+        ageingMaturation: row.ageingMaturation,
+        distillationMethod: row.distillationMethod,
+        body: row.body,
+        finish: row.finish,
+        regionOrigin: row.regionOrigin,
+        visualColor: row.visualColor,
+        tannins: row.tannins,
+        acidity: row.acidity,
+        examples: row.examples,
         imageUrl: row.imageUrl,
         imageAlt: row.imageAlt,
         position: rowIndex,
@@ -194,12 +200,19 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
         semanticKey: table.semanticKey ?? undefined,
         columns: table.columns as TableColumn[],
         rows: table.rows.map((row) => ({
-          ...decodeTableRowDescription(row.description),
           term: row.term,
           composition: row.composition ?? undefined,
           objective: row.objective ?? undefined,
-          reference: row.reference ?? undefined,
           abv: row.abv ?? undefined,
+          ageingMaturation: row.ageingMaturation ?? undefined,
+          distillationMethod: row.distillationMethod ?? undefined,
+          body: row.body ?? undefined,
+          finish: row.finish ?? undefined,
+          regionOrigin: row.regionOrigin ?? undefined,
+          visualColor: row.visualColor ?? undefined,
+          tannins: row.tannins ?? undefined,
+          acidity: row.acidity ?? undefined,
+          examples: row.examples ?? row.reference ?? row.description ?? undefined,
           imageUrl: row.imageUrl ?? undefined,
           imageAlt: row.imageAlt ?? undefined,
         })),

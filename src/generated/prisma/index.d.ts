@@ -10235,6 +10235,15 @@ export namespace Prisma {
     description: string | null
     reference: string | null
     abv: string | null
+    ageingMaturation: string | null
+    distillationMethod: string | null
+    body: string | null
+    finish: string | null
+    regionOrigin: string | null
+    visualColor: string | null
+    tannins: string | null
+    acidity: string | null
+    examples: string | null
     imageUrl: string | null
     imageAlt: string | null
     position: number | null
@@ -10251,6 +10260,15 @@ export namespace Prisma {
     description: string | null
     reference: string | null
     abv: string | null
+    ageingMaturation: string | null
+    distillationMethod: string | null
+    body: string | null
+    finish: string | null
+    regionOrigin: string | null
+    visualColor: string | null
+    tannins: string | null
+    acidity: string | null
+    examples: string | null
     imageUrl: string | null
     imageAlt: string | null
     position: number | null
@@ -10267,6 +10285,15 @@ export namespace Prisma {
     description: number
     reference: number
     abv: number
+    ageingMaturation: number
+    distillationMethod: number
+    body: number
+    finish: number
+    regionOrigin: number
+    visualColor: number
+    tannins: number
+    acidity: number
+    examples: number
     imageUrl: number
     imageAlt: number
     position: number
@@ -10293,6 +10320,15 @@ export namespace Prisma {
     description?: true
     reference?: true
     abv?: true
+    ageingMaturation?: true
+    distillationMethod?: true
+    body?: true
+    finish?: true
+    regionOrigin?: true
+    visualColor?: true
+    tannins?: true
+    acidity?: true
+    examples?: true
     imageUrl?: true
     imageAlt?: true
     position?: true
@@ -10309,6 +10345,15 @@ export namespace Prisma {
     description?: true
     reference?: true
     abv?: true
+    ageingMaturation?: true
+    distillationMethod?: true
+    body?: true
+    finish?: true
+    regionOrigin?: true
+    visualColor?: true
+    tannins?: true
+    acidity?: true
+    examples?: true
     imageUrl?: true
     imageAlt?: true
     position?: true
@@ -10325,6 +10370,15 @@ export namespace Prisma {
     description?: true
     reference?: true
     abv?: true
+    ageingMaturation?: true
+    distillationMethod?: true
+    body?: true
+    finish?: true
+    regionOrigin?: true
+    visualColor?: true
+    tannins?: true
+    acidity?: true
+    examples?: true
     imageUrl?: true
     imageAlt?: true
     position?: true
@@ -10428,6 +10482,15 @@ export namespace Prisma {
     description: string | null
     reference: string | null
     abv: string | null
+    ageingMaturation: string | null
+    distillationMethod: string | null
+    body: string | null
+    finish: string | null
+    regionOrigin: string | null
+    visualColor: string | null
+    tannins: string | null
+    acidity: string | null
+    examples: string | null
     imageUrl: string | null
     imageAlt: string | null
     position: number
@@ -10463,6 +10526,15 @@ export namespace Prisma {
     description?: boolean
     reference?: boolean
     abv?: boolean
+    ageingMaturation?: boolean
+    distillationMethod?: boolean
+    body?: boolean
+    finish?: boolean
+    regionOrigin?: boolean
+    visualColor?: boolean
+    tannins?: boolean
+    acidity?: boolean
+    examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -10480,6 +10552,15 @@ export namespace Prisma {
     description?: boolean
     reference?: boolean
     abv?: boolean
+    ageingMaturation?: boolean
+    distillationMethod?: boolean
+    body?: boolean
+    finish?: boolean
+    regionOrigin?: boolean
+    visualColor?: boolean
+    tannins?: boolean
+    acidity?: boolean
+    examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -10497,6 +10578,15 @@ export namespace Prisma {
     description?: boolean
     reference?: boolean
     abv?: boolean
+    ageingMaturation?: boolean
+    distillationMethod?: boolean
+    body?: boolean
+    finish?: boolean
+    regionOrigin?: boolean
+    visualColor?: boolean
+    tannins?: boolean
+    acidity?: boolean
+    examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -10514,6 +10604,15 @@ export namespace Prisma {
     description?: boolean
     reference?: boolean
     abv?: boolean
+    ageingMaturation?: boolean
+    distillationMethod?: boolean
+    body?: boolean
+    finish?: boolean
+    regionOrigin?: boolean
+    visualColor?: boolean
+    tannins?: boolean
+    acidity?: boolean
+    examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
     position?: boolean
@@ -10521,7 +10620,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "reference" | "abv" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
+  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "reference" | "abv" | "ageingMaturation" | "distillationMethod" | "body" | "finish" | "regionOrigin" | "visualColor" | "tannins" | "acidity" | "examples" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
   export type GuideTableRowInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     table?: boolean | GuideTableDefaultArgs<ExtArgs>
   }
@@ -10546,6 +10645,15 @@ export namespace Prisma {
       description: string | null
       reference: string | null
       abv: string | null
+      ageingMaturation: string | null
+      distillationMethod: string | null
+      body: string | null
+      finish: string | null
+      regionOrigin: string | null
+      visualColor: string | null
+      tannins: string | null
+      acidity: string | null
+      examples: string | null
       imageUrl: string | null
       imageAlt: string | null
       position: number
@@ -10983,6 +11091,15 @@ export namespace Prisma {
     readonly description: FieldRef<"GuideTableRow", 'String'>
     readonly reference: FieldRef<"GuideTableRow", 'String'>
     readonly abv: FieldRef<"GuideTableRow", 'String'>
+    readonly ageingMaturation: FieldRef<"GuideTableRow", 'String'>
+    readonly distillationMethod: FieldRef<"GuideTableRow", 'String'>
+    readonly body: FieldRef<"GuideTableRow", 'String'>
+    readonly finish: FieldRef<"GuideTableRow", 'String'>
+    readonly regionOrigin: FieldRef<"GuideTableRow", 'String'>
+    readonly visualColor: FieldRef<"GuideTableRow", 'String'>
+    readonly tannins: FieldRef<"GuideTableRow", 'String'>
+    readonly acidity: FieldRef<"GuideTableRow", 'String'>
+    readonly examples: FieldRef<"GuideTableRow", 'String'>
     readonly imageUrl: FieldRef<"GuideTableRow", 'String'>
     readonly imageAlt: FieldRef<"GuideTableRow", 'String'>
     readonly position: FieldRef<"GuideTableRow", 'Int'>
@@ -14866,6 +14983,15 @@ export namespace Prisma {
     description: 'description',
     reference: 'reference',
     abv: 'abv',
+    ageingMaturation: 'ageingMaturation',
+    distillationMethod: 'distillationMethod',
+    body: 'body',
+    finish: 'finish',
+    regionOrigin: 'regionOrigin',
+    visualColor: 'visualColor',
+    tannins: 'tannins',
+    acidity: 'acidity',
+    examples: 'examples',
     imageUrl: 'imageUrl',
     imageAlt: 'imageAlt',
     position: 'position',
@@ -15610,6 +15736,15 @@ export namespace Prisma {
     description?: StringNullableFilter<"GuideTableRow"> | string | null
     reference?: StringNullableFilter<"GuideTableRow"> | string | null
     abv?: StringNullableFilter<"GuideTableRow"> | string | null
+    ageingMaturation?: StringNullableFilter<"GuideTableRow"> | string | null
+    distillationMethod?: StringNullableFilter<"GuideTableRow"> | string | null
+    body?: StringNullableFilter<"GuideTableRow"> | string | null
+    finish?: StringNullableFilter<"GuideTableRow"> | string | null
+    regionOrigin?: StringNullableFilter<"GuideTableRow"> | string | null
+    visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
+    tannins?: StringNullableFilter<"GuideTableRow"> | string | null
+    acidity?: StringNullableFilter<"GuideTableRow"> | string | null
+    examples?: StringNullableFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableFilter<"GuideTableRow"> | string | null
     position?: IntFilter<"GuideTableRow"> | number
@@ -15627,6 +15762,15 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder
     reference?: SortOrderInput | SortOrder
     abv?: SortOrderInput | SortOrder
+    ageingMaturation?: SortOrderInput | SortOrder
+    distillationMethod?: SortOrderInput | SortOrder
+    body?: SortOrderInput | SortOrder
+    finish?: SortOrderInput | SortOrder
+    regionOrigin?: SortOrderInput | SortOrder
+    visualColor?: SortOrderInput | SortOrder
+    tannins?: SortOrderInput | SortOrder
+    acidity?: SortOrderInput | SortOrder
+    examples?: SortOrderInput | SortOrder
     imageUrl?: SortOrderInput | SortOrder
     imageAlt?: SortOrderInput | SortOrder
     position?: SortOrder
@@ -15647,6 +15791,15 @@ export namespace Prisma {
     description?: StringNullableFilter<"GuideTableRow"> | string | null
     reference?: StringNullableFilter<"GuideTableRow"> | string | null
     abv?: StringNullableFilter<"GuideTableRow"> | string | null
+    ageingMaturation?: StringNullableFilter<"GuideTableRow"> | string | null
+    distillationMethod?: StringNullableFilter<"GuideTableRow"> | string | null
+    body?: StringNullableFilter<"GuideTableRow"> | string | null
+    finish?: StringNullableFilter<"GuideTableRow"> | string | null
+    regionOrigin?: StringNullableFilter<"GuideTableRow"> | string | null
+    visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
+    tannins?: StringNullableFilter<"GuideTableRow"> | string | null
+    acidity?: StringNullableFilter<"GuideTableRow"> | string | null
+    examples?: StringNullableFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableFilter<"GuideTableRow"> | string | null
     position?: IntFilter<"GuideTableRow"> | number
@@ -15664,6 +15817,15 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder
     reference?: SortOrderInput | SortOrder
     abv?: SortOrderInput | SortOrder
+    ageingMaturation?: SortOrderInput | SortOrder
+    distillationMethod?: SortOrderInput | SortOrder
+    body?: SortOrderInput | SortOrder
+    finish?: SortOrderInput | SortOrder
+    regionOrigin?: SortOrderInput | SortOrder
+    visualColor?: SortOrderInput | SortOrder
+    tannins?: SortOrderInput | SortOrder
+    acidity?: SortOrderInput | SortOrder
+    examples?: SortOrderInput | SortOrder
     imageUrl?: SortOrderInput | SortOrder
     imageAlt?: SortOrderInput | SortOrder
     position?: SortOrder
@@ -15688,6 +15850,15 @@ export namespace Prisma {
     description?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     reference?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     abv?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    ageingMaturation?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    distillationMethod?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    body?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    finish?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    regionOrigin?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    visualColor?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    tannins?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    acidity?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    examples?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     position?: IntWithAggregatesFilter<"GuideTableRow"> | number
@@ -16503,6 +16674,15 @@ export namespace Prisma {
     description?: string | null
     reference?: string | null
     abv?: string | null
+    ageingMaturation?: string | null
+    distillationMethod?: string | null
+    body?: string | null
+    finish?: string | null
+    regionOrigin?: string | null
+    visualColor?: string | null
+    tannins?: string | null
+    acidity?: string | null
+    examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
     position: number
@@ -16520,6 +16700,15 @@ export namespace Prisma {
     description?: string | null
     reference?: string | null
     abv?: string | null
+    ageingMaturation?: string | null
+    distillationMethod?: string | null
+    body?: string | null
+    finish?: string | null
+    regionOrigin?: string | null
+    visualColor?: string | null
+    tannins?: string | null
+    acidity?: string | null
+    examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
     position: number
@@ -16535,6 +16724,15 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
+    ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
+    distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
+    body?: NullableStringFieldUpdateOperationsInput | string | null
+    finish?: NullableStringFieldUpdateOperationsInput | string | null
+    regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
+    visualColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tannins?: NullableStringFieldUpdateOperationsInput | string | null
+    acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
@@ -16552,6 +16750,15 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
+    ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
+    distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
+    body?: NullableStringFieldUpdateOperationsInput | string | null
+    finish?: NullableStringFieldUpdateOperationsInput | string | null
+    regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
+    visualColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tannins?: NullableStringFieldUpdateOperationsInput | string | null
+    acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
@@ -16568,6 +16775,15 @@ export namespace Prisma {
     description?: string | null
     reference?: string | null
     abv?: string | null
+    ageingMaturation?: string | null
+    distillationMethod?: string | null
+    body?: string | null
+    finish?: string | null
+    regionOrigin?: string | null
+    visualColor?: string | null
+    tannins?: string | null
+    acidity?: string | null
+    examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
     position: number
@@ -16583,6 +16799,15 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
+    ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
+    distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
+    body?: NullableStringFieldUpdateOperationsInput | string | null
+    finish?: NullableStringFieldUpdateOperationsInput | string | null
+    regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
+    visualColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tannins?: NullableStringFieldUpdateOperationsInput | string | null
+    acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
@@ -16599,6 +16824,15 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
+    ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
+    distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
+    body?: NullableStringFieldUpdateOperationsInput | string | null
+    finish?: NullableStringFieldUpdateOperationsInput | string | null
+    regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
+    visualColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tannins?: NullableStringFieldUpdateOperationsInput | string | null
+    acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
@@ -17390,6 +17624,15 @@ export namespace Prisma {
     description?: SortOrder
     reference?: SortOrder
     abv?: SortOrder
+    ageingMaturation?: SortOrder
+    distillationMethod?: SortOrder
+    body?: SortOrder
+    finish?: SortOrder
+    regionOrigin?: SortOrder
+    visualColor?: SortOrder
+    tannins?: SortOrder
+    acidity?: SortOrder
+    examples?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -17410,6 +17653,15 @@ export namespace Prisma {
     description?: SortOrder
     reference?: SortOrder
     abv?: SortOrder
+    ageingMaturation?: SortOrder
+    distillationMethod?: SortOrder
+    body?: SortOrder
+    finish?: SortOrder
+    regionOrigin?: SortOrder
+    visualColor?: SortOrder
+    tannins?: SortOrder
+    acidity?: SortOrder
+    examples?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -17426,6 +17678,15 @@ export namespace Prisma {
     description?: SortOrder
     reference?: SortOrder
     abv?: SortOrder
+    ageingMaturation?: SortOrder
+    distillationMethod?: SortOrder
+    body?: SortOrder
+    finish?: SortOrder
+    regionOrigin?: SortOrder
+    visualColor?: SortOrder
+    tannins?: SortOrder
+    acidity?: SortOrder
+    examples?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
     position?: SortOrder
@@ -19143,6 +19404,15 @@ export namespace Prisma {
     description?: string | null
     reference?: string | null
     abv?: string | null
+    ageingMaturation?: string | null
+    distillationMethod?: string | null
+    body?: string | null
+    finish?: string | null
+    regionOrigin?: string | null
+    visualColor?: string | null
+    tannins?: string | null
+    acidity?: string | null
+    examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
     position: number
@@ -19158,6 +19428,15 @@ export namespace Prisma {
     description?: string | null
     reference?: string | null
     abv?: string | null
+    ageingMaturation?: string | null
+    distillationMethod?: string | null
+    body?: string | null
+    finish?: string | null
+    regionOrigin?: string | null
+    visualColor?: string | null
+    tannins?: string | null
+    acidity?: string | null
+    examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
     position: number
@@ -19246,6 +19525,15 @@ export namespace Prisma {
     description?: StringNullableFilter<"GuideTableRow"> | string | null
     reference?: StringNullableFilter<"GuideTableRow"> | string | null
     abv?: StringNullableFilter<"GuideTableRow"> | string | null
+    ageingMaturation?: StringNullableFilter<"GuideTableRow"> | string | null
+    distillationMethod?: StringNullableFilter<"GuideTableRow"> | string | null
+    body?: StringNullableFilter<"GuideTableRow"> | string | null
+    finish?: StringNullableFilter<"GuideTableRow"> | string | null
+    regionOrigin?: StringNullableFilter<"GuideTableRow"> | string | null
+    visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
+    tannins?: StringNullableFilter<"GuideTableRow"> | string | null
+    acidity?: StringNullableFilter<"GuideTableRow"> | string | null
+    examples?: StringNullableFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableFilter<"GuideTableRow"> | string | null
     position?: IntFilter<"GuideTableRow"> | number
@@ -19875,6 +20163,15 @@ export namespace Prisma {
     description?: string | null
     reference?: string | null
     abv?: string | null
+    ageingMaturation?: string | null
+    distillationMethod?: string | null
+    body?: string | null
+    finish?: string | null
+    regionOrigin?: string | null
+    visualColor?: string | null
+    tannins?: string | null
+    acidity?: string | null
+    examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
     position: number
@@ -19890,6 +20187,15 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
+    ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
+    distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
+    body?: NullableStringFieldUpdateOperationsInput | string | null
+    finish?: NullableStringFieldUpdateOperationsInput | string | null
+    regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
+    visualColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tannins?: NullableStringFieldUpdateOperationsInput | string | null
+    acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
@@ -19905,6 +20211,15 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
+    ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
+    distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
+    body?: NullableStringFieldUpdateOperationsInput | string | null
+    finish?: NullableStringFieldUpdateOperationsInput | string | null
+    regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
+    visualColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tannins?: NullableStringFieldUpdateOperationsInput | string | null
+    acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number
@@ -19920,6 +20235,15 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
+    ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
+    distillationMethod?: NullableStringFieldUpdateOperationsInput | string | null
+    body?: NullableStringFieldUpdateOperationsInput | string | null
+    finish?: NullableStringFieldUpdateOperationsInput | string | null
+    regionOrigin?: NullableStringFieldUpdateOperationsInput | string | null
+    visualColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tannins?: NullableStringFieldUpdateOperationsInput | string | null
+    acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
     position?: IntFieldUpdateOperationsInput | number

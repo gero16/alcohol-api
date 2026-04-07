@@ -2,9 +2,16 @@ export type TableColumnKey =
   | "term"
   | "composition"
   | "objective"
-  | "description"
-  | "reference"
-  | "abv";
+  | "abv"
+  | "ageingMaturation"
+  | "distillationMethod"
+  | "body"
+  | "finish"
+  | "regionOrigin"
+  | "visualColor"
+  | "tannins"
+  | "acidity"
+  | "examples";
 
 export type TableColumn = {
   key: TableColumnKey;
@@ -37,10 +44,16 @@ export type SeedGuideTableRow = {
   term: string;
   composition?: string;
   objective?: string;
-  description?: string;
-  descriptions?: string[];
-  reference?: string;
   abv?: string;
+  ageingMaturation?: string;
+  distillationMethod?: string;
+  body?: string;
+  finish?: string;
+  regionOrigin?: string;
+  visualColor?: string;
+  tannins?: string;
+  acidity?: string;
+  examples?: string;
   imageUrl?: string;
   imageAlt?: string;
 };

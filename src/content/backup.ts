@@ -10,7 +10,6 @@ import type {
   TableColumn,
 } from "../domain/contracts";
 import { classificationBlocksFromJson } from "../domain/classificationBlocks";
-import { decodeTableRowDescription } from "../domain/tableRowDescriptions";
 import {
   glossaryItemInclude,
   guideDetailInclude,
@@ -57,12 +56,19 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
           semanticKey: table.semanticKey ?? undefined,
           columns: table.columns as TableColumn[],
           rows: table.rows.map((row) => ({
-            ...decodeTableRowDescription(row.description),
             term: row.term,
             composition: row.composition ?? undefined,
             objective: row.objective ?? undefined,
-            reference: row.reference ?? undefined,
             abv: row.abv ?? undefined,
+            ageingMaturation: row.ageingMaturation ?? undefined,
+            distillationMethod: row.distillationMethod ?? undefined,
+            body: row.body ?? undefined,
+            finish: row.finish ?? undefined,
+            regionOrigin: row.regionOrigin ?? undefined,
+            visualColor: row.visualColor ?? undefined,
+            tannins: row.tannins ?? undefined,
+            acidity: row.acidity ?? undefined,
+            examples: row.examples ?? row.reference ?? row.description ?? undefined,
             imageUrl: row.imageUrl ?? undefined,
             imageAlt: row.imageAlt ?? undefined,
           })),

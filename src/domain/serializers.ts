@@ -9,7 +9,6 @@ import type {
   TableColumn,
 } from "./contracts";
 import { classificationBlocksFromJson } from "./classificationBlocks";
-import { decodeTableRowDescription } from "./tableRowDescriptions";
 
 export const guideDetailInclude = {
   category: true,
@@ -150,13 +149,20 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
           semanticKey: table.semanticKey ?? undefined,
           columns,
           rows: table.rows.map((row) => ({
-            ...decodeTableRowDescription(row.description),
             id: row.id,
             term: row.term,
             composition: row.composition ?? undefined,
             objective: row.objective ?? undefined,
-            reference: row.reference ?? undefined,
             abv: row.abv ?? undefined,
+            ageingMaturation: row.ageingMaturation ?? undefined,
+            distillationMethod: row.distillationMethod ?? undefined,
+            body: row.body ?? undefined,
+            finish: row.finish ?? undefined,
+            regionOrigin: row.regionOrigin ?? undefined,
+            visualColor: row.visualColor ?? undefined,
+            tannins: row.tannins ?? undefined,
+            acidity: row.acidity ?? undefined,
+            examples: row.examples ?? row.reference ?? row.description ?? undefined,
             imageUrl: row.imageUrl ?? undefined,
             imageAlt: row.imageAlt ?? undefined,
           })),

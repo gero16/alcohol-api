@@ -15,6 +15,8 @@ import { parseGuideSemanticKey, assertGuideSemanticKeysInPayload } from "../doma
 import { guideDetailInclude, type GuideDetailRecord } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
 
+const CLASSIFICATIONS_TABLE_LOCATION = "__clasificaciones__";
+
 type SectionMutationInput = SeedGuideSection & {
   tabSlug?: string;
   position?: number;
@@ -208,6 +210,7 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
 function assertTableSectionSlugsMatchTabs(payload: GuideUpsertInput) {
   for (const tab of payload.tabs) {
     const sectionSlugs = new Set((tab.sections ?? []).map((s) => s.slug.trim()).filter(Boolean));
+    sectionSlugs.add(CLASSIFICATIONS_TABLE_LOCATION);
     for (const table of tab.tables ?? []) {
       const hint = table.sectionSlug?.trim();
       if (hint && !sectionSlugs.has(hint)) {

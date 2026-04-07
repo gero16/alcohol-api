@@ -34,6 +34,7 @@ const tableColumnSchema = {
         "composition",
         "objective",
         "description",
+        "notes",
         "reference",
         "abv",
         "ageingMaturation",
@@ -75,6 +76,7 @@ const tableRowSchema = {
     composition: { type: "string" },
     objective: { type: "string" },
     description: { type: "string" },
+    notes: { type: "string" },
     reference: { type: "string" },
     abv: { type: "string" },
     ageingMaturation: { type: "string" },
@@ -160,7 +162,6 @@ const guideSchema = {
               properties: {
                 slug: { type: "string", minLength: 1 },
                 title: { type: "string", minLength: 1 },
-                notes: { type: "string" },
                 sectionSlug: { type: "string" },
                 semanticKey: guideSemanticKeySchema,
                 columns: {

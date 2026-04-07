@@ -9040,7 +9040,6 @@ export namespace Prisma {
     tabId: string | null
     slug: string | null
     title: string | null
-    notes: string | null
     position: number | null
     sectionSlug: string | null
     semanticKey: string | null
@@ -9053,7 +9052,6 @@ export namespace Prisma {
     tabId: string | null
     slug: string | null
     title: string | null
-    notes: string | null
     position: number | null
     sectionSlug: string | null
     semanticKey: string | null
@@ -9066,7 +9064,6 @@ export namespace Prisma {
     tabId: number
     slug: number
     title: number
-    notes: number
     columns: number
     position: number
     sectionSlug: number
@@ -9090,7 +9087,6 @@ export namespace Prisma {
     tabId?: true
     slug?: true
     title?: true
-    notes?: true
     position?: true
     sectionSlug?: true
     semanticKey?: true
@@ -9103,7 +9099,6 @@ export namespace Prisma {
     tabId?: true
     slug?: true
     title?: true
-    notes?: true
     position?: true
     sectionSlug?: true
     semanticKey?: true
@@ -9116,7 +9111,6 @@ export namespace Prisma {
     tabId?: true
     slug?: true
     title?: true
-    notes?: true
     columns?: true
     position?: true
     sectionSlug?: true
@@ -9217,7 +9211,6 @@ export namespace Prisma {
     tabId: string
     slug: string
     title: string
-    notes: string | null
     columns: JsonValue
     position: number
     sectionSlug: string | null
@@ -9250,7 +9243,6 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     title?: boolean
-    notes?: boolean
     columns?: boolean
     position?: boolean
     sectionSlug?: boolean
@@ -9267,7 +9259,6 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     title?: boolean
-    notes?: boolean
     columns?: boolean
     position?: boolean
     sectionSlug?: boolean
@@ -9282,7 +9273,6 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     title?: boolean
-    notes?: boolean
     columns?: boolean
     position?: boolean
     sectionSlug?: boolean
@@ -9297,7 +9287,6 @@ export namespace Prisma {
     tabId?: boolean
     slug?: boolean
     title?: boolean
-    notes?: boolean
     columns?: boolean
     position?: boolean
     sectionSlug?: boolean
@@ -9306,7 +9295,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type GuideTableOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "title" | "notes" | "columns" | "position" | "sectionSlug" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTable"]>
+  export type GuideTableOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tabId" | "slug" | "title" | "columns" | "position" | "sectionSlug" | "semanticKey" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTable"]>
   export type GuideTableInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     tab?: boolean | GuideTabDefaultArgs<ExtArgs>
     rows?: boolean | GuideTable$rowsArgs<ExtArgs>
@@ -9330,7 +9319,6 @@ export namespace Prisma {
       tabId: string
       slug: string
       title: string
-      notes: string | null
       columns: Prisma.JsonValue
       position: number
       /**
@@ -9769,7 +9757,6 @@ export namespace Prisma {
     readonly tabId: FieldRef<"GuideTable", 'String'>
     readonly slug: FieldRef<"GuideTable", 'String'>
     readonly title: FieldRef<"GuideTable", 'String'>
-    readonly notes: FieldRef<"GuideTable", 'String'>
     readonly columns: FieldRef<"GuideTable", 'Json'>
     readonly position: FieldRef<"GuideTable", 'Int'>
     readonly sectionSlug: FieldRef<"GuideTable", 'String'>
@@ -10246,6 +10233,7 @@ export namespace Prisma {
     composition: string | null
     objective: string | null
     description: string | null
+    notes: string | null
     reference: string | null
     abv: string | null
     ageingMaturation: string | null
@@ -10274,6 +10262,7 @@ export namespace Prisma {
     composition: string | null
     objective: string | null
     description: string | null
+    notes: string | null
     reference: string | null
     abv: string | null
     ageingMaturation: string | null
@@ -10302,6 +10291,7 @@ export namespace Prisma {
     composition: number
     objective: number
     description: number
+    notes: number
     reference: number
     abv: number
     ageingMaturation: number
@@ -10340,6 +10330,7 @@ export namespace Prisma {
     composition?: true
     objective?: true
     description?: true
+    notes?: true
     reference?: true
     abv?: true
     ageingMaturation?: true
@@ -10368,6 +10359,7 @@ export namespace Prisma {
     composition?: true
     objective?: true
     description?: true
+    notes?: true
     reference?: true
     abv?: true
     ageingMaturation?: true
@@ -10396,6 +10388,7 @@ export namespace Prisma {
     composition?: true
     objective?: true
     description?: true
+    notes?: true
     reference?: true
     abv?: true
     ageingMaturation?: true
@@ -10511,6 +10504,7 @@ export namespace Prisma {
     composition: string | null
     objective: string | null
     description: string | null
+    notes: string | null
     reference: string | null
     abv: string | null
     ageingMaturation: string | null
@@ -10558,6 +10552,7 @@ export namespace Prisma {
     composition?: boolean
     objective?: boolean
     description?: boolean
+    notes?: boolean
     reference?: boolean
     abv?: boolean
     ageingMaturation?: boolean
@@ -10587,6 +10582,7 @@ export namespace Prisma {
     composition?: boolean
     objective?: boolean
     description?: boolean
+    notes?: boolean
     reference?: boolean
     abv?: boolean
     ageingMaturation?: boolean
@@ -10616,6 +10612,7 @@ export namespace Prisma {
     composition?: boolean
     objective?: boolean
     description?: boolean
+    notes?: boolean
     reference?: boolean
     abv?: boolean
     ageingMaturation?: boolean
@@ -10645,6 +10642,7 @@ export namespace Prisma {
     composition?: boolean
     objective?: boolean
     description?: boolean
+    notes?: boolean
     reference?: boolean
     abv?: boolean
     ageingMaturation?: boolean
@@ -10666,7 +10664,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "reference" | "abv" | "ageingMaturation" | "distillationMethod" | "profileCharacter" | "body" | "intensity" | "bitternessIbu" | "finish" | "regionOrigin" | "visualColor" | "tannins" | "acidity" | "examples" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
+  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "notes" | "reference" | "abv" | "ageingMaturation" | "distillationMethod" | "profileCharacter" | "body" | "intensity" | "bitternessIbu" | "finish" | "regionOrigin" | "visualColor" | "tannins" | "acidity" | "examples" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
   export type GuideTableRowInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     table?: boolean | GuideTableDefaultArgs<ExtArgs>
   }
@@ -10689,6 +10687,7 @@ export namespace Prisma {
       composition: string | null
       objective: string | null
       description: string | null
+      notes: string | null
       reference: string | null
       abv: string | null
       ageingMaturation: string | null
@@ -11138,6 +11137,7 @@ export namespace Prisma {
     readonly composition: FieldRef<"GuideTableRow", 'String'>
     readonly objective: FieldRef<"GuideTableRow", 'String'>
     readonly description: FieldRef<"GuideTableRow", 'String'>
+    readonly notes: FieldRef<"GuideTableRow", 'String'>
     readonly reference: FieldRef<"GuideTableRow", 'String'>
     readonly abv: FieldRef<"GuideTableRow", 'String'>
     readonly ageingMaturation: FieldRef<"GuideTableRow", 'String'>
@@ -15015,7 +15015,6 @@ export namespace Prisma {
     tabId: 'tabId',
     slug: 'slug',
     title: 'title',
-    notes: 'notes',
     columns: 'columns',
     position: 'position',
     sectionSlug: 'sectionSlug',
@@ -15034,6 +15033,7 @@ export namespace Prisma {
     composition: 'composition',
     objective: 'objective',
     description: 'description',
+    notes: 'notes',
     reference: 'reference',
     abv: 'abv',
     ageingMaturation: 'ageingMaturation',
@@ -15702,7 +15702,6 @@ export namespace Prisma {
     tabId?: StringFilter<"GuideTable"> | string
     slug?: StringFilter<"GuideTable"> | string
     title?: StringFilter<"GuideTable"> | string
-    notes?: StringNullableFilter<"GuideTable"> | string | null
     columns?: JsonFilter<"GuideTable">
     position?: IntFilter<"GuideTable"> | number
     sectionSlug?: StringNullableFilter<"GuideTable"> | string | null
@@ -15718,7 +15717,6 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     title?: SortOrder
-    notes?: SortOrderInput | SortOrder
     columns?: SortOrder
     position?: SortOrder
     sectionSlug?: SortOrderInput | SortOrder
@@ -15738,7 +15736,6 @@ export namespace Prisma {
     tabId?: StringFilter<"GuideTable"> | string
     slug?: StringFilter<"GuideTable"> | string
     title?: StringFilter<"GuideTable"> | string
-    notes?: StringNullableFilter<"GuideTable"> | string | null
     columns?: JsonFilter<"GuideTable">
     position?: IntFilter<"GuideTable"> | number
     sectionSlug?: StringNullableFilter<"GuideTable"> | string | null
@@ -15754,7 +15751,6 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     title?: SortOrder
-    notes?: SortOrderInput | SortOrder
     columns?: SortOrder
     position?: SortOrder
     sectionSlug?: SortOrderInput | SortOrder
@@ -15776,7 +15772,6 @@ export namespace Prisma {
     tabId?: StringWithAggregatesFilter<"GuideTable"> | string
     slug?: StringWithAggregatesFilter<"GuideTable"> | string
     title?: StringWithAggregatesFilter<"GuideTable"> | string
-    notes?: StringNullableWithAggregatesFilter<"GuideTable"> | string | null
     columns?: JsonWithAggregatesFilter<"GuideTable">
     position?: IntWithAggregatesFilter<"GuideTable"> | number
     sectionSlug?: StringNullableWithAggregatesFilter<"GuideTable"> | string | null
@@ -15795,6 +15790,7 @@ export namespace Prisma {
     composition?: StringNullableFilter<"GuideTableRow"> | string | null
     objective?: StringNullableFilter<"GuideTableRow"> | string | null
     description?: StringNullableFilter<"GuideTableRow"> | string | null
+    notes?: StringNullableFilter<"GuideTableRow"> | string | null
     reference?: StringNullableFilter<"GuideTableRow"> | string | null
     abv?: StringNullableFilter<"GuideTableRow"> | string | null
     ageingMaturation?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -15824,6 +15820,7 @@ export namespace Prisma {
     composition?: SortOrderInput | SortOrder
     objective?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
+    notes?: SortOrderInput | SortOrder
     reference?: SortOrderInput | SortOrder
     abv?: SortOrderInput | SortOrder
     ageingMaturation?: SortOrderInput | SortOrder
@@ -15856,6 +15853,7 @@ export namespace Prisma {
     composition?: StringNullableFilter<"GuideTableRow"> | string | null
     objective?: StringNullableFilter<"GuideTableRow"> | string | null
     description?: StringNullableFilter<"GuideTableRow"> | string | null
+    notes?: StringNullableFilter<"GuideTableRow"> | string | null
     reference?: StringNullableFilter<"GuideTableRow"> | string | null
     abv?: StringNullableFilter<"GuideTableRow"> | string | null
     ageingMaturation?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -15885,6 +15883,7 @@ export namespace Prisma {
     composition?: SortOrderInput | SortOrder
     objective?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
+    notes?: SortOrderInput | SortOrder
     reference?: SortOrderInput | SortOrder
     abv?: SortOrderInput | SortOrder
     ageingMaturation?: SortOrderInput | SortOrder
@@ -15921,6 +15920,7 @@ export namespace Prisma {
     composition?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     objective?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     description?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    notes?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     reference?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     abv?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     ageingMaturation?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
@@ -16652,7 +16652,6 @@ export namespace Prisma {
     id?: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -16668,7 +16667,6 @@ export namespace Prisma {
     tabId: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -16682,7 +16680,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16698,7 +16695,6 @@ export namespace Prisma {
     tabId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16713,7 +16709,6 @@ export namespace Prisma {
     tabId: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -16726,7 +16721,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16740,7 +16734,6 @@ export namespace Prisma {
     tabId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16755,6 +16748,7 @@ export namespace Prisma {
     composition?: string | null
     objective?: string | null
     description?: string | null
+    notes?: string | null
     reference?: string | null
     abv?: string | null
     ageingMaturation?: string | null
@@ -16784,6 +16778,7 @@ export namespace Prisma {
     composition?: string | null
     objective?: string | null
     description?: string | null
+    notes?: string | null
     reference?: string | null
     abv?: string | null
     ageingMaturation?: string | null
@@ -16811,6 +16806,7 @@ export namespace Prisma {
     composition?: NullableStringFieldUpdateOperationsInput | string | null
     objective?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
     ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16840,6 +16836,7 @@ export namespace Prisma {
     composition?: NullableStringFieldUpdateOperationsInput | string | null
     objective?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
     ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16868,6 +16865,7 @@ export namespace Prisma {
     composition?: string | null
     objective?: string | null
     description?: string | null
+    notes?: string | null
     reference?: string | null
     abv?: string | null
     ageingMaturation?: string | null
@@ -16895,6 +16893,7 @@ export namespace Prisma {
     composition?: NullableStringFieldUpdateOperationsInput | string | null
     objective?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
     ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
@@ -16923,6 +16922,7 @@ export namespace Prisma {
     composition?: NullableStringFieldUpdateOperationsInput | string | null
     objective?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
     ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
@@ -17674,7 +17674,6 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     title?: SortOrder
-    notes?: SortOrder
     columns?: SortOrder
     position?: SortOrder
     sectionSlug?: SortOrder
@@ -17692,7 +17691,6 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     title?: SortOrder
-    notes?: SortOrder
     position?: SortOrder
     sectionSlug?: SortOrder
     semanticKey?: SortOrder
@@ -17705,7 +17703,6 @@ export namespace Prisma {
     tabId?: SortOrder
     slug?: SortOrder
     title?: SortOrder
-    notes?: SortOrder
     position?: SortOrder
     sectionSlug?: SortOrder
     semanticKey?: SortOrder
@@ -17729,6 +17726,7 @@ export namespace Prisma {
     composition?: SortOrder
     objective?: SortOrder
     description?: SortOrder
+    notes?: SortOrder
     reference?: SortOrder
     abv?: SortOrder
     ageingMaturation?: SortOrder
@@ -17761,6 +17759,7 @@ export namespace Prisma {
     composition?: SortOrder
     objective?: SortOrder
     description?: SortOrder
+    notes?: SortOrder
     reference?: SortOrder
     abv?: SortOrder
     ageingMaturation?: SortOrder
@@ -17789,6 +17788,7 @@ export namespace Prisma {
     composition?: SortOrder
     objective?: SortOrder
     description?: SortOrder
+    notes?: SortOrder
     reference?: SortOrder
     abv?: SortOrder
     ageingMaturation?: SortOrder
@@ -19003,7 +19003,6 @@ export namespace Prisma {
     id?: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -19017,7 +19016,6 @@ export namespace Prisma {
     id?: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -19153,7 +19151,6 @@ export namespace Prisma {
     tabId?: StringFilter<"GuideTable"> | string
     slug?: StringFilter<"GuideTable"> | string
     title?: StringFilter<"GuideTable"> | string
-    notes?: StringNullableFilter<"GuideTable"> | string | null
     columns?: JsonFilter<"GuideTable">
     position?: IntFilter<"GuideTable"> | number
     sectionSlug?: StringNullableFilter<"GuideTable"> | string | null
@@ -19521,6 +19518,7 @@ export namespace Prisma {
     composition?: string | null
     objective?: string | null
     description?: string | null
+    notes?: string | null
     reference?: string | null
     abv?: string | null
     ageingMaturation?: string | null
@@ -19548,6 +19546,7 @@ export namespace Prisma {
     composition?: string | null
     objective?: string | null
     description?: string | null
+    notes?: string | null
     reference?: string | null
     abv?: string | null
     ageingMaturation?: string | null
@@ -19648,6 +19647,7 @@ export namespace Prisma {
     composition?: StringNullableFilter<"GuideTableRow"> | string | null
     objective?: StringNullableFilter<"GuideTableRow"> | string | null
     description?: StringNullableFilter<"GuideTableRow"> | string | null
+    notes?: StringNullableFilter<"GuideTableRow"> | string | null
     reference?: StringNullableFilter<"GuideTableRow"> | string | null
     abv?: StringNullableFilter<"GuideTableRow"> | string | null
     ageingMaturation?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -19673,7 +19673,6 @@ export namespace Prisma {
     id?: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -19688,7 +19687,6 @@ export namespace Prisma {
     tabId: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -19717,7 +19715,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19732,7 +19729,6 @@ export namespace Prisma {
     tabId?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20128,7 +20124,6 @@ export namespace Prisma {
     id?: string
     slug: string
     title: string
-    notes?: string | null
     columns: JsonNullValueInput | InputJsonValue
     position: number
     sectionSlug?: string | null
@@ -20192,7 +20187,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20206,7 +20200,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20220,7 +20213,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     slug?: StringFieldUpdateOperationsInput | string
     title?: StringFieldUpdateOperationsInput | string
-    notes?: NullableStringFieldUpdateOperationsInput | string | null
     columns?: JsonNullValueInput | InputJsonValue
     position?: IntFieldUpdateOperationsInput | number
     sectionSlug?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20297,6 +20289,7 @@ export namespace Prisma {
     composition?: string | null
     objective?: string | null
     description?: string | null
+    notes?: string | null
     reference?: string | null
     abv?: string | null
     ageingMaturation?: string | null
@@ -20324,6 +20317,7 @@ export namespace Prisma {
     composition?: NullableStringFieldUpdateOperationsInput | string | null
     objective?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
     ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20351,6 +20345,7 @@ export namespace Prisma {
     composition?: NullableStringFieldUpdateOperationsInput | string | null
     objective?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
     ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20378,6 +20373,7 @@ export namespace Prisma {
     composition?: NullableStringFieldUpdateOperationsInput | string | null
     objective?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
+    notes?: NullableStringFieldUpdateOperationsInput | string | null
     reference?: NullableStringFieldUpdateOperationsInput | string | null
     abv?: NullableStringFieldUpdateOperationsInput | string | null
     ageingMaturation?: NullableStringFieldUpdateOperationsInput | string | null

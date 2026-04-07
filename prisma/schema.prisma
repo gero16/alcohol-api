@@ -108,6 +108,7 @@ model GuideTable {
   tabId        String
   slug         String
   title        String
+  notes        String?
   columns      Json
   position     Int
   /// Si se informa, en fichas de destilado con varias secciones la tabla se muestra en la pestaña de esa sección (slug de GuideSection en la misma pestaña).

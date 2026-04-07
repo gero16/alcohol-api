@@ -52,6 +52,7 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
         tables: tab.tables.map((table) => ({
           slug: table.slug,
           title: table.title,
+          notes: table.notes ?? undefined,
           sectionSlug: table.sectionSlug ?? undefined,
           semanticKey: table.semanticKey ?? undefined,
           columns: table.columns as TableColumn[],

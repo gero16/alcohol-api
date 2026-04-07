@@ -160,6 +160,7 @@ const guideSchema = {
               properties: {
                 slug: { type: "string", minLength: 1 },
                 title: { type: "string", minLength: 1 },
+                notes: { type: "string" },
                 sectionSlug: { type: "string" },
                 semanticKey: guideSemanticKeySchema,
                 columns: {

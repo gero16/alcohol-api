@@ -70,6 +70,7 @@ function toGuideTableCreate(
   return {
     slug: table.slug,
     title: table.title,
+    notes: table.notes,
     columns: table.columns,
     position: index,
     sectionSlug: sectionSlug && sectionSlug.length > 0 ? sectionSlug : null,
@@ -201,6 +202,7 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
       tables: tab.tables.map((table) => ({
         slug: table.slug,
         title: table.title,
+        notes: table.notes ?? undefined,
         sectionSlug: table.sectionSlug ?? undefined,
         semanticKey: table.semanticKey ?? undefined,
         columns: table.columns as TableColumn[],

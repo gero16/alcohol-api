@@ -8,6 +8,7 @@ const GUIDE_METADATA_PATCHES = [
   `ALTER TABLE "GuideSection" ADD COLUMN IF NOT EXISTS "semanticKey" TEXT`,
   `ALTER TABLE "GuideTable" ADD COLUMN IF NOT EXISTS "sectionSlug" TEXT`,
   `ALTER TABLE "GuideTable" ADD COLUMN IF NOT EXISTS "semanticKey" TEXT`,
+  `ALTER TABLE "GuideTable" ADD COLUMN IF NOT EXISTS "notes" TEXT`,
 ] as const;
 
 export type SchemaPatchResult = {

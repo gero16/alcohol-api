@@ -71,6 +71,7 @@ export type SeedGuideTableRow = {
 export type SeedGuideTable = {
   slug: string;
   title: string;
+  notes?: string;
   /** Slug de una sección de la misma pestaña; en guías partidas por sección (destilados) la tabla aparece ahí en lugar de en «Tablas y notas». */
   sectionSlug?: string;
   semanticKey?: string;
@@ -156,6 +157,7 @@ export type ApiGuideTable = {
   id: string;
   slug: string;
   title: string;
+  notes?: string;
   displayMode: "table" | "cards";
   sectionSlug?: string;
   semanticKey?: string;

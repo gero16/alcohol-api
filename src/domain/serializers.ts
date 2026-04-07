@@ -144,6 +144,7 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
           id: table.id,
           slug: table.slug,
           title: table.title,
+          notes: table.notes ?? undefined,
           displayMode,
           sectionSlug: table.sectionSlug ?? undefined,
           semanticKey: table.semanticKey ?? undefined,

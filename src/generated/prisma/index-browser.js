@@ -196,6 +196,7 @@ exports.Prisma.GuideTableScalarFieldEnum = {
   tabId: 'tabId',
   slug: 'slug',
   title: 'title',
+  notes: 'notes',
   columns: 'columns',
   position: 'position',
   sectionSlug: 'sectionSlug',

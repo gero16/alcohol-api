@@ -161,6 +161,7 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
             profileCharacter: row.profileCharacter ?? undefined,
             body: row.body ?? undefined,
             intensity: row.intensity ?? undefined,
+            bitternessIbu: row.bitternessIbu ?? undefined,
             finish: row.finish ?? undefined,
             regionOrigin: row.regionOrigin ?? undefined,
             visualColor: row.visualColor ?? undefined,

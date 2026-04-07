@@ -136,6 +136,7 @@ model GuideTableRow {
   profileCharacter   String?
   body               String?
   intensity          String?
+  bitternessIbu      String?
   finish             String?
   regionOrigin       String?
   visualColor        String?

@@ -218,6 +218,7 @@ exports.Prisma.GuideTableRowScalarFieldEnum = {
   profileCharacter: 'profileCharacter',
   body: 'body',
   intensity: 'intensity',
+  bitternessIbu: 'bitternessIbu',
   finish: 'finish',
   regionOrigin: 'regionOrigin',
   visualColor: 'visualColor',

@@ -10,6 +10,7 @@ export type TableColumnKey =
   | "profileCharacter"
   | "body"
   | "intensity"
+  | "bitternessIbu"
   | "finish"
   | "regionOrigin"
   | "visualColor"
@@ -56,6 +57,7 @@ export type SeedGuideTableRow = {
   profileCharacter?: string;
   body?: string;
   intensity?: string;
+  bitternessIbu?: string;
   finish?: string;
   regionOrigin?: string;
   visualColor?: string;

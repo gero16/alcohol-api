@@ -11,6 +11,7 @@ import {
   classificationBlocksFromJson,
   classificationBlocksToJson,
 } from "../domain/classificationBlocks";
+import { decodeTableRowDescription, encodeTableRowDescription } from "../domain/tableRowDescriptions";
 import { parseGuideSemanticKey, assertGuideSemanticKeysInPayload } from "../domain/guideSemantics";
 import { guideDetailInclude, type GuideDetailRecord } from "../domain/serializers";
 import { getPrismaOrThrow } from "../lib/prisma";
@@ -79,7 +80,7 @@ function toGuideTableCreate(
         term: row.term,
         composition: row.composition,
         objective: row.objective,
-        description: row.description,
+        description: encodeTableRowDescription(row),
         reference: row.reference,
         abv: row.abv,
         imageUrl: row.imageUrl,
@@ -193,10 +194,10 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
         semanticKey: table.semanticKey ?? undefined,
         columns: table.columns as TableColumn[],
         rows: table.rows.map((row) => ({
+          ...decodeTableRowDescription(row.description),
           term: row.term,
           composition: row.composition ?? undefined,
           objective: row.objective ?? undefined,
-          description: row.description ?? undefined,
           reference: row.reference ?? undefined,
           abv: row.abv ?? undefined,
           imageUrl: row.imageUrl ?? undefined,

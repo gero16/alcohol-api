@@ -56,6 +56,10 @@ const tableRowSchema = {
     composition: { type: "string" },
     objective: { type: "string" },
     description: { type: "string" },
+    descriptions: {
+      type: "array",
+      items: { type: "string" },
+    },
     reference: { type: "string" },
     abv: { type: "string" },
     imageUrl: { type: "string" },

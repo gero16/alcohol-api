@@ -38,6 +38,7 @@ export type SeedGuideTableRow = {
   composition?: string;
   objective?: string;
   description?: string;
+  descriptions?: string[];
   reference?: string;
   abv?: string;
   imageUrl?: string;

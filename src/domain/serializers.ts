@@ -9,6 +9,7 @@ import type {
   TableColumn,
 } from "./contracts";
 import { classificationBlocksFromJson } from "./classificationBlocks";
+import { decodeTableRowDescription } from "./tableRowDescriptions";
 
 export const guideDetailInclude = {
   category: true,
@@ -149,11 +150,11 @@ export function toApiGuideDetail(guide: GuideDetailRecord): ApiGuideDetail {
           semanticKey: table.semanticKey ?? undefined,
           columns,
           rows: table.rows.map((row) => ({
+            ...decodeTableRowDescription(row.description),
             id: row.id,
             term: row.term,
             composition: row.composition ?? undefined,
             objective: row.objective ?? undefined,
-            description: row.description ?? undefined,
             reference: row.reference ?? undefined,
             abv: row.abv ?? undefined,
             imageUrl: row.imageUrl ?? undefined,

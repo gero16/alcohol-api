@@ -10,6 +10,7 @@ import type {
   TableColumn,
 } from "../domain/contracts";
 import { classificationBlocksFromJson } from "../domain/classificationBlocks";
+import { decodeTableRowDescription } from "../domain/tableRowDescriptions";
 import {
   glossaryItemInclude,
   guideDetailInclude,
@@ -56,10 +57,10 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
           semanticKey: table.semanticKey ?? undefined,
           columns: table.columns as TableColumn[],
           rows: table.rows.map((row) => ({
+            ...decodeTableRowDescription(row.description),
             term: row.term,
             composition: row.composition ?? undefined,
             objective: row.objective ?? undefined,
-            description: row.description ?? undefined,
             reference: row.reference ?? undefined,
             abv: row.abv ?? undefined,
             imageUrl: row.imageUrl ?? undefined,

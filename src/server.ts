@@ -3,7 +3,7 @@ import { config } from "./config";
 import { prisma } from "./lib/prisma";
 
 async function start() {
-  const app = buildApp();
+  const app = await buildApp();
 
   try {
     await app.listen({

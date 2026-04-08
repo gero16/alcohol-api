@@ -1,5 +1,7 @@
+import path from "node:path";
 import Fastify from "fastify";
 import cors from "@fastify/cors";
+import staticFiles from "@fastify/static";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
 import { adminMigrationRoutes } from "./routes/adminMigration";
@@ -8,7 +10,7 @@ import { glossaryRoutes } from "./routes/glossary";
 import { guidesRoutes } from "./routes/guides";
 import { subcategoriesRoutes } from "./routes/subcategories";
 
-export function buildApp() {
+export async function buildApp() {
   const app = Fastify({
     logger: true,
   });
@@ -37,6 +39,12 @@ export function buildApp() {
 
   app.register(swaggerUi, {
     routePrefix: "/docs",
+  });
+
+  await app.register(staticFiles, {
+    root: path.join(process.cwd(), "static"),
+    prefix: "/static/",
+    decorateReply: false,
   });
 
   app.get(

@@ -1,17 +1,22 @@
+import fs from "node:fs/promises";
+import path from "node:path";
 import { listGuideDetailsFromDatabase } from "../content/backup";
+import { config } from "../config";
 import { prisma } from "../lib/prisma";
 
 /**
- * Escribe por stdout (p. ej. `npm run guides:export-static > guides.json`).
- * No publica archivos en el front; el JSON público vía web es GET /admin/migration/guides/json con secreto.
+ * Misma salida que POST /admin/migration/guides/publish-static (static/guides.json → GET /static/guides.json).
+ * Ejecutar desde `alcohol-api`: `npm run guides:export-static`
  */
 async function main() {
   const guides = await listGuideDetailsFromDatabase();
-  const payload = {
-    generatedAt: new Date().toISOString(),
-    guides,
-  };
-  process.stdout.write(`${JSON.stringify(payload, null, 2)}\n`);
+  const generatedAt = new Date().toISOString();
+  const payload = { generatedAt, guides };
+  const outFile = config.guidesStaticJsonPath;
+
+  await fs.mkdir(path.dirname(outFile), { recursive: true });
+  await fs.writeFile(outFile, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  console.log(`Escrito ${outFile} (${guides.length} guías).`);
 }
 
 main()

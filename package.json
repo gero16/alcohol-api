@@ -13,6 +13,8 @@
     "db:seed": "tsx prisma/seed.ts",
     "backup:export": "tsx src/scripts/export-backup.ts",
     "guides:export-static": "tsx src/scripts/export-guides-static.ts",
+    "glossary:export-static": "tsx src/scripts/export-glossary-static.ts",
+    "categories:export-static": "tsx src/scripts/export-categories-static.ts",
     "db:sync": "npm run db:push && npm run db:seed",
     "content:sync": "npm run db:sync"
   },

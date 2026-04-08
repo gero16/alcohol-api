@@ -1,5 +1,5 @@
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
-import { buildSeedDatasetFromDatabase } from "../content/backup";
+import { buildSeedDatasetFromDatabase, listGuideDetailsFromDatabase } from "../content/backup";
 import { config } from "../config";
 import { READ_ONLY_MODE_MESSAGE, isDatabaseUnavailableError } from "../lib/database";
 import { getPrismaOrThrow } from "../lib/prisma";
@@ -64,6 +64,37 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
             ttlMs: result.ttlMs,
           },
           ...result.dataset,
+        });
+      } catch (error) {
+        if (isDatabaseUnavailableError(error)) {
+          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
+        }
+
+        throw error;
+      }
+    },
+  );
+
+  app.get(
+    "/guides/json",
+    {
+      schema: {
+        tags: ["Admin"],
+        summary: "JSON de todas las guías (detalle API, no público)",
+        description:
+          "Devuelve { generatedAt, guides } en forma ApiGuideDetail. Requiere x-admin-migration-secret.",
+      },
+    },
+    async (request, reply) => {
+      if (!requireAdminMigrationSecret(request, reply)) {
+        return;
+      }
+
+      try {
+        const guides = await listGuideDetailsFromDatabase();
+        return reply.code(200).send({
+          generatedAt: new Date().toISOString(),
+          guides,
         });
       } catch (error) {
         if (isDatabaseUnavailableError(error)) {

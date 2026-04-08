@@ -1,12 +1,11 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
-import { buildSeedDatasetFromDatabase, listGuideDetailsFromDatabase } from "../content/backup";
+import { listGuideDetailsFromDatabase } from "../content/backup";
 import { config } from "../config";
 import { READ_ONLY_MODE_MESSAGE, isDatabaseUnavailableError } from "../lib/database";
 import { getPrismaOrThrow } from "../lib/prisma";
 import { applyGuideMetadataSchemaPatches } from "../services/schemaMigrations";
-import { getFullBackupDataset } from "../services/fullBackupCache";
 
 function requireAdminMigrationSecret(request: FastifyRequest, reply: FastifyReply): boolean {
   const expected = process.env.ADMIN_MIGRATION_SECRET?.trim();
@@ -28,86 +27,6 @@ function requireAdminMigrationSecret(request: FastifyRequest, reply: FastifyRepl
 }
 
 export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
-  app.get(
-    "/backup/full",
-    {
-      schema: {
-        tags: ["Admin"],
-        summary: "JSON completo del contenido (con caché en memoria)",
-        description:
-          "Devuelve categories + guides + glossary en un solo JSON. Usa caché en memoria para evitar leer la BD en cada request. Requiere x-admin-migration-secret.",
-        querystring: {
-          type: "object",
-          properties: {
-            refresh: { type: "boolean" },
-          },
-        },
-      },
-    },
-    async (request, reply) => {
-      if (!requireAdminMigrationSecret(request, reply)) {
-        return;
-      }
-
-      const { refresh } = request.query as { refresh?: boolean | string };
-      const forceRefresh = refresh === true || refresh === "true" || refresh === "1";
-
-      try {
-        const result = await getFullBackupDataset({
-          forceRefresh,
-          ttlMs: config.fullBackupCacheTtlMs,
-        });
-
-        return reply.code(200).send({
-          _meta: {
-            source: result.fromCache ? "cache" : "database",
-            cachedAt: result.cachedAt,
-            ageMs: result.ageMs,
-            ttlMs: result.ttlMs,
-          },
-          ...result.dataset,
-        });
-      } catch (error) {
-        if (isDatabaseUnavailableError(error)) {
-          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
-        }
-
-        throw error;
-      }
-    },
-  );
-
-  app.get(
-    "/guides/json",
-    {
-      schema: {
-        tags: ["Admin"],
-        summary: "JSON de todas las guías (detalle API, no público)",
-        description:
-          "Devuelve { generatedAt, guides } en forma ApiGuideDetail. Requiere x-admin-migration-secret.",
-      },
-    },
-    async (request, reply) => {
-      if (!requireAdminMigrationSecret(request, reply)) {
-        return;
-      }
-
-      try {
-        const guides = await listGuideDetailsFromDatabase();
-        return reply.code(200).send({
-          generatedAt: new Date().toISOString(),
-          guides,
-        });
-      } catch (error) {
-        if (isDatabaseUnavailableError(error)) {
-          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
-        }
-
-        throw error;
-      }
-    },
-  );
-
   app.post(
     "/guides/publish-static",
     {
@@ -152,77 +71,6 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
           path: outFile,
           detail: msg,
         });
-      }
-    },
-  );
-
-  app.post(
-    "/backup/full/refresh",
-    {
-      schema: {
-        tags: ["Admin"],
-        summary: "Forzar refresco del caché del backup completo",
-        description:
-          "Recarga inmediatamente el JSON completo desde la base de datos y actualiza el caché en memoria. Requiere x-admin-migration-secret.",
-      },
-    },
-    async (request, reply) => {
-      if (!requireAdminMigrationSecret(request, reply)) {
-        return;
-      }
-
-      try {
-        const result = await getFullBackupDataset({
-          forceRefresh: true,
-          ttlMs: config.fullBackupCacheTtlMs,
-        });
-
-        return reply.code(200).send({
-          message: "Caché del backup completo actualizado correctamente.",
-          cachedAt: result.cachedAt,
-          ttlMs: result.ttlMs,
-        });
-      } catch (error) {
-        if (isDatabaseUnavailableError(error)) {
-          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
-        }
-
-        throw error;
-      }
-    },
-  );
-
-  app.post(
-    "/backup/snapshot",
-    {
-      schema: {
-        tags: ["Admin"],
-        summary: "Métricas de contenido desde PostgreSQL (sin archivo)",
-        description:
-          "Devuelve solo conteos. El respaldo real de datos es la propia base (pg_dump, réplicas, etc.). Requiere x-admin-migration-secret.",
-      },
-    },
-    async (request, reply) => {
-      if (!requireAdminMigrationSecret(request, reply)) {
-        return;
-      }
-
-      try {
-        const snapshot = await buildSeedDatasetFromDatabase();
-
-        return reply.code(200).send({
-          message:
-            "Volcado lógico desde la base de datos (solo métricas). No se genera archivo en el servidor.",
-          categoriesCount: snapshot.categories.length,
-          guidesCount: snapshot.guides.length,
-          glossaryCount: snapshot.glossary.length,
-        });
-      } catch (error) {
-        if (isDatabaseUnavailableError(error)) {
-          return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
-        }
-
-        throw error;
       }
     },
   );

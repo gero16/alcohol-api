@@ -5,7 +5,7 @@ import { config } from "../config";
 import { prisma } from "../lib/prisma";
 
 /**
- * Misma salida que POST /admin/migration/guides/publish-static (static/guides.json → GET /static/guides.json).
+ * Escribe static/guides.json (mismo JSON que POST /admin/migration/guides/publish-static devuelve en el cuerpo).
  * Ejecutar desde `alcohol-api`: `npm run guides:export-static`
  */
 async function main() {

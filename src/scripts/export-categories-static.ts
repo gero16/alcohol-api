@@ -5,7 +5,7 @@ import { config } from "../config";
 import { prisma } from "../lib/prisma";
 
 /**
- * Misma salida que POST /admin/migration/categories/publish-static.
+ * Escribe static/categories.json (mismo JSON que POST …/categories/publish-static devuelve en el cuerpo).
  * Ejecutar desde `alcohol-api`: `npm run categories:export-static`
  */
 async function main() {

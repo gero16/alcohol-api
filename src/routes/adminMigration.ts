@@ -1,12 +1,9 @@
-import fs from "node:fs/promises";
-import path from "node:path";
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
 import {
   listCategoriesFromDatabase,
   listGuideDetailsFromDatabase,
   listGlossaryFromDatabase,
 } from "../content/backup";
-import { config } from "../config";
 import { READ_ONLY_MODE_MESSAGE, isDatabaseUnavailableError } from "../lib/database";
 import { getPrismaOrThrow } from "../lib/prisma";
 import { applyGuideMetadataSchemaPatches } from "../services/schemaMigrations";
@@ -30,10 +27,13 @@ function requireAdminMigrationSecret(request: FastifyRequest, reply: FastifyRepl
   return true;
 }
 
-async function writeStaticJsonFile(outFile: string, payload: Record<string, unknown>): Promise<void> {
+/** Mismo contenido que guardarías en static/*.json (indentado para copiar y pegar en el repo). */
+function sendRepoJsonPayload(reply: FastifyReply, payload: Record<string, unknown>): FastifyReply {
   const body = `${JSON.stringify(payload, null, 2)}\n`;
-  await fs.mkdir(path.dirname(outFile), { recursive: true });
-  await fs.writeFile(outFile, body, "utf8");
+  return reply
+    .code(200)
+    .header("Content-Type", "application/json; charset=utf-8")
+    .send(body);
 }
 
 export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
@@ -42,9 +42,9 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
     {
       schema: {
         tags: ["Admin"],
-        summary: "Generar static/guides.json en el API",
+        summary: "JSON de guías para copiar al repo (static/guides.json)",
         description:
-          "Lee la BD y escribe JSON en GUIDES_STATIC_JSON_PATH (por defecto static/guides.json bajo el cwd del API). Queda servido en GET /static/guides.json. Requiere x-admin-migration-secret.",
+          "Lee la BD y devuelve solo el cuerpo JSON { generatedAt, guides } (no escribe disco). Guárdalo manualmente en alcohol-api/static/guides.json y súbelo a GitHub. Requiere x-admin-migration-secret.",
       },
     },
     async (request, reply) => {
@@ -52,32 +52,15 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
         return;
       }
 
-      const outFile = config.guidesStaticJsonPath;
-
       try {
         const guides = await listGuideDetailsFromDatabase();
         const generatedAt = new Date().toISOString();
-        const payload = { generatedAt, guides };
-        await writeStaticJsonFile(outFile, payload);
-
-        return reply.code(200).send({
-          message:
-            "Archivo escrito en el backend. Disponible en GET /static/guides.json (mismo origen que el API).",
-          path: outFile,
-          guidesCount: guides.length,
-          generatedAt,
-        });
+        return sendRepoJsonPayload(reply, { generatedAt, guides });
       } catch (error) {
         if (isDatabaseUnavailableError(error)) {
           return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
-
-        const msg = error instanceof Error ? error.message : String(error);
-        return reply.code(500).send({
-          message: "No se pudo escribir el archivo. Comprueba permisos y GUIDES_STATIC_JSON_PATH.",
-          path: outFile,
-          detail: msg,
-        });
+        throw error;
       }
     },
   );
@@ -87,9 +70,9 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
     {
       schema: {
         tags: ["Admin"],
-        summary: "Generar static/glossary.json en el API",
+        summary: "JSON de glosario para copiar al repo (static/glossary.json)",
         description:
-          "Lee la BD y escribe JSON en GLOSSARY_STATIC_JSON_PATH (por defecto static/glossary.json). Queda servido en GET /static/glossary.json. Requiere x-admin-migration-secret.",
+          "Lee la BD y devuelve solo { generatedAt, glossary }. Guárdalo en alcohol-api/static/glossary.json. Requiere x-admin-migration-secret.",
       },
     },
     async (request, reply) => {
@@ -97,32 +80,15 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
         return;
       }
 
-      const outFile = config.glossaryStaticJsonPath;
-
       try {
         const glossary = await listGlossaryFromDatabase();
         const generatedAt = new Date().toISOString();
-        const payload = { generatedAt, glossary };
-        await writeStaticJsonFile(outFile, payload);
-
-        return reply.code(200).send({
-          message:
-            "Archivo escrito en el backend. Disponible en GET /static/glossary.json (mismo origen que el API).",
-          path: outFile,
-          glossaryCount: glossary.length,
-          generatedAt,
-        });
+        return sendRepoJsonPayload(reply, { generatedAt, glossary });
       } catch (error) {
         if (isDatabaseUnavailableError(error)) {
           return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
-
-        const msg = error instanceof Error ? error.message : String(error);
-        return reply.code(500).send({
-          message: "No se pudo escribir el archivo. Comprueba permisos y GLOSSARY_STATIC_JSON_PATH.",
-          path: outFile,
-          detail: msg,
-        });
+        throw error;
       }
     },
   );
@@ -132,9 +98,9 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
     {
       schema: {
         tags: ["Admin"],
-        summary: "Generar static/categories.json en el API",
+        summary: "JSON de categorías para copiar al repo (static/categories.json)",
         description:
-          "Lee la BD y escribe JSON en CATEGORIES_STATIC_JSON_PATH (por defecto static/categories.json). Queda servido en GET /static/categories.json. Requiere x-admin-migration-secret.",
+          "Lee la BD y devuelve solo { generatedAt, categories }. Guárdalo en alcohol-api/static/categories.json. Requiere x-admin-migration-secret.",
       },
     },
     async (request, reply) => {
@@ -142,32 +108,15 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
         return;
       }
 
-      const outFile = config.categoriesStaticJsonPath;
-
       try {
         const categories = await listCategoriesFromDatabase();
         const generatedAt = new Date().toISOString();
-        const payload = { generatedAt, categories };
-        await writeStaticJsonFile(outFile, payload);
-
-        return reply.code(200).send({
-          message:
-            "Archivo escrito en el backend. Disponible en GET /static/categories.json (mismo origen que el API).",
-          path: outFile,
-          categoriesCount: categories.length,
-          generatedAt,
-        });
+        return sendRepoJsonPayload(reply, { generatedAt, categories });
       } catch (error) {
         if (isDatabaseUnavailableError(error)) {
           return reply.code(503).send({ message: READ_ONLY_MODE_MESSAGE });
         }
-
-        const msg = error instanceof Error ? error.message : String(error);
-        return reply.code(500).send({
-          message: "No se pudo escribir el archivo. Comprueba permisos y CATEGORIES_STATIC_JSON_PATH.",
-          path: outFile,
-          detail: msg,
-        });
+        throw error;
       }
     },
   );

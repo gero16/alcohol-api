@@ -5,7 +5,7 @@ import { config } from "../config";
 import { prisma } from "../lib/prisma";
 
 /**
- * Misma salida que POST /admin/migration/glossary/publish-static.
+ * Escribe static/glossary.json (mismo JSON que POST …/glossary/publish-static devuelve en el cuerpo).
  * Ejecutar desde `alcohol-api`: `npm run glossary:export-static`
  */
 async function main() {

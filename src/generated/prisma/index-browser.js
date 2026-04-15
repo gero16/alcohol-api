@@ -271,6 +271,9 @@ exports.Prisma.ProductScalarFieldEnum = {
   ibu: 'ibu',
   beerColor: 'beerColor',
   pairings: 'pairings',
+  celiacFriendly: 'celiacFriendly',
+  veganFriendly: 'veganFriendly',
+  note: 'note',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };

@@ -258,6 +258,13 @@ model Product {
   // Maridajes: ["Carnes rojas", "Quesos azules", ...]
   pairings Json?
 
+  /// Apto para celíacos (sin gluten / elaboración sin trigo, cebada, etc., según etiquetado o criterio editorial).
+  celiacFriendly Boolean?
+  /// Apto vegano (sin ingredientes de origen animal en la elaboración habitual).
+  veganFriendly  Boolean?
+  /// Nota libre: aclaraciones dietarias, advertencias o fuente del dato.
+  note           String?
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

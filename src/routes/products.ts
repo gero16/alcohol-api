@@ -10,10 +10,68 @@ const nullableBool = { type: ["boolean", "null"] } as const;
 const nullableEnum = (values: readonly string[]) =>
   ({ anyOf: [{ type: "string", enum: values }, { type: "null" }] }) as const;
 
+/** Solo estas claves llegan a Prisma (defensa ante propiedades extra con additionalProperties: true). */
+const PRODUCT_WRITABLE_KEYS = [
+  "slug",
+  "name",
+  "brand",
+  "categorySlug",
+  "subcategorySlug",
+  "abv",
+  "origin",
+  "regionDetail",
+  "imageUrl",
+  "imageAlt",
+  "shortDescription",
+  "longDescription",
+  "servingSuggestion",
+  "priceRange",
+  "featured",
+  "tags",
+  "bodyDensity",
+  "mixingRatio",
+  "tastingColor",
+  "tastingNose",
+  "tastingPalate",
+  "tastingFinish",
+  "whiskyType",
+  "distillery",
+  "ageStatement",
+  "caskType",
+  "isPeated",
+  "wineType",
+  "wineStyle",
+  "vintage",
+  "producer",
+  "grapes",
+  "beerStyle",
+  "ibu",
+  "beerColor",
+  "pairings",
+  "celiacFriendly",
+  "veganFriendly",
+  "note",
+] as const;
+
+function pickProductBody(body: unknown): Prisma.ProductUncheckedCreateInput {
+  if (typeof body !== "object" || body === null) {
+    return {} as Prisma.ProductUncheckedCreateInput;
+  }
+  const b = body as Record<string, unknown>;
+  const out: Record<string, unknown> = {};
+  for (const key of PRODUCT_WRITABLE_KEYS) {
+    if (Object.prototype.hasOwnProperty.call(b, key) && b[key] !== undefined) {
+      out[key] = b[key];
+    }
+  }
+  return out as Prisma.ProductUncheckedCreateInput;
+}
+
 const productBodySchema = {
   type: "object",
   required: ["slug", "name", "brand", "categorySlug"],
-  additionalProperties: false,
+  // true: Ajv (removeAdditional) no borra campos nuevos si el despliegue va una versión atrás del esquema.
+  additionalProperties: true,
   properties: {
     slug:              { type: "string", minLength: 1 },
     name:              { type: "string", minLength: 1 },
@@ -56,6 +114,10 @@ const productBodySchema = {
     beerColor:         nullableStr,
     // Maridajes
     pairings:          { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
+    // Dietario / notas
+    celiacFriendly:    nullableBool,
+    veganFriendly:     nullableBool,
+    note:              nullableStr,
   },
 };
 
@@ -132,7 +194,7 @@ export const productsRoutes: FastifyPluginAsync = async (app) => {
       },
     },
     async (request, reply) => {
-      const body = request.body as Prisma.ProductCreateInput;
+      const body = pickProductBody(request.body);
 
       try {
         const prisma = getPrismaOrThrow();
@@ -178,7 +240,7 @@ export const productsRoutes: FastifyPluginAsync = async (app) => {
     },
     async (request, reply) => {
       const { slug } = request.params as { slug: string };
-      const body = request.body as Prisma.ProductUpdateInput;
+      const body = pickProductBody(request.body);
 
       try {
         const prisma = getPrismaOrThrow();

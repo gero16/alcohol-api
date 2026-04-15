@@ -11834,6 +11834,9 @@ export namespace Prisma {
     beerStyle: string | null
     ibu: number | null
     beerColor: string | null
+    celiacFriendly: boolean | null
+    veganFriendly: boolean | null
+    note: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -11871,6 +11874,9 @@ export namespace Prisma {
     beerStyle: string | null
     ibu: number | null
     beerColor: string | null
+    celiacFriendly: boolean | null
+    veganFriendly: boolean | null
+    note: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -11913,6 +11919,9 @@ export namespace Prisma {
     ibu: number
     beerColor: number
     pairings: number
+    celiacFriendly: number
+    veganFriendly: number
+    note: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -11964,6 +11973,9 @@ export namespace Prisma {
     beerStyle?: true
     ibu?: true
     beerColor?: true
+    celiacFriendly?: true
+    veganFriendly?: true
+    note?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -12001,6 +12013,9 @@ export namespace Prisma {
     beerStyle?: true
     ibu?: true
     beerColor?: true
+    celiacFriendly?: true
+    veganFriendly?: true
+    note?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -12043,6 +12058,9 @@ export namespace Prisma {
     ibu?: true
     beerColor?: true
     pairings?: true
+    celiacFriendly?: true
+    veganFriendly?: true
+    note?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -12172,6 +12190,9 @@ export namespace Prisma {
     ibu: number | null
     beerColor: string | null
     pairings: JsonValue | null
+    celiacFriendly: boolean | null
+    veganFriendly: boolean | null
+    note: string | null
     createdAt: Date
     updatedAt: Date
     _count: ProductCountAggregateOutputType | null
@@ -12233,6 +12254,9 @@ export namespace Prisma {
     ibu?: boolean
     beerColor?: boolean
     pairings?: boolean
+    celiacFriendly?: boolean
+    veganFriendly?: boolean
+    note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     category?: boolean | CategoryDefaultArgs<ExtArgs>
@@ -12276,6 +12300,9 @@ export namespace Prisma {
     ibu?: boolean
     beerColor?: boolean
     pairings?: boolean
+    celiacFriendly?: boolean
+    veganFriendly?: boolean
+    note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     category?: boolean | CategoryDefaultArgs<ExtArgs>
@@ -12319,6 +12346,9 @@ export namespace Prisma {
     ibu?: boolean
     beerColor?: boolean
     pairings?: boolean
+    celiacFriendly?: boolean
+    veganFriendly?: boolean
+    note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     category?: boolean | CategoryDefaultArgs<ExtArgs>
@@ -12362,11 +12392,14 @@ export namespace Prisma {
     ibu?: boolean
     beerColor?: boolean
     pairings?: boolean
+    celiacFriendly?: boolean
+    veganFriendly?: boolean
+    note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "name" | "brand" | "categorySlug" | "subcategorySlug" | "abv" | "origin" | "regionDetail" | "imageUrl" | "imageAlt" | "shortDescription" | "longDescription" | "servingSuggestion" | "priceRange" | "featured" | "tags" | "bodyDensity" | "mixingRatio" | "tastingColor" | "tastingNose" | "tastingPalate" | "tastingFinish" | "whiskyType" | "distillery" | "ageStatement" | "caskType" | "isPeated" | "wineType" | "wineStyle" | "vintage" | "producer" | "grapes" | "beerStyle" | "ibu" | "beerColor" | "pairings" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "name" | "brand" | "categorySlug" | "subcategorySlug" | "abv" | "origin" | "regionDetail" | "imageUrl" | "imageAlt" | "shortDescription" | "longDescription" | "servingSuggestion" | "priceRange" | "featured" | "tags" | "bodyDensity" | "mixingRatio" | "tastingColor" | "tastingNose" | "tastingPalate" | "tastingFinish" | "whiskyType" | "distillery" | "ageStatement" | "caskType" | "isPeated" | "wineType" | "wineStyle" | "vintage" | "producer" | "grapes" | "beerStyle" | "ibu" | "beerColor" | "pairings" | "celiacFriendly" | "veganFriendly" | "note" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | CategoryDefaultArgs<ExtArgs>
   }
@@ -12447,6 +12480,18 @@ export namespace Prisma {
       ibu: number | null
       beerColor: string | null
       pairings: Prisma.JsonValue | null
+      /**
+       * Apto para celíacos (sin gluten / elaboración sin trigo, cebada, etc., según etiquetado o criterio editorial).
+       */
+      celiacFriendly: boolean | null
+      /**
+       * Apto vegano (sin ingredientes de origen animal en la elaboración habitual).
+       */
+      veganFriendly: boolean | null
+      /**
+       * Nota libre: aclaraciones dietarias, advertencias o fuente del dato.
+       */
+      note: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["product"]>
@@ -12910,6 +12955,9 @@ export namespace Prisma {
     readonly ibu: FieldRef<"Product", 'Int'>
     readonly beerColor: FieldRef<"Product", 'String'>
     readonly pairings: FieldRef<"Product", 'Json'>
+    readonly celiacFriendly: FieldRef<"Product", 'Boolean'>
+    readonly veganFriendly: FieldRef<"Product", 'Boolean'>
+    readonly note: FieldRef<"Product", 'String'>
     readonly createdAt: FieldRef<"Product", 'DateTime'>
     readonly updatedAt: FieldRef<"Product", 'DateTime'>
   }
@@ -16851,6 +16899,9 @@ export namespace Prisma {
     ibu: 'ibu',
     beerColor: 'beerColor',
     pairings: 'pairings',
+    celiacFriendly: 'celiacFriendly',
+    veganFriendly: 'veganFriendly',
+    note: 'note',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -17850,6 +17901,9 @@ export namespace Prisma {
     ibu?: IntNullableFilter<"Product"> | number | null
     beerColor?: StringNullableFilter<"Product"> | string | null
     pairings?: JsonNullableFilter<"Product">
+    celiacFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    veganFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    note?: StringNullableFilter<"Product"> | string | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
     category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
@@ -17893,6 +17947,9 @@ export namespace Prisma {
     ibu?: SortOrderInput | SortOrder
     beerColor?: SortOrderInput | SortOrder
     pairings?: SortOrderInput | SortOrder
+    celiacFriendly?: SortOrderInput | SortOrder
+    veganFriendly?: SortOrderInput | SortOrder
+    note?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     category?: CategoryOrderByWithRelationInput
@@ -17939,6 +17996,9 @@ export namespace Prisma {
     ibu?: IntNullableFilter<"Product"> | number | null
     beerColor?: StringNullableFilter<"Product"> | string | null
     pairings?: JsonNullableFilter<"Product">
+    celiacFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    veganFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    note?: StringNullableFilter<"Product"> | string | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
     category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
@@ -17982,6 +18042,9 @@ export namespace Prisma {
     ibu?: SortOrderInput | SortOrder
     beerColor?: SortOrderInput | SortOrder
     pairings?: SortOrderInput | SortOrder
+    celiacFriendly?: SortOrderInput | SortOrder
+    veganFriendly?: SortOrderInput | SortOrder
+    note?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: ProductCountOrderByAggregateInput
@@ -18032,6 +18095,9 @@ export namespace Prisma {
     ibu?: IntNullableWithAggregatesFilter<"Product"> | number | null
     beerColor?: StringNullableWithAggregatesFilter<"Product"> | string | null
     pairings?: JsonNullableWithAggregatesFilter<"Product">
+    celiacFriendly?: BoolNullableWithAggregatesFilter<"Product"> | boolean | null
+    veganFriendly?: BoolNullableWithAggregatesFilter<"Product"> | boolean | null
+    note?: StringNullableWithAggregatesFilter<"Product"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
   }
@@ -19079,6 +19145,9 @@ export namespace Prisma {
     ibu?: number | null
     beerColor?: string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: boolean | null
+    veganFriendly?: boolean | null
+    note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     category: CategoryCreateNestedOneWithoutProductsInput
@@ -19122,6 +19191,9 @@ export namespace Prisma {
     ibu?: number | null
     beerColor?: string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: boolean | null
+    veganFriendly?: boolean | null
+    note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -19163,6 +19235,9 @@ export namespace Prisma {
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
     beerColor?: NullableStringFieldUpdateOperationsInput | string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     category?: CategoryUpdateOneRequiredWithoutProductsNestedInput
@@ -19206,6 +19281,9 @@ export namespace Prisma {
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
     beerColor?: NullableStringFieldUpdateOperationsInput | string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -19248,6 +19326,9 @@ export namespace Prisma {
     ibu?: number | null
     beerColor?: string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: boolean | null
+    veganFriendly?: boolean | null
+    note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -19289,6 +19370,9 @@ export namespace Prisma {
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
     beerColor?: NullableStringFieldUpdateOperationsInput | string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -19331,6 +19415,9 @@ export namespace Prisma {
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
     beerColor?: NullableStringFieldUpdateOperationsInput | string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -20336,6 +20423,9 @@ export namespace Prisma {
     ibu?: SortOrder
     beerColor?: SortOrder
     pairings?: SortOrder
+    celiacFriendly?: SortOrder
+    veganFriendly?: SortOrder
+    note?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -20379,6 +20469,9 @@ export namespace Prisma {
     beerStyle?: SortOrder
     ibu?: SortOrder
     beerColor?: SortOrder
+    celiacFriendly?: SortOrder
+    veganFriendly?: SortOrder
+    note?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -20416,6 +20509,9 @@ export namespace Prisma {
     beerStyle?: SortOrder
     ibu?: SortOrder
     beerColor?: SortOrder
+    celiacFriendly?: SortOrder
+    veganFriendly?: SortOrder
+    note?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -21721,6 +21817,9 @@ export namespace Prisma {
     ibu?: number | null
     beerColor?: string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: boolean | null
+    veganFriendly?: boolean | null
+    note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -21762,6 +21861,9 @@ export namespace Prisma {
     ibu?: number | null
     beerColor?: string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: boolean | null
+    veganFriendly?: boolean | null
+    note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -21888,6 +21990,9 @@ export namespace Prisma {
     ibu?: IntNullableFilter<"Product"> | number | null
     beerColor?: StringNullableFilter<"Product"> | string | null
     pairings?: JsonNullableFilter<"Product">
+    celiacFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    veganFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    note?: StringNullableFilter<"Product"> | string | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
   }
@@ -23261,6 +23366,9 @@ export namespace Prisma {
     ibu?: number | null
     beerColor?: string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: boolean | null
+    veganFriendly?: boolean | null
+    note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -23320,6 +23428,9 @@ export namespace Prisma {
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
     beerColor?: NullableStringFieldUpdateOperationsInput | string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -23361,6 +23472,9 @@ export namespace Prisma {
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
     beerColor?: NullableStringFieldUpdateOperationsInput | string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -23402,6 +23516,9 @@ export namespace Prisma {
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
     beerColor?: NullableStringFieldUpdateOperationsInput | string | null
     pairings?: NullableJsonNullValueInput | InputJsonValue
+    celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

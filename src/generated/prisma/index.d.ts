@@ -84,6 +84,7 @@ export namespace $Enums {
   BLENDED_MALT: 'BLENDED_MALT',
   BLENDED_SCOTCH: 'BLENDED_SCOTCH',
   BOURBON: 'BOURBON',
+  TENNESSEE_WHISKEY: 'TENNESSEE_WHISKEY',
   RYE: 'RYE',
   IRISH: 'IRISH',
   JAPANESE: 'JAPANESE',
@@ -11812,7 +11813,8 @@ export namespace Prisma {
     regionDetail: string | null
     imageUrl: string | null
     imageAlt: string | null
-    description: string | null
+    shortDescription: string | null
+    longDescription: string | null
     servingSuggestion: string | null
     priceRange: string | null
     featured: boolean | null
@@ -11848,7 +11850,8 @@ export namespace Prisma {
     regionDetail: string | null
     imageUrl: string | null
     imageAlt: string | null
-    description: string | null
+    shortDescription: string | null
+    longDescription: string | null
     servingSuggestion: string | null
     priceRange: string | null
     featured: boolean | null
@@ -11884,7 +11887,8 @@ export namespace Prisma {
     regionDetail: number
     imageUrl: number
     imageAlt: number
-    description: number
+    shortDescription: number
+    longDescription: number
     servingSuggestion: number
     priceRange: number
     featured: number
@@ -11939,7 +11943,8 @@ export namespace Prisma {
     regionDetail?: true
     imageUrl?: true
     imageAlt?: true
-    description?: true
+    shortDescription?: true
+    longDescription?: true
     servingSuggestion?: true
     priceRange?: true
     featured?: true
@@ -11975,7 +11980,8 @@ export namespace Prisma {
     regionDetail?: true
     imageUrl?: true
     imageAlt?: true
-    description?: true
+    shortDescription?: true
+    longDescription?: true
     servingSuggestion?: true
     priceRange?: true
     featured?: true
@@ -12011,7 +12017,8 @@ export namespace Prisma {
     regionDetail?: true
     imageUrl?: true
     imageAlt?: true
-    description?: true
+    shortDescription?: true
+    longDescription?: true
     servingSuggestion?: true
     priceRange?: true
     featured?: true
@@ -12139,7 +12146,8 @@ export namespace Prisma {
     regionDetail: string | null
     imageUrl: string | null
     imageAlt: string | null
-    description: string | null
+    shortDescription: string | null
+    longDescription: string | null
     servingSuggestion: string | null
     priceRange: string | null
     featured: boolean
@@ -12199,7 +12207,8 @@ export namespace Prisma {
     regionDetail?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
-    description?: boolean
+    shortDescription?: boolean
+    longDescription?: boolean
     servingSuggestion?: boolean
     priceRange?: boolean
     featured?: boolean
@@ -12241,7 +12250,8 @@ export namespace Prisma {
     regionDetail?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
-    description?: boolean
+    shortDescription?: boolean
+    longDescription?: boolean
     servingSuggestion?: boolean
     priceRange?: boolean
     featured?: boolean
@@ -12283,7 +12293,8 @@ export namespace Prisma {
     regionDetail?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
-    description?: boolean
+    shortDescription?: boolean
+    longDescription?: boolean
     servingSuggestion?: boolean
     priceRange?: boolean
     featured?: boolean
@@ -12325,7 +12336,8 @@ export namespace Prisma {
     regionDetail?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
-    description?: boolean
+    shortDescription?: boolean
+    longDescription?: boolean
     servingSuggestion?: boolean
     priceRange?: boolean
     featured?: boolean
@@ -12354,7 +12366,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "name" | "brand" | "categorySlug" | "subcategorySlug" | "abv" | "origin" | "regionDetail" | "imageUrl" | "imageAlt" | "description" | "servingSuggestion" | "priceRange" | "featured" | "tags" | "bodyDensity" | "mixingRatio" | "tastingColor" | "tastingNose" | "tastingPalate" | "tastingFinish" | "whiskyType" | "distillery" | "ageStatement" | "caskType" | "isPeated" | "wineType" | "wineStyle" | "vintage" | "producer" | "grapes" | "beerStyle" | "ibu" | "beerColor" | "pairings" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "name" | "brand" | "categorySlug" | "subcategorySlug" | "abv" | "origin" | "regionDetail" | "imageUrl" | "imageAlt" | "shortDescription" | "longDescription" | "servingSuggestion" | "priceRange" | "featured" | "tags" | "bodyDensity" | "mixingRatio" | "tastingColor" | "tastingNose" | "tastingPalate" | "tastingFinish" | "whiskyType" | "distillery" | "ageStatement" | "caskType" | "isPeated" | "wineType" | "wineStyle" | "vintage" | "producer" | "grapes" | "beerStyle" | "ibu" | "beerColor" | "pairings" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | CategoryDefaultArgs<ExtArgs>
   }
@@ -12382,7 +12394,8 @@ export namespace Prisma {
       regionDetail: string | null
       imageUrl: string | null
       imageAlt: string | null
-      description: string | null
+      shortDescription: string | null
+      longDescription: string | null
       /**
        * "On the rocks", "En copa técnica", "Highball", etc.
        */
@@ -12871,7 +12884,8 @@ export namespace Prisma {
     readonly regionDetail: FieldRef<"Product", 'String'>
     readonly imageUrl: FieldRef<"Product", 'String'>
     readonly imageAlt: FieldRef<"Product", 'String'>
-    readonly description: FieldRef<"Product", 'String'>
+    readonly shortDescription: FieldRef<"Product", 'String'>
+    readonly longDescription: FieldRef<"Product", 'String'>
     readonly servingSuggestion: FieldRef<"Product", 'String'>
     readonly priceRange: FieldRef<"Product", 'String'>
     readonly featured: FieldRef<"Product", 'Boolean'>
@@ -16811,7 +16825,8 @@ export namespace Prisma {
     regionDetail: 'regionDetail',
     imageUrl: 'imageUrl',
     imageAlt: 'imageAlt',
-    description: 'description',
+    shortDescription: 'shortDescription',
+    longDescription: 'longDescription',
     servingSuggestion: 'servingSuggestion',
     priceRange: 'priceRange',
     featured: 'featured',
@@ -17809,7 +17824,8 @@ export namespace Prisma {
     regionDetail?: StringNullableFilter<"Product"> | string | null
     imageUrl?: StringNullableFilter<"Product"> | string | null
     imageAlt?: StringNullableFilter<"Product"> | string | null
-    description?: StringNullableFilter<"Product"> | string | null
+    shortDescription?: StringNullableFilter<"Product"> | string | null
+    longDescription?: StringNullableFilter<"Product"> | string | null
     servingSuggestion?: StringNullableFilter<"Product"> | string | null
     priceRange?: StringNullableFilter<"Product"> | string | null
     featured?: BoolFilter<"Product"> | boolean
@@ -17851,7 +17867,8 @@ export namespace Prisma {
     regionDetail?: SortOrderInput | SortOrder
     imageUrl?: SortOrderInput | SortOrder
     imageAlt?: SortOrderInput | SortOrder
-    description?: SortOrderInput | SortOrder
+    shortDescription?: SortOrderInput | SortOrder
+    longDescription?: SortOrderInput | SortOrder
     servingSuggestion?: SortOrderInput | SortOrder
     priceRange?: SortOrderInput | SortOrder
     featured?: SortOrder
@@ -17896,7 +17913,8 @@ export namespace Prisma {
     regionDetail?: StringNullableFilter<"Product"> | string | null
     imageUrl?: StringNullableFilter<"Product"> | string | null
     imageAlt?: StringNullableFilter<"Product"> | string | null
-    description?: StringNullableFilter<"Product"> | string | null
+    shortDescription?: StringNullableFilter<"Product"> | string | null
+    longDescription?: StringNullableFilter<"Product"> | string | null
     servingSuggestion?: StringNullableFilter<"Product"> | string | null
     priceRange?: StringNullableFilter<"Product"> | string | null
     featured?: BoolFilter<"Product"> | boolean
@@ -17938,7 +17956,8 @@ export namespace Prisma {
     regionDetail?: SortOrderInput | SortOrder
     imageUrl?: SortOrderInput | SortOrder
     imageAlt?: SortOrderInput | SortOrder
-    description?: SortOrderInput | SortOrder
+    shortDescription?: SortOrderInput | SortOrder
+    longDescription?: SortOrderInput | SortOrder
     servingSuggestion?: SortOrderInput | SortOrder
     priceRange?: SortOrderInput | SortOrder
     featured?: SortOrder
@@ -17987,7 +18006,8 @@ export namespace Prisma {
     regionDetail?: StringNullableWithAggregatesFilter<"Product"> | string | null
     imageUrl?: StringNullableWithAggregatesFilter<"Product"> | string | null
     imageAlt?: StringNullableWithAggregatesFilter<"Product"> | string | null
-    description?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    shortDescription?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    longDescription?: StringNullableWithAggregatesFilter<"Product"> | string | null
     servingSuggestion?: StringNullableWithAggregatesFilter<"Product"> | string | null
     priceRange?: StringNullableWithAggregatesFilter<"Product"> | string | null
     featured?: BoolWithAggregatesFilter<"Product"> | boolean
@@ -19033,7 +19053,8 @@ export namespace Prisma {
     regionDetail?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
-    description?: string | null
+    shortDescription?: string | null
+    longDescription?: string | null
     servingSuggestion?: string | null
     priceRange?: string | null
     featured?: boolean
@@ -19075,7 +19096,8 @@ export namespace Prisma {
     regionDetail?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
-    description?: string | null
+    shortDescription?: string | null
+    longDescription?: string | null
     servingSuggestion?: string | null
     priceRange?: string | null
     featured?: boolean
@@ -19115,7 +19137,8 @@ export namespace Prisma {
     regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    shortDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    longDescription?: NullableStringFieldUpdateOperationsInput | string | null
     servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     featured?: BoolFieldUpdateOperationsInput | boolean
@@ -19157,7 +19180,8 @@ export namespace Prisma {
     regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    shortDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    longDescription?: NullableStringFieldUpdateOperationsInput | string | null
     servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     featured?: BoolFieldUpdateOperationsInput | boolean
@@ -19198,7 +19222,8 @@ export namespace Prisma {
     regionDetail?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
-    description?: string | null
+    shortDescription?: string | null
+    longDescription?: string | null
     servingSuggestion?: string | null
     priceRange?: string | null
     featured?: boolean
@@ -19238,7 +19263,8 @@ export namespace Prisma {
     regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    shortDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    longDescription?: NullableStringFieldUpdateOperationsInput | string | null
     servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     featured?: BoolFieldUpdateOperationsInput | boolean
@@ -19279,7 +19305,8 @@ export namespace Prisma {
     regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    shortDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    longDescription?: NullableStringFieldUpdateOperationsInput | string | null
     servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     featured?: BoolFieldUpdateOperationsInput | boolean
@@ -20283,7 +20310,8 @@ export namespace Prisma {
     regionDetail?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
-    description?: SortOrder
+    shortDescription?: SortOrder
+    longDescription?: SortOrder
     servingSuggestion?: SortOrder
     priceRange?: SortOrder
     featured?: SortOrder
@@ -20330,7 +20358,8 @@ export namespace Prisma {
     regionDetail?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
-    description?: SortOrder
+    shortDescription?: SortOrder
+    longDescription?: SortOrder
     servingSuggestion?: SortOrder
     priceRange?: SortOrder
     featured?: SortOrder
@@ -20366,7 +20395,8 @@ export namespace Prisma {
     regionDetail?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
-    description?: SortOrder
+    shortDescription?: SortOrder
+    longDescription?: SortOrder
     servingSuggestion?: SortOrder
     priceRange?: SortOrder
     featured?: SortOrder
@@ -21665,7 +21695,8 @@ export namespace Prisma {
     regionDetail?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
-    description?: string | null
+    shortDescription?: string | null
+    longDescription?: string | null
     servingSuggestion?: string | null
     priceRange?: string | null
     featured?: boolean
@@ -21705,7 +21736,8 @@ export namespace Prisma {
     regionDetail?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
-    description?: string | null
+    shortDescription?: string | null
+    longDescription?: string | null
     servingSuggestion?: string | null
     priceRange?: string | null
     featured?: boolean
@@ -21830,7 +21862,8 @@ export namespace Prisma {
     regionDetail?: StringNullableFilter<"Product"> | string | null
     imageUrl?: StringNullableFilter<"Product"> | string | null
     imageAlt?: StringNullableFilter<"Product"> | string | null
-    description?: StringNullableFilter<"Product"> | string | null
+    shortDescription?: StringNullableFilter<"Product"> | string | null
+    longDescription?: StringNullableFilter<"Product"> | string | null
     servingSuggestion?: StringNullableFilter<"Product"> | string | null
     priceRange?: StringNullableFilter<"Product"> | string | null
     featured?: BoolFilter<"Product"> | boolean
@@ -23202,7 +23235,8 @@ export namespace Prisma {
     regionDetail?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
-    description?: string | null
+    shortDescription?: string | null
+    longDescription?: string | null
     servingSuggestion?: string | null
     priceRange?: string | null
     featured?: boolean
@@ -23260,7 +23294,8 @@ export namespace Prisma {
     regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    shortDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    longDescription?: NullableStringFieldUpdateOperationsInput | string | null
     servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     featured?: BoolFieldUpdateOperationsInput | boolean
@@ -23300,7 +23335,8 @@ export namespace Prisma {
     regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    shortDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    longDescription?: NullableStringFieldUpdateOperationsInput | string | null
     servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     featured?: BoolFieldUpdateOperationsInput | boolean
@@ -23340,7 +23376,8 @@ export namespace Prisma {
     regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+    shortDescription?: NullableStringFieldUpdateOperationsInput | string | null
+    longDescription?: NullableStringFieldUpdateOperationsInput | string | null
     servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
     priceRange?: NullableStringFieldUpdateOperationsInput | string | null
     featured?: BoolFieldUpdateOperationsInput | boolean

@@ -163,6 +163,7 @@ enum WhiskyType {
   BLENDED_MALT
   BLENDED_SCOTCH
   BOURBON
+  TENNESSEE_WHISKEY
   RYE
   IRISH
   JAPANESE
@@ -211,7 +212,8 @@ model Product {
   regionDetail      String?
   imageUrl          String?
   imageAlt          String?
-  description       String?
+  shortDescription  String?
+  longDescription   String?
   /// "On the rocks", "En copa técnica", "Highball", etc.
   servingSuggestion String?
   priceRange        String?

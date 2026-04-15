@@ -25,7 +25,8 @@ const productBodySchema = {
     regionDetail:      nullableStr,
     imageUrl:          nullableStr,
     imageAlt:          nullableStr,
-    description:       nullableStr,
+    shortDescription:  nullableStr,
+    longDescription:   nullableStr,
     servingSuggestion: nullableStr,
     priceRange:        nullableStr,
     featured:          { type: "boolean" },
@@ -38,7 +39,7 @@ const productBodySchema = {
     tastingPalate:     { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
     tastingFinish:     nullableStr,
     // Whisky
-    whiskyType:        nullableEnum(["SINGLE_MALT","SINGLE_GRAIN","BLENDED_MALT","BLENDED_SCOTCH","BOURBON","RYE","IRISH","JAPANESE","WORLD"]),
+    whiskyType:        nullableEnum(["SINGLE_MALT","SINGLE_GRAIN","BLENDED_MALT","BLENDED_SCOTCH","BOURBON","TENNESSEE_WHISKEY","RYE","IRISH","JAPANESE","WORLD"]),
     distillery:        nullableStr,
     ageStatement:      nullableStr,
     caskType:          nullableStr,

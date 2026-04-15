@@ -162,7 +162,7 @@ enum WhiskyType {
   SINGLE_GRAIN
   BLENDED_MALT
   BLENDED_SCOTCH
-  BOURBON,
+  BOURBON
   TENNESSEE_WHISKEY
   RYE
   IRISH
@@ -212,7 +212,8 @@ model Product {
   regionDetail      String?
   imageUrl          String?
   imageAlt          String?
-  description       String?
+  shortDescription  String?
+  longDescription   String?
   /// "On the rocks", "En copa técnica", "Highball", etc.
   servingSuggestion String?
   priceRange        String?

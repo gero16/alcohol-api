@@ -233,6 +233,47 @@ exports.Prisma.GuideTableRowScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.ProductScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  name: 'name',
+  brand: 'brand',
+  categorySlug: 'categorySlug',
+  subcategorySlug: 'subcategorySlug',
+  abv: 'abv',
+  origin: 'origin',
+  regionDetail: 'regionDetail',
+  imageUrl: 'imageUrl',
+  imageAlt: 'imageAlt',
+  description: 'description',
+  servingSuggestion: 'servingSuggestion',
+  priceRange: 'priceRange',
+  featured: 'featured',
+  tags: 'tags',
+  bodyDensity: 'bodyDensity',
+  mixingRatio: 'mixingRatio',
+  tastingColor: 'tastingColor',
+  tastingNose: 'tastingNose',
+  tastingPalate: 'tastingPalate',
+  tastingFinish: 'tastingFinish',
+  whiskyType: 'whiskyType',
+  distillery: 'distillery',
+  ageStatement: 'ageStatement',
+  caskType: 'caskType',
+  isPeated: 'isPeated',
+  wineType: 'wineType',
+  wineStyle: 'wineStyle',
+  vintage: 'vintage',
+  producer: 'producer',
+  grapes: 'grapes',
+  beerStyle: 'beerStyle',
+  ibu: 'ibu',
+  beerColor: 'beerColor',
+  pairings: 'pairings',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.GlossaryItemScalarFieldEnum = {
   id: 'id',
   slug: 'slug',
@@ -268,6 +309,11 @@ exports.Prisma.JsonNullValueInput = {
   JsonNull: Prisma.JsonNull
 };
 
+exports.Prisma.NullableJsonNullValueInput = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull
+};
+
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
@@ -283,7 +329,44 @@ exports.Prisma.JsonNullValueFilter = {
   JsonNull: Prisma.JsonNull,
   AnyNull: Prisma.AnyNull
 };
+exports.BodyDensity = exports.$Enums.BodyDensity = {
+  LOW: 'LOW',
+  MEDIUM_LOW: 'MEDIUM_LOW',
+  MEDIUM: 'MEDIUM',
+  MEDIUM_HIGH: 'MEDIUM_HIGH',
+  HIGH: 'HIGH'
+};
 
+exports.WhiskyType = exports.$Enums.WhiskyType = {
+  SINGLE_MALT: 'SINGLE_MALT',
+  SINGLE_GRAIN: 'SINGLE_GRAIN',
+  BLENDED_MALT: 'BLENDED_MALT',
+  BLENDED_SCOTCH: 'BLENDED_SCOTCH',
+  BOURBON: 'BOURBON',
+  RYE: 'RYE',
+  IRISH: 'IRISH',
+  JAPANESE: 'JAPANESE',
+  WORLD: 'WORLD'
+};
+
+exports.WineType = exports.$Enums.WineType = {
+  TINTO: 'TINTO',
+  BLANCO: 'BLANCO',
+  ROSADO: 'ROSADO',
+  ESPUMOSO: 'ESPUMOSO',
+  DULCE: 'DULCE',
+  SEMI_DULCE: 'SEMI_DULCE',
+  SEMI_SECO: 'SEMI_SECO',
+  FORTIFICADO: 'FORTIFICADO'
+};
+
+exports.WineStyle = exports.$Enums.WineStyle = {
+  JOVEN: 'JOVEN',
+  ROBLE: 'ROBLE',
+  CRIANZA: 'CRIANZA',
+  RESERVA: 'RESERVA',
+  GRAN_RESERVA: 'GRAN_RESERVA'
+};
 
 exports.Prisma.ModelName = {
   Category: 'Category',
@@ -294,6 +377,7 @@ exports.Prisma.ModelName = {
   GuideParagraph: 'GuideParagraph',
   GuideTable: 'GuideTable',
   GuideTableRow: 'GuideTableRow',
+  Product: 'Product',
   GlossaryItem: 'GlossaryItem',
   GlossaryDetail: 'GlossaryDetail',
   GlossaryItemCategory: 'GlossaryItemCategory'

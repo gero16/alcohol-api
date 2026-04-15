@@ -54,6 +54,11 @@ export type GuideTable = $Result.DefaultSelection<Prisma.$GuideTablePayload>
  */
 export type GuideTableRow = $Result.DefaultSelection<Prisma.$GuideTableRowPayload>
 /**
+ * Model Product
+ * 
+ */
+export type Product = $Result.DefaultSelection<Prisma.$ProductPayload>
+/**
  * Model GlossaryItem
  * 
  */
@@ -68,6 +73,78 @@ export type GlossaryDetail = $Result.DefaultSelection<Prisma.$GlossaryDetailPayl
  * 
  */
 export type GlossaryItemCategory = $Result.DefaultSelection<Prisma.$GlossaryItemCategoryPayload>
+
+/**
+ * Enums
+ */
+export namespace $Enums {
+  export const WhiskyType: {
+  SINGLE_MALT: 'SINGLE_MALT',
+  SINGLE_GRAIN: 'SINGLE_GRAIN',
+  BLENDED_MALT: 'BLENDED_MALT',
+  BLENDED_SCOTCH: 'BLENDED_SCOTCH',
+  BOURBON: 'BOURBON',
+  RYE: 'RYE',
+  IRISH: 'IRISH',
+  JAPANESE: 'JAPANESE',
+  WORLD: 'WORLD'
+};
+
+export type WhiskyType = (typeof WhiskyType)[keyof typeof WhiskyType]
+
+
+export const WineType: {
+  TINTO: 'TINTO',
+  BLANCO: 'BLANCO',
+  ROSADO: 'ROSADO',
+  ESPUMOSO: 'ESPUMOSO',
+  DULCE: 'DULCE',
+  SEMI_DULCE: 'SEMI_DULCE',
+  SEMI_SECO: 'SEMI_SECO',
+  FORTIFICADO: 'FORTIFICADO'
+};
+
+export type WineType = (typeof WineType)[keyof typeof WineType]
+
+
+export const WineStyle: {
+  JOVEN: 'JOVEN',
+  ROBLE: 'ROBLE',
+  CRIANZA: 'CRIANZA',
+  RESERVA: 'RESERVA',
+  GRAN_RESERVA: 'GRAN_RESERVA'
+};
+
+export type WineStyle = (typeof WineStyle)[keyof typeof WineStyle]
+
+
+export const BodyDensity: {
+  LOW: 'LOW',
+  MEDIUM_LOW: 'MEDIUM_LOW',
+  MEDIUM: 'MEDIUM',
+  MEDIUM_HIGH: 'MEDIUM_HIGH',
+  HIGH: 'HIGH'
+};
+
+export type BodyDensity = (typeof BodyDensity)[keyof typeof BodyDensity]
+
+}
+
+export type WhiskyType = $Enums.WhiskyType
+
+export const WhiskyType: typeof $Enums.WhiskyType
+
+export type WineType = $Enums.WineType
+
+export const WineType: typeof $Enums.WineType
+
+export type WineStyle = $Enums.WineStyle
+
+export const WineStyle: typeof $Enums.WineStyle
+
+export type BodyDensity = $Enums.BodyDensity
+
+export const BodyDensity: typeof $Enums.BodyDensity
 
 /**
  * ##  Prisma Client ʲˢ
@@ -269,6 +346,16 @@ export class PrismaClient<
     * ```
     */
   get guideTableRow(): Prisma.GuideTableRowDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.product`: Exposes CRUD operations for the **Product** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Products
+    * const products = await prisma.product.findMany()
+    * ```
+    */
+  get product(): Prisma.ProductDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.glossaryItem`: Exposes CRUD operations for the **GlossaryItem** model.
@@ -741,6 +828,7 @@ export namespace Prisma {
     GuideParagraph: 'GuideParagraph',
     GuideTable: 'GuideTable',
     GuideTableRow: 'GuideTableRow',
+    Product: 'Product',
     GlossaryItem: 'GlossaryItem',
     GlossaryDetail: 'GlossaryDetail',
     GlossaryItemCategory: 'GlossaryItemCategory'
@@ -759,7 +847,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "category" | "guide" | "guideTab" | "guideClassification" | "guideSection" | "guideParagraph" | "guideTable" | "guideTableRow" | "glossaryItem" | "glossaryDetail" | "glossaryItemCategory"
+      modelProps: "category" | "guide" | "guideTab" | "guideClassification" | "guideSection" | "guideParagraph" | "guideTable" | "guideTableRow" | "product" | "glossaryItem" | "glossaryDetail" | "glossaryItemCategory"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1355,6 +1443,80 @@ export namespace Prisma {
           }
         }
       }
+      Product: {
+        payload: Prisma.$ProductPayload<ExtArgs>
+        fields: Prisma.ProductFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProductFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProductFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+          }
+          findFirst: {
+            args: Prisma.ProductFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProductFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+          }
+          findMany: {
+            args: Prisma.ProductFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>[]
+          }
+          create: {
+            args: Prisma.ProductCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+          }
+          createMany: {
+            args: Prisma.ProductCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ProductCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>[]
+          }
+          delete: {
+            args: Prisma.ProductDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+          }
+          update: {
+            args: Prisma.ProductUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+          }
+          deleteMany: {
+            args: Prisma.ProductDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProductUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ProductUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>[]
+          }
+          upsert: {
+            args: Prisma.ProductUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductPayload>
+          }
+          aggregate: {
+            args: Prisma.ProductAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProduct>
+          }
+          groupBy: {
+            args: Prisma.ProductGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProductGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ProductCountArgs<ExtArgs>
+            result: $Utils.Optional<ProductCountAggregateOutputType> | number
+          }
+        }
+      }
       GlossaryItem: {
         payload: Prisma.$GlossaryItemPayload<ExtArgs>
         fields: Prisma.GlossaryItemFieldRefs
@@ -1693,6 +1855,7 @@ export namespace Prisma {
     guideParagraph?: GuideParagraphOmit
     guideTable?: GuideTableOmit
     guideTableRow?: GuideTableRowOmit
+    product?: ProductOmit
     glossaryItem?: GlossaryItemOmit
     glossaryDetail?: GlossaryDetailOmit
     glossaryItemCategory?: GlossaryItemCategoryOmit
@@ -1777,10 +1940,12 @@ export namespace Prisma {
 
   export type CategoryCountOutputType = {
     glossaryLinks: number
+    products: number
   }
 
   export type CategoryCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     glossaryLinks?: boolean | CategoryCountOutputTypeCountGlossaryLinksArgs
+    products?: boolean | CategoryCountOutputTypeCountProductsArgs
   }
 
   // Custom InputTypes
@@ -1799,6 +1964,13 @@ export namespace Prisma {
    */
   export type CategoryCountOutputTypeCountGlossaryLinksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: GlossaryItemCategoryWhereInput
+  }
+
+  /**
+   * CategoryCountOutputType without action
+   */
+  export type CategoryCountOutputTypeCountProductsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProductWhereInput
   }
 
 
@@ -2236,6 +2408,7 @@ export namespace Prisma {
     updatedAt?: boolean
     guide?: boolean | Category$guideArgs<ExtArgs>
     glossaryLinks?: boolean | Category$glossaryLinksArgs<ExtArgs>
+    products?: boolean | Category$productsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
 
@@ -2285,6 +2458,7 @@ export namespace Prisma {
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     guide?: boolean | Category$guideArgs<ExtArgs>
     glossaryLinks?: boolean | Category$glossaryLinksArgs<ExtArgs>
+    products?: boolean | Category$productsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CategoryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -2295,6 +2469,7 @@ export namespace Prisma {
     objects: {
       guide: Prisma.$GuidePayload<ExtArgs> | null
       glossaryLinks: Prisma.$GlossaryItemCategoryPayload<ExtArgs>[]
+      products: Prisma.$ProductPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2704,6 +2879,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     guide<T extends Category$guideArgs<ExtArgs> = {}>(args?: Subset<T, Category$guideArgs<ExtArgs>>): Prisma__GuideClient<$Result.GetResult<Prisma.$GuidePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     glossaryLinks<T extends Category$glossaryLinksArgs<ExtArgs> = {}>(args?: Subset<T, Category$glossaryLinksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GlossaryItemCategoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    products<T extends Category$productsArgs<ExtArgs> = {}>(args?: Subset<T, Category$productsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3177,6 +3353,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: GlossaryItemCategoryScalarFieldEnum | GlossaryItemCategoryScalarFieldEnum[]
+  }
+
+  /**
+   * Category.products
+   */
+  export type Category$productsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    where?: ProductWhereInput
+    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    cursor?: ProductWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
   }
 
   /**
@@ -11577,6 +11777,1547 @@ export namespace Prisma {
 
 
   /**
+   * Model Product
+   */
+
+  export type AggregateProduct = {
+    _count: ProductCountAggregateOutputType | null
+    _avg: ProductAvgAggregateOutputType | null
+    _sum: ProductSumAggregateOutputType | null
+    _min: ProductMinAggregateOutputType | null
+    _max: ProductMaxAggregateOutputType | null
+  }
+
+  export type ProductAvgAggregateOutputType = {
+    abv: number | null
+    vintage: number | null
+    ibu: number | null
+  }
+
+  export type ProductSumAggregateOutputType = {
+    abv: number | null
+    vintage: number | null
+    ibu: number | null
+  }
+
+  export type ProductMinAggregateOutputType = {
+    id: string | null
+    slug: string | null
+    name: string | null
+    brand: string | null
+    categorySlug: string | null
+    subcategorySlug: string | null
+    abv: number | null
+    origin: string | null
+    regionDetail: string | null
+    imageUrl: string | null
+    imageAlt: string | null
+    description: string | null
+    servingSuggestion: string | null
+    priceRange: string | null
+    featured: boolean | null
+    bodyDensity: $Enums.BodyDensity | null
+    mixingRatio: string | null
+    tastingColor: string | null
+    tastingFinish: string | null
+    whiskyType: $Enums.WhiskyType | null
+    distillery: string | null
+    ageStatement: string | null
+    caskType: string | null
+    isPeated: boolean | null
+    wineType: $Enums.WineType | null
+    wineStyle: $Enums.WineStyle | null
+    vintage: number | null
+    producer: string | null
+    beerStyle: string | null
+    ibu: number | null
+    beerColor: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ProductMaxAggregateOutputType = {
+    id: string | null
+    slug: string | null
+    name: string | null
+    brand: string | null
+    categorySlug: string | null
+    subcategorySlug: string | null
+    abv: number | null
+    origin: string | null
+    regionDetail: string | null
+    imageUrl: string | null
+    imageAlt: string | null
+    description: string | null
+    servingSuggestion: string | null
+    priceRange: string | null
+    featured: boolean | null
+    bodyDensity: $Enums.BodyDensity | null
+    mixingRatio: string | null
+    tastingColor: string | null
+    tastingFinish: string | null
+    whiskyType: $Enums.WhiskyType | null
+    distillery: string | null
+    ageStatement: string | null
+    caskType: string | null
+    isPeated: boolean | null
+    wineType: $Enums.WineType | null
+    wineStyle: $Enums.WineStyle | null
+    vintage: number | null
+    producer: string | null
+    beerStyle: string | null
+    ibu: number | null
+    beerColor: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ProductCountAggregateOutputType = {
+    id: number
+    slug: number
+    name: number
+    brand: number
+    categorySlug: number
+    subcategorySlug: number
+    abv: number
+    origin: number
+    regionDetail: number
+    imageUrl: number
+    imageAlt: number
+    description: number
+    servingSuggestion: number
+    priceRange: number
+    featured: number
+    tags: number
+    bodyDensity: number
+    mixingRatio: number
+    tastingColor: number
+    tastingNose: number
+    tastingPalate: number
+    tastingFinish: number
+    whiskyType: number
+    distillery: number
+    ageStatement: number
+    caskType: number
+    isPeated: number
+    wineType: number
+    wineStyle: number
+    vintage: number
+    producer: number
+    grapes: number
+    beerStyle: number
+    ibu: number
+    beerColor: number
+    pairings: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ProductAvgAggregateInputType = {
+    abv?: true
+    vintage?: true
+    ibu?: true
+  }
+
+  export type ProductSumAggregateInputType = {
+    abv?: true
+    vintage?: true
+    ibu?: true
+  }
+
+  export type ProductMinAggregateInputType = {
+    id?: true
+    slug?: true
+    name?: true
+    brand?: true
+    categorySlug?: true
+    subcategorySlug?: true
+    abv?: true
+    origin?: true
+    regionDetail?: true
+    imageUrl?: true
+    imageAlt?: true
+    description?: true
+    servingSuggestion?: true
+    priceRange?: true
+    featured?: true
+    bodyDensity?: true
+    mixingRatio?: true
+    tastingColor?: true
+    tastingFinish?: true
+    whiskyType?: true
+    distillery?: true
+    ageStatement?: true
+    caskType?: true
+    isPeated?: true
+    wineType?: true
+    wineStyle?: true
+    vintage?: true
+    producer?: true
+    beerStyle?: true
+    ibu?: true
+    beerColor?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ProductMaxAggregateInputType = {
+    id?: true
+    slug?: true
+    name?: true
+    brand?: true
+    categorySlug?: true
+    subcategorySlug?: true
+    abv?: true
+    origin?: true
+    regionDetail?: true
+    imageUrl?: true
+    imageAlt?: true
+    description?: true
+    servingSuggestion?: true
+    priceRange?: true
+    featured?: true
+    bodyDensity?: true
+    mixingRatio?: true
+    tastingColor?: true
+    tastingFinish?: true
+    whiskyType?: true
+    distillery?: true
+    ageStatement?: true
+    caskType?: true
+    isPeated?: true
+    wineType?: true
+    wineStyle?: true
+    vintage?: true
+    producer?: true
+    beerStyle?: true
+    ibu?: true
+    beerColor?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ProductCountAggregateInputType = {
+    id?: true
+    slug?: true
+    name?: true
+    brand?: true
+    categorySlug?: true
+    subcategorySlug?: true
+    abv?: true
+    origin?: true
+    regionDetail?: true
+    imageUrl?: true
+    imageAlt?: true
+    description?: true
+    servingSuggestion?: true
+    priceRange?: true
+    featured?: true
+    tags?: true
+    bodyDensity?: true
+    mixingRatio?: true
+    tastingColor?: true
+    tastingNose?: true
+    tastingPalate?: true
+    tastingFinish?: true
+    whiskyType?: true
+    distillery?: true
+    ageStatement?: true
+    caskType?: true
+    isPeated?: true
+    wineType?: true
+    wineStyle?: true
+    vintage?: true
+    producer?: true
+    grapes?: true
+    beerStyle?: true
+    ibu?: true
+    beerColor?: true
+    pairings?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ProductAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Product to aggregate.
+     */
+    where?: ProductWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Products to fetch.
+     */
+    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProductWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Products from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Products.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Products
+    **/
+    _count?: true | ProductCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ProductAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ProductSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProductMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProductMaxAggregateInputType
+  }
+
+  export type GetProductAggregateType<T extends ProductAggregateArgs> = {
+        [P in keyof T & keyof AggregateProduct]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProduct[P]>
+      : GetScalarType<T[P], AggregateProduct[P]>
+  }
+
+
+
+
+  export type ProductGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProductWhereInput
+    orderBy?: ProductOrderByWithAggregationInput | ProductOrderByWithAggregationInput[]
+    by: ProductScalarFieldEnum[] | ProductScalarFieldEnum
+    having?: ProductScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProductCountAggregateInputType | true
+    _avg?: ProductAvgAggregateInputType
+    _sum?: ProductSumAggregateInputType
+    _min?: ProductMinAggregateInputType
+    _max?: ProductMaxAggregateInputType
+  }
+
+  export type ProductGroupByOutputType = {
+    id: string
+    slug: string
+    name: string
+    brand: string
+    categorySlug: string
+    subcategorySlug: string | null
+    abv: number | null
+    origin: string | null
+    regionDetail: string | null
+    imageUrl: string | null
+    imageAlt: string | null
+    description: string | null
+    servingSuggestion: string | null
+    priceRange: string | null
+    featured: boolean
+    tags: JsonValue | null
+    bodyDensity: $Enums.BodyDensity | null
+    mixingRatio: string | null
+    tastingColor: string | null
+    tastingNose: JsonValue | null
+    tastingPalate: JsonValue | null
+    tastingFinish: string | null
+    whiskyType: $Enums.WhiskyType | null
+    distillery: string | null
+    ageStatement: string | null
+    caskType: string | null
+    isPeated: boolean | null
+    wineType: $Enums.WineType | null
+    wineStyle: $Enums.WineStyle | null
+    vintage: number | null
+    producer: string | null
+    grapes: JsonValue | null
+    beerStyle: string | null
+    ibu: number | null
+    beerColor: string | null
+    pairings: JsonValue | null
+    createdAt: Date
+    updatedAt: Date
+    _count: ProductCountAggregateOutputType | null
+    _avg: ProductAvgAggregateOutputType | null
+    _sum: ProductSumAggregateOutputType | null
+    _min: ProductMinAggregateOutputType | null
+    _max: ProductMaxAggregateOutputType | null
+  }
+
+  type GetProductGroupByPayload<T extends ProductGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProductGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProductGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProductGroupByOutputType[P]>
+            : GetScalarType<T[P], ProductGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProductSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    slug?: boolean
+    name?: boolean
+    brand?: boolean
+    categorySlug?: boolean
+    subcategorySlug?: boolean
+    abv?: boolean
+    origin?: boolean
+    regionDetail?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    description?: boolean
+    servingSuggestion?: boolean
+    priceRange?: boolean
+    featured?: boolean
+    tags?: boolean
+    bodyDensity?: boolean
+    mixingRatio?: boolean
+    tastingColor?: boolean
+    tastingNose?: boolean
+    tastingPalate?: boolean
+    tastingFinish?: boolean
+    whiskyType?: boolean
+    distillery?: boolean
+    ageStatement?: boolean
+    caskType?: boolean
+    isPeated?: boolean
+    wineType?: boolean
+    wineStyle?: boolean
+    vintage?: boolean
+    producer?: boolean
+    grapes?: boolean
+    beerStyle?: boolean
+    ibu?: boolean
+    beerColor?: boolean
+    pairings?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["product"]>
+
+  export type ProductSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    slug?: boolean
+    name?: boolean
+    brand?: boolean
+    categorySlug?: boolean
+    subcategorySlug?: boolean
+    abv?: boolean
+    origin?: boolean
+    regionDetail?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    description?: boolean
+    servingSuggestion?: boolean
+    priceRange?: boolean
+    featured?: boolean
+    tags?: boolean
+    bodyDensity?: boolean
+    mixingRatio?: boolean
+    tastingColor?: boolean
+    tastingNose?: boolean
+    tastingPalate?: boolean
+    tastingFinish?: boolean
+    whiskyType?: boolean
+    distillery?: boolean
+    ageStatement?: boolean
+    caskType?: boolean
+    isPeated?: boolean
+    wineType?: boolean
+    wineStyle?: boolean
+    vintage?: boolean
+    producer?: boolean
+    grapes?: boolean
+    beerStyle?: boolean
+    ibu?: boolean
+    beerColor?: boolean
+    pairings?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["product"]>
+
+  export type ProductSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    slug?: boolean
+    name?: boolean
+    brand?: boolean
+    categorySlug?: boolean
+    subcategorySlug?: boolean
+    abv?: boolean
+    origin?: boolean
+    regionDetail?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    description?: boolean
+    servingSuggestion?: boolean
+    priceRange?: boolean
+    featured?: boolean
+    tags?: boolean
+    bodyDensity?: boolean
+    mixingRatio?: boolean
+    tastingColor?: boolean
+    tastingNose?: boolean
+    tastingPalate?: boolean
+    tastingFinish?: boolean
+    whiskyType?: boolean
+    distillery?: boolean
+    ageStatement?: boolean
+    caskType?: boolean
+    isPeated?: boolean
+    wineType?: boolean
+    wineStyle?: boolean
+    vintage?: boolean
+    producer?: boolean
+    grapes?: boolean
+    beerStyle?: boolean
+    ibu?: boolean
+    beerColor?: boolean
+    pairings?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["product"]>
+
+  export type ProductSelectScalar = {
+    id?: boolean
+    slug?: boolean
+    name?: boolean
+    brand?: boolean
+    categorySlug?: boolean
+    subcategorySlug?: boolean
+    abv?: boolean
+    origin?: boolean
+    regionDetail?: boolean
+    imageUrl?: boolean
+    imageAlt?: boolean
+    description?: boolean
+    servingSuggestion?: boolean
+    priceRange?: boolean
+    featured?: boolean
+    tags?: boolean
+    bodyDensity?: boolean
+    mixingRatio?: boolean
+    tastingColor?: boolean
+    tastingNose?: boolean
+    tastingPalate?: boolean
+    tastingFinish?: boolean
+    whiskyType?: boolean
+    distillery?: boolean
+    ageStatement?: boolean
+    caskType?: boolean
+    isPeated?: boolean
+    wineType?: boolean
+    wineStyle?: boolean
+    vintage?: boolean
+    producer?: boolean
+    grapes?: boolean
+    beerStyle?: boolean
+    ibu?: boolean
+    beerColor?: boolean
+    pairings?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "name" | "brand" | "categorySlug" | "subcategorySlug" | "abv" | "origin" | "regionDetail" | "imageUrl" | "imageAlt" | "description" | "servingSuggestion" | "priceRange" | "featured" | "tags" | "bodyDensity" | "mixingRatio" | "tastingColor" | "tastingNose" | "tastingPalate" | "tastingFinish" | "whiskyType" | "distillery" | "ageStatement" | "caskType" | "isPeated" | "wineType" | "wineStyle" | "vintage" | "producer" | "grapes" | "beerStyle" | "ibu" | "beerColor" | "pairings" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }
+  export type ProductIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }
+  export type ProductIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    category?: boolean | CategoryDefaultArgs<ExtArgs>
+  }
+
+  export type $ProductPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Product"
+    objects: {
+      category: Prisma.$CategoryPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      slug: string
+      name: string
+      brand: string
+      categorySlug: string
+      subcategorySlug: string | null
+      abv: number | null
+      origin: string | null
+      regionDetail: string | null
+      imageUrl: string | null
+      imageAlt: string | null
+      description: string | null
+      /**
+       * "On the rocks", "En copa técnica", "Highball", etc.
+       */
+      servingSuggestion: string | null
+      priceRange: string | null
+      featured: boolean
+      /**
+       * Tags libres para búsqueda: ["ahumado", "mezcla", "picante"]
+       */
+      tags: Prisma.JsonValue | null
+      /**
+       * Cuerpo/densidad en boca (LOW → HIGH)
+       */
+      bodyDensity: $Enums.BodyDensity | null
+      /**
+       * Proporción de mezcla recomendada: "70/30 Cola", "Ginger Ale 1:3"
+       */
+      mixingRatio: string | null
+      tastingColor: string | null
+      /**
+       * ["cítricos", "vainilla", "humo joven"]
+       */
+      tastingNose: Prisma.JsonValue | null
+      /**
+       * ["especias", "malta", "pimienta"]
+       */
+      tastingPalate: Prisma.JsonValue | null
+      tastingFinish: string | null
+      whiskyType: $Enums.WhiskyType | null
+      distillery: string | null
+      /**
+       * Años de guarda; "NAS" si no tiene declaración de edad
+       */
+      ageStatement: string | null
+      caskType: string | null
+      /**
+       * Indica si el whisky es ahumado con turba (filtro clave para usuarios)
+       */
+      isPeated: boolean | null
+      wineType: $Enums.WineType | null
+      wineStyle: $Enums.WineStyle | null
+      vintage: number | null
+      producer: string | null
+      /**
+       * [{ "grape": "Malbec", "percentage": 70 }, ...]
+       */
+      grapes: Prisma.JsonValue | null
+      beerStyle: string | null
+      ibu: number | null
+      beerColor: string | null
+      pairings: Prisma.JsonValue | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["product"]>
+    composites: {}
+  }
+
+  type ProductGetPayload<S extends boolean | null | undefined | ProductDefaultArgs> = $Result.GetResult<Prisma.$ProductPayload, S>
+
+  type ProductCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProductFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProductCountAggregateInputType | true
+    }
+
+  export interface ProductDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Product'], meta: { name: 'Product' } }
+    /**
+     * Find zero or one Product that matches the filter.
+     * @param {ProductFindUniqueArgs} args - Arguments to find a Product
+     * @example
+     * // Get one Product
+     * const product = await prisma.product.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ProductFindUniqueArgs>(args: SelectSubset<T, ProductFindUniqueArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Product that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ProductFindUniqueOrThrowArgs} args - Arguments to find a Product
+     * @example
+     * // Get one Product
+     * const product = await prisma.product.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ProductFindUniqueOrThrowArgs>(args: SelectSubset<T, ProductFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Product that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductFindFirstArgs} args - Arguments to find a Product
+     * @example
+     * // Get one Product
+     * const product = await prisma.product.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ProductFindFirstArgs>(args?: SelectSubset<T, ProductFindFirstArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Product that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductFindFirstOrThrowArgs} args - Arguments to find a Product
+     * @example
+     * // Get one Product
+     * const product = await prisma.product.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ProductFindFirstOrThrowArgs>(args?: SelectSubset<T, ProductFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Products that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Products
+     * const products = await prisma.product.findMany()
+     * 
+     * // Get first 10 Products
+     * const products = await prisma.product.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const productWithIdOnly = await prisma.product.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ProductFindManyArgs>(args?: SelectSubset<T, ProductFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Product.
+     * @param {ProductCreateArgs} args - Arguments to create a Product.
+     * @example
+     * // Create one Product
+     * const Product = await prisma.product.create({
+     *   data: {
+     *     // ... data to create a Product
+     *   }
+     * })
+     * 
+     */
+    create<T extends ProductCreateArgs>(args: SelectSubset<T, ProductCreateArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Products.
+     * @param {ProductCreateManyArgs} args - Arguments to create many Products.
+     * @example
+     * // Create many Products
+     * const product = await prisma.product.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ProductCreateManyArgs>(args?: SelectSubset<T, ProductCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Products and returns the data saved in the database.
+     * @param {ProductCreateManyAndReturnArgs} args - Arguments to create many Products.
+     * @example
+     * // Create many Products
+     * const product = await prisma.product.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Products and only return the `id`
+     * const productWithIdOnly = await prisma.product.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ProductCreateManyAndReturnArgs>(args?: SelectSubset<T, ProductCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Product.
+     * @param {ProductDeleteArgs} args - Arguments to delete one Product.
+     * @example
+     * // Delete one Product
+     * const Product = await prisma.product.delete({
+     *   where: {
+     *     // ... filter to delete one Product
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ProductDeleteArgs>(args: SelectSubset<T, ProductDeleteArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Product.
+     * @param {ProductUpdateArgs} args - Arguments to update one Product.
+     * @example
+     * // Update one Product
+     * const product = await prisma.product.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ProductUpdateArgs>(args: SelectSubset<T, ProductUpdateArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Products.
+     * @param {ProductDeleteManyArgs} args - Arguments to filter Products to delete.
+     * @example
+     * // Delete a few Products
+     * const { count } = await prisma.product.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ProductDeleteManyArgs>(args?: SelectSubset<T, ProductDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Products.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Products
+     * const product = await prisma.product.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ProductUpdateManyArgs>(args: SelectSubset<T, ProductUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Products and returns the data updated in the database.
+     * @param {ProductUpdateManyAndReturnArgs} args - Arguments to update many Products.
+     * @example
+     * // Update many Products
+     * const product = await prisma.product.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Products and only return the `id`
+     * const productWithIdOnly = await prisma.product.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ProductUpdateManyAndReturnArgs>(args: SelectSubset<T, ProductUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Product.
+     * @param {ProductUpsertArgs} args - Arguments to update or create a Product.
+     * @example
+     * // Update or create a Product
+     * const product = await prisma.product.upsert({
+     *   create: {
+     *     // ... data to create a Product
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Product we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ProductUpsertArgs>(args: SelectSubset<T, ProductUpsertArgs<ExtArgs>>): Prisma__ProductClient<$Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Products.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductCountArgs} args - Arguments to filter Products to count.
+     * @example
+     * // Count the number of Products
+     * const count = await prisma.product.count({
+     *   where: {
+     *     // ... the filter for the Products we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProductCountArgs>(
+      args?: Subset<T, ProductCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProductCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Product.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProductAggregateArgs>(args: Subset<T, ProductAggregateArgs>): Prisma.PrismaPromise<GetProductAggregateType<T>>
+
+    /**
+     * Group by Product.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProductGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProductGroupByArgs['orderBy'] }
+        : { orderBy?: ProductGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProductGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProductGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Product model
+   */
+  readonly fields: ProductFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Product.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProductClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    category<T extends CategoryDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CategoryDefaultArgs<ExtArgs>>): Prisma__CategoryClient<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Product model
+   */
+  interface ProductFieldRefs {
+    readonly id: FieldRef<"Product", 'String'>
+    readonly slug: FieldRef<"Product", 'String'>
+    readonly name: FieldRef<"Product", 'String'>
+    readonly brand: FieldRef<"Product", 'String'>
+    readonly categorySlug: FieldRef<"Product", 'String'>
+    readonly subcategorySlug: FieldRef<"Product", 'String'>
+    readonly abv: FieldRef<"Product", 'Float'>
+    readonly origin: FieldRef<"Product", 'String'>
+    readonly regionDetail: FieldRef<"Product", 'String'>
+    readonly imageUrl: FieldRef<"Product", 'String'>
+    readonly imageAlt: FieldRef<"Product", 'String'>
+    readonly description: FieldRef<"Product", 'String'>
+    readonly servingSuggestion: FieldRef<"Product", 'String'>
+    readonly priceRange: FieldRef<"Product", 'String'>
+    readonly featured: FieldRef<"Product", 'Boolean'>
+    readonly tags: FieldRef<"Product", 'Json'>
+    readonly bodyDensity: FieldRef<"Product", 'BodyDensity'>
+    readonly mixingRatio: FieldRef<"Product", 'String'>
+    readonly tastingColor: FieldRef<"Product", 'String'>
+    readonly tastingNose: FieldRef<"Product", 'Json'>
+    readonly tastingPalate: FieldRef<"Product", 'Json'>
+    readonly tastingFinish: FieldRef<"Product", 'String'>
+    readonly whiskyType: FieldRef<"Product", 'WhiskyType'>
+    readonly distillery: FieldRef<"Product", 'String'>
+    readonly ageStatement: FieldRef<"Product", 'String'>
+    readonly caskType: FieldRef<"Product", 'String'>
+    readonly isPeated: FieldRef<"Product", 'Boolean'>
+    readonly wineType: FieldRef<"Product", 'WineType'>
+    readonly wineStyle: FieldRef<"Product", 'WineStyle'>
+    readonly vintage: FieldRef<"Product", 'Int'>
+    readonly producer: FieldRef<"Product", 'String'>
+    readonly grapes: FieldRef<"Product", 'Json'>
+    readonly beerStyle: FieldRef<"Product", 'String'>
+    readonly ibu: FieldRef<"Product", 'Int'>
+    readonly beerColor: FieldRef<"Product", 'String'>
+    readonly pairings: FieldRef<"Product", 'Json'>
+    readonly createdAt: FieldRef<"Product", 'DateTime'>
+    readonly updatedAt: FieldRef<"Product", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Product findUnique
+   */
+  export type ProductFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * Filter, which Product to fetch.
+     */
+    where: ProductWhereUniqueInput
+  }
+
+  /**
+   * Product findUniqueOrThrow
+   */
+  export type ProductFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * Filter, which Product to fetch.
+     */
+    where: ProductWhereUniqueInput
+  }
+
+  /**
+   * Product findFirst
+   */
+  export type ProductFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * Filter, which Product to fetch.
+     */
+    where?: ProductWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Products to fetch.
+     */
+    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Products.
+     */
+    cursor?: ProductWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Products from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Products.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Products.
+     */
+    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+  }
+
+  /**
+   * Product findFirstOrThrow
+   */
+  export type ProductFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * Filter, which Product to fetch.
+     */
+    where?: ProductWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Products to fetch.
+     */
+    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Products.
+     */
+    cursor?: ProductWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Products from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Products.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Products.
+     */
+    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+  }
+
+  /**
+   * Product findMany
+   */
+  export type ProductFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * Filter, which Products to fetch.
+     */
+    where?: ProductWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Products to fetch.
+     */
+    orderBy?: ProductOrderByWithRelationInput | ProductOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Products.
+     */
+    cursor?: ProductWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Products from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Products.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Products.
+     */
+    distinct?: ProductScalarFieldEnum | ProductScalarFieldEnum[]
+  }
+
+  /**
+   * Product create
+   */
+  export type ProductCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Product.
+     */
+    data: XOR<ProductCreateInput, ProductUncheckedCreateInput>
+  }
+
+  /**
+   * Product createMany
+   */
+  export type ProductCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Products.
+     */
+    data: ProductCreateManyInput | ProductCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Product createManyAndReturn
+   */
+  export type ProductCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * The data used to create many Products.
+     */
+    data: ProductCreateManyInput | ProductCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Product update
+   */
+  export type ProductUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Product.
+     */
+    data: XOR<ProductUpdateInput, ProductUncheckedUpdateInput>
+    /**
+     * Choose, which Product to update.
+     */
+    where: ProductWhereUniqueInput
+  }
+
+  /**
+   * Product updateMany
+   */
+  export type ProductUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Products.
+     */
+    data: XOR<ProductUpdateManyMutationInput, ProductUncheckedUpdateManyInput>
+    /**
+     * Filter which Products to update
+     */
+    where?: ProductWhereInput
+    /**
+     * Limit how many Products to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Product updateManyAndReturn
+   */
+  export type ProductUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * The data used to update Products.
+     */
+    data: XOR<ProductUpdateManyMutationInput, ProductUncheckedUpdateManyInput>
+    /**
+     * Filter which Products to update
+     */
+    where?: ProductWhereInput
+    /**
+     * Limit how many Products to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Product upsert
+   */
+  export type ProductUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Product to update in case it exists.
+     */
+    where: ProductWhereUniqueInput
+    /**
+     * In case the Product found by the `where` argument doesn't exist, create a new Product with this data.
+     */
+    create: XOR<ProductCreateInput, ProductUncheckedCreateInput>
+    /**
+     * In case the Product was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProductUpdateInput, ProductUncheckedUpdateInput>
+  }
+
+  /**
+   * Product delete
+   */
+  export type ProductDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+    /**
+     * Filter which Product to delete.
+     */
+    where: ProductWhereUniqueInput
+  }
+
+  /**
+   * Product deleteMany
+   */
+  export type ProductDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Products to delete
+     */
+    where?: ProductWhereInput
+    /**
+     * Limit how many Products to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Product without action
+   */
+  export type ProductDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Product
+     */
+    select?: ProductSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Product
+     */
+    omit?: ProductOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Model GlossaryItem
    */
 
@@ -15058,6 +16799,50 @@ export namespace Prisma {
   export type GuideTableRowScalarFieldEnum = (typeof GuideTableRowScalarFieldEnum)[keyof typeof GuideTableRowScalarFieldEnum]
 
 
+  export const ProductScalarFieldEnum: {
+    id: 'id',
+    slug: 'slug',
+    name: 'name',
+    brand: 'brand',
+    categorySlug: 'categorySlug',
+    subcategorySlug: 'subcategorySlug',
+    abv: 'abv',
+    origin: 'origin',
+    regionDetail: 'regionDetail',
+    imageUrl: 'imageUrl',
+    imageAlt: 'imageAlt',
+    description: 'description',
+    servingSuggestion: 'servingSuggestion',
+    priceRange: 'priceRange',
+    featured: 'featured',
+    tags: 'tags',
+    bodyDensity: 'bodyDensity',
+    mixingRatio: 'mixingRatio',
+    tastingColor: 'tastingColor',
+    tastingNose: 'tastingNose',
+    tastingPalate: 'tastingPalate',
+    tastingFinish: 'tastingFinish',
+    whiskyType: 'whiskyType',
+    distillery: 'distillery',
+    ageStatement: 'ageStatement',
+    caskType: 'caskType',
+    isPeated: 'isPeated',
+    wineType: 'wineType',
+    wineStyle: 'wineStyle',
+    vintage: 'vintage',
+    producer: 'producer',
+    grapes: 'grapes',
+    beerStyle: 'beerStyle',
+    ibu: 'ibu',
+    beerColor: 'beerColor',
+    pairings: 'pairings',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
   export const GlossaryItemScalarFieldEnum: {
     id: 'id',
     slug: 'slug',
@@ -15106,6 +16891,14 @@ export namespace Prisma {
   };
 
   export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
+  export const NullableJsonNullValueInput: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull
+  };
+
+  export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
 
 
   export const QueryMode: {
@@ -15195,13 +16988,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Boolean'
-   */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
-    
-
-
-  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -15212,6 +16998,69 @@ export namespace Prisma {
    * Reference to a field of type 'Float[]'
    */
   export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
+   * Reference to a field of type 'BodyDensity'
+   */
+  export type EnumBodyDensityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BodyDensity'>
+    
+
+
+  /**
+   * Reference to a field of type 'BodyDensity[]'
+   */
+  export type ListEnumBodyDensityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BodyDensity[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'WhiskyType'
+   */
+  export type EnumWhiskyTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WhiskyType'>
+    
+
+
+  /**
+   * Reference to a field of type 'WhiskyType[]'
+   */
+  export type ListEnumWhiskyTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WhiskyType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'WineType'
+   */
+  export type EnumWineTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WineType'>
+    
+
+
+  /**
+   * Reference to a field of type 'WineType[]'
+   */
+  export type ListEnumWineTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WineType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'WineStyle'
+   */
+  export type EnumWineStyleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WineStyle'>
+    
+
+
+  /**
+   * Reference to a field of type 'WineStyle[]'
+   */
+  export type ListEnumWineStyleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WineStyle[]'>
     
   /**
    * Deep Input Types
@@ -15235,6 +17084,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Category"> | Date | string
     guide?: XOR<GuideNullableScalarRelationFilter, GuideWhereInput> | null
     glossaryLinks?: GlossaryItemCategoryListRelationFilter
+    products?: ProductListRelationFilter
   }
 
   export type CategoryOrderByWithRelationInput = {
@@ -15251,6 +17101,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     guide?: GuideOrderByWithRelationInput
     glossaryLinks?: GlossaryItemCategoryOrderByRelationAggregateInput
+    products?: ProductOrderByRelationAggregateInput
   }
 
   export type CategoryWhereUniqueInput = Prisma.AtLeast<{
@@ -15270,6 +17121,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Category"> | Date | string
     guide?: XOR<GuideNullableScalarRelationFilter, GuideWhereInput> | null
     glossaryLinks?: GlossaryItemCategoryListRelationFilter
+    products?: ProductListRelationFilter
   }, "id" | "slug">
 
   export type CategoryOrderByWithAggregationInput = {
@@ -15942,6 +17794,228 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"GuideTableRow"> | Date | string
   }
 
+  export type ProductWhereInput = {
+    AND?: ProductWhereInput | ProductWhereInput[]
+    OR?: ProductWhereInput[]
+    NOT?: ProductWhereInput | ProductWhereInput[]
+    id?: StringFilter<"Product"> | string
+    slug?: StringFilter<"Product"> | string
+    name?: StringFilter<"Product"> | string
+    brand?: StringFilter<"Product"> | string
+    categorySlug?: StringFilter<"Product"> | string
+    subcategorySlug?: StringNullableFilter<"Product"> | string | null
+    abv?: FloatNullableFilter<"Product"> | number | null
+    origin?: StringNullableFilter<"Product"> | string | null
+    regionDetail?: StringNullableFilter<"Product"> | string | null
+    imageUrl?: StringNullableFilter<"Product"> | string | null
+    imageAlt?: StringNullableFilter<"Product"> | string | null
+    description?: StringNullableFilter<"Product"> | string | null
+    servingSuggestion?: StringNullableFilter<"Product"> | string | null
+    priceRange?: StringNullableFilter<"Product"> | string | null
+    featured?: BoolFilter<"Product"> | boolean
+    tags?: JsonNullableFilter<"Product">
+    bodyDensity?: EnumBodyDensityNullableFilter<"Product"> | $Enums.BodyDensity | null
+    mixingRatio?: StringNullableFilter<"Product"> | string | null
+    tastingColor?: StringNullableFilter<"Product"> | string | null
+    tastingNose?: JsonNullableFilter<"Product">
+    tastingPalate?: JsonNullableFilter<"Product">
+    tastingFinish?: StringNullableFilter<"Product"> | string | null
+    whiskyType?: EnumWhiskyTypeNullableFilter<"Product"> | $Enums.WhiskyType | null
+    distillery?: StringNullableFilter<"Product"> | string | null
+    ageStatement?: StringNullableFilter<"Product"> | string | null
+    caskType?: StringNullableFilter<"Product"> | string | null
+    isPeated?: BoolNullableFilter<"Product"> | boolean | null
+    wineType?: EnumWineTypeNullableFilter<"Product"> | $Enums.WineType | null
+    wineStyle?: EnumWineStyleNullableFilter<"Product"> | $Enums.WineStyle | null
+    vintage?: IntNullableFilter<"Product"> | number | null
+    producer?: StringNullableFilter<"Product"> | string | null
+    grapes?: JsonNullableFilter<"Product">
+    beerStyle?: StringNullableFilter<"Product"> | string | null
+    ibu?: IntNullableFilter<"Product"> | number | null
+    beerColor?: StringNullableFilter<"Product"> | string | null
+    pairings?: JsonNullableFilter<"Product">
+    createdAt?: DateTimeFilter<"Product"> | Date | string
+    updatedAt?: DateTimeFilter<"Product"> | Date | string
+    category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
+  }
+
+  export type ProductOrderByWithRelationInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    name?: SortOrder
+    brand?: SortOrder
+    categorySlug?: SortOrder
+    subcategorySlug?: SortOrderInput | SortOrder
+    abv?: SortOrderInput | SortOrder
+    origin?: SortOrderInput | SortOrder
+    regionDetail?: SortOrderInput | SortOrder
+    imageUrl?: SortOrderInput | SortOrder
+    imageAlt?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    servingSuggestion?: SortOrderInput | SortOrder
+    priceRange?: SortOrderInput | SortOrder
+    featured?: SortOrder
+    tags?: SortOrderInput | SortOrder
+    bodyDensity?: SortOrderInput | SortOrder
+    mixingRatio?: SortOrderInput | SortOrder
+    tastingColor?: SortOrderInput | SortOrder
+    tastingNose?: SortOrderInput | SortOrder
+    tastingPalate?: SortOrderInput | SortOrder
+    tastingFinish?: SortOrderInput | SortOrder
+    whiskyType?: SortOrderInput | SortOrder
+    distillery?: SortOrderInput | SortOrder
+    ageStatement?: SortOrderInput | SortOrder
+    caskType?: SortOrderInput | SortOrder
+    isPeated?: SortOrderInput | SortOrder
+    wineType?: SortOrderInput | SortOrder
+    wineStyle?: SortOrderInput | SortOrder
+    vintage?: SortOrderInput | SortOrder
+    producer?: SortOrderInput | SortOrder
+    grapes?: SortOrderInput | SortOrder
+    beerStyle?: SortOrderInput | SortOrder
+    ibu?: SortOrderInput | SortOrder
+    beerColor?: SortOrderInput | SortOrder
+    pairings?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    category?: CategoryOrderByWithRelationInput
+  }
+
+  export type ProductWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    slug?: string
+    AND?: ProductWhereInput | ProductWhereInput[]
+    OR?: ProductWhereInput[]
+    NOT?: ProductWhereInput | ProductWhereInput[]
+    name?: StringFilter<"Product"> | string
+    brand?: StringFilter<"Product"> | string
+    categorySlug?: StringFilter<"Product"> | string
+    subcategorySlug?: StringNullableFilter<"Product"> | string | null
+    abv?: FloatNullableFilter<"Product"> | number | null
+    origin?: StringNullableFilter<"Product"> | string | null
+    regionDetail?: StringNullableFilter<"Product"> | string | null
+    imageUrl?: StringNullableFilter<"Product"> | string | null
+    imageAlt?: StringNullableFilter<"Product"> | string | null
+    description?: StringNullableFilter<"Product"> | string | null
+    servingSuggestion?: StringNullableFilter<"Product"> | string | null
+    priceRange?: StringNullableFilter<"Product"> | string | null
+    featured?: BoolFilter<"Product"> | boolean
+    tags?: JsonNullableFilter<"Product">
+    bodyDensity?: EnumBodyDensityNullableFilter<"Product"> | $Enums.BodyDensity | null
+    mixingRatio?: StringNullableFilter<"Product"> | string | null
+    tastingColor?: StringNullableFilter<"Product"> | string | null
+    tastingNose?: JsonNullableFilter<"Product">
+    tastingPalate?: JsonNullableFilter<"Product">
+    tastingFinish?: StringNullableFilter<"Product"> | string | null
+    whiskyType?: EnumWhiskyTypeNullableFilter<"Product"> | $Enums.WhiskyType | null
+    distillery?: StringNullableFilter<"Product"> | string | null
+    ageStatement?: StringNullableFilter<"Product"> | string | null
+    caskType?: StringNullableFilter<"Product"> | string | null
+    isPeated?: BoolNullableFilter<"Product"> | boolean | null
+    wineType?: EnumWineTypeNullableFilter<"Product"> | $Enums.WineType | null
+    wineStyle?: EnumWineStyleNullableFilter<"Product"> | $Enums.WineStyle | null
+    vintage?: IntNullableFilter<"Product"> | number | null
+    producer?: StringNullableFilter<"Product"> | string | null
+    grapes?: JsonNullableFilter<"Product">
+    beerStyle?: StringNullableFilter<"Product"> | string | null
+    ibu?: IntNullableFilter<"Product"> | number | null
+    beerColor?: StringNullableFilter<"Product"> | string | null
+    pairings?: JsonNullableFilter<"Product">
+    createdAt?: DateTimeFilter<"Product"> | Date | string
+    updatedAt?: DateTimeFilter<"Product"> | Date | string
+    category?: XOR<CategoryScalarRelationFilter, CategoryWhereInput>
+  }, "id" | "slug">
+
+  export type ProductOrderByWithAggregationInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    name?: SortOrder
+    brand?: SortOrder
+    categorySlug?: SortOrder
+    subcategorySlug?: SortOrderInput | SortOrder
+    abv?: SortOrderInput | SortOrder
+    origin?: SortOrderInput | SortOrder
+    regionDetail?: SortOrderInput | SortOrder
+    imageUrl?: SortOrderInput | SortOrder
+    imageAlt?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    servingSuggestion?: SortOrderInput | SortOrder
+    priceRange?: SortOrderInput | SortOrder
+    featured?: SortOrder
+    tags?: SortOrderInput | SortOrder
+    bodyDensity?: SortOrderInput | SortOrder
+    mixingRatio?: SortOrderInput | SortOrder
+    tastingColor?: SortOrderInput | SortOrder
+    tastingNose?: SortOrderInput | SortOrder
+    tastingPalate?: SortOrderInput | SortOrder
+    tastingFinish?: SortOrderInput | SortOrder
+    whiskyType?: SortOrderInput | SortOrder
+    distillery?: SortOrderInput | SortOrder
+    ageStatement?: SortOrderInput | SortOrder
+    caskType?: SortOrderInput | SortOrder
+    isPeated?: SortOrderInput | SortOrder
+    wineType?: SortOrderInput | SortOrder
+    wineStyle?: SortOrderInput | SortOrder
+    vintage?: SortOrderInput | SortOrder
+    producer?: SortOrderInput | SortOrder
+    grapes?: SortOrderInput | SortOrder
+    beerStyle?: SortOrderInput | SortOrder
+    ibu?: SortOrderInput | SortOrder
+    beerColor?: SortOrderInput | SortOrder
+    pairings?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ProductCountOrderByAggregateInput
+    _avg?: ProductAvgOrderByAggregateInput
+    _max?: ProductMaxOrderByAggregateInput
+    _min?: ProductMinOrderByAggregateInput
+    _sum?: ProductSumOrderByAggregateInput
+  }
+
+  export type ProductScalarWhereWithAggregatesInput = {
+    AND?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
+    OR?: ProductScalarWhereWithAggregatesInput[]
+    NOT?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Product"> | string
+    slug?: StringWithAggregatesFilter<"Product"> | string
+    name?: StringWithAggregatesFilter<"Product"> | string
+    brand?: StringWithAggregatesFilter<"Product"> | string
+    categorySlug?: StringWithAggregatesFilter<"Product"> | string
+    subcategorySlug?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    abv?: FloatNullableWithAggregatesFilter<"Product"> | number | null
+    origin?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    regionDetail?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    imageUrl?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    imageAlt?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    description?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    servingSuggestion?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    priceRange?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    featured?: BoolWithAggregatesFilter<"Product"> | boolean
+    tags?: JsonNullableWithAggregatesFilter<"Product">
+    bodyDensity?: EnumBodyDensityNullableWithAggregatesFilter<"Product"> | $Enums.BodyDensity | null
+    mixingRatio?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    tastingColor?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    tastingNose?: JsonNullableWithAggregatesFilter<"Product">
+    tastingPalate?: JsonNullableWithAggregatesFilter<"Product">
+    tastingFinish?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    whiskyType?: EnumWhiskyTypeNullableWithAggregatesFilter<"Product"> | $Enums.WhiskyType | null
+    distillery?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    ageStatement?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    caskType?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    isPeated?: BoolNullableWithAggregatesFilter<"Product"> | boolean | null
+    wineType?: EnumWineTypeNullableWithAggregatesFilter<"Product"> | $Enums.WineType | null
+    wineStyle?: EnumWineStyleNullableWithAggregatesFilter<"Product"> | $Enums.WineStyle | null
+    vintage?: IntNullableWithAggregatesFilter<"Product"> | number | null
+    producer?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    grapes?: JsonNullableWithAggregatesFilter<"Product">
+    beerStyle?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    ibu?: IntNullableWithAggregatesFilter<"Product"> | number | null
+    beerColor?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    pairings?: JsonNullableWithAggregatesFilter<"Product">
+    createdAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
+  }
+
   export type GlossaryItemWhereInput = {
     AND?: GlossaryItemWhereInput | GlossaryItemWhereInput[]
     OR?: GlossaryItemWhereInput[]
@@ -16142,6 +18216,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     guide?: GuideCreateNestedOneWithoutCategoryInput
     glossaryLinks?: GlossaryItemCategoryCreateNestedManyWithoutCategoryInput
+    products?: ProductCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateInput = {
@@ -16158,6 +18233,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     guide?: GuideUncheckedCreateNestedOneWithoutCategoryInput
     glossaryLinks?: GlossaryItemCategoryUncheckedCreateNestedManyWithoutCategoryInput
+    products?: ProductUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUpdateInput = {
@@ -16174,6 +18250,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneWithoutCategoryNestedInput
     glossaryLinks?: GlossaryItemCategoryUpdateManyWithoutCategoryNestedInput
+    products?: ProductUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateInput = {
@@ -16190,6 +18267,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUncheckedUpdateOneWithoutCategoryNestedInput
     glossaryLinks?: GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryNestedInput
+    products?: ProductUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryCreateManyInput = {
@@ -16944,6 +19022,292 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type ProductCreateInput = {
+    id?: string
+    slug: string
+    name: string
+    brand: string
+    subcategorySlug?: string | null
+    abv?: number | null
+    origin?: string | null
+    regionDetail?: string | null
+    imageUrl?: string | null
+    imageAlt?: string | null
+    description?: string | null
+    servingSuggestion?: string | null
+    priceRange?: string | null
+    featured?: boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: $Enums.BodyDensity | null
+    mixingRatio?: string | null
+    tastingColor?: string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: string | null
+    whiskyType?: $Enums.WhiskyType | null
+    distillery?: string | null
+    ageStatement?: string | null
+    caskType?: string | null
+    isPeated?: boolean | null
+    wineType?: $Enums.WineType | null
+    wineStyle?: $Enums.WineStyle | null
+    vintage?: number | null
+    producer?: string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: string | null
+    ibu?: number | null
+    beerColor?: string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    category: CategoryCreateNestedOneWithoutProductsInput
+  }
+
+  export type ProductUncheckedCreateInput = {
+    id?: string
+    slug: string
+    name: string
+    brand: string
+    categorySlug: string
+    subcategorySlug?: string | null
+    abv?: number | null
+    origin?: string | null
+    regionDetail?: string | null
+    imageUrl?: string | null
+    imageAlt?: string | null
+    description?: string | null
+    servingSuggestion?: string | null
+    priceRange?: string | null
+    featured?: boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: $Enums.BodyDensity | null
+    mixingRatio?: string | null
+    tastingColor?: string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: string | null
+    whiskyType?: $Enums.WhiskyType | null
+    distillery?: string | null
+    ageStatement?: string | null
+    caskType?: string | null
+    isPeated?: boolean | null
+    wineType?: $Enums.WineType | null
+    wineStyle?: $Enums.WineStyle | null
+    vintage?: number | null
+    producer?: string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: string | null
+    ibu?: number | null
+    beerColor?: string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    subcategorySlug?: NullableStringFieldUpdateOperationsInput | string | null
+    abv?: NullableFloatFieldUpdateOperationsInput | number | null
+    origin?: NullableStringFieldUpdateOperationsInput | string | null
+    regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: NullableEnumBodyDensityFieldUpdateOperationsInput | $Enums.BodyDensity | null
+    mixingRatio?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: NullableStringFieldUpdateOperationsInput | string | null
+    whiskyType?: NullableEnumWhiskyTypeFieldUpdateOperationsInput | $Enums.WhiskyType | null
+    distillery?: NullableStringFieldUpdateOperationsInput | string | null
+    ageStatement?: NullableStringFieldUpdateOperationsInput | string | null
+    caskType?: NullableStringFieldUpdateOperationsInput | string | null
+    isPeated?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    wineType?: NullableEnumWineTypeFieldUpdateOperationsInput | $Enums.WineType | null
+    wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
+    vintage?: NullableIntFieldUpdateOperationsInput | number | null
+    producer?: NullableStringFieldUpdateOperationsInput | string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
+    ibu?: NullableIntFieldUpdateOperationsInput | number | null
+    beerColor?: NullableStringFieldUpdateOperationsInput | string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    category?: CategoryUpdateOneRequiredWithoutProductsNestedInput
+  }
+
+  export type ProductUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    categorySlug?: StringFieldUpdateOperationsInput | string
+    subcategorySlug?: NullableStringFieldUpdateOperationsInput | string | null
+    abv?: NullableFloatFieldUpdateOperationsInput | number | null
+    origin?: NullableStringFieldUpdateOperationsInput | string | null
+    regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: NullableEnumBodyDensityFieldUpdateOperationsInput | $Enums.BodyDensity | null
+    mixingRatio?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: NullableStringFieldUpdateOperationsInput | string | null
+    whiskyType?: NullableEnumWhiskyTypeFieldUpdateOperationsInput | $Enums.WhiskyType | null
+    distillery?: NullableStringFieldUpdateOperationsInput | string | null
+    ageStatement?: NullableStringFieldUpdateOperationsInput | string | null
+    caskType?: NullableStringFieldUpdateOperationsInput | string | null
+    isPeated?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    wineType?: NullableEnumWineTypeFieldUpdateOperationsInput | $Enums.WineType | null
+    wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
+    vintage?: NullableIntFieldUpdateOperationsInput | number | null
+    producer?: NullableStringFieldUpdateOperationsInput | string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
+    ibu?: NullableIntFieldUpdateOperationsInput | number | null
+    beerColor?: NullableStringFieldUpdateOperationsInput | string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductCreateManyInput = {
+    id?: string
+    slug: string
+    name: string
+    brand: string
+    categorySlug: string
+    subcategorySlug?: string | null
+    abv?: number | null
+    origin?: string | null
+    regionDetail?: string | null
+    imageUrl?: string | null
+    imageAlt?: string | null
+    description?: string | null
+    servingSuggestion?: string | null
+    priceRange?: string | null
+    featured?: boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: $Enums.BodyDensity | null
+    mixingRatio?: string | null
+    tastingColor?: string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: string | null
+    whiskyType?: $Enums.WhiskyType | null
+    distillery?: string | null
+    ageStatement?: string | null
+    caskType?: string | null
+    isPeated?: boolean | null
+    wineType?: $Enums.WineType | null
+    wineStyle?: $Enums.WineStyle | null
+    vintage?: number | null
+    producer?: string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: string | null
+    ibu?: number | null
+    beerColor?: string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    subcategorySlug?: NullableStringFieldUpdateOperationsInput | string | null
+    abv?: NullableFloatFieldUpdateOperationsInput | number | null
+    origin?: NullableStringFieldUpdateOperationsInput | string | null
+    regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: NullableEnumBodyDensityFieldUpdateOperationsInput | $Enums.BodyDensity | null
+    mixingRatio?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: NullableStringFieldUpdateOperationsInput | string | null
+    whiskyType?: NullableEnumWhiskyTypeFieldUpdateOperationsInput | $Enums.WhiskyType | null
+    distillery?: NullableStringFieldUpdateOperationsInput | string | null
+    ageStatement?: NullableStringFieldUpdateOperationsInput | string | null
+    caskType?: NullableStringFieldUpdateOperationsInput | string | null
+    isPeated?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    wineType?: NullableEnumWineTypeFieldUpdateOperationsInput | $Enums.WineType | null
+    wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
+    vintage?: NullableIntFieldUpdateOperationsInput | number | null
+    producer?: NullableStringFieldUpdateOperationsInput | string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
+    ibu?: NullableIntFieldUpdateOperationsInput | number | null
+    beerColor?: NullableStringFieldUpdateOperationsInput | string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    categorySlug?: StringFieldUpdateOperationsInput | string
+    subcategorySlug?: NullableStringFieldUpdateOperationsInput | string | null
+    abv?: NullableFloatFieldUpdateOperationsInput | number | null
+    origin?: NullableStringFieldUpdateOperationsInput | string | null
+    regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: NullableEnumBodyDensityFieldUpdateOperationsInput | $Enums.BodyDensity | null
+    mixingRatio?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: NullableStringFieldUpdateOperationsInput | string | null
+    whiskyType?: NullableEnumWhiskyTypeFieldUpdateOperationsInput | $Enums.WhiskyType | null
+    distillery?: NullableStringFieldUpdateOperationsInput | string | null
+    ageStatement?: NullableStringFieldUpdateOperationsInput | string | null
+    caskType?: NullableStringFieldUpdateOperationsInput | string | null
+    isPeated?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    wineType?: NullableEnumWineTypeFieldUpdateOperationsInput | $Enums.WineType | null
+    wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
+    vintage?: NullableIntFieldUpdateOperationsInput | number | null
+    producer?: NullableStringFieldUpdateOperationsInput | string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
+    ibu?: NullableIntFieldUpdateOperationsInput | number | null
+    beerColor?: NullableStringFieldUpdateOperationsInput | string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type GlossaryItemCreateInput = {
     id?: string
     slug: string
@@ -17179,7 +19543,17 @@ export namespace Prisma {
     none?: GlossaryItemCategoryWhereInput
   }
 
+  export type ProductListRelationFilter = {
+    every?: ProductWhereInput
+    some?: ProductWhereInput
+    none?: ProductWhereInput
+  }
+
   export type GlossaryItemCategoryOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ProductOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -17814,9 +20188,326 @@ export namespace Prisma {
     position?: SortOrder
   }
 
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+  export type JsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type EnumBodyDensityNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.BodyDensity | EnumBodyDensityFieldRefInput<$PrismaModel> | null
+    in?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumBodyDensityNullableFilter<$PrismaModel> | $Enums.BodyDensity | null
+  }
+
+  export type EnumWhiskyTypeNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WhiskyType | EnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWhiskyTypeNullableFilter<$PrismaModel> | $Enums.WhiskyType | null
+  }
+
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type EnumWineTypeNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineType | EnumWineTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineTypeNullableFilter<$PrismaModel> | $Enums.WineType | null
+  }
+
+  export type EnumWineStyleNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineStyle | EnumWineStyleFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineStyleNullableFilter<$PrismaModel> | $Enums.WineStyle | null
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type ProductCountOrderByAggregateInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    name?: SortOrder
+    brand?: SortOrder
+    categorySlug?: SortOrder
+    subcategorySlug?: SortOrder
+    abv?: SortOrder
+    origin?: SortOrder
+    regionDetail?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    description?: SortOrder
+    servingSuggestion?: SortOrder
+    priceRange?: SortOrder
+    featured?: SortOrder
+    tags?: SortOrder
+    bodyDensity?: SortOrder
+    mixingRatio?: SortOrder
+    tastingColor?: SortOrder
+    tastingNose?: SortOrder
+    tastingPalate?: SortOrder
+    tastingFinish?: SortOrder
+    whiskyType?: SortOrder
+    distillery?: SortOrder
+    ageStatement?: SortOrder
+    caskType?: SortOrder
+    isPeated?: SortOrder
+    wineType?: SortOrder
+    wineStyle?: SortOrder
+    vintage?: SortOrder
+    producer?: SortOrder
+    grapes?: SortOrder
+    beerStyle?: SortOrder
+    ibu?: SortOrder
+    beerColor?: SortOrder
+    pairings?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProductAvgOrderByAggregateInput = {
+    abv?: SortOrder
+    vintage?: SortOrder
+    ibu?: SortOrder
+  }
+
+  export type ProductMaxOrderByAggregateInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    name?: SortOrder
+    brand?: SortOrder
+    categorySlug?: SortOrder
+    subcategorySlug?: SortOrder
+    abv?: SortOrder
+    origin?: SortOrder
+    regionDetail?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    description?: SortOrder
+    servingSuggestion?: SortOrder
+    priceRange?: SortOrder
+    featured?: SortOrder
+    bodyDensity?: SortOrder
+    mixingRatio?: SortOrder
+    tastingColor?: SortOrder
+    tastingFinish?: SortOrder
+    whiskyType?: SortOrder
+    distillery?: SortOrder
+    ageStatement?: SortOrder
+    caskType?: SortOrder
+    isPeated?: SortOrder
+    wineType?: SortOrder
+    wineStyle?: SortOrder
+    vintage?: SortOrder
+    producer?: SortOrder
+    beerStyle?: SortOrder
+    ibu?: SortOrder
+    beerColor?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProductMinOrderByAggregateInput = {
+    id?: SortOrder
+    slug?: SortOrder
+    name?: SortOrder
+    brand?: SortOrder
+    categorySlug?: SortOrder
+    subcategorySlug?: SortOrder
+    abv?: SortOrder
+    origin?: SortOrder
+    regionDetail?: SortOrder
+    imageUrl?: SortOrder
+    imageAlt?: SortOrder
+    description?: SortOrder
+    servingSuggestion?: SortOrder
+    priceRange?: SortOrder
+    featured?: SortOrder
+    bodyDensity?: SortOrder
+    mixingRatio?: SortOrder
+    tastingColor?: SortOrder
+    tastingFinish?: SortOrder
+    whiskyType?: SortOrder
+    distillery?: SortOrder
+    ageStatement?: SortOrder
+    caskType?: SortOrder
+    isPeated?: SortOrder
+    wineType?: SortOrder
+    wineStyle?: SortOrder
+    vintage?: SortOrder
+    producer?: SortOrder
+    beerStyle?: SortOrder
+    ibu?: SortOrder
+    beerColor?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProductSumOrderByAggregateInput = {
+    abv?: SortOrder
+    vintage?: SortOrder
+    ibu?: SortOrder
+  }
+
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+  export type JsonNullableWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonNullableWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonNullableWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedJsonNullableFilter<$PrismaModel>
+    _max?: NestedJsonNullableFilter<$PrismaModel>
+  }
+
+  export type EnumBodyDensityNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.BodyDensity | EnumBodyDensityFieldRefInput<$PrismaModel> | null
+    in?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumBodyDensityNullableWithAggregatesFilter<$PrismaModel> | $Enums.BodyDensity | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumBodyDensityNullableFilter<$PrismaModel>
+    _max?: NestedEnumBodyDensityNullableFilter<$PrismaModel>
+  }
+
+  export type EnumWhiskyTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WhiskyType | EnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWhiskyTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.WhiskyType | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWhiskyTypeNullableFilter<$PrismaModel>
+    _max?: NestedEnumWhiskyTypeNullableFilter<$PrismaModel>
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type EnumWineTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineType | EnumWineTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.WineType | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWineTypeNullableFilter<$PrismaModel>
+    _max?: NestedEnumWineTypeNullableFilter<$PrismaModel>
+  }
+
+  export type EnumWineStyleNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineStyle | EnumWineStyleFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineStyleNullableWithAggregatesFilter<$PrismaModel> | $Enums.WineStyle | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWineStyleNullableFilter<$PrismaModel>
+    _max?: NestedEnumWineStyleNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type GlossaryDetailListRelationFilter = {
@@ -17857,14 +20548,6 @@ export namespace Prisma {
     featured?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-  }
-
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type GlossaryItemScalarRelationFilter = {
@@ -17954,6 +20637,13 @@ export namespace Prisma {
     connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
   }
 
+  export type ProductCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<ProductCreateWithoutCategoryInput, ProductUncheckedCreateWithoutCategoryInput> | ProductCreateWithoutCategoryInput[] | ProductUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutCategoryInput | ProductCreateOrConnectWithoutCategoryInput[]
+    createMany?: ProductCreateManyCategoryInputEnvelope
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+  }
+
   export type GuideUncheckedCreateNestedOneWithoutCategoryInput = {
     create?: XOR<GuideCreateWithoutCategoryInput, GuideUncheckedCreateWithoutCategoryInput>
     connectOrCreate?: GuideCreateOrConnectWithoutCategoryInput
@@ -17965,6 +20655,13 @@ export namespace Prisma {
     connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutCategoryInput | GlossaryItemCategoryCreateOrConnectWithoutCategoryInput[]
     createMany?: GlossaryItemCategoryCreateManyCategoryInputEnvelope
     connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
+  }
+
+  export type ProductUncheckedCreateNestedManyWithoutCategoryInput = {
+    create?: XOR<ProductCreateWithoutCategoryInput, ProductUncheckedCreateWithoutCategoryInput> | ProductCreateWithoutCategoryInput[] | ProductUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutCategoryInput | ProductCreateOrConnectWithoutCategoryInput[]
+    createMany?: ProductCreateManyCategoryInputEnvelope
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -18007,6 +20704,20 @@ export namespace Prisma {
     deleteMany?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
   }
 
+  export type ProductUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<ProductCreateWithoutCategoryInput, ProductUncheckedCreateWithoutCategoryInput> | ProductCreateWithoutCategoryInput[] | ProductUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutCategoryInput | ProductCreateOrConnectWithoutCategoryInput[]
+    upsert?: ProductUpsertWithWhereUniqueWithoutCategoryInput | ProductUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: ProductCreateManyCategoryInputEnvelope
+    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    update?: ProductUpdateWithWhereUniqueWithoutCategoryInput | ProductUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: ProductUpdateManyWithWhereWithoutCategoryInput | ProductUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
+  }
+
   export type GuideUncheckedUpdateOneWithoutCategoryNestedInput = {
     create?: XOR<GuideCreateWithoutCategoryInput, GuideUncheckedCreateWithoutCategoryInput>
     connectOrCreate?: GuideCreateOrConnectWithoutCategoryInput
@@ -18029,6 +20740,20 @@ export namespace Prisma {
     update?: GlossaryItemCategoryUpdateWithWhereUniqueWithoutCategoryInput | GlossaryItemCategoryUpdateWithWhereUniqueWithoutCategoryInput[]
     updateMany?: GlossaryItemCategoryUpdateManyWithWhereWithoutCategoryInput | GlossaryItemCategoryUpdateManyWithWhereWithoutCategoryInput[]
     deleteMany?: GlossaryItemCategoryScalarWhereInput | GlossaryItemCategoryScalarWhereInput[]
+  }
+
+  export type ProductUncheckedUpdateManyWithoutCategoryNestedInput = {
+    create?: XOR<ProductCreateWithoutCategoryInput, ProductUncheckedCreateWithoutCategoryInput> | ProductCreateWithoutCategoryInput[] | ProductUncheckedCreateWithoutCategoryInput[]
+    connectOrCreate?: ProductCreateOrConnectWithoutCategoryInput | ProductCreateOrConnectWithoutCategoryInput[]
+    upsert?: ProductUpsertWithWhereUniqueWithoutCategoryInput | ProductUpsertWithWhereUniqueWithoutCategoryInput[]
+    createMany?: ProductCreateManyCategoryInputEnvelope
+    set?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    disconnect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    delete?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    connect?: ProductWhereUniqueInput | ProductWhereUniqueInput[]
+    update?: ProductUpdateWithWhereUniqueWithoutCategoryInput | ProductUpdateWithWhereUniqueWithoutCategoryInput[]
+    updateMany?: ProductUpdateManyWithWhereWithoutCategoryInput | ProductUpdateManyWithWhereWithoutCategoryInput[]
+    deleteMany?: ProductScalarWhereInput | ProductScalarWhereInput[]
   }
 
   export type CategoryCreateNestedOneWithoutGuideInput = {
@@ -18385,6 +21110,60 @@ export namespace Prisma {
     update?: XOR<XOR<GuideTableUpdateToOneWithWhereWithoutRowsInput, GuideTableUpdateWithoutRowsInput>, GuideTableUncheckedUpdateWithoutRowsInput>
   }
 
+  export type CategoryCreateNestedOneWithoutProductsInput = {
+    create?: XOR<CategoryCreateWithoutProductsInput, CategoryUncheckedCreateWithoutProductsInput>
+    connectOrCreate?: CategoryCreateOrConnectWithoutProductsInput
+    connect?: CategoryWhereUniqueInput
+  }
+
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type NullableEnumBodyDensityFieldUpdateOperationsInput = {
+    set?: $Enums.BodyDensity | null
+  }
+
+  export type NullableEnumWhiskyTypeFieldUpdateOperationsInput = {
+    set?: $Enums.WhiskyType | null
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
+  export type NullableEnumWineTypeFieldUpdateOperationsInput = {
+    set?: $Enums.WineType | null
+  }
+
+  export type NullableEnumWineStyleFieldUpdateOperationsInput = {
+    set?: $Enums.WineStyle | null
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type CategoryUpdateOneRequiredWithoutProductsNestedInput = {
+    create?: XOR<CategoryCreateWithoutProductsInput, CategoryUncheckedCreateWithoutProductsInput>
+    connectOrCreate?: CategoryCreateOrConnectWithoutProductsInput
+    upsert?: CategoryUpsertWithoutProductsInput
+    connect?: CategoryWhereUniqueInput
+    update?: XOR<XOR<CategoryUpdateToOneWithWhereWithoutProductsInput, CategoryUpdateWithoutProductsInput>, CategoryUncheckedUpdateWithoutProductsInput>
+  }
+
   export type GlossaryDetailCreateNestedManyWithoutGlossaryItemInput = {
     create?: XOR<GlossaryDetailCreateWithoutGlossaryItemInput, GlossaryDetailUncheckedCreateWithoutGlossaryItemInput> | GlossaryDetailCreateWithoutGlossaryItemInput[] | GlossaryDetailUncheckedCreateWithoutGlossaryItemInput[]
     connectOrCreate?: GlossaryDetailCreateOrConnectWithoutGlossaryItemInput | GlossaryDetailCreateOrConnectWithoutGlossaryItemInput[]
@@ -18411,10 +21190,6 @@ export namespace Prisma {
     connectOrCreate?: GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput | GlossaryItemCategoryCreateOrConnectWithoutGlossaryItemInput[]
     createMany?: GlossaryItemCategoryCreateManyGlossaryItemInputEnvelope
     connect?: GlossaryItemCategoryWhereUniqueInput | GlossaryItemCategoryWhereUniqueInput[]
-  }
-
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
   }
 
   export type GlossaryDetailUpdateManyWithoutGlossaryItemNestedInput = {
@@ -18674,9 +21449,69 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedEnumBodyDensityNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.BodyDensity | EnumBodyDensityFieldRefInput<$PrismaModel> | null
+    in?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumBodyDensityNullableFilter<$PrismaModel> | $Enums.BodyDensity | null
+  }
+
+  export type NestedEnumWhiskyTypeNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WhiskyType | EnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWhiskyTypeNullableFilter<$PrismaModel> | $Enums.WhiskyType | null
+  }
+
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type NestedEnumWineTypeNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineType | EnumWineTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineTypeNullableFilter<$PrismaModel> | $Enums.WineType | null
+  }
+
+  export type NestedEnumWineStyleNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineStyle | EnumWineStyleFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineStyleNullableFilter<$PrismaModel> | $Enums.WineStyle | null
+  }
+
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -18685,6 +21520,93 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
+  }
+  export type NestedJsonNullableFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonNullableFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonNullableFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonNullableFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonNullableFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type NestedEnumBodyDensityNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.BodyDensity | EnumBodyDensityFieldRefInput<$PrismaModel> | null
+    in?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.BodyDensity[] | ListEnumBodyDensityFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumBodyDensityNullableWithAggregatesFilter<$PrismaModel> | $Enums.BodyDensity | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumBodyDensityNullableFilter<$PrismaModel>
+    _max?: NestedEnumBodyDensityNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumWhiskyTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WhiskyType | EnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WhiskyType[] | ListEnumWhiskyTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWhiskyTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.WhiskyType | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWhiskyTypeNullableFilter<$PrismaModel>
+    _max?: NestedEnumWhiskyTypeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumWineTypeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineType | EnumWineTypeFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineType[] | ListEnumWineTypeFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineTypeNullableWithAggregatesFilter<$PrismaModel> | $Enums.WineType | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWineTypeNullableFilter<$PrismaModel>
+    _max?: NestedEnumWineTypeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumWineStyleNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineStyle | EnumWineStyleFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineStyle[] | ListEnumWineStyleFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineStyleNullableWithAggregatesFilter<$PrismaModel> | $Enums.WineStyle | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWineStyleNullableFilter<$PrismaModel>
+    _max?: NestedEnumWineStyleNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type GuideCreateWithoutCategoryInput = {
@@ -18729,6 +21651,96 @@ export namespace Prisma {
 
   export type GlossaryItemCategoryCreateManyCategoryInputEnvelope = {
     data: GlossaryItemCategoryCreateManyCategoryInput | GlossaryItemCategoryCreateManyCategoryInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ProductCreateWithoutCategoryInput = {
+    id?: string
+    slug: string
+    name: string
+    brand: string
+    subcategorySlug?: string | null
+    abv?: number | null
+    origin?: string | null
+    regionDetail?: string | null
+    imageUrl?: string | null
+    imageAlt?: string | null
+    description?: string | null
+    servingSuggestion?: string | null
+    priceRange?: string | null
+    featured?: boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: $Enums.BodyDensity | null
+    mixingRatio?: string | null
+    tastingColor?: string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: string | null
+    whiskyType?: $Enums.WhiskyType | null
+    distillery?: string | null
+    ageStatement?: string | null
+    caskType?: string | null
+    isPeated?: boolean | null
+    wineType?: $Enums.WineType | null
+    wineStyle?: $Enums.WineStyle | null
+    vintage?: number | null
+    producer?: string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: string | null
+    ibu?: number | null
+    beerColor?: string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductUncheckedCreateWithoutCategoryInput = {
+    id?: string
+    slug: string
+    name: string
+    brand: string
+    subcategorySlug?: string | null
+    abv?: number | null
+    origin?: string | null
+    regionDetail?: string | null
+    imageUrl?: string | null
+    imageAlt?: string | null
+    description?: string | null
+    servingSuggestion?: string | null
+    priceRange?: string | null
+    featured?: boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: $Enums.BodyDensity | null
+    mixingRatio?: string | null
+    tastingColor?: string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: string | null
+    whiskyType?: $Enums.WhiskyType | null
+    distillery?: string | null
+    ageStatement?: string | null
+    caskType?: string | null
+    isPeated?: boolean | null
+    wineType?: $Enums.WineType | null
+    wineStyle?: $Enums.WineStyle | null
+    vintage?: number | null
+    producer?: string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: string | null
+    ibu?: number | null
+    beerColor?: string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductCreateOrConnectWithoutCategoryInput = {
+    where: ProductWhereUniqueInput
+    create: XOR<ProductCreateWithoutCategoryInput, ProductUncheckedCreateWithoutCategoryInput>
+  }
+
+  export type ProductCreateManyCategoryInputEnvelope = {
+    data: ProductCreateManyCategoryInput | ProductCreateManyCategoryInput[]
     skipDuplicates?: boolean
   }
 
@@ -18787,6 +21799,66 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"GlossaryItemCategory"> | Date | string
   }
 
+  export type ProductUpsertWithWhereUniqueWithoutCategoryInput = {
+    where: ProductWhereUniqueInput
+    update: XOR<ProductUpdateWithoutCategoryInput, ProductUncheckedUpdateWithoutCategoryInput>
+    create: XOR<ProductCreateWithoutCategoryInput, ProductUncheckedCreateWithoutCategoryInput>
+  }
+
+  export type ProductUpdateWithWhereUniqueWithoutCategoryInput = {
+    where: ProductWhereUniqueInput
+    data: XOR<ProductUpdateWithoutCategoryInput, ProductUncheckedUpdateWithoutCategoryInput>
+  }
+
+  export type ProductUpdateManyWithWhereWithoutCategoryInput = {
+    where: ProductScalarWhereInput
+    data: XOR<ProductUpdateManyMutationInput, ProductUncheckedUpdateManyWithoutCategoryInput>
+  }
+
+  export type ProductScalarWhereInput = {
+    AND?: ProductScalarWhereInput | ProductScalarWhereInput[]
+    OR?: ProductScalarWhereInput[]
+    NOT?: ProductScalarWhereInput | ProductScalarWhereInput[]
+    id?: StringFilter<"Product"> | string
+    slug?: StringFilter<"Product"> | string
+    name?: StringFilter<"Product"> | string
+    brand?: StringFilter<"Product"> | string
+    categorySlug?: StringFilter<"Product"> | string
+    subcategorySlug?: StringNullableFilter<"Product"> | string | null
+    abv?: FloatNullableFilter<"Product"> | number | null
+    origin?: StringNullableFilter<"Product"> | string | null
+    regionDetail?: StringNullableFilter<"Product"> | string | null
+    imageUrl?: StringNullableFilter<"Product"> | string | null
+    imageAlt?: StringNullableFilter<"Product"> | string | null
+    description?: StringNullableFilter<"Product"> | string | null
+    servingSuggestion?: StringNullableFilter<"Product"> | string | null
+    priceRange?: StringNullableFilter<"Product"> | string | null
+    featured?: BoolFilter<"Product"> | boolean
+    tags?: JsonNullableFilter<"Product">
+    bodyDensity?: EnumBodyDensityNullableFilter<"Product"> | $Enums.BodyDensity | null
+    mixingRatio?: StringNullableFilter<"Product"> | string | null
+    tastingColor?: StringNullableFilter<"Product"> | string | null
+    tastingNose?: JsonNullableFilter<"Product">
+    tastingPalate?: JsonNullableFilter<"Product">
+    tastingFinish?: StringNullableFilter<"Product"> | string | null
+    whiskyType?: EnumWhiskyTypeNullableFilter<"Product"> | $Enums.WhiskyType | null
+    distillery?: StringNullableFilter<"Product"> | string | null
+    ageStatement?: StringNullableFilter<"Product"> | string | null
+    caskType?: StringNullableFilter<"Product"> | string | null
+    isPeated?: BoolNullableFilter<"Product"> | boolean | null
+    wineType?: EnumWineTypeNullableFilter<"Product"> | $Enums.WineType | null
+    wineStyle?: EnumWineStyleNullableFilter<"Product"> | $Enums.WineStyle | null
+    vintage?: IntNullableFilter<"Product"> | number | null
+    producer?: StringNullableFilter<"Product"> | string | null
+    grapes?: JsonNullableFilter<"Product">
+    beerStyle?: StringNullableFilter<"Product"> | string | null
+    ibu?: IntNullableFilter<"Product"> | number | null
+    beerColor?: StringNullableFilter<"Product"> | string | null
+    pairings?: JsonNullableFilter<"Product">
+    createdAt?: DateTimeFilter<"Product"> | Date | string
+    updatedAt?: DateTimeFilter<"Product"> | Date | string
+  }
+
   export type CategoryCreateWithoutGuideInput = {
     id?: string
     slug: string
@@ -18800,6 +21872,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     glossaryLinks?: GlossaryItemCategoryCreateNestedManyWithoutCategoryInput
+    products?: ProductCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateWithoutGuideInput = {
@@ -18815,6 +21888,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     glossaryLinks?: GlossaryItemCategoryUncheckedCreateNestedManyWithoutCategoryInput
+    products?: ProductUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryCreateOrConnectWithoutGuideInput = {
@@ -18888,6 +21962,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     glossaryLinks?: GlossaryItemCategoryUpdateManyWithoutCategoryNestedInput
+    products?: ProductUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateWithoutGuideInput = {
@@ -18903,6 +21978,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     glossaryLinks?: GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryNestedInput
+    products?: ProductUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type GuideTabUpsertWithWhereUniqueWithoutGuideInput = {
@@ -19737,6 +22813,86 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type CategoryCreateWithoutProductsInput = {
+    id?: string
+    slug: string
+    position: number
+    title: string
+    summary: string
+    abv: string
+    origin: string
+    imageUrl: string
+    imageAlt: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guide?: GuideCreateNestedOneWithoutCategoryInput
+    glossaryLinks?: GlossaryItemCategoryCreateNestedManyWithoutCategoryInput
+  }
+
+  export type CategoryUncheckedCreateWithoutProductsInput = {
+    id?: string
+    slug: string
+    position: number
+    title: string
+    summary: string
+    abv: string
+    origin: string
+    imageUrl: string
+    imageAlt: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    guide?: GuideUncheckedCreateNestedOneWithoutCategoryInput
+    glossaryLinks?: GlossaryItemCategoryUncheckedCreateNestedManyWithoutCategoryInput
+  }
+
+  export type CategoryCreateOrConnectWithoutProductsInput = {
+    where: CategoryWhereUniqueInput
+    create: XOR<CategoryCreateWithoutProductsInput, CategoryUncheckedCreateWithoutProductsInput>
+  }
+
+  export type CategoryUpsertWithoutProductsInput = {
+    update: XOR<CategoryUpdateWithoutProductsInput, CategoryUncheckedUpdateWithoutProductsInput>
+    create: XOR<CategoryCreateWithoutProductsInput, CategoryUncheckedCreateWithoutProductsInput>
+    where?: CategoryWhereInput
+  }
+
+  export type CategoryUpdateToOneWithWhereWithoutProductsInput = {
+    where?: CategoryWhereInput
+    data: XOR<CategoryUpdateWithoutProductsInput, CategoryUncheckedUpdateWithoutProductsInput>
+  }
+
+  export type CategoryUpdateWithoutProductsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    summary?: StringFieldUpdateOperationsInput | string
+    abv?: StringFieldUpdateOperationsInput | string
+    origin?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guide?: GuideUpdateOneWithoutCategoryNestedInput
+    glossaryLinks?: GlossaryItemCategoryUpdateManyWithoutCategoryNestedInput
+  }
+
+  export type CategoryUncheckedUpdateWithoutProductsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    position?: IntFieldUpdateOperationsInput | number
+    title?: StringFieldUpdateOperationsInput | string
+    summary?: StringFieldUpdateOperationsInput | string
+    abv?: StringFieldUpdateOperationsInput | string
+    origin?: StringFieldUpdateOperationsInput | string
+    imageUrl?: StringFieldUpdateOperationsInput | string
+    imageAlt?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    guide?: GuideUncheckedUpdateOneWithoutCategoryNestedInput
+    glossaryLinks?: GlossaryItemCategoryUncheckedUpdateManyWithoutCategoryNestedInput
+  }
+
   export type GlossaryDetailCreateWithoutGlossaryItemInput = {
     id?: string
     content: string
@@ -19929,6 +23085,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     guide?: GuideCreateNestedOneWithoutCategoryInput
+    products?: ProductCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryUncheckedCreateWithoutGlossaryLinksInput = {
@@ -19944,6 +23101,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     guide?: GuideUncheckedCreateNestedOneWithoutCategoryInput
+    products?: ProductUncheckedCreateNestedManyWithoutCategoryInput
   }
 
   export type CategoryCreateOrConnectWithoutGlossaryLinksInput = {
@@ -20008,6 +23166,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUpdateOneWithoutCategoryNestedInput
+    products?: ProductUpdateManyWithoutCategoryNestedInput
   }
 
   export type CategoryUncheckedUpdateWithoutGlossaryLinksInput = {
@@ -20023,12 +23182,53 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     guide?: GuideUncheckedUpdateOneWithoutCategoryNestedInput
+    products?: ProductUncheckedUpdateManyWithoutCategoryNestedInput
   }
 
   export type GlossaryItemCategoryCreateManyCategoryInput = {
     glossaryItemId: string
     position: number
     createdAt?: Date | string
+  }
+
+  export type ProductCreateManyCategoryInput = {
+    id?: string
+    slug: string
+    name: string
+    brand: string
+    subcategorySlug?: string | null
+    abv?: number | null
+    origin?: string | null
+    regionDetail?: string | null
+    imageUrl?: string | null
+    imageAlt?: string | null
+    description?: string | null
+    servingSuggestion?: string | null
+    priceRange?: string | null
+    featured?: boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: $Enums.BodyDensity | null
+    mixingRatio?: string | null
+    tastingColor?: string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: string | null
+    whiskyType?: $Enums.WhiskyType | null
+    distillery?: string | null
+    ageStatement?: string | null
+    caskType?: string | null
+    isPeated?: boolean | null
+    wineType?: $Enums.WineType | null
+    wineStyle?: $Enums.WineStyle | null
+    vintage?: number | null
+    producer?: string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: string | null
+    ibu?: number | null
+    beerColor?: string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type GlossaryItemCategoryUpdateWithoutCategoryInput = {
@@ -20047,6 +23247,126 @@ export namespace Prisma {
     glossaryItemId?: StringFieldUpdateOperationsInput | string
     position?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductUpdateWithoutCategoryInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    subcategorySlug?: NullableStringFieldUpdateOperationsInput | string | null
+    abv?: NullableFloatFieldUpdateOperationsInput | number | null
+    origin?: NullableStringFieldUpdateOperationsInput | string | null
+    regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: NullableEnumBodyDensityFieldUpdateOperationsInput | $Enums.BodyDensity | null
+    mixingRatio?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: NullableStringFieldUpdateOperationsInput | string | null
+    whiskyType?: NullableEnumWhiskyTypeFieldUpdateOperationsInput | $Enums.WhiskyType | null
+    distillery?: NullableStringFieldUpdateOperationsInput | string | null
+    ageStatement?: NullableStringFieldUpdateOperationsInput | string | null
+    caskType?: NullableStringFieldUpdateOperationsInput | string | null
+    isPeated?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    wineType?: NullableEnumWineTypeFieldUpdateOperationsInput | $Enums.WineType | null
+    wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
+    vintage?: NullableIntFieldUpdateOperationsInput | number | null
+    producer?: NullableStringFieldUpdateOperationsInput | string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
+    ibu?: NullableIntFieldUpdateOperationsInput | number | null
+    beerColor?: NullableStringFieldUpdateOperationsInput | string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductUncheckedUpdateWithoutCategoryInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    subcategorySlug?: NullableStringFieldUpdateOperationsInput | string | null
+    abv?: NullableFloatFieldUpdateOperationsInput | number | null
+    origin?: NullableStringFieldUpdateOperationsInput | string | null
+    regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: NullableEnumBodyDensityFieldUpdateOperationsInput | $Enums.BodyDensity | null
+    mixingRatio?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: NullableStringFieldUpdateOperationsInput | string | null
+    whiskyType?: NullableEnumWhiskyTypeFieldUpdateOperationsInput | $Enums.WhiskyType | null
+    distillery?: NullableStringFieldUpdateOperationsInput | string | null
+    ageStatement?: NullableStringFieldUpdateOperationsInput | string | null
+    caskType?: NullableStringFieldUpdateOperationsInput | string | null
+    isPeated?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    wineType?: NullableEnumWineTypeFieldUpdateOperationsInput | $Enums.WineType | null
+    wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
+    vintage?: NullableIntFieldUpdateOperationsInput | number | null
+    producer?: NullableStringFieldUpdateOperationsInput | string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
+    ibu?: NullableIntFieldUpdateOperationsInput | number | null
+    beerColor?: NullableStringFieldUpdateOperationsInput | string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductUncheckedUpdateManyWithoutCategoryInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    slug?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    brand?: StringFieldUpdateOperationsInput | string
+    subcategorySlug?: NullableStringFieldUpdateOperationsInput | string | null
+    abv?: NullableFloatFieldUpdateOperationsInput | number | null
+    origin?: NullableStringFieldUpdateOperationsInput | string | null
+    regionDetail?: NullableStringFieldUpdateOperationsInput | string | null
+    imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
+    imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    servingSuggestion?: NullableStringFieldUpdateOperationsInput | string | null
+    priceRange?: NullableStringFieldUpdateOperationsInput | string | null
+    featured?: BoolFieldUpdateOperationsInput | boolean
+    tags?: NullableJsonNullValueInput | InputJsonValue
+    bodyDensity?: NullableEnumBodyDensityFieldUpdateOperationsInput | $Enums.BodyDensity | null
+    mixingRatio?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingColor?: NullableStringFieldUpdateOperationsInput | string | null
+    tastingNose?: NullableJsonNullValueInput | InputJsonValue
+    tastingPalate?: NullableJsonNullValueInput | InputJsonValue
+    tastingFinish?: NullableStringFieldUpdateOperationsInput | string | null
+    whiskyType?: NullableEnumWhiskyTypeFieldUpdateOperationsInput | $Enums.WhiskyType | null
+    distillery?: NullableStringFieldUpdateOperationsInput | string | null
+    ageStatement?: NullableStringFieldUpdateOperationsInput | string | null
+    caskType?: NullableStringFieldUpdateOperationsInput | string | null
+    isPeated?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    wineType?: NullableEnumWineTypeFieldUpdateOperationsInput | $Enums.WineType | null
+    wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
+    vintage?: NullableIntFieldUpdateOperationsInput | number | null
+    producer?: NullableStringFieldUpdateOperationsInput | string | null
+    grapes?: NullableJsonNullValueInput | InputJsonValue
+    beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
+    ibu?: NullableIntFieldUpdateOperationsInput | number | null
+    beerColor?: NullableStringFieldUpdateOperationsInput | string | null
+    pairings?: NullableJsonNullValueInput | InputJsonValue
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type GuideTabCreateManyGuideInput = {

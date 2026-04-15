@@ -8,6 +8,7 @@ import { adminMigrationRoutes } from "./routes/adminMigration";
 import { categoriesRoutes } from "./routes/categories";
 import { glossaryRoutes } from "./routes/glossary";
 import { guidesRoutes } from "./routes/guides";
+import { productsRoutes } from "./routes/products";
 import { subcategoriesRoutes } from "./routes/subcategories";
 
 export async function buildApp() {
@@ -71,6 +72,10 @@ export async function buildApp() {
 
   app.register(glossaryRoutes, {
     prefix: "/glossary",
+  });
+
+  app.register(productsRoutes, {
+    prefix: "/products",
   });
 
   app.register(subcategoriesRoutes, {

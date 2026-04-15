@@ -21,6 +21,7 @@ model Category {
   updatedAt     DateTime              @updatedAt
   guide         Guide?
   glossaryLinks GlossaryItemCategory[]
+  products      Product[]
 }
 
 model Guide {
@@ -152,6 +153,116 @@ model GuideTableRow {
   table        GuideTable  @relation(fields: [tableId], references: [id], onDelete: Cascade)
 
   @@index([tableId, position])
+}
+
+// ─── Enums para productos ──────────────────────────────────────────────────────
+
+enum WhiskyType {
+  SINGLE_MALT
+  SINGLE_GRAIN
+  BLENDED_MALT
+  BLENDED_SCOTCH
+  BOURBON
+  RYE
+  IRISH
+  JAPANESE
+  WORLD
+}
+
+enum WineType {
+  TINTO
+  BLANCO
+  ROSADO
+  ESPUMOSO
+  DULCE
+  SEMI_DULCE
+  SEMI_SECO
+  FORTIFICADO
+}
+
+enum WineStyle {
+  JOVEN
+  ROBLE
+  CRIANZA
+  RESERVA
+  GRAN_RESERVA
+}
+
+/// Cuerpo/densidad del líquido en boca, aplicable a cualquier bebida.
+enum BodyDensity {
+  LOW
+  MEDIUM_LOW
+  MEDIUM
+  MEDIUM_HIGH
+  HIGH
+}
+
+// ─── Catálogo de productos / marcas específicas ────────────────────────────────
+
+model Product {
+  id                String      @id @default(cuid())
+  slug              String      @unique
+  name              String
+  brand             String
+  categorySlug      String
+  subcategorySlug   String?
+  abv               Float?
+  origin            String?
+  regionDetail      String?
+  imageUrl          String?
+  imageAlt          String?
+  description       String?
+  /// "On the rocks", "En copa técnica", "Highball", etc.
+  servingSuggestion String?
+  priceRange        String?
+  featured          Boolean     @default(false)
+  /// Tags libres para búsqueda: ["ahumado", "mezcla", "picante"]
+  tags              Json?
+  /// Cuerpo/densidad en boca (LOW → HIGH)
+  bodyDensity       BodyDensity?
+  /// Proporción de mezcla recomendada: "70/30 Cola", "Ginger Ale 1:3"
+  mixingRatio       String?
+
+  // Notas de cata — arrays para permitir filtrado por sabor/aroma
+  tastingColor      String?
+  /// ["cítricos", "vainilla", "humo joven"]
+  tastingNose       Json?
+  /// ["especias", "malta", "pimienta"]
+  tastingPalate     Json?
+  tastingFinish     String?
+
+  // Whisky
+  whiskyType        WhiskyType?
+  distillery        String?
+  /// Años de guarda; "NAS" si no tiene declaración de edad
+  ageStatement      String?
+  caskType          String?
+  /// Indica si el whisky es ahumado con turba (filtro clave para usuarios)
+  isPeated          Boolean?
+
+  // Vino
+  wineType          WineType?
+  wineStyle         WineStyle?
+  vintage           Int?
+  producer          String?
+  /// [{ "grape": "Malbec", "percentage": 70 }, ...]
+  grapes            Json?
+
+  // Cerveza
+  beerStyle         String?
+  ibu               Int?
+  beerColor         String?
+
+  // Maridajes: ["Carnes rojas", "Quesos azules", ...]
+  pairings          Json?
+
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+
+  category          Category    @relation(fields: [categorySlug], references: [slug])
+
+  @@index([categorySlug])
+  @@index([subcategorySlug])
 }
 
 model GlossaryItem {

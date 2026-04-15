@@ -3,6 +3,13 @@ import { Prisma } from "../generated/prisma";
 import { READ_ONLY_MODE_MESSAGE, isDatabaseUnavailableError } from "../lib/database";
 import { getPrismaOrThrow } from "../lib/prisma";
 
+// Helpers para tipos nullables en JSON Schema
+const nullableStr  = { type: ["string",  "null"] } as const;
+const nullableNum  = { type: ["number",  "null"] } as const;
+const nullableBool = { type: ["boolean", "null"] } as const;
+const nullableEnum = (values: readonly string[]) =>
+  ({ anyOf: [{ type: "string", enum: values }, { type: "null" }] }) as const;
+
 const productBodySchema = {
   type: "object",
   required: ["slug", "name", "brand", "categorySlug"],
@@ -12,44 +19,44 @@ const productBodySchema = {
     name:              { type: "string", minLength: 1 },
     brand:             { type: "string", minLength: 1 },
     categorySlug:      { type: "string", minLength: 1 },
-    subcategorySlug:   { type: "string" },
-    abv:               { type: "number" },
-    origin:            { type: "string" },
-    regionDetail:      { type: "string" },
-    imageUrl:          { type: "string" },
-    imageAlt:          { type: "string" },
-    description:       { type: "string" },
-    servingSuggestion: { type: "string" },
-    priceRange:        { type: "string" },
+    subcategorySlug:   nullableStr,
+    abv:               nullableNum,
+    origin:            nullableStr,
+    regionDetail:      nullableStr,
+    imageUrl:          nullableStr,
+    imageAlt:          nullableStr,
+    description:       nullableStr,
+    servingSuggestion: nullableStr,
+    priceRange:        nullableStr,
     featured:          { type: "boolean" },
     tags:              { type: "array", items: { type: "string" } },
-    bodyDensity:       { type: "string", enum: ["LOW","MEDIUM_LOW","MEDIUM","MEDIUM_HIGH","HIGH"] },
-    mixingRatio:       { type: "string" },
+    bodyDensity:       nullableEnum(["LOW","MEDIUM_LOW","MEDIUM","MEDIUM_HIGH","HIGH"]),
+    mixingRatio:       nullableStr,
     // Notas de cata
-    tastingColor:      { type: "string" },
-    tastingNose:       { type: "array", items: { type: "string" } },
-    tastingPalate:     { type: "array", items: { type: "string" } },
-    tastingFinish:     { type: "string" },
+    tastingColor:      nullableStr,
+    tastingNose:       { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
+    tastingPalate:     { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
+    tastingFinish:     nullableStr,
     // Whisky
-    whiskyType:        { type: "string", enum: ["SINGLE_MALT","SINGLE_GRAIN","BLENDED_MALT","BLENDED_SCOTCH","BOURBON","RYE","IRISH","JAPANESE","WORLD"] },
-    distillery:        { type: "string" },
-    ageStatement:      { type: "string" },
-    caskType:          { type: "string" },
-    isPeated:          { type: "boolean" },
+    whiskyType:        nullableEnum(["SINGLE_MALT","SINGLE_GRAIN","BLENDED_MALT","BLENDED_SCOTCH","BOURBON","RYE","IRISH","JAPANESE","WORLD"]),
+    distillery:        nullableStr,
+    ageStatement:      nullableStr,
+    caskType:          nullableStr,
+    isPeated:          nullableBool,
     // Vino
-    wineType:          { type: "string", enum: ["TINTO","BLANCO","ROSADO","ESPUMOSO","DULCE","SEMI_DULCE","SEMI_SECO","FORTIFICADO"] },
-    wineStyle:         { type: "string", enum: ["JOVEN","ROBLE","CRIANZA","RESERVA","GRAN_RESERVA"] },
-    vintage:           { type: "number" },
-    producer:          { type: "string" },
-    grapes:            { type: "array", items: { type: "object", properties: { grape: { type: "string" }, percentage: { type: "number" } } } },
+    wineType:          nullableEnum(["TINTO","BLANCO","ROSADO","ESPUMOSO","DULCE","SEMI_DULCE","SEMI_SECO","FORTIFICADO"]),
+    wineStyle:         nullableEnum(["JOVEN","ROBLE","CRIANZA","RESERVA","GRAN_RESERVA"]),
+    vintage:           nullableNum,
+    producer:          nullableStr,
+    grapes:            { anyOf: [{ type: "array", items: { type: "object", properties: { grape: { type: "string" }, percentage: nullableNum } } }, { type: "null" }] },
     // Cerveza
-    beerStyle:         { type: "string" },
-    ibu:               { type: "number" },
-    beerColor:         { type: "string" },
+    beerStyle:         nullableStr,
+    ibu:               nullableNum,
+    beerColor:         nullableStr,
     // Maridajes
-    pairings:          { type: "array", items: { type: "string" } },
+    pairings:          { anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }] },
   },
-} as const;
+};
 
 export const productsRoutes: FastifyPluginAsync = async (app) => {
   app.get(

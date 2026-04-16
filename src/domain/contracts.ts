@@ -17,6 +17,7 @@ export type TableColumnKey =
   | "visualColor"
   | "tannins"
   | "acidity"
+  | "category"
   | "examples";
 
 export type TableColumn = {
@@ -65,6 +66,7 @@ export type SeedGuideTableRow = {
   visualColor?: string;
   tannins?: string;
   acidity?: string;
+  category?: string;
   examples?: string;
   imageUrl?: string;
   imageAlt?: string;

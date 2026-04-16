@@ -144,6 +144,7 @@ model GuideTableRow {
   visualColor  String?
   tannins      String?
   acidity      String?
+  category     String?
   examples     String?
   imageUrl     String?
   imageAlt     String?

@@ -225,6 +225,7 @@ exports.Prisma.GuideTableRowScalarFieldEnum = {
   visualColor: 'visualColor',
   tannins: 'tannins',
   acidity: 'acidity',
+  category: 'category',
   examples: 'examples',
   imageUrl: 'imageUrl',
   imageAlt: 'imageAlt',

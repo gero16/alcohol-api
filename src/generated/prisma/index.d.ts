@@ -10461,6 +10461,7 @@ export namespace Prisma {
     visualColor: string | null
     tannins: string | null
     acidity: string | null
+    category: string | null
     examples: string | null
     imageUrl: string | null
     imageAlt: string | null
@@ -10490,6 +10491,7 @@ export namespace Prisma {
     visualColor: string | null
     tannins: string | null
     acidity: string | null
+    category: string | null
     examples: string | null
     imageUrl: string | null
     imageAlt: string | null
@@ -10519,6 +10521,7 @@ export namespace Prisma {
     visualColor: number
     tannins: number
     acidity: number
+    category: number
     examples: number
     imageUrl: number
     imageAlt: number
@@ -10558,6 +10561,7 @@ export namespace Prisma {
     visualColor?: true
     tannins?: true
     acidity?: true
+    category?: true
     examples?: true
     imageUrl?: true
     imageAlt?: true
@@ -10587,6 +10591,7 @@ export namespace Prisma {
     visualColor?: true
     tannins?: true
     acidity?: true
+    category?: true
     examples?: true
     imageUrl?: true
     imageAlt?: true
@@ -10616,6 +10621,7 @@ export namespace Prisma {
     visualColor?: true
     tannins?: true
     acidity?: true
+    category?: true
     examples?: true
     imageUrl?: true
     imageAlt?: true
@@ -10732,6 +10738,7 @@ export namespace Prisma {
     visualColor: string | null
     tannins: string | null
     acidity: string | null
+    category: string | null
     examples: string | null
     imageUrl: string | null
     imageAlt: string | null
@@ -10780,6 +10787,7 @@ export namespace Prisma {
     visualColor?: boolean
     tannins?: boolean
     acidity?: boolean
+    category?: boolean
     examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
@@ -10810,6 +10818,7 @@ export namespace Prisma {
     visualColor?: boolean
     tannins?: boolean
     acidity?: boolean
+    category?: boolean
     examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
@@ -10840,6 +10849,7 @@ export namespace Prisma {
     visualColor?: boolean
     tannins?: boolean
     acidity?: boolean
+    category?: boolean
     examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
@@ -10870,6 +10880,7 @@ export namespace Prisma {
     visualColor?: boolean
     tannins?: boolean
     acidity?: boolean
+    category?: boolean
     examples?: boolean
     imageUrl?: boolean
     imageAlt?: boolean
@@ -10878,7 +10889,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "notes" | "reference" | "abv" | "ageingMaturation" | "distillationMethod" | "profileCharacter" | "body" | "intensity" | "bitternessIbu" | "finish" | "regionOrigin" | "visualColor" | "tannins" | "acidity" | "examples" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
+  export type GuideTableRowOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "tableId" | "term" | "composition" | "objective" | "description" | "notes" | "reference" | "abv" | "ageingMaturation" | "distillationMethod" | "profileCharacter" | "body" | "intensity" | "bitternessIbu" | "finish" | "regionOrigin" | "visualColor" | "tannins" | "acidity" | "category" | "examples" | "imageUrl" | "imageAlt" | "position" | "createdAt" | "updatedAt", ExtArgs["result"]["guideTableRow"]>
   export type GuideTableRowInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     table?: boolean | GuideTableDefaultArgs<ExtArgs>
   }
@@ -10915,6 +10926,7 @@ export namespace Prisma {
       visualColor: string | null
       tannins: string | null
       acidity: string | null
+      category: string | null
       examples: string | null
       imageUrl: string | null
       imageAlt: string | null
@@ -11365,6 +11377,7 @@ export namespace Prisma {
     readonly visualColor: FieldRef<"GuideTableRow", 'String'>
     readonly tannins: FieldRef<"GuideTableRow", 'String'>
     readonly acidity: FieldRef<"GuideTableRow", 'String'>
+    readonly category: FieldRef<"GuideTableRow", 'String'>
     readonly examples: FieldRef<"GuideTableRow", 'String'>
     readonly imageUrl: FieldRef<"GuideTableRow", 'String'>
     readonly imageAlt: FieldRef<"GuideTableRow", 'String'>
@@ -16937,6 +16950,7 @@ export namespace Prisma {
     visualColor: 'visualColor',
     tannins: 'tannins',
     acidity: 'acidity',
+    category: 'category',
     examples: 'examples',
     imageUrl: 'imageUrl',
     imageAlt: 'imageAlt',
@@ -17828,6 +17842,7 @@ export namespace Prisma {
     visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
     tannins?: StringNullableFilter<"GuideTableRow"> | string | null
     acidity?: StringNullableFilter<"GuideTableRow"> | string | null
+    category?: StringNullableFilter<"GuideTableRow"> | string | null
     examples?: StringNullableFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -17858,6 +17873,7 @@ export namespace Prisma {
     visualColor?: SortOrderInput | SortOrder
     tannins?: SortOrderInput | SortOrder
     acidity?: SortOrderInput | SortOrder
+    category?: SortOrderInput | SortOrder
     examples?: SortOrderInput | SortOrder
     imageUrl?: SortOrderInput | SortOrder
     imageAlt?: SortOrderInput | SortOrder
@@ -17891,6 +17907,7 @@ export namespace Prisma {
     visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
     tannins?: StringNullableFilter<"GuideTableRow"> | string | null
     acidity?: StringNullableFilter<"GuideTableRow"> | string | null
+    category?: StringNullableFilter<"GuideTableRow"> | string | null
     examples?: StringNullableFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -17921,6 +17938,7 @@ export namespace Prisma {
     visualColor?: SortOrderInput | SortOrder
     tannins?: SortOrderInput | SortOrder
     acidity?: SortOrderInput | SortOrder
+    category?: SortOrderInput | SortOrder
     examples?: SortOrderInput | SortOrder
     imageUrl?: SortOrderInput | SortOrder
     imageAlt?: SortOrderInput | SortOrder
@@ -17958,6 +17976,7 @@ export namespace Prisma {
     visualColor?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     tannins?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     acidity?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
+    category?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     examples?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableWithAggregatesFilter<"GuideTableRow"> | string | null
@@ -19057,6 +19076,7 @@ export namespace Prisma {
     visualColor?: string | null
     tannins?: string | null
     acidity?: string | null
+    category?: string | null
     examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
@@ -19087,6 +19107,7 @@ export namespace Prisma {
     visualColor?: string | null
     tannins?: string | null
     acidity?: string | null
+    category?: string | null
     examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
@@ -19115,6 +19136,7 @@ export namespace Prisma {
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
     tannins?: NullableStringFieldUpdateOperationsInput | string | null
     acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
     examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19145,6 +19167,7 @@ export namespace Prisma {
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
     tannins?: NullableStringFieldUpdateOperationsInput | string | null
     acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
     examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19174,6 +19197,7 @@ export namespace Prisma {
     visualColor?: string | null
     tannins?: string | null
     acidity?: string | null
+    category?: string | null
     examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
@@ -19202,6 +19226,7 @@ export namespace Prisma {
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
     tannins?: NullableStringFieldUpdateOperationsInput | string | null
     acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
     examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
@@ -19231,6 +19256,7 @@ export namespace Prisma {
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
     tannins?: NullableStringFieldUpdateOperationsInput | string | null
     acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
     examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
@@ -20394,6 +20420,7 @@ export namespace Prisma {
     visualColor?: SortOrder
     tannins?: SortOrder
     acidity?: SortOrder
+    category?: SortOrder
     examples?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
@@ -20427,6 +20454,7 @@ export namespace Prisma {
     visualColor?: SortOrder
     tannins?: SortOrder
     acidity?: SortOrder
+    category?: SortOrder
     examples?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
@@ -20456,6 +20484,7 @@ export namespace Prisma {
     visualColor?: SortOrder
     tannins?: SortOrder
     acidity?: SortOrder
+    category?: SortOrder
     examples?: SortOrder
     imageUrl?: SortOrder
     imageAlt?: SortOrder
@@ -22980,6 +23009,7 @@ export namespace Prisma {
     visualColor?: string | null
     tannins?: string | null
     acidity?: string | null
+    category?: string | null
     examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
@@ -23008,6 +23038,7 @@ export namespace Prisma {
     visualColor?: string | null
     tannins?: string | null
     acidity?: string | null
+    category?: string | null
     examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
@@ -23109,6 +23140,7 @@ export namespace Prisma {
     visualColor?: StringNullableFilter<"GuideTableRow"> | string | null
     tannins?: StringNullableFilter<"GuideTableRow"> | string | null
     acidity?: StringNullableFilter<"GuideTableRow"> | string | null
+    category?: StringNullableFilter<"GuideTableRow"> | string | null
     examples?: StringNullableFilter<"GuideTableRow"> | string | null
     imageUrl?: StringNullableFilter<"GuideTableRow"> | string | null
     imageAlt?: StringNullableFilter<"GuideTableRow"> | string | null
@@ -24031,6 +24063,7 @@ export namespace Prisma {
     visualColor?: string | null
     tannins?: string | null
     acidity?: string | null
+    category?: string | null
     examples?: string | null
     imageUrl?: string | null
     imageAlt?: string | null
@@ -24059,6 +24092,7 @@ export namespace Prisma {
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
     tannins?: NullableStringFieldUpdateOperationsInput | string | null
     acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
     examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24087,6 +24121,7 @@ export namespace Prisma {
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
     tannins?: NullableStringFieldUpdateOperationsInput | string | null
     acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
     examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null
@@ -24115,6 +24150,7 @@ export namespace Prisma {
     visualColor?: NullableStringFieldUpdateOperationsInput | string | null
     tannins?: NullableStringFieldUpdateOperationsInput | string | null
     acidity?: NullableStringFieldUpdateOperationsInput | string | null
+    category?: NullableStringFieldUpdateOperationsInput | string | null
     examples?: NullableStringFieldUpdateOperationsInput | string | null
     imageUrl?: NullableStringFieldUpdateOperationsInput | string | null
     imageAlt?: NullableStringFieldUpdateOperationsInput | string | null

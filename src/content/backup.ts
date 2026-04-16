@@ -74,6 +74,7 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
             visualColor: row.visualColor ?? undefined,
             tannins: row.tannins ?? undefined,
             acidity: row.acidity ?? undefined,
+            category: row.category ?? undefined,
             examples: row.examples ?? row.reference ?? undefined,
             imageUrl: row.imageUrl ?? undefined,
             imageAlt: row.imageAlt ?? undefined,

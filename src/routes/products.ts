@@ -43,6 +43,10 @@ const PRODUCT_WRITABLE_KEYS = [
   "wineStyle",
   "vintage",
   "producer",
+  "varietal",
+  "oakAging",
+  "tanninLevel",
+  "acidityLevel",
   "grapes",
   "beerStyle",
   "ibu",
@@ -50,6 +54,7 @@ const PRODUCT_WRITABLE_KEYS = [
   "pairings",
   "celiacFriendly",
   "veganFriendly",
+  "isOrganic",
   "note",
 ] as const;
 
@@ -107,6 +112,10 @@ const productBodySchema = {
     wineStyle:         nullableEnum(["JOVEN","ROBLE","CRIANZA","RESERVA","GRAN_RESERVA"]),
     vintage:           nullableNum,
     producer:          nullableStr,
+    varietal:          nullableStr,
+    oakAging:          nullableBool,
+    tanninLevel:       nullableEnum(["LOW","MEDIUM","HIGH"]),
+    acidityLevel:      nullableEnum(["LOW","MEDIUM","HIGH"]),
     grapes:            { anyOf: [{ type: "array", items: { type: "object", properties: { grape: { type: "string" }, percentage: nullableNum } } }, { type: "null" }] },
     // Cerveza
     beerStyle:         nullableStr,
@@ -117,6 +126,7 @@ const productBodySchema = {
     // Dietario / notas
     celiacFriendly:    nullableBool,
     veganFriendly:     nullableBool,
+    isOrganic:         nullableBool,
     note:              nullableStr,
   },
 };

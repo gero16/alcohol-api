@@ -198,6 +198,13 @@ enum BodyDensity {
   HIGH
 }
 
+/// Escala simple para taninos (tintos) y acidez (blancos), etc.
+enum WineSensoryLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
 // ─── Catálogo de productos / marcas específicas ────────────────────────────────
 
 model Product {
@@ -247,6 +254,12 @@ model Product {
   wineStyle         WineStyle?
   vintage           Int?
   producer          String?
+  /// Varietal declarado o tipo de blend (ej. "100% Malbec", "Cabernet · Merlot").
+  varietal          String?
+  /// Crianza en barrica (complementa `wineStyle` para Reserva / Gran Reserva, etc.).
+  oakAging          Boolean?
+  tanninLevel       WineSensoryLevel?
+  acidityLevel      WineSensoryLevel?
   /// [{ "grape": "Malbec", "percentage": 70 }, ...]
   grapes            Json?
 
@@ -262,6 +275,8 @@ model Product {
   celiacFriendly    Boolean?
   /// Apto vegano (sin ingredientes de origen animal en la elaboración habitual).
   veganFriendly     Boolean?
+  /// Elaboración orgánica / ecológica (ej. líneas certificadas).
+  isOrganic         Boolean?
   /// Nota libre: aclaraciones dietarias, advertencias o fuente del dato.
   note              String?
 

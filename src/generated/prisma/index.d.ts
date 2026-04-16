@@ -129,6 +129,15 @@ export const BodyDensity: {
 
 export type BodyDensity = (typeof BodyDensity)[keyof typeof BodyDensity]
 
+
+export const WineSensoryLevel: {
+  LOW: 'LOW',
+  MEDIUM: 'MEDIUM',
+  HIGH: 'HIGH'
+};
+
+export type WineSensoryLevel = (typeof WineSensoryLevel)[keyof typeof WineSensoryLevel]
+
 }
 
 export type WhiskyType = $Enums.WhiskyType
@@ -146,6 +155,10 @@ export const WineStyle: typeof $Enums.WineStyle
 export type BodyDensity = $Enums.BodyDensity
 
 export const BodyDensity: typeof $Enums.BodyDensity
+
+export type WineSensoryLevel = $Enums.WineSensoryLevel
+
+export const WineSensoryLevel: typeof $Enums.WineSensoryLevel
 
 /**
  * ##  Prisma Client ʲˢ
@@ -11831,11 +11844,16 @@ export namespace Prisma {
     wineStyle: $Enums.WineStyle | null
     vintage: number | null
     producer: string | null
+    varietal: string | null
+    oakAging: boolean | null
+    tanninLevel: $Enums.WineSensoryLevel | null
+    acidityLevel: $Enums.WineSensoryLevel | null
     beerStyle: string | null
     ibu: number | null
     beerColor: string | null
     celiacFriendly: boolean | null
     veganFriendly: boolean | null
+    isOrganic: boolean | null
     note: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -11871,11 +11889,16 @@ export namespace Prisma {
     wineStyle: $Enums.WineStyle | null
     vintage: number | null
     producer: string | null
+    varietal: string | null
+    oakAging: boolean | null
+    tanninLevel: $Enums.WineSensoryLevel | null
+    acidityLevel: $Enums.WineSensoryLevel | null
     beerStyle: string | null
     ibu: number | null
     beerColor: string | null
     celiacFriendly: boolean | null
     veganFriendly: boolean | null
+    isOrganic: boolean | null
     note: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -11914,6 +11937,10 @@ export namespace Prisma {
     wineStyle: number
     vintage: number
     producer: number
+    varietal: number
+    oakAging: number
+    tanninLevel: number
+    acidityLevel: number
     grapes: number
     beerStyle: number
     ibu: number
@@ -11921,6 +11948,7 @@ export namespace Prisma {
     pairings: number
     celiacFriendly: number
     veganFriendly: number
+    isOrganic: number
     note: number
     createdAt: number
     updatedAt: number
@@ -11970,11 +11998,16 @@ export namespace Prisma {
     wineStyle?: true
     vintage?: true
     producer?: true
+    varietal?: true
+    oakAging?: true
+    tanninLevel?: true
+    acidityLevel?: true
     beerStyle?: true
     ibu?: true
     beerColor?: true
     celiacFriendly?: true
     veganFriendly?: true
+    isOrganic?: true
     note?: true
     createdAt?: true
     updatedAt?: true
@@ -12010,11 +12043,16 @@ export namespace Prisma {
     wineStyle?: true
     vintage?: true
     producer?: true
+    varietal?: true
+    oakAging?: true
+    tanninLevel?: true
+    acidityLevel?: true
     beerStyle?: true
     ibu?: true
     beerColor?: true
     celiacFriendly?: true
     veganFriendly?: true
+    isOrganic?: true
     note?: true
     createdAt?: true
     updatedAt?: true
@@ -12053,6 +12091,10 @@ export namespace Prisma {
     wineStyle?: true
     vintage?: true
     producer?: true
+    varietal?: true
+    oakAging?: true
+    tanninLevel?: true
+    acidityLevel?: true
     grapes?: true
     beerStyle?: true
     ibu?: true
@@ -12060,6 +12102,7 @@ export namespace Prisma {
     pairings?: true
     celiacFriendly?: true
     veganFriendly?: true
+    isOrganic?: true
     note?: true
     createdAt?: true
     updatedAt?: true
@@ -12185,6 +12228,10 @@ export namespace Prisma {
     wineStyle: $Enums.WineStyle | null
     vintage: number | null
     producer: string | null
+    varietal: string | null
+    oakAging: boolean | null
+    tanninLevel: $Enums.WineSensoryLevel | null
+    acidityLevel: $Enums.WineSensoryLevel | null
     grapes: JsonValue | null
     beerStyle: string | null
     ibu: number | null
@@ -12192,6 +12239,7 @@ export namespace Prisma {
     pairings: JsonValue | null
     celiacFriendly: boolean | null
     veganFriendly: boolean | null
+    isOrganic: boolean | null
     note: string | null
     createdAt: Date
     updatedAt: Date
@@ -12249,6 +12297,10 @@ export namespace Prisma {
     wineStyle?: boolean
     vintage?: boolean
     producer?: boolean
+    varietal?: boolean
+    oakAging?: boolean
+    tanninLevel?: boolean
+    acidityLevel?: boolean
     grapes?: boolean
     beerStyle?: boolean
     ibu?: boolean
@@ -12256,6 +12308,7 @@ export namespace Prisma {
     pairings?: boolean
     celiacFriendly?: boolean
     veganFriendly?: boolean
+    isOrganic?: boolean
     note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -12295,6 +12348,10 @@ export namespace Prisma {
     wineStyle?: boolean
     vintage?: boolean
     producer?: boolean
+    varietal?: boolean
+    oakAging?: boolean
+    tanninLevel?: boolean
+    acidityLevel?: boolean
     grapes?: boolean
     beerStyle?: boolean
     ibu?: boolean
@@ -12302,6 +12359,7 @@ export namespace Prisma {
     pairings?: boolean
     celiacFriendly?: boolean
     veganFriendly?: boolean
+    isOrganic?: boolean
     note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -12341,6 +12399,10 @@ export namespace Prisma {
     wineStyle?: boolean
     vintage?: boolean
     producer?: boolean
+    varietal?: boolean
+    oakAging?: boolean
+    tanninLevel?: boolean
+    acidityLevel?: boolean
     grapes?: boolean
     beerStyle?: boolean
     ibu?: boolean
@@ -12348,6 +12410,7 @@ export namespace Prisma {
     pairings?: boolean
     celiacFriendly?: boolean
     veganFriendly?: boolean
+    isOrganic?: boolean
     note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -12387,6 +12450,10 @@ export namespace Prisma {
     wineStyle?: boolean
     vintage?: boolean
     producer?: boolean
+    varietal?: boolean
+    oakAging?: boolean
+    tanninLevel?: boolean
+    acidityLevel?: boolean
     grapes?: boolean
     beerStyle?: boolean
     ibu?: boolean
@@ -12394,12 +12461,13 @@ export namespace Prisma {
     pairings?: boolean
     celiacFriendly?: boolean
     veganFriendly?: boolean
+    isOrganic?: boolean
     note?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "name" | "brand" | "categorySlug" | "subcategorySlug" | "abv" | "origin" | "regionDetail" | "imageUrl" | "imageAlt" | "shortDescription" | "longDescription" | "servingSuggestion" | "priceRange" | "featured" | "tags" | "bodyDensity" | "mixingRatio" | "tastingColor" | "tastingNose" | "tastingPalate" | "tastingFinish" | "whiskyType" | "distillery" | "ageStatement" | "caskType" | "isPeated" | "wineType" | "wineStyle" | "vintage" | "producer" | "grapes" | "beerStyle" | "ibu" | "beerColor" | "pairings" | "celiacFriendly" | "veganFriendly" | "note" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "slug" | "name" | "brand" | "categorySlug" | "subcategorySlug" | "abv" | "origin" | "regionDetail" | "imageUrl" | "imageAlt" | "shortDescription" | "longDescription" | "servingSuggestion" | "priceRange" | "featured" | "tags" | "bodyDensity" | "mixingRatio" | "tastingColor" | "tastingNose" | "tastingPalate" | "tastingFinish" | "whiskyType" | "distillery" | "ageStatement" | "caskType" | "isPeated" | "wineType" | "wineStyle" | "vintage" | "producer" | "varietal" | "oakAging" | "tanninLevel" | "acidityLevel" | "grapes" | "beerStyle" | "ibu" | "beerColor" | "pairings" | "celiacFriendly" | "veganFriendly" | "isOrganic" | "note" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     category?: boolean | CategoryDefaultArgs<ExtArgs>
   }
@@ -12473,6 +12541,16 @@ export namespace Prisma {
       vintage: number | null
       producer: string | null
       /**
+       * Varietal declarado o tipo de blend (ej. "100% Malbec", "Cabernet · Merlot").
+       */
+      varietal: string | null
+      /**
+       * Crianza en barrica (complementa `wineStyle` para Reserva / Gran Reserva, etc.).
+       */
+      oakAging: boolean | null
+      tanninLevel: $Enums.WineSensoryLevel | null
+      acidityLevel: $Enums.WineSensoryLevel | null
+      /**
        * [{ "grape": "Malbec", "percentage": 70 }, ...]
        */
       grapes: Prisma.JsonValue | null
@@ -12488,6 +12566,10 @@ export namespace Prisma {
        * Apto vegano (sin ingredientes de origen animal en la elaboración habitual).
        */
       veganFriendly: boolean | null
+      /**
+       * Elaboración orgánica / ecológica (ej. líneas certificadas).
+       */
+      isOrganic: boolean | null
       /**
        * Nota libre: aclaraciones dietarias, advertencias o fuente del dato.
        */
@@ -12950,6 +13032,10 @@ export namespace Prisma {
     readonly wineStyle: FieldRef<"Product", 'WineStyle'>
     readonly vintage: FieldRef<"Product", 'Int'>
     readonly producer: FieldRef<"Product", 'String'>
+    readonly varietal: FieldRef<"Product", 'String'>
+    readonly oakAging: FieldRef<"Product", 'Boolean'>
+    readonly tanninLevel: FieldRef<"Product", 'WineSensoryLevel'>
+    readonly acidityLevel: FieldRef<"Product", 'WineSensoryLevel'>
     readonly grapes: FieldRef<"Product", 'Json'>
     readonly beerStyle: FieldRef<"Product", 'String'>
     readonly ibu: FieldRef<"Product", 'Int'>
@@ -12957,6 +13043,7 @@ export namespace Prisma {
     readonly pairings: FieldRef<"Product", 'Json'>
     readonly celiacFriendly: FieldRef<"Product", 'Boolean'>
     readonly veganFriendly: FieldRef<"Product", 'Boolean'>
+    readonly isOrganic: FieldRef<"Product", 'Boolean'>
     readonly note: FieldRef<"Product", 'String'>
     readonly createdAt: FieldRef<"Product", 'DateTime'>
     readonly updatedAt: FieldRef<"Product", 'DateTime'>
@@ -16894,6 +16981,10 @@ export namespace Prisma {
     wineStyle: 'wineStyle',
     vintage: 'vintage',
     producer: 'producer',
+    varietal: 'varietal',
+    oakAging: 'oakAging',
+    tanninLevel: 'tanninLevel',
+    acidityLevel: 'acidityLevel',
     grapes: 'grapes',
     beerStyle: 'beerStyle',
     ibu: 'ibu',
@@ -16901,6 +16992,7 @@ export namespace Prisma {
     pairings: 'pairings',
     celiacFriendly: 'celiacFriendly',
     veganFriendly: 'veganFriendly',
+    isOrganic: 'isOrganic',
     note: 'note',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -17127,6 +17219,20 @@ export namespace Prisma {
    * Reference to a field of type 'WineStyle[]'
    */
   export type ListEnumWineStyleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WineStyle[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'WineSensoryLevel'
+   */
+  export type EnumWineSensoryLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WineSensoryLevel'>
+    
+
+
+  /**
+   * Reference to a field of type 'WineSensoryLevel[]'
+   */
+  export type ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WineSensoryLevel[]'>
     
   /**
    * Deep Input Types
@@ -17896,6 +18002,10 @@ export namespace Prisma {
     wineStyle?: EnumWineStyleNullableFilter<"Product"> | $Enums.WineStyle | null
     vintage?: IntNullableFilter<"Product"> | number | null
     producer?: StringNullableFilter<"Product"> | string | null
+    varietal?: StringNullableFilter<"Product"> | string | null
+    oakAging?: BoolNullableFilter<"Product"> | boolean | null
+    tanninLevel?: EnumWineSensoryLevelNullableFilter<"Product"> | $Enums.WineSensoryLevel | null
+    acidityLevel?: EnumWineSensoryLevelNullableFilter<"Product"> | $Enums.WineSensoryLevel | null
     grapes?: JsonNullableFilter<"Product">
     beerStyle?: StringNullableFilter<"Product"> | string | null
     ibu?: IntNullableFilter<"Product"> | number | null
@@ -17903,6 +18013,7 @@ export namespace Prisma {
     pairings?: JsonNullableFilter<"Product">
     celiacFriendly?: BoolNullableFilter<"Product"> | boolean | null
     veganFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    isOrganic?: BoolNullableFilter<"Product"> | boolean | null
     note?: StringNullableFilter<"Product"> | string | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
@@ -17942,6 +18053,10 @@ export namespace Prisma {
     wineStyle?: SortOrderInput | SortOrder
     vintage?: SortOrderInput | SortOrder
     producer?: SortOrderInput | SortOrder
+    varietal?: SortOrderInput | SortOrder
+    oakAging?: SortOrderInput | SortOrder
+    tanninLevel?: SortOrderInput | SortOrder
+    acidityLevel?: SortOrderInput | SortOrder
     grapes?: SortOrderInput | SortOrder
     beerStyle?: SortOrderInput | SortOrder
     ibu?: SortOrderInput | SortOrder
@@ -17949,6 +18064,7 @@ export namespace Prisma {
     pairings?: SortOrderInput | SortOrder
     celiacFriendly?: SortOrderInput | SortOrder
     veganFriendly?: SortOrderInput | SortOrder
+    isOrganic?: SortOrderInput | SortOrder
     note?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -17991,6 +18107,10 @@ export namespace Prisma {
     wineStyle?: EnumWineStyleNullableFilter<"Product"> | $Enums.WineStyle | null
     vintage?: IntNullableFilter<"Product"> | number | null
     producer?: StringNullableFilter<"Product"> | string | null
+    varietal?: StringNullableFilter<"Product"> | string | null
+    oakAging?: BoolNullableFilter<"Product"> | boolean | null
+    tanninLevel?: EnumWineSensoryLevelNullableFilter<"Product"> | $Enums.WineSensoryLevel | null
+    acidityLevel?: EnumWineSensoryLevelNullableFilter<"Product"> | $Enums.WineSensoryLevel | null
     grapes?: JsonNullableFilter<"Product">
     beerStyle?: StringNullableFilter<"Product"> | string | null
     ibu?: IntNullableFilter<"Product"> | number | null
@@ -17998,6 +18118,7 @@ export namespace Prisma {
     pairings?: JsonNullableFilter<"Product">
     celiacFriendly?: BoolNullableFilter<"Product"> | boolean | null
     veganFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    isOrganic?: BoolNullableFilter<"Product"> | boolean | null
     note?: StringNullableFilter<"Product"> | string | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
@@ -18037,6 +18158,10 @@ export namespace Prisma {
     wineStyle?: SortOrderInput | SortOrder
     vintage?: SortOrderInput | SortOrder
     producer?: SortOrderInput | SortOrder
+    varietal?: SortOrderInput | SortOrder
+    oakAging?: SortOrderInput | SortOrder
+    tanninLevel?: SortOrderInput | SortOrder
+    acidityLevel?: SortOrderInput | SortOrder
     grapes?: SortOrderInput | SortOrder
     beerStyle?: SortOrderInput | SortOrder
     ibu?: SortOrderInput | SortOrder
@@ -18044,6 +18169,7 @@ export namespace Prisma {
     pairings?: SortOrderInput | SortOrder
     celiacFriendly?: SortOrderInput | SortOrder
     veganFriendly?: SortOrderInput | SortOrder
+    isOrganic?: SortOrderInput | SortOrder
     note?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -18090,6 +18216,10 @@ export namespace Prisma {
     wineStyle?: EnumWineStyleNullableWithAggregatesFilter<"Product"> | $Enums.WineStyle | null
     vintage?: IntNullableWithAggregatesFilter<"Product"> | number | null
     producer?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    varietal?: StringNullableWithAggregatesFilter<"Product"> | string | null
+    oakAging?: BoolNullableWithAggregatesFilter<"Product"> | boolean | null
+    tanninLevel?: EnumWineSensoryLevelNullableWithAggregatesFilter<"Product"> | $Enums.WineSensoryLevel | null
+    acidityLevel?: EnumWineSensoryLevelNullableWithAggregatesFilter<"Product"> | $Enums.WineSensoryLevel | null
     grapes?: JsonNullableWithAggregatesFilter<"Product">
     beerStyle?: StringNullableWithAggregatesFilter<"Product"> | string | null
     ibu?: IntNullableWithAggregatesFilter<"Product"> | number | null
@@ -18097,6 +18227,7 @@ export namespace Prisma {
     pairings?: JsonNullableWithAggregatesFilter<"Product">
     celiacFriendly?: BoolNullableWithAggregatesFilter<"Product"> | boolean | null
     veganFriendly?: BoolNullableWithAggregatesFilter<"Product"> | boolean | null
+    isOrganic?: BoolNullableWithAggregatesFilter<"Product"> | boolean | null
     note?: StringNullableWithAggregatesFilter<"Product"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Product"> | Date | string
@@ -19140,6 +19271,10 @@ export namespace Prisma {
     wineStyle?: $Enums.WineStyle | null
     vintage?: number | null
     producer?: string | null
+    varietal?: string | null
+    oakAging?: boolean | null
+    tanninLevel?: $Enums.WineSensoryLevel | null
+    acidityLevel?: $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: string | null
     ibu?: number | null
@@ -19147,6 +19282,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: boolean | null
     veganFriendly?: boolean | null
+    isOrganic?: boolean | null
     note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -19186,6 +19322,10 @@ export namespace Prisma {
     wineStyle?: $Enums.WineStyle | null
     vintage?: number | null
     producer?: string | null
+    varietal?: string | null
+    oakAging?: boolean | null
+    tanninLevel?: $Enums.WineSensoryLevel | null
+    acidityLevel?: $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: string | null
     ibu?: number | null
@@ -19193,6 +19333,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: boolean | null
     veganFriendly?: boolean | null
+    isOrganic?: boolean | null
     note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -19230,6 +19371,10 @@ export namespace Prisma {
     wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
     vintage?: NullableIntFieldUpdateOperationsInput | number | null
     producer?: NullableStringFieldUpdateOperationsInput | string | null
+    varietal?: NullableStringFieldUpdateOperationsInput | string | null
+    oakAging?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    tanninLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
+    acidityLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19237,6 +19382,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
     veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isOrganic?: NullableBoolFieldUpdateOperationsInput | boolean | null
     note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -19276,6 +19422,10 @@ export namespace Prisma {
     wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
     vintage?: NullableIntFieldUpdateOperationsInput | number | null
     producer?: NullableStringFieldUpdateOperationsInput | string | null
+    varietal?: NullableStringFieldUpdateOperationsInput | string | null
+    oakAging?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    tanninLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
+    acidityLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19283,6 +19433,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
     veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isOrganic?: NullableBoolFieldUpdateOperationsInput | boolean | null
     note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -19321,6 +19472,10 @@ export namespace Prisma {
     wineStyle?: $Enums.WineStyle | null
     vintage?: number | null
     producer?: string | null
+    varietal?: string | null
+    oakAging?: boolean | null
+    tanninLevel?: $Enums.WineSensoryLevel | null
+    acidityLevel?: $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: string | null
     ibu?: number | null
@@ -19328,6 +19483,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: boolean | null
     veganFriendly?: boolean | null
+    isOrganic?: boolean | null
     note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -19365,6 +19521,10 @@ export namespace Prisma {
     wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
     vintage?: NullableIntFieldUpdateOperationsInput | number | null
     producer?: NullableStringFieldUpdateOperationsInput | string | null
+    varietal?: NullableStringFieldUpdateOperationsInput | string | null
+    oakAging?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    tanninLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
+    acidityLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19372,6 +19532,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
     veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isOrganic?: NullableBoolFieldUpdateOperationsInput | boolean | null
     note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -19410,6 +19571,10 @@ export namespace Prisma {
     wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
     vintage?: NullableIntFieldUpdateOperationsInput | number | null
     producer?: NullableStringFieldUpdateOperationsInput | string | null
+    varietal?: NullableStringFieldUpdateOperationsInput | string | null
+    oakAging?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    tanninLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
+    acidityLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -19417,6 +19582,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
     veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isOrganic?: NullableBoolFieldUpdateOperationsInput | boolean | null
     note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -20385,6 +20551,13 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type EnumWineSensoryLevelNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineSensoryLevel | EnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineSensoryLevelNullableFilter<$PrismaModel> | $Enums.WineSensoryLevel | null
+  }
+
   export type ProductCountOrderByAggregateInput = {
     id?: SortOrder
     slug?: SortOrder
@@ -20418,6 +20591,10 @@ export namespace Prisma {
     wineStyle?: SortOrder
     vintage?: SortOrder
     producer?: SortOrder
+    varietal?: SortOrder
+    oakAging?: SortOrder
+    tanninLevel?: SortOrder
+    acidityLevel?: SortOrder
     grapes?: SortOrder
     beerStyle?: SortOrder
     ibu?: SortOrder
@@ -20425,6 +20602,7 @@ export namespace Prisma {
     pairings?: SortOrder
     celiacFriendly?: SortOrder
     veganFriendly?: SortOrder
+    isOrganic?: SortOrder
     note?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -20466,11 +20644,16 @@ export namespace Prisma {
     wineStyle?: SortOrder
     vintage?: SortOrder
     producer?: SortOrder
+    varietal?: SortOrder
+    oakAging?: SortOrder
+    tanninLevel?: SortOrder
+    acidityLevel?: SortOrder
     beerStyle?: SortOrder
     ibu?: SortOrder
     beerColor?: SortOrder
     celiacFriendly?: SortOrder
     veganFriendly?: SortOrder
+    isOrganic?: SortOrder
     note?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -20506,11 +20689,16 @@ export namespace Prisma {
     wineStyle?: SortOrder
     vintage?: SortOrder
     producer?: SortOrder
+    varietal?: SortOrder
+    oakAging?: SortOrder
+    tanninLevel?: SortOrder
+    acidityLevel?: SortOrder
     beerStyle?: SortOrder
     ibu?: SortOrder
     beerColor?: SortOrder
     celiacFriendly?: SortOrder
     veganFriendly?: SortOrder
+    isOrganic?: SortOrder
     note?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -20634,6 +20822,16 @@ export namespace Prisma {
     _sum?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedIntNullableFilter<$PrismaModel>
     _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type EnumWineSensoryLevelNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineSensoryLevel | EnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineSensoryLevelNullableWithAggregatesFilter<$PrismaModel> | $Enums.WineSensoryLevel | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWineSensoryLevelNullableFilter<$PrismaModel>
+    _max?: NestedEnumWineSensoryLevelNullableFilter<$PrismaModel>
   }
 
   export type GlossaryDetailListRelationFilter = {
@@ -21282,6 +21480,10 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type NullableEnumWineSensoryLevelFieldUpdateOperationsInput = {
+    set?: $Enums.WineSensoryLevel | null
+  }
+
   export type CategoryUpdateOneRequiredWithoutProductsNestedInput = {
     create?: XOR<CategoryCreateWithoutProductsInput, CategoryUncheckedCreateWithoutProductsInput>
     connectOrCreate?: CategoryCreateOrConnectWithoutProductsInput
@@ -21624,6 +21826,13 @@ export namespace Prisma {
     not?: NestedEnumWineStyleNullableFilter<$PrismaModel> | $Enums.WineStyle | null
   }
 
+  export type NestedEnumWineSensoryLevelNullableFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineSensoryLevel | EnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineSensoryLevelNullableFilter<$PrismaModel> | $Enums.WineSensoryLevel | null
+  }
+
   export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | FloatFieldRefInput<$PrismaModel> | null
     in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
@@ -21735,6 +21944,16 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
+  export type NestedEnumWineSensoryLevelNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.WineSensoryLevel | EnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    in?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    notIn?: $Enums.WineSensoryLevel[] | ListEnumWineSensoryLevelFieldRefInput<$PrismaModel> | null
+    not?: NestedEnumWineSensoryLevelNullableWithAggregatesFilter<$PrismaModel> | $Enums.WineSensoryLevel | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedEnumWineSensoryLevelNullableFilter<$PrismaModel>
+    _max?: NestedEnumWineSensoryLevelNullableFilter<$PrismaModel>
+  }
+
   export type GuideCreateWithoutCategoryInput = {
     id?: string
     title: string
@@ -21812,6 +22031,10 @@ export namespace Prisma {
     wineStyle?: $Enums.WineStyle | null
     vintage?: number | null
     producer?: string | null
+    varietal?: string | null
+    oakAging?: boolean | null
+    tanninLevel?: $Enums.WineSensoryLevel | null
+    acidityLevel?: $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: string | null
     ibu?: number | null
@@ -21819,6 +22042,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: boolean | null
     veganFriendly?: boolean | null
+    isOrganic?: boolean | null
     note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -21856,6 +22080,10 @@ export namespace Prisma {
     wineStyle?: $Enums.WineStyle | null
     vintage?: number | null
     producer?: string | null
+    varietal?: string | null
+    oakAging?: boolean | null
+    tanninLevel?: $Enums.WineSensoryLevel | null
+    acidityLevel?: $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: string | null
     ibu?: number | null
@@ -21863,6 +22091,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: boolean | null
     veganFriendly?: boolean | null
+    isOrganic?: boolean | null
     note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -21985,6 +22214,10 @@ export namespace Prisma {
     wineStyle?: EnumWineStyleNullableFilter<"Product"> | $Enums.WineStyle | null
     vintage?: IntNullableFilter<"Product"> | number | null
     producer?: StringNullableFilter<"Product"> | string | null
+    varietal?: StringNullableFilter<"Product"> | string | null
+    oakAging?: BoolNullableFilter<"Product"> | boolean | null
+    tanninLevel?: EnumWineSensoryLevelNullableFilter<"Product"> | $Enums.WineSensoryLevel | null
+    acidityLevel?: EnumWineSensoryLevelNullableFilter<"Product"> | $Enums.WineSensoryLevel | null
     grapes?: JsonNullableFilter<"Product">
     beerStyle?: StringNullableFilter<"Product"> | string | null
     ibu?: IntNullableFilter<"Product"> | number | null
@@ -21992,6 +22225,7 @@ export namespace Prisma {
     pairings?: JsonNullableFilter<"Product">
     celiacFriendly?: BoolNullableFilter<"Product"> | boolean | null
     veganFriendly?: BoolNullableFilter<"Product"> | boolean | null
+    isOrganic?: BoolNullableFilter<"Product"> | boolean | null
     note?: StringNullableFilter<"Product"> | string | null
     createdAt?: DateTimeFilter<"Product"> | Date | string
     updatedAt?: DateTimeFilter<"Product"> | Date | string
@@ -23361,6 +23595,10 @@ export namespace Prisma {
     wineStyle?: $Enums.WineStyle | null
     vintage?: number | null
     producer?: string | null
+    varietal?: string | null
+    oakAging?: boolean | null
+    tanninLevel?: $Enums.WineSensoryLevel | null
+    acidityLevel?: $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: string | null
     ibu?: number | null
@@ -23368,6 +23606,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: boolean | null
     veganFriendly?: boolean | null
+    isOrganic?: boolean | null
     note?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -23423,6 +23662,10 @@ export namespace Prisma {
     wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
     vintage?: NullableIntFieldUpdateOperationsInput | number | null
     producer?: NullableStringFieldUpdateOperationsInput | string | null
+    varietal?: NullableStringFieldUpdateOperationsInput | string | null
+    oakAging?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    tanninLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
+    acidityLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -23430,6 +23673,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
     veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isOrganic?: NullableBoolFieldUpdateOperationsInput | boolean | null
     note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -23467,6 +23711,10 @@ export namespace Prisma {
     wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
     vintage?: NullableIntFieldUpdateOperationsInput | number | null
     producer?: NullableStringFieldUpdateOperationsInput | string | null
+    varietal?: NullableStringFieldUpdateOperationsInput | string | null
+    oakAging?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    tanninLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
+    acidityLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -23474,6 +23722,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
     veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isOrganic?: NullableBoolFieldUpdateOperationsInput | boolean | null
     note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -23511,6 +23760,10 @@ export namespace Prisma {
     wineStyle?: NullableEnumWineStyleFieldUpdateOperationsInput | $Enums.WineStyle | null
     vintage?: NullableIntFieldUpdateOperationsInput | number | null
     producer?: NullableStringFieldUpdateOperationsInput | string | null
+    varietal?: NullableStringFieldUpdateOperationsInput | string | null
+    oakAging?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    tanninLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
+    acidityLevel?: NullableEnumWineSensoryLevelFieldUpdateOperationsInput | $Enums.WineSensoryLevel | null
     grapes?: NullableJsonNullValueInput | InputJsonValue
     beerStyle?: NullableStringFieldUpdateOperationsInput | string | null
     ibu?: NullableIntFieldUpdateOperationsInput | number | null
@@ -23518,6 +23771,7 @@ export namespace Prisma {
     pairings?: NullableJsonNullValueInput | InputJsonValue
     celiacFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
     veganFriendly?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    isOrganic?: NullableBoolFieldUpdateOperationsInput | boolean | null
     note?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string

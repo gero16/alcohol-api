@@ -266,6 +266,10 @@ exports.Prisma.ProductScalarFieldEnum = {
   wineStyle: 'wineStyle',
   vintage: 'vintage',
   producer: 'producer',
+  varietal: 'varietal',
+  oakAging: 'oakAging',
+  tanninLevel: 'tanninLevel',
+  acidityLevel: 'acidityLevel',
   grapes: 'grapes',
   beerStyle: 'beerStyle',
   ibu: 'ibu',
@@ -273,6 +277,7 @@ exports.Prisma.ProductScalarFieldEnum = {
   pairings: 'pairings',
   celiacFriendly: 'celiacFriendly',
   veganFriendly: 'veganFriendly',
+  isOrganic: 'isOrganic',
   note: 'note',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
@@ -371,6 +376,12 @@ exports.WineStyle = exports.$Enums.WineStyle = {
   CRIANZA: 'CRIANZA',
   RESERVA: 'RESERVA',
   GRAN_RESERVA: 'GRAN_RESERVA'
+};
+
+exports.WineSensoryLevel = exports.$Enums.WineSensoryLevel = {
+  LOW: 'LOW',
+  MEDIUM: 'MEDIUM',
+  HIGH: 'HIGH'
 };
 
 exports.Prisma.ModelName = {

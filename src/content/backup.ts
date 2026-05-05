@@ -60,6 +60,8 @@ function toSeedGuideFromRecord(guide: GuideDetailRecord): SeedGuide {
             composition: row.composition ?? undefined,
             objective: row.objective ?? undefined,
             description: row.description ?? undefined,
+            description2: row.description2 ?? undefined,
+            maridaje: row.maridaje ?? undefined,
             notes: row.notes ?? undefined,
             reference: row.reference ?? undefined,
             abv: row.abv ?? undefined,

@@ -5,10 +5,11 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "prisma db push && prisma generate && tsc -p tsconfig.json --noEmit",
+    "build": "prisma generate && tsc -p tsconfig.json --noEmit",
     "build:types": "prisma generate && tsc -p tsconfig.json --noEmit",
-    "start": "tsx src/server.ts",
+    "start": "prisma migrate deploy && tsx src/server.ts",
     "prisma:generate": "prisma generate",
+    "db:up": "docker compose up -d",
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "backup:export": "tsx src/scripts/export-backup.ts",
@@ -36,12 +37,12 @@
     "@prisma/client": "^7.6.0",
     "dotenv": "^17.3.1",
     "fastify": "^5.8.4",
-    "pg": "^8.20.0"
+    "pg": "^8.20.0",
+    "prisma": "^7.6.0",
+    "tsx": "^4.21.0"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
-    "prisma": "^7.6.0",
-    "tsx": "^4.21.0",
     "typescript": "^6.0.2"
   }
 }

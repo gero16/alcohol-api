@@ -130,6 +130,8 @@ model GuideTableRow {
   composition        String?
   objective          String?
   description        String?
+  description2       String?
+  maridaje           String?
   notes              String?
   reference          String?
   abv                String?

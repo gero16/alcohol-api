@@ -3,6 +3,8 @@ export type TableColumnKey =
   | "composition"
   | "objective"
   | "description"
+  | "description2"
+  | "maridaje"
   | "notes"
   | "reference"
   | "abv"
@@ -52,6 +54,8 @@ export type SeedGuideTableRow = {
   composition?: string;
   objective?: string;
   description?: string;
+  description2?: string;
+  maridaje?: string;
   notes?: string;
   reference?: string;
   abv?: string;

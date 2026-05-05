@@ -211,6 +211,8 @@ exports.Prisma.GuideTableRowScalarFieldEnum = {
   composition: 'composition',
   objective: 'objective',
   description: 'description',
+  description2: 'description2',
+  maridaje: 'maridaje',
   notes: 'notes',
   reference: 'reference',
   abv: 'abv',

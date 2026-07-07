@@ -123,6 +123,7 @@ const guideSchema = {
           noteTitle: { type: "string" },
           noteContent: { type: "string" },
           semanticKey: guideSemanticKeySchema,
+          showInNav: { type: "boolean" },
           classifications: {
             type: "array",
             items: {
@@ -156,6 +157,7 @@ const guideSchema = {
                   items: { type: "string", minLength: 1 },
                 },
                 semanticKey: guideSemanticKeySchema,
+                showInNav: { type: "boolean" },
               },
             },
           },
@@ -213,6 +215,7 @@ const sectionSchema = {
       items: { type: "string", minLength: 1 },
     },
     semanticKey: guideSemanticKeySchema,
+    showInNav: { type: "boolean" },
   },
 } as const;
 

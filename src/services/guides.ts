@@ -352,6 +352,7 @@ export async function createSectionForGuide(categorySlug: string, payload: Secti
       imageAlt: payload.imageAlt,
       position: payload.position ?? existingSections,
       semanticKey: parseGuideSemanticKey(payload.semanticKey),
+      showInNav: payload.showInNav ?? null,
       paragraphs: {
         create: payload.paragraphs.map((content, index) => ({
           content,
@@ -418,6 +419,7 @@ export async function updateSectionForGuide(
       imageAlt: payload.imageAlt,
       position: payload.position ?? section.position,
       semanticKey: parseGuideSemanticKey(payload.semanticKey),
+      showInNav: payload.showInNav ?? null,
       paragraphs: {
         create: payload.paragraphs.map((content, index) => ({
           content,

@@ -46,6 +46,8 @@ export type SeedGuideSection = {
   imageAlt: string;
   /** Vocabulario compartido: intro, origin, types, drinks, etc. */
   semanticKey?: string;
+  /** true/false = control explícito del menú; omitir/null = reglas legacy por categoría. */
+  showInNav?: boolean;
   paragraphs: string[];
 };
 
@@ -107,6 +109,8 @@ export type SeedGuideTab = {
   noteTitle?: string;
   noteContent?: string;
   semanticKey?: string;
+  /** true/false = control explícito del menú; omitir/null = reglas legacy por categoría. */
+  showInNav?: boolean;
   classifications?: SeedGuideClassification[];
   sections?: SeedGuideSection[];
   tables?: SeedGuideTable[];
@@ -153,6 +157,7 @@ export type ApiGuideSection = {
   imageUrl: string;
   imageAlt: string;
   semanticKey?: string;
+  showInNav?: boolean;
   paragraphs: string[];
 };
 
@@ -186,6 +191,7 @@ export type ApiGuideTab = {
   noteTitle?: string;
   noteContent?: string;
   semanticKey?: string;
+  showInNav?: boolean;
   classifications: ApiGuideClassification[];
   sections: ApiGuideSection[];
   tables: ApiGuideTable[];

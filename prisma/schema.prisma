@@ -46,6 +46,8 @@ model GuideTab {
   position     Int
   /// Vocabulario compartido (intro, origin, drinks, …) para cruzar vino, destilados y licores.
   semanticKey  String?
+  /// Si es true/false, control explícito del menú de navegación; null = reglas legacy por categoría.
+  showInNav    Boolean?
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
   guide             Guide                  @relation(fields: [guideId], references: [id], onDelete: Cascade)
@@ -83,6 +85,8 @@ model GuideSection {
   imageAlt    String
   position    Int
   semanticKey String?
+  /// Si es true/false, control explícito del menú de navegación; null = reglas legacy por categoría.
+  showInNav   Boolean?
   createdAt   DateTime         @default(now())
   updatedAt   DateTime         @updatedAt
   tab         GuideTab         @relation(fields: [tabId], references: [id], onDelete: Cascade)

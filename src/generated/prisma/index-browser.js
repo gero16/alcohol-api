@@ -153,6 +153,7 @@ exports.Prisma.GuideTabScalarFieldEnum = {
   noteContent: 'noteContent',
   position: 'position',
   semanticKey: 'semanticKey',
+  showInNav: 'showInNav',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -178,6 +179,7 @@ exports.Prisma.GuideSectionScalarFieldEnum = {
   imageAlt: 'imageAlt',
   position: 'position',
   semanticKey: 'semanticKey',
+  showInNav: 'showInNav',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };

@@ -16,6 +16,8 @@
     "guides:export-static": "tsx src/scripts/export-guides-static.ts",
     "glossary:export-static": "tsx src/scripts/export-glossary-static.ts",
     "categories:export-static": "tsx src/scripts/export-categories-static.ts",
+    "nav:backfill": "tsx src/scripts/backfill-guide-nav.ts",
+    "nav:backfill:local": "tsx src/scripts/run-local-nav-backfill.ts",
     "db:sync": "npm run db:push && npm run db:seed",
     "content:sync": "npm run db:sync"
   },
@@ -43,6 +45,7 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
+    "embedded-postgres": "^18.4.0-beta.17",
     "typescript": "^6.0.2"
   }
 }

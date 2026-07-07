@@ -31,6 +31,7 @@ function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideI
     noteContent: tab.noteContent,
     position: tab.position,
     semanticKey: parseGuideSemanticKey(tab.semanticKey),
+    showInNav: tab.showInNav ?? null,
     classifications: {
       create: (tab.classifications ?? []).map((c: SeedGuideClassification, index) => ({
         slug: c.slug,
@@ -48,6 +49,7 @@ function toGuideTabCreate(tab: SeedGuideTab): Prisma.GuideTabCreateWithoutGuideI
         imageAlt: section.imageAlt,
         position: index,
         semanticKey: parseGuideSemanticKey(section.semanticKey),
+        showInNav: section.showInNav ?? null,
         paragraphs: {
           create: section.paragraphs.map((content, paragraphIndex) => ({
             content,
@@ -188,6 +190,7 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
       noteTitle: tab.noteTitle ?? undefined,
       noteContent: tab.noteContent ?? undefined,
       semanticKey: tab.semanticKey ?? undefined,
+      showInNav: tab.showInNav ?? undefined,
       classifications: tab.classifications.map((c) => ({
         slug: c.slug,
         blocks: classificationBlocksFromJson(c.blocks),
@@ -200,6 +203,7 @@ function guideRecordToUpsertInput(record: GuideDetailRecord): GuideUpsertInput {
         imageUrl: section.imageUrl,
         imageAlt: section.imageAlt,
         semanticKey: section.semanticKey ?? undefined,
+        showInNav: section.showInNav ?? undefined,
         paragraphs: section.paragraphs.map((p) => p.content),
       })),
       tables: tab.tables.map((table) => ({

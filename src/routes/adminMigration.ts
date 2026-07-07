@@ -185,6 +185,7 @@ export const adminMigrationRoutes: FastifyPluginAsync = async (app) => {
             "DDL aplicado (o columnas ya existentes). Reinicia el servicio si el cliente Prisma del despliegue era anterior al schema.",
           executed: result.executed,
           statements: [...result.statements],
+          navBackfill: result.navBackfill,
         });
       } catch (error) {
         if (isDatabaseUnavailableError(error)) {

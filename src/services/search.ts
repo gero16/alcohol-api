@@ -123,27 +123,79 @@ function joinTexts(...parts: Array<string | null | undefined>): string {
     .join(" · ");
 }
 
+const CLASSIFICATIONS_LOCATION = "__clasificaciones__";
+
+/**
+ * Slug de pestaña sintética en subcategorías multi-sección
+ * (misma convención que CategoryPage: `__sec__`, `__clasificaciones`, `__extra`).
+ */
+function resolveViewTabSlug(
+  tab: ApiGuideTab,
+  hit: {
+    type: "tab" | "section" | "table" | "classification";
+    sectionSlug?: string;
+    tableSectionSlug?: string;
+  },
+): string | undefined {
+  const multiSection = (tab.sections?.length ?? 0) > 1;
+  if (!multiSection) {
+    return undefined;
+  }
+
+  if (hit.type === "classification") {
+    return `${tab.slug}__clasificaciones`;
+  }
+
+  if (hit.type === "section" && hit.sectionSlug) {
+    return `${tab.slug}__sec__${hit.sectionSlug}`;
+  }
+
+  if (hit.type === "table") {
+    const scoped = hit.tableSectionSlug?.trim() ?? "";
+    if (scoped === CLASSIFICATIONS_LOCATION) {
+      return `${tab.slug}__clasificaciones`;
+    }
+    if (scoped && tab.sections.some((section) => section.slug === scoped)) {
+      return `${tab.slug}__sec__${scoped}`;
+    }
+    return `${tab.slug}__extra`;
+  }
+
+  return undefined;
+}
+
 function buildGuideHref(
   guide: ApiGuideDetail,
-  tabSlug: string,
-  sectionSlug?: string,
-  hash?: string,
+  tab: ApiGuideTab,
+  options?: {
+    /** Si el hit pertenece a una sección que también es subcategoría de nav. */
+    preferNavSlug?: string;
+    viewTabSlug?: string;
+    hash?: string;
+  },
 ): string {
   const categorySlug = guide.category.slug;
-  const hashSuffix = hash ? `#${encodeURIComponent(hash)}` : "";
+  const hashSuffix = options?.hash ? `#${encodeURIComponent(options.hash)}` : "";
+  const params = new URLSearchParams();
+  if (options?.viewTabSlug) {
+    params.set("tab", options.viewTabSlug);
+  }
+  const query = params.toString() ? `?${params.toString()}` : "";
 
-  if (sectionSlug && isGuideNavSlug(guide, sectionSlug)) {
-    return `/${categorySlug}/${sectionSlug}${hashSuffix}`;
+  if (options?.preferNavSlug && isGuideNavSlug(guide, options.preferNavSlug)) {
+    return `/${categorySlug}/${options.preferNavSlug}${query}${hashSuffix}`;
   }
 
   const tabAsNav =
-    categorySlug === "destilados" ? toSpiritSubcategorySlug(tabSlug) : tabSlug;
+    categorySlug === "destilados" ? toSpiritSubcategorySlug(tab.slug) : tab.slug;
 
   if (isGuideNavSlug(guide, tabAsNav)) {
-    return `/${categorySlug}/${tabAsNav}${hashSuffix}`;
+    return `/${categorySlug}/${tabAsNav}${query}${hashSuffix}`;
   }
 
-  const params = new URLSearchParams({ tab: tabSlug });
+  if (!params.has("tab")) {
+    params.set("tab", options?.viewTabSlug ?? tab.slug);
+  }
   return `/${categorySlug}?${params.toString()}${hashSuffix}`;
 }
 
@@ -170,7 +222,9 @@ function searchInGuide(
         kind: "guide",
         title: tab.label,
         snippet: makeSnippet(tabBlob, tokens),
-        href: buildGuideHref(guide, tab.slug),
+        href: buildGuideHref(guide, tab, {
+          viewTabSlug: resolveViewTabSlug(tab, { type: "tab" }),
+        }),
         breadcrumb: guideBreadcrumb(guide, tab),
       });
     }
@@ -191,7 +245,9 @@ function searchInGuide(
           kind: "guide",
           title: classification.slug,
           snippet: makeSnippet(blob, tokens),
-          href: buildGuideHref(guide, tab.slug),
+          href: buildGuideHref(guide, tab, {
+            viewTabSlug: resolveViewTabSlug(tab, { type: "classification" }),
+          }),
           breadcrumb: guideBreadcrumb(guide, tab, "Clasificaciones"),
         });
       }
@@ -204,12 +260,25 @@ function searchInGuide(
         ...(section.paragraphs ?? []),
       );
       if (textMatches(blob, tokens)) {
+        const linksAsSubcategory = isGuideNavSlug(guide, section.slug);
+        const dedicatedTab = guide.tabs.find((candidate) => candidate.slug === section.slug);
+        const hrefTab = dedicatedTab ?? tab;
+
         pushUnique(results, seen, {
           id: `guide-section:${guide.category.slug}:${tab.slug}:${section.slug}`,
           kind: "guide",
           title: section.title,
           snippet: makeSnippet(blob, tokens),
-          href: buildGuideHref(guide, tab.slug, section.slug, `section-${section.slug}`),
+          href: buildGuideHref(guide, hrefTab, {
+            preferNavSlug: linksAsSubcategory ? section.slug : undefined,
+            viewTabSlug: linksAsSubcategory
+              ? undefined
+              : resolveViewTabSlug(tab, {
+                  type: "section",
+                  sectionSlug: section.slug,
+                }),
+            hash: `section-${section.slug}`,
+          }),
           breadcrumb: guideBreadcrumb(guide, tab, section.title),
         });
       }
@@ -217,18 +286,28 @@ function searchInGuide(
 
     for (const table of tab.tables) {
       const tableTitleBlob = joinTexts(table.title, table.slug);
+      const tableViewTab = resolveViewTabSlug(tab, {
+        type: "table",
+        tableSectionSlug: table.sectionSlug,
+      });
+      const tablePreferNav =
+        table.sectionSlug &&
+        table.sectionSlug !== CLASSIFICATIONS_LOCATION &&
+        isGuideNavSlug(guide, table.sectionSlug)
+          ? table.sectionSlug
+          : undefined;
+
       if (textMatches(tableTitleBlob, tokens)) {
         pushUnique(results, seen, {
           id: `guide-table:${guide.category.slug}:${tab.slug}:${table.slug}`,
           kind: "guide",
           title: table.title,
           snippet: makeSnippet(tableTitleBlob, tokens),
-          href: buildGuideHref(
-            guide,
-            tab.slug,
-            table.sectionSlug ?? undefined,
-            `table-${table.slug}`,
-          ),
+          href: buildGuideHref(guide, tab, {
+            preferNavSlug: tablePreferNav,
+            viewTabSlug: tableViewTab,
+            hash: `table-${table.slug}`,
+          }),
           breadcrumb: guideBreadcrumb(guide, tab, table.title),
         });
       }
@@ -248,12 +327,11 @@ function searchInGuide(
           kind: "guide",
           title: row.term || table.title,
           snippet: makeSnippet(blob, tokens),
-          href: buildGuideHref(
-            guide,
-            tab.slug,
-            table.sectionSlug ?? undefined,
-            `table-${table.slug}`,
-          ),
+          href: buildGuideHref(guide, tab, {
+            preferNavSlug: tablePreferNav,
+            viewTabSlug: tableViewTab,
+            hash: `table-${table.slug}`,
+          }),
           breadcrumb: guideBreadcrumb(guide, tab, table.title),
         });
       }

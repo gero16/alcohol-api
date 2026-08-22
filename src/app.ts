@@ -9,6 +9,7 @@ import { categoriesRoutes } from "./routes/categories";
 import { glossaryRoutes } from "./routes/glossary";
 import { guidesRoutes } from "./routes/guides";
 import { productsRoutes } from "./routes/products";
+import { searchRoutes } from "./routes/search";
 import { subcategoriesRoutes } from "./routes/subcategories";
 
 export async function buildApp() {
@@ -80,6 +81,10 @@ export async function buildApp() {
 
   app.register(subcategoriesRoutes, {
     prefix: "/subcategories",
+  });
+
+  app.register(searchRoutes, {
+    prefix: "/search",
   });
 
   app.register(adminMigrationRoutes, {
